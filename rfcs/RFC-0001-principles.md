@@ -1,7 +1,7 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.1
+**Versione:** 0.1.2
 **Ultima modifica:** 2026-07-26
 
 ## Scopo
@@ -26,7 +26,7 @@ Qualsiasi complessità aggiuntiva DEVE:
 - produrre un beneficio verificabile;
 - non poter essere sostituita da una soluzione più semplice con risultati equivalenti.
 
-Prima di aggiungere un componente, un'automazione, un'astrazione, una regola o un documento, si DEVE verificare:
+Prima di aggiungere un'entità, uno stato, una regola, un concetto, un componente, un'automazione, un'astrazione o un documento, si DEVE verificare:
 
 1. Esiste un modo più semplice per ottenere lo stesso risultato?
 2. È possibile eliminare o riutilizzare qualcosa invece di aggiungere?
