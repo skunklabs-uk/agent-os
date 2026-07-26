@@ -1,8 +1,8 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.0  
-**Ultima modifica:** 2026-07-14
+**Versione:** 0.1.1
+**Ultima modifica:** 2026-07-26
 
 ## Scopo
 
@@ -169,6 +169,26 @@ Un esito `NO` DEVE indicare l'azione correttiva necessaria.
 Un artefatto che non supera una verifica obbligatoria NON PUÒ diventare `Active` finché la non conformità non viene corretta oppure viene approvata una deroga esplicitamente motivata.
 
 Un principio che non può essere verificato DEVE essere chiarito o riscritto prima di diventare `Active`.
+
+---
+
+## 7. Controllo dei costi e dei retry di GitHub Actions
+
+Ogni esecuzione o rerun di GitHub Actions DEVE essere trattato come uso di una risorsa esterna potenzialmente a pagamento.
+
+- I rerun automatici di workflow o job sono vietati.
+- I rerun massivi e il rilancio indiscriminato di tutti i workflow sono vietati.
+- Un job fallito prima dell'avvio del primo step NON DEVE essere rilanciato.
+- Un job con lista degli step vuota DEVE essere classificato come problema di infrastruttura, billing, quota, permessi o runner, non come failure applicativa.
+- Se più workflow falliscono contemporaneamente prima del primo step, la remediation CI DEVE fermarsi.
+- L'esaurimento confermato o sospetto del credito GitHub Actions è una condizione di stop immediata.
+- Ogni retry che possa consumare ulteriore credito richiede l'autorizzazione esplicita dell'utente o del Product Owner.
+- Dopo l'autorizzazione è consentito al massimo un retry per workflow e per commit o head. Ogni ulteriore retry richiede una nuova autorizzazione esplicita.
+- Il retry NON DEVE essere usato come strumento diagnostico.
+- Prima di considerare un retry, la diagnosi DEVE usare log esistenti, stato del job, annotazioni, billing o quota, permessi, runner e verifiche locali.
+- Le verifiche locali e i controlli proporzionali DEVONO essere preferiti prima di attivare CI costosa.
+- L'autorizzazione di una wave autonoma NON autorizza implicitamente spesa CI illimitata.
+- Le istruzioni «continua fino al verde» o «non fermarti per failure tecniche» NON prevalgono su questa guardia economica.
 
 ---
 
