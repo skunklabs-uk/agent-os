@@ -1,7 +1,7 @@
 # RFC-0002 – Capability-oriented bounded execution
 
 **Stato:** Draft / Pilot
-**Versione:** 0.1.0
+**Versione:** 0.1.1
 **Ultima modifica:** 2026-07-26
 **Repository pilota:** `ignazio-ingenito/iwant`
 **Dipende da:** RFC-0001
@@ -43,11 +43,19 @@ L’unità PUÒ comprendere più pagine, route o stati quando tutti i cambiament
 
 Una PR NON DEVE accorpare capability indipendenti solo per ridurre il numero di PR.
 
-### 2. Plan Mode
+### 2. Pianificazione proporzionata
 
-Ogni incremento capability-oriented DEVE iniziare in Codex Plan Mode.
+Codex Plan Mode è obbligatorio quando l’incremento:
 
-Il piano DEVE indicare almeno:
+- comprende più route, pagine o stati osservabili;
+- modifica più di un file operativo significativo;
+- richiede una scelta esplicita del blast radius;
+- presenta alternative implementative materialmente diverse;
+- introduce un rischio di rollback non banale.
+
+Per fix semplici, documentazione, aggiornamenti meccanici o modifiche localizzate prive di scelte rilevanti è sufficiente un piano breve repository-owned nell’issue o nella PR.
+
+Il piano, in qualunque forma, DEVE indicare almeno:
 
 - obiettivo e outcome osservabile;
 - confine funzionale e blast radius;
@@ -61,13 +69,40 @@ Il piano DEVE indicare almeno:
 
 Il piano approvato diventa il confine operativo della PR. La sua esecuzione non richiede ulteriori approvazioni per passaggi tecnici già descritti, salvo stop condition prevista da RFC-0001 o dalle fonti locali.
 
-### 3. TDD
+### 3. Controllo di accumulo del blast radius
+
+Durante l’implementazione il blast radius NON DEVE crescere implicitamente.
+
+Se emerge lavoro aggiuntivo che introduce almeno uno dei seguenti elementi:
+
+- una capability o sottocapability diversa;
+- un contratto indipendente;
+- un renderer o flusso operativo separato;
+- una dipendenza nuova;
+- un rischio di rollback autonomo;
+- una decisione prodotto, dati, sicurezza o architettura distinta;
+
+l’esecutore DEVE fermare l’espansione dello scope e classificare il nuovo lavoro come:
+
+- `IN SCOPE`, solo se era già previsto dal piano e condivide test, rischio e rollback;
+- `FOLLOW-UP`, se è utile ma indipendente;
+- `BLOCKED`, solo se il lavoro corrente non può essere completato senza una decisione reale.
+
+L’accumulo progressivo di modifiche non pianificate nella stessa PR è vietato.
+
+Prima della review finale, l’esecutore DEVE confrontare il diff reale con il blast radius approvato e produrre uno degli esiti:
+
+- `SÌ`: il diff resta dentro il confine;
+- `NO`: la PR deve essere ridotta o separata;
+- `NON APPLICABILE`: solo per documentazione o modifiche non operative.
+
+### 4. TDD
 
 TDD è obbligatorio per ogni modifica di comportamento o presentazione osservabile.
 
 I test DEVONO coprire il comportamento capability-level previsto dal piano. Non è richiesto creare un test separato per ogni modifica puramente interna quando la regressione è già osservabile tramite test esistenti o nuovi test capability-level.
 
-### 4. Review
+### 5. Review
 
 È obbligatoria una review sul current head per ogni PR.
 
@@ -81,7 +116,7 @@ La review DEVE essere proporzionata al blast radius e verificare almeno:
 
 Non è richiesto ripetere più rituali o lenti equivalenti quando una singola review documentata copre gli stessi rischi.
 
-### 5. Browser Verification
+### 6. Browser Verification
 
 La verifica browser è condizionale.
 
@@ -98,7 +133,7 @@ La verifica browser è condizionale.
 
 La verifica browser DEVE essere eseguita una volta per la PR capability-oriented sul current head, non una volta per ogni route inclusa.
 
-### 6. Controlled Runtime
+### 7. Controlled Runtime
 
 Controlled Runtime è obbligatorio per ogni PR runtime/UI che modifica almeno uno dei seguenti elementi:
 
@@ -115,7 +150,7 @@ Il gate DEVE dimostrare che l’applicazione parte e completa il percorso capabi
 
 Il Controlled Runtime DEVE essere eseguito una volta per PR sul current head.
 
-### 7. CI e costi
+### 8. CI e costi
 
 RFC-0001 sezione 7 resta integralmente applicabile.
 
@@ -123,7 +158,7 @@ Una PR capability-oriented DEVE ridurre il numero di cicli CI rispetto alla fram
 
 Non sono consentiti retry automatici o rilanci diagnostici indiscriminati.
 
-### 8. Documentazione e stato
+### 9. Documentazione e stato
 
 L’issue di orchestrazione e il pointer della wave DEVONO registrare lo stato a livello di capability o unità di rischio, non ogni micro-passaggio.
 
@@ -217,5 +252,8 @@ L’adozione repository-level DEVE avvenire tramite una PR focalizzata che aggio
 | È prevista una sola review completa sul current head? |  |  |
 | I gate vengono eseguiti una sola volta quando l’head è pronto? |  |  |
 | La documentazione è limitata alle transizioni materiali? |  |  |
+| Il diff reale coincide con il blast radius approvato? |  |  |
+| Sono emersi cambi non pianificati? |  |  |
+| Ogni cambio aggiuntivo è stato classificato `IN SCOPE` o `FOLLOW-UP`? |  |  |
 | La PR è revertibile senza coinvolgere capability indipendenti? |  |  |
 | La soluzione resta conforme a RFC-0001? |  |  |
