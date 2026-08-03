@@ -1,8 +1,8 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.2
-**Ultima modifica:** 2026-07-26
+**Versione:** 0.1.3
+**Ultima modifica:** 2026-08-03
 
 ## Scopo
 
@@ -13,6 +13,8 @@ I principi si applicano alla Software Factory stessa e agli artefatti prodotti a
 ## Definizione
 
 Una **fonte autorevole** è la fonte designata dal progetto come riferimento ufficiale per una determinata informazione.
+
+Una **missione** è un obiettivo attivo, delimitato e verificabile che produce un risultato utile per il progetto.
 
 ---
 
@@ -36,7 +38,38 @@ La complessità priva di una giustificazione verificabile è overengineering e N
 
 ---
 
-## 2. Implementabilità
+## 2. Concentrazione e chiusura
+
+Il lavoro DEVE essere organizzato per missioni, non per issue, pull request o attività tecniche considerate come fini autonomi.
+
+Ogni repository DEVE avere una sola missione primaria attiva. Una seconda missione è ammessa solo quando la prima è bloccata da una dipendenza esterna documentata e non può avanzare in altro modo utile.
+
+Ogni attività DEVE contribuire direttamente alla missione attiva. Issue, pull request, refactoring, documentazione, analisi, remediation e strumenti sono mezzi subordinati al risultato, non nuovi obiettivi.
+
+Un nuovo fronte di lavoro può essere aperto solo quando è necessario per:
+
+- completare la missione;
+- rimuovere un blocco reale e documentato;
+- soddisfare un requisito o una verifica obbligatoria.
+
+Le attività utili ma non necessarie al completamento DEVONO essere rinviate o registrate nel backlog. La presenza di un miglioramento possibile non è, da sola, una ragione sufficiente per eseguirlo.
+
+Un'attività laterale NON DEVE diventare una nuova issue o pull request quando può essere completata nel lavoro corrente, rinviata senza compromettere i criteri di accettazione oppure evitata.
+
+Prima di aprire una nuova issue, branch, pull request, wave o attività, si DEVE poter indicare:
+
+1. quale missione fa avanzare;
+2. quale risultato concreto produce;
+3. perché è necessaria adesso;
+4. quale condizione ne determina la chiusura.
+
+In assenza di risposte verificabili, l'attività DEVE essere rinviata o inserita nel backlog.
+
+Il completamento ha priorità sull'espansione dello scope: prima chiudere, poi migliorare.
+
+---
+
+## 3. Implementabilità
 
 Devono essere proposte esclusivamente soluzioni realizzabili con gli strumenti, le risorse e le informazioni effettivamente disponibili.
 
@@ -46,11 +79,11 @@ Quando la fattibilità dipende da una condizione non verificata, tale condizione
 
 ---
 
-## 3. Fatti, deduzioni e informazioni mancanti
+## 4. Fatti, deduzioni e informazioni mancanti
 
 Ogni affermazione usata per prendere una decisione DEVE essere classificabile come fatto, deduzione o informazione mancante.
 
-### 3.1 Fatto
+### 4.1 Fatto
 
 Un fatto è un'informazione presente:
 
@@ -60,7 +93,7 @@ Un fatto è un'informazione presente:
 
 La fonte DEVE essere indicata quando non è già evidente dal contesto.
 
-### 3.2 Deduzione
+### 4.2 Deduzione
 
 Una deduzione è ammessa esclusivamente quando è chiaramente e logicamente derivabile da fatti disponibili.
 
@@ -72,7 +105,7 @@ Ogni deduzione DEVE:
 
 Se sono possibili più interpretazioni ragionevoli, la conclusione NON DEVE essere trattata come deduzione certa.
 
-### 3.3 Informazione mancante
+### 4.3 Informazione mancante
 
 Un'informazione è mancante quando i fatti disponibili non consentono di procedere correttamente o di scegliere tra più alternative rilevanti.
 
@@ -88,7 +121,7 @@ La mancanza di informazioni non rilevanti per il task NON DEVE bloccare il lavor
 
 ---
 
-## 4. Tracciabilità e contestabilità
+## 5. Tracciabilità e contestabilità
 
 Ogni decisione rilevante DEVE poter essere ricondotta a:
 
@@ -121,7 +154,7 @@ Una decisione che non supera queste verifiche DEVE essere modificata o scartata.
 
 ---
 
-## 5. Repository come contesto operativo
+## 6. Repository come contesto operativo
 
 Il repository è la fonte autorevole dello stato corrente del progetto.
 
@@ -147,7 +180,7 @@ Un nuovo documento NON DEVE essere creato quando un documento attivo può conten
 
 ---
 
-## 6. Verificabilità operativa
+## 7. Verificabilità operativa
 
 Ogni principio, requisito o regola operativa DEVE poter essere verificato in modo indipendente tramite almeno uno dei seguenti metodi:
 
@@ -172,7 +205,7 @@ Un principio che non può essere verificato DEVE essere chiarito o riscritto pri
 
 ---
 
-## 7. Controllo dei costi e dei retry di GitHub Actions
+## 8. Controllo dei costi e dei retry di GitHub Actions
 
 Ogni esecuzione o rerun di GitHub Actions DEVE essere trattato come uso di una risorsa esterna potenzialmente a pagamento.
 
@@ -201,6 +234,9 @@ Prima di considerare completato un lavoro, verificare:
 | La soluzione soddisfa tutti i requisiti applicabili? |  |  |
 | Esiste un modo più semplice per ottenere lo stesso risultato? |  |  |
 | Ogni complessità introdotta ha una giustificazione verificabile? |  |  |
+| Il lavoro fa avanzare una missione attiva e identificata? |  |  |
+| L'apertura di nuovi fronti è necessaria al completamento o alla rimozione di un blocco documentato? |  |  |
+| Le attività laterali rinviabili sono state mantenute fuori dal flusso principale? |  |  |
 | La fattibilità della soluzione è stata verificata? |  |  |
 | I fatti utilizzati provengono da fonti verificabili? |  |  |
 | Ogni deduzione cita i fatti e il passaggio logico da cui deriva? |  |  |
