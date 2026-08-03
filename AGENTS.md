@@ -94,3 +94,7 @@ Non dichiarare completato un lavoro quando una verifica obbligatoria ha esito ne
 - I file copiati in un nuovo repository diventano fonti locali autonome di quel progetto; le modifiche future a `templates/project/` non si propagano automaticamente.
 - I file approvati nello scheletro non devono essere riscritti senza un requisito concreto e verificabile.
 - `scripts/init-project.sh` è il meccanismo canonico per creare un nuovo progetto locale autonomo a partire dallo scheletro.
+
+## Riferimento pubblico
+
+- La versione pubblica di [RFC-0001 – Principi fondanti della Software Factory](https://github.com/ignazio-ingenito/agent-os/blob/main/rfcs/RFC-0001-principles.md) corrisponde al file locale `rfcs/RFC-0001-principles.md`.
