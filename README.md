@@ -44,6 +44,8 @@ nuovo progetto locale
 
 Il bootstrap crea un punto di partenza comune, non un collegamento permanente con Agent OS.
 
+Le skill riusabili non fanno parte dello scheletro del progetto: la loro sorgente autorevole è il [repository codex-skills](https://github.com/ignazio-ingenito/codex-skills). I progetti devono installarle tramite symlink con `scripts/install-project.sh` e non devono tracciarne copie locali.
+
 Per creare un nuovo progetto locale a partire dallo scheletro:
 
 ```bash
