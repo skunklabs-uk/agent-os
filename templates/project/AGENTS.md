@@ -6,11 +6,13 @@ Le istruzioni di questo file sono vincolanti per ogni wave, task o decisione ese
 
 ## Fonte normativa autorevole
 
-La fonte normativa primaria è:
+Prima di analizzare, pianificare, modificare o creare issue o pull request, si DEVE leggere integralmente la versione corrente della fonte normativa primaria:
 
 - https://github.com/ignazio-ingenito/agent-os/blob/main/rfcs/RFC-0001-principles.md
 
-Il contenuto completo di questa RFC non deve essere duplicato nel repository locale.
+Se la fonte non è accessibile, il lavoro DEVE fermarsi. Le regole locali possono restringere la RFC, ma non indebolirla; conflitti o deroghe richiedono l'autorizzazione esplicita dell'utente o di una fonte attiva approvata di autorità superiore.
+
+Il contenuto completo della RFC non DEVE essere duplicato nel repository locale.
 
 ## Regole operative e lifecycle degli artefatti
 
