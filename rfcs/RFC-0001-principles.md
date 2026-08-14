@@ -1,7 +1,7 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.5
+**Versione:** 0.1.6
 **Ultima modifica:** 2026-08-14
 
 ## Scopo
@@ -13,6 +13,8 @@ I principi si applicano alla Software Factory stessa e agli artefatti prodotti a
 ## Definizione
 
 Una **fonte autorevole** è la fonte designata dal progetto come riferimento ufficiale per una determinata informazione.
+
+Una **fonte attiva approvata** è una fonte autorevole con stato `Active`, oppure un'issue, una pull request, una wave o un altro artefatto operativo esplicitamente approvato dall'utente o dall'autorità competente del progetto. La sola esistenza, apertura o modifica recente di un artefatto non gli conferisce autorità.
 
 Una **missione** è un obiettivo attivo, delimitato e verificabile che produce un risultato utile per il progetto.
 
@@ -52,7 +54,7 @@ Un nuovo fronte di lavoro può essere aperto solo quando è necessario per:
 - rimuovere un blocco reale e documentato;
 - soddisfare un requisito o una verifica obbligatoria.
 
-Le attività utili ma non necessarie al completamento DEVONO essere rinviate. POSSONO essere segnalate sinteticamente, ma NON DEVONO diventare automaticamente implementazione, issue o backlog. Il tracciamento richiede l'autorizzazione della fonte attiva oppure è ammesso quando necessario per non perdere un rischio concreto già confermato. La presenza di un miglioramento possibile non è, da sola, una ragione sufficiente per eseguirlo.
+Le attività utili ma non necessarie al completamento DEVONO essere rinviate. POSSONO essere segnalate sinteticamente, ma NON DEVONO diventare automaticamente implementazione, issue o backlog. Il tracciamento richiede l'autorizzazione dell'utente o di una fonte attiva approvata. Un rischio concreto già confermato DEVE essere segnalato, ma la sua trasformazione in issue o backlog richiede la stessa autorizzazione. La presenza di un miglioramento possibile non è, da sola, una ragione sufficiente per eseguirlo.
 
 Un'attività laterale NON DEVE diventare una nuova issue o pull request quando può essere completata nel lavoro corrente, rinviata senza compromettere i criteri di accettazione oppure evitata.
 
@@ -331,6 +333,7 @@ Prima di considerare completato un lavoro, verificare:
 | Ogni complessità introdotta ha una giustificazione verificabile? |  |  |
 | Il lavoro fa avanzare una missione attiva e identificata? |  |  |
 | L'apertura di nuovi fronti è necessaria al completamento o alla rimozione di un blocco documentato? |  |  |
+| Obiettivo, scope e passaggi non espliciti sono autorizzati dall'utente o da una fonte attiva approvata? |  |  |
 | Le attività laterali rinviabili sono state mantenute fuori dal flusso principale? |  |  |
 | La fattibilità della soluzione è stata verificata? |  |  |
 | I fatti utilizzati provengono da fonti verificabili? |  |  |
@@ -343,3 +346,4 @@ Prima di considerare completato un lavoro, verificare:
 | I documenti interessati hanno uno stato corretto? |  |  |
 | La documentazione attiva rappresenta lo stato corrente del progetto? |  |  |
 | Le verifiche producono evidenze osservabili? |  |  |
+| Test, strumenti e workflow adottano la soluzione minima nell'ordine previsto e ogni custom supera il relativo burden of proof? |  |  |
