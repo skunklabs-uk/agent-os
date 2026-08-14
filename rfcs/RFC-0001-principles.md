@@ -1,7 +1,7 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.4
+**Versione:** 0.1.5
 **Ultima modifica:** 2026-08-14
 
 ## Scopo
@@ -52,7 +52,7 @@ Un nuovo fronte di lavoro può essere aperto solo quando è necessario per:
 - rimuovere un blocco reale e documentato;
 - soddisfare un requisito o una verifica obbligatoria.
 
-Le attività utili ma non necessarie al completamento DEVONO essere rinviate o registrate nel backlog. La presenza di un miglioramento possibile non è, da sola, una ragione sufficiente per eseguirlo.
+Le attività utili ma non necessarie al completamento DEVONO essere rinviate. POSSONO essere segnalate sinteticamente, ma NON DEVONO diventare automaticamente implementazione, issue o backlog. Il tracciamento richiede l'autorizzazione della fonte attiva oppure è ammesso quando necessario per non perdere un rischio concreto già confermato. La presenza di un miglioramento possibile non è, da sola, una ragione sufficiente per eseguirlo.
 
 Un'attività laterale NON DEVE diventare una nuova issue o pull request quando può essere completata nel lavoro corrente, rinviata senza compromettere i criteri di accettazione oppure evitata.
 
@@ -63,9 +63,24 @@ Prima di aprire una nuova issue, branch, pull request, wave o attività, si DEVE
 3. perché è necessaria adesso;
 4. quale condizione ne determina la chiusura.
 
-In assenza di risposte verificabili, l'attività DEVE essere rinviata o inserita nel backlog.
+In assenza di risposte verificabili, l'attività DEVE essere rinviata; l'eventuale tracciamento resta soggetto alla regola precedente.
 
 Il completamento ha priorità sull'espansione dello scope: prima chiudere, poi migliorare.
+
+### Autorizzazione e ampliamento dello scope
+
+L'autorità deriva dalla richiesta dell'utente o da una fonte attiva approvata e copre obiettivo, scope, criteri di accettazione e passaggi tecnici strettamente necessari.
+
+Un passaggio non esplicito può essere eseguito senza nuova autorizzazione solo quando:
+
+1. è necessario per soddisfare un criterio approvato, rimuovere un blocco reale o completare una verifica obbligatoria;
+2. è la modifica minima sufficiente;
+3. è locale e reversibile;
+4. non esistono alternative con conseguenze operative significativamente diverse.
+
+Nuovi obiettivi, deliverable, repository, issue, pull request, wave, dipendenze, automazioni, documenti, refactoring laterali o conseguenze durevoli su architettura, sicurezza, dati, interfacce, deploy, comunicazioni esterne o costi costituiscono ampliamento dello scope quando non sono già autorizzati dalla fonte attiva.
+
+Se una delle condizioni precedenti manca, prima di procedere si DEVONO indicare fatto osservato, ampliamento proposto, necessità, alternative e decisione richiesta.
 
 ---
 
@@ -202,6 +217,27 @@ Un esito `NO` DEVE indicare l'azione correttiva necessaria.
 Un artefatto che non supera una verifica obbligatoria NON PUÒ diventare `Active` finché la non conformità non viene corretta oppure viene approvata una deroga esplicitamente motivata.
 
 Un principio che non può essere verificato DEVE essere chiarito o riscritto prima di diventare `Active`.
+
+### Burden of proof dei test e degli strumenti
+
+I test DEVONO proteggere comportamento osservabile, contratti o invarianti e identificare il failure mode rilevato. Un test che non fallisce quando il comportamento protetto viene violato NON è utile.
+
+Per test, strumenti e workflow di test si DEVE preferire, nell'ordine:
+
+1. eliminazione o nessun test quando un'altra verifica è sufficiente;
+2. funzionalità nativa già disponibile;
+3. tool standard, stabile e mantenuto;
+4. implementazione custom.
+
+Un custom è ammesso solo quando dimostra un gap concreto, l'assenza di un'alternativa standard sufficiente, un vantaggio verificabile, un costo di manutenzione proporzionato e un perimetro minimo.
+
+Tool e framework DEVONO essere usati secondo documentazione upstream corrente, best practice applicabili, use case previsto e configurazione minima sufficiente.
+
+Test di dettagli implementativi, stringhe, topologie, comportamento upstream, coverage fine a sé stessa o attestazioni procedurali partono come candidati `DELETE`, salvo che proteggano un contratto esplicito.
+
+Non si DEVONO creare wrapper, runner o workflow custom quando gli strumenti esistenti offrono già comando, exit code, report o integrazione adeguati.
+
+Una modifica documentale non richiede test quando il documento non è consumato da codice. Un test fuori dallo scope corrente non autorizza un audit o una remediation laterale. Prima di eliminare un test esistente si DEVE verificare che non protegga un invariante unico.
 
 ---
 
