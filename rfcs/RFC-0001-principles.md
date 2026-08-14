@@ -1,8 +1,8 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.3
-**Ultima modifica:** 2026-08-03
+**Versione:** 0.1.4
+**Ultima modifica:** 2026-08-14
 
 ## Scopo
 
@@ -222,6 +222,65 @@ Ogni esecuzione o rerun di GitHub Actions DEVE essere trattato come uso di una r
 - Le verifiche locali e i controlli proporzionali DEVONO essere preferiti prima di attivare CI costosa.
 - L'autorizzazione di una wave autonoma NON autorizza implicitamente spesa CI illimitata.
 - Le istruzioni «continua fino al verde» o «non fermarti per failure tecniche» NON prevalgono su questa guardia economica.
+
+---
+
+## 9. Priorità delle issue operative
+
+La priorità rappresenta l'urgenza operativa e l'impegno corrente. NON rappresenta tipo, stato, severità o complessità dell'attività.
+
+Ogni issue operativa DEVE avere esattamente una delle seguenti label:
+
+| Label | Colore | Criterio |
+|---|---|---|
+| `priority:urgent` | `B60205` | Intervento immediato: incidente attivo, rischio di sicurezza critico o blocco corrente. |
+| `priority:high` | `D93F0B` | Prossimo lavoro già impegnato, rischio elevato o scadenza vicina. |
+| `priority:medium` | `FBCA04` | Lavoro pianificato e pronto, senza blocco immediato. |
+| `priority:low` | `C5DEF5` | Backlog, attività sospesa o opzionale, oppure attesa di evidenze esterne. |
+
+### Classificazione
+
+Le condizioni DEVONO essere valutate nell'ordine seguente:
+
+1. Dependency Dashboard e altri tracker automatici NON DEVONO ricevere una label di priorità.
+2. Un incidente attivo, un rischio di sicurezza critico o un blocco corrente che richiede azione immediata è `priority:urgent`.
+3. Il prossimo lavoro già impegnato, un'attività ad alto rischio o con scadenza vicina è `priority:high`.
+4. Il lavoro pianificato e pronto, senza blocco immediato, è `priority:medium`.
+5. Il backlog, il lavoro sospeso o opzionale e le attività in attesa di evidenze esterne sono `priority:low`.
+
+Le pull request NON DEVONO ricevere una priorità propria: usano il contesto dell'issue collegata.
+
+La priorità NON si propaga automaticamente tra issue dipendenti. Ogni issue DEVE essere classificata in base al proprio impatto e alla propria urgenza. Una dipendenza modifica la priorità solo quando soddisfa direttamente uno dei criteri precedenti.
+
+Quando cambiano i fatti, la nuova priorità DEVE sostituire la precedente senza modificare le altre label dell'issue.
+
+### Creazione e triage
+
+Un agente DEVE determinare la priorità prima di creare un'issue operativa e applicarla nella stessa operazione. La creazione è fail-closed: se la label non è disponibile o non può essere applicata, l'issue non è considerata completata e l'agente DEVE segnalare il blocco.
+
+Le issue create da persone o sistemi esterni senza priorità DEVONO essere classificate al primo triage. Se un'issue operativa presenta più priorità, il triage DEVE conservarne una sola. Un tracker automatico classificato per errore DEVE essere privato di tutte le label di priorità.
+
+### Bootstrap dei repository GitHub
+
+Quando esiste il repository GitHub, le quattro label canoniche DEVONO essere predisposte prima della prima issue operativa. Il bootstrap locale definito da `scripts/init-project.sh` resta separato e non richiede accesso a GitHub.
+
+È sufficiente usare l'API GitHub, un connettore equivalente oppure i comandi nativi seguenti, sostituendo `OWNER/REPO`:
+
+```bash
+gh label create 'priority:urgent' --repo OWNER/REPO --color B60205 --description 'Act immediately: incident, critical security risk, or current blocker.' --force
+gh label create 'priority:high' --repo OWNER/REPO --color D93F0B --description 'Next committed work, high risk, or near-term deadline.' --force
+gh label create 'priority:medium' --repo OWNER/REPO --color FBCA04 --description 'Planned and ready work with no immediate blocker.' --force
+gh label create 'priority:low' --repo OWNER/REPO --color C5DEF5 --description 'Backlog, hold, optional work, or waiting on external evidence.' --force
+```
+
+L'opzione `--force` rende l'operazione idempotente aggiornando colore e descrizione quando una label esiste già.
+
+La verifica finale DEVE confermare:
+
+- le quattro label canoniche con nome, colore e descrizione attesi nel repository;
+- esattamente una priorità per ogni issue operativa sottoposta a creazione o triage;
+- nessuna priorità per pull request, Dependency Dashboard e altri tracker automatici.
+
 
 ---
 
