@@ -97,4 +97,4 @@ Non dichiarare completato un lavoro quando una verifica obbligatoria ha esito ne
 
 ## Riferimento pubblico
 
-- La versione pubblica di [RFC-0001 – Principi fondanti della Software Factory](https://github.com/ignazio-ingenito/agent-os/blob/main/rfcs/RFC-0001-principles.md) corrisponde al file locale `rfcs/RFC-0001-principles.md`.
+- La versione pubblica di [RFC-0001 – Principi fondanti della Software Factory](https://github.com/skunklabs-uk/agent-os/blob/main/rfcs/RFC-0001-principles.md) corrisponde al file locale `rfcs/RFC-0001-principles.md`.

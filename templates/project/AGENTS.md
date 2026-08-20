@@ -8,7 +8,7 @@ Le istruzioni di questo file sono vincolanti per ogni wave, task o decisione ese
 
 Prima di analizzare, pianificare, modificare o creare issue o pull request, si DEVE leggere integralmente la versione corrente della fonte normativa primaria:
 
-- https://github.com/ignazio-ingenito/agent-os/blob/main/rfcs/RFC-0001-principles.md
+- https://github.com/skunklabs-uk/agent-os/blob/main/rfcs/RFC-0001-principles.md
 
 Se la fonte non è accessibile, il lavoro DEVE fermarsi. Le regole locali possono restringere la RFC, ma non indebolirla; conflitti o deroghe richiedono l'autorizzazione esplicita dell'utente o di una fonte attiva approvata di autorità superiore.
 
@@ -65,4 +65,4 @@ Non rendere obbligatori per ogni modifica nuovi documenti, nuove RFC, pianificaz
 4. Dopo la revisione tecnica, applicare `humanize-writing` quando disponibile. Se non può essere invocata, applicarne manualmente i criteri: eliminare formule da LLM, tono promozionale, enfasi, riempitivi, strutture ripetitive e conclusioni generiche; usare parole concrete; condensare preferendo eliminare ripetizioni e contenuti duplicati, invece di riassumere o fondere concetti distinti, senza perdere fatti, decisioni, vincoli, riferimenti, condizioni o significato tecnico.
 5. Il controllo finale verifica che il testo non sia ulteriormente accorciabile senza perdere informazioni utili, che fatti, decisioni, azioni, vincoli e verifiche restino espliciti, e che la sintesi non trasformi deduzioni, incertezze o limiti in affermazioni certe.
 6. Il template non è la fonte autorevole. Issue, wave, pull request, report e review devono rimandare alle fonti autorevoli senza duplicarne il contenuto.
-7. Le skill riusabili hanno una sola sorgente nel [repository codex-skills](https://github.com/ignazio-ingenito/codex-skills); i progetti devono installarle tramite symlink con `scripts/install-project.sh` e non devono tracciarne copie locali.
+7. Le skill riusabili hanno una sola sorgente nel [repository codex-skills](https://github.com/skunklabs-uk/codex-skills); i progetti devono installarle tramite symlink con `scripts/install-project.sh` e non devono tracciarne copie locali.
