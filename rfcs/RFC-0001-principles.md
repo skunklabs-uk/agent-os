@@ -1,8 +1,8 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.6
-**Ultima modifica:** 2026-08-14
+**Versione:** 0.1.7
+**Ultima modifica:** 2026-08-20
 
 ## Scopo
 
@@ -68,6 +68,10 @@ Prima di aprire una nuova issue, branch, pull request, wave o attività, si DEVE
 In assenza di risposte verificabili, l'attività DEVE essere rinviata; l'eventuale tracciamento resta soggetto alla regola precedente.
 
 Il completamento ha priorità sull'espansione dello scope: prima chiudere, poi migliorare.
+
+Un'attività o una pull request NON È completata per il solo fatto che codice e test siano validi. Il closeout è completo solo quando gli artefatti autorevoli del repository rappresentano lo stato finale del lavoro.
+
+Quando il lavoro modifica comportamento, architettura, decisioni, operatività o conoscenza necessaria alla manutenzione futura, il closeout DEVE includere, se applicabile, l'aggiornamento di README, documentazione operativa, ADR e riferimenti interni. Gli artefatti resi inesatti, superati o non più applicabili DEVONO essere aggiornati, sostituiti o archiviati secondo la sezione 6. Le modifiche interne che non incidono su tali elementi NON DEVONO produrre aggiornamenti documentali artificiali.
 
 ### Autorizzazione e ampliamento dello scope
 
@@ -344,6 +348,7 @@ Prima di considerare completato un lavoro, verificare:
 | Ogni informazione operativa ha una sola fonte autorevole? |  |  |
 | Sono state introdotte duplicazioni evitabili? |  |  |
 | I documenti interessati hanno uno stato corretto? |  |  |
-| La documentazione attiva rappresenta lo stato corrente del progetto? |  |  |
+| La documentazione attiva rappresenta lo stato finale del lavoro, quando la modifica richiede un aggiornamento documentale? |  |  |
+| Gli artefatti superati o non più applicabili sono stati aggiornati, sostituiti o archiviati secondo le regole esistenti? |  |  |
 | Le verifiche producono evidenze osservabili? |  |  |
 | Test, strumenti e workflow adottano la soluzione minima nell'ordine previsto e ogni custom supera il relativo burden of proof? |  |  |
