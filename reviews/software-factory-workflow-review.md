@@ -1,7 +1,9 @@
 # Software Factory Workflow Review
 
-**Stato:** Draft
+**Stato:** Archived
 **Data:** 2026-07-14
+
+Nota: review completata sulla revisione iniziale di `software-factory.md` integrata con la PR #8; il file è conservato esclusivamente come evidenza storica e non si applica alle revisioni successive.
 
 ## Artefatto revisionato
 

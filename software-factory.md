@@ -71,6 +71,7 @@ Una wave è funzionalmente completata quando:
 - eventuali osservazioni di review bloccanti sono state risolte oppure sono coperte da una deroga esplicitamente approvata e motivata;
 - l'approvazione richiesta è presente;
 - la Pull Request è stata integrata senza automatizzare modifiche non approvate;
+- il closeout richiesto da RFC-0001 è completato: quando applicabile, gli artefatti autorevoli rappresentano lo stato finale della wave e quelli superati o non più applicabili sono stati aggiornati, sostituiti o archiviati;
 - il contesto necessario per una wave successiva è conservato nel repository quando serve a ricostruire il lavoro, motivare una decisione o proseguire il piano.
 
 ## Decisioni ancora aperte
