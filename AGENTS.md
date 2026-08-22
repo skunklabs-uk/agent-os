@@ -35,7 +35,7 @@ I documenti con stato `Archived` non devono essere usati come istruzioni operati
 
 - Il lavoro attivo si individua solo tramite la fonte esplicita del lavoro corrente: richiesta dell'utente, Pull Request o task approvato. Non si deduce da nome, data o ultima modifica.
 - Una wave `Draft` non autorizza l'esecuzione. Una wave `Active` autorizza solo obiettivo, scope, non-obiettivi, verifiche e condizioni di stop dichiarati nella wave.
-- Non possono essere eseguite più wave incompatibili nello stesso momento. Quando non esiste una wave attiva, governa la fonte esplicita del lavoro corrente.
+- Ogni repository può avere al massimo una wave `Active` alla volta. Wave `Active` appartenenti a repository diversi possono coesistere ed essere eseguite in parallelo. Quando non esiste una wave attiva nel repository corrente, governa la fonte esplicita del lavoro corrente.
 - L'autorità della wave cessa alla chiusura. L'integrazione finale resta soggetta all'approvazione richiesta e alle regole di merge applicabili.
 
 ## Arresto e prosecuzione
