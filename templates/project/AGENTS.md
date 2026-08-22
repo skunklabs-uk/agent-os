@@ -27,7 +27,7 @@ Il contenuto completo della RFC non DEVE essere duplicato nel repository locale.
 
 1. Il lavoro attivo si individua solo tramite `docs/execution/README.md`. Quando `status: none`, governa la fonte esplicita indicata nel task corrente. Non si deduce da nome, data o ultima modifica.
 2. Una wave `Draft` non autorizza l’esecuzione. Una wave `Active` autorizza solo obiettivo, scope, non-obiettivi, verifiche e condizioni di stop dichiarati nella wave.
-3. Non possono essere eseguite più wave incompatibili nello stesso momento. Quando non esiste una wave attiva, governa la fonte esplicita del lavoro corrente.
+3. Ogni repository può avere al massimo una wave `Active` alla volta. Wave `Active` appartenenti a repository diversi possono coesistere ed essere eseguite in parallelo. Quando non esiste una wave attiva nel repository corrente, governa la fonte esplicita del lavoro corrente.
 4. L’autorità della wave cessa alla chiusura. L’integrazione finale resta soggetta all’approvazione richiesta e alle regole di merge applicabili.
 
 ## Arresto e prosecuzione
