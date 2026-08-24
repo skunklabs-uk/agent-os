@@ -70,3 +70,16 @@ Il remote è facoltativo. Il default è nessun remote; in un terminale interatti
 Lo script non crea commit o branch, non esegue push e non modifica configurazioni Git globali. Eventuali remote già presenti in un repository Git vuoto restano invariati.
 
 Dopo l'inizializzazione, i file copiati appartengono al nuovo repository. Le modifiche future a `templates/project/` valgono solo per nuove inizializzazioni e non sincronizzano automaticamente i progetti già creati.
+
+## Riallineare un progetto esistente
+
+`init-project.sh` non deve essere usato per sovrascrivere un repository già popolato. Per riallineare un `AGENTS.md` locale al template corrente:
+
+1. leggere `templates/project/AGENTS.md`, l'`AGENTS.md` locale e le fonti `Active` del progetto che governano il lavoro corrente;
+2. confrontare il comportamento delle regole, non la sola formulazione, e preservare i vincoli locali necessari al dominio;
+3. risolvere direttamente le differenze fattuali o correggibili in modo univoco;
+4. quando una differenza modifica autorità, autonomia, condizioni di stop o continuità della missione, usare `grill-with-docs` o `interview-me` per mostrare al Product Owner il comportamento attuale, quello proposto e la patch minima, chiedendo conferma della scelta;
+5. applicare solo le modifiche approvate, senza sostituire integralmente l'`AGENTS.md` locale con il template;
+6. verificare che ogni stop condition abbia un perimetro chiaro, che il blocco di un task non fermi automaticamente la missione e che il lavoro successivo già autorizzato e determinato continui senza conferme meccaniche.
+
+Il primo riallineamento deve restare manuale. Automatizzare il confronto o la patch ha senso solo dopo aver osservato più casi in cui il processo risulta ripetibile senza perdere regole locali necessarie.
