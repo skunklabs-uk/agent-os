@@ -44,6 +44,10 @@ Fermarsi solo quando il lavoro richiede una decisione non documentata, supera lo
 
 Prima di fermarsi, indicare condizione applicabile, fatto osservato e decisione o informazione necessaria.
 
+Una condizione di stop si applica al solo perimetro che la richiede. Il blocco di un task, una fase o un'operazione non blocca automaticamente l'intera missione: il lavoro già autorizzato e determinato che non dipende da quella condizione deve proseguire.
+
+Quando un task si chiude e la fonte attiva identifica già il lavoro successivo necessario nella stessa missione, proseguire senza chiedere una conferma meccanica, salvo che si applichi una condizione di stop reale.
+
 Non fermarsi per passaggi già approvati, errori locali correggibili, verifiche risolvibili entro lo scope, stato documentale correggibile in modo univoco o fallback già autorizzati. Dati, schema, contratti, dipendenze e architettura non sono stop automatici quando rientrano nello scope approvato.
 
 ## Controlli proporzionali
