@@ -69,6 +69,16 @@ Non rendere obbligatori per ogni modifica nuovi documenti, nuove RFC, pianificaz
 - Alla chiusura della wave, quando applicabile, aggiornare le fonti rese inesatte, registrare una sola volta i fatti durevoli, archiviare gli artefatti esecutivi conclusi, aggiornare lo stato del lavoro attivo, rimuovere istruzioni obsolete e separare lavoro futuro da decisioni ancora aperte.
 - Non archiviare requisiti, decisioni o comportamenti durevoli solo perché la wave è terminata.
 
+### Closeout terminale RFC-0001
+
+Prima del merge terminale, del commit o push che conclude la missione oppure della chiusura dell'issue, completare il closeout previsto da RFC-0001.
+
+Verificare tutte le fonti autorevoli e i documenti `Active` interessati. Aggiornare quelli che mantengono la stessa funzione; archiviare nella stessa modifica quelli conclusi, superati, sostituiti, obsoleti o non più operativi. Prima dell'archiviazione trasferire fatti, decisioni, limiti, requisiti e obblighi di verifica ancora durevoli nella fonte corrente; rimuovere poi il documento da puntatori, indici, tracker, code di lavoro, sezioni sullo stato corrente e istruzioni operative.
+
+I commenti GitHub forniscono tracciabilità, ma non sostituiscono la documentazione autorevole. Quando un'evidenza runtime è un criterio di accettazione, mantenere la missione aperta e non usare `Closes #N` finché tale evidenza manca. `NON APPLICABILE` richiede una motivazione concreta e verificabile.
+
+Commit e push intermedi restano consentiti; quello terminale deve includere il closeout completato.
+
 ## Lingua e qualità editoriale
 
 - I testi rivolti a persone devono essere in italiano; codice, identificatori, comandi, percorsi, output e termini tecnici restano nella forma più precisa.
