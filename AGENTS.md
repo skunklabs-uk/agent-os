@@ -2,7 +2,7 @@
 
 ## Scopo
 
-Questo file contiene le regole operative minime per lavorare nel repository.
+Questo file contiene le regole operative minime per lavorare nel repository. Le sue istruzioni sono vincolanti; ogni deroga richiede autorizzazione esplicita.
 
 ## Fonti autorevoli
 
@@ -69,6 +69,12 @@ Non rendere obbligatori per ogni modifica nuovi documenti, nuove RFC, pianificaz
 - Alla chiusura della wave, quando applicabile, aggiornare le fonti rese inesatte, registrare una sola volta i fatti durevoli, archiviare gli artefatti esecutivi conclusi, aggiornare lo stato del lavoro attivo, rimuovere istruzioni obsolete e separare lavoro futuro da decisioni ancora aperte.
 - Non archiviare requisiti, decisioni o comportamenti durevoli solo perché la wave è terminata.
 
+## Lingua e qualità editoriale
+
+- I testi rivolti a persone devono essere in italiano; codice, identificatori, comandi, percorsi, output e termini tecnici restano nella forma più precisa.
+- Prima della pubblicazione, distinguere fatti, deduzioni, decisioni, rischi e azioni, eliminare ripetizioni e affermazioni non supportate, quindi applicare `humanize-writing` quando disponibile.
+- La sintesi non deve perdere requisiti, contratti, vincoli, riferimenti, condizioni di stop o significato tecnico.
+
 ## Prima di modificare il repository
 
 Verificare:
@@ -96,6 +102,7 @@ Non dichiarare completato un lavoro quando una verifica obbligatoria ha esito ne
 - `templates/project/` è la fonte autorevole dello scheletro iniziale destinato ai nuovi repository.
 - Lo scheletro deve rispettare `rfcs/RFC-0001-principles.md` e mantenere una sola fonte autorevole per ogni informazione operativa.
 - I file copiati in un nuovo repository diventano fonti locali autonome di quel progetto; le modifiche future a `templates/project/` non si propagano automaticamente.
+- Il template è autorevole solo come scheletro iniziale e non sostituisce le fonti `Active` del progetto che lo adotta.
 - I file approvati nello scheletro non devono essere riscritti senza un requisito concreto e verificabile.
 - `scripts/init-project.sh` è il meccanismo canonico per creare un nuovo progetto locale autonomo a partire dallo scheletro.
 
