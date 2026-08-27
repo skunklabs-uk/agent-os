@@ -61,6 +61,25 @@ Non rendere obbligatori per ogni modifica nuovi documenti, nuove RFC, pianificaz
 2. Alla chiusura della wave, quando applicabile, aggiornare le fonti rese inesatte, registrare una sola volta i fatti durevoli, archiviare gli artefatti esecutivi conclusi, aggiornare lo stato del lavoro attivo, rimuovere istruzioni obsolete e separare lavoro futuro da decisioni ancora aperte.
 3. Non archiviare requisiti, decisioni o comportamenti durevoli solo perché la wave è terminata.
 
+### Closeout terminale RFC-0001
+
+Prima del merge della pull request terminale, del commit o push che conclude la missione oppure della chiusura dell’issue, si DEVE completare il closeout previsto da RFC-0001.
+
+Il closeout DEVE verificare tutte le fonti autorevoli e i documenti `Active` interessati. Quelli non più attuali DEVONO cessare di essere `Active`:
+
+- aggiornarli, se mantengono la stessa funzione;
+- altrimenti archiviarli nella stessa modifica, anche quando sono stati sostituiti da una nuova fonte.
+
+Prima dell’archiviazione, fatti, decisioni, limiti, requisiti e obblighi di verifica ancora durevoli DEVONO essere trasferiti nella fonte corrente appropriata. Il documento archiviato DEVE essere rimosso da puntatori, indici, code di lavoro, sezioni sullo stato corrente e istruzioni operative; resta consultabile solo come evidenza storica.
+
+I commenti GitHub forniscono tracciabilità, ma NON sostituiscono la documentazione autorevole.
+
+Quando un’evidenza runtime è un criterio di accettazione, la missione DEVE restare aperta e non si DEVE usare `Closes #N` finché tale evidenza manca.
+
+`NON APPLICABILE` è ammesso solo con una motivazione concreta e verificabile.
+
+Commit e push intermedi restano consentiti; quello terminale DEVE includere il closeout completato.
+
 ## Lingua e qualità editoriale
 
 1. Tutti i testi destinati alla lettura umana devono essere scritti in italiano: wave, piani, issue, pull request, commenti, review, report, checklist, richieste di approvazione e spiegazioni di errori, rischi o blocchi.
