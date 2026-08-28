@@ -63,6 +63,15 @@ Non fermarsi per passaggi già approvati, errori locali correggibili, verifiche 
 
 Non rendere obbligatori per ogni modifica nuovi documenti, nuove RFC, pianificazione aggiuntiva, rilettura completa del repository o review non pertinenti.
 
+### Riconciliazione dei controlli preesistenti
+
+- Una checklist, una verifica o un richiamo locale che rende osservabile un requisito già vigente, senza aggiungere artefatti, stati, workflow, condizioni di stop o obblighi più severi, non costituisce da solo un nuovo controllo: usa la stessa necessità del requisito originario.
+- L'assenza del rimando alla prova di necessità in una fonte corrente è drift documentale da correggere; non dimostra automaticamente né l'utilità né l'inutilità del controllo.
+- Per ogni controllo preesistente senza prova evidente, cercare prima la decisione e l'evidenza storica verificabile, confrontarle con failure mode, copertura e alternative correnti, quindi classificare `KEEP`, `DELETE` o `REPLACE`.
+- Fino alla classificazione, non ampliare il controllo. Una non conformità blocca solo il perimetro che dipende da quel controllo; il lavoro indipendente già autorizzato deve continuare.
+- Tool, indici e skill esterni non sono prerequisiti universali salvo prova locale specifica. La loro indisponibilità blocca solo una verifica che dipende esclusivamente da essi; ispezione diretta, test focalizzati e strumenti equivalenti restano evidenze valide quando soddisfano il requisito.
+- Il closeout documentale resta `KEEP`: la necessità è dimostrata dalla PR `#23`, che ha registrato chiusure con fonti autorevoli non riallineate e successivi commit esclusivamente documentali; la PR `#26` ne ha propagato il gate nel template.
+
 ## Review e chiusura
 
 - Ogni review deve indicare la revisione esaminata. Se modifiche successive cambiano materialmente la superficie valutata, riesaminare la parte interessata e ripetere le verifiche pertinenti.
