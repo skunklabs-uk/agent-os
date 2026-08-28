@@ -1,8 +1,8 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.8
-**Ultima modifica:** 2026-08-27
+**Versione:** 0.1.9
+**Ultima modifica:** 2026-08-28
 
 ## Scopo
 
@@ -19,6 +19,8 @@ Una **fonte attiva approvata** è una fonte autorevole con stato `Active`, oppur
 Una **missione** è un obiettivo attivo, delimitato e verificabile che produce un risultato utile per il progetto.
 
 Un **controllo** è qualsiasi gate, verifica, identità, permission, schema, ledger, audit, artifact, wrapper, runner, test, workflow o automazione introdotto per prevenire, rilevare o rendere ricostruibile un failure mode.
+
+Una **verifica o proiezione di un requisito esistente** ne rende osservabile l'applicazione senza introdurre artefatti, stati, workflow, condizioni di stop o obblighi più severi. Non è un controllo aggiuntivo e usa la prova e il perimetro del requisito originario.
 
 Una **prova di necessità** è l'evidenza, prodotta prima dell'implementazione, che dimostra perché un controllo aggiuntivo è necessario e perché le alternative più semplici sono insufficienti.
 
@@ -55,6 +57,8 @@ Il richiamo generico a sicurezza, prudenza, auditabilità, compliance o `fail-cl
 La proporzionalità DEVE essere valutata sull'intera soluzione corrente, non soltanto sulla singola modifica. Una sequenza di modifiche localmente minime che produce un apparato complessivamente sproporzionato è overengineering.
 
 In assenza della prova richiesta, il controllo o il custom DEVE essere scartato prima dell'implementazione. La complessità priva di una giustificazione verificabile è overengineering e NON DEVE essere introdotta.
+
+Una checklist, una verifica o un richiamo non diventa automaticamente un controllo aggiuntivo per il solo fatto di rendere osservabile un requisito già vigente. Se ne amplia comportamento, perimetro, severità o lifecycle, l'ampliamento è invece un controllo aggiuntivo e richiede una propria prova di necessità.
 
 ---
 
@@ -191,7 +195,7 @@ Per ogni decisione rilevante DEVE essere possibile rispondere:
 
 Una decisione che non supera queste verifiche DEVE essere modificata o scartata.
 
-La decisione di introdurre, mantenere o rendere obbligatorio un controllo è sempre rilevante e DEVE rimandare alla relativa prova di necessità. La correttezza interna del controllo, il superamento dei suoi test o l'esistenza di componenti che già dipendono da esso non dimostrano la sua utilità o necessità.
+La decisione di introdurre, mantenere o rendere obbligatorio un controllo aggiuntivo è sempre rilevante e DEVE rimandare alla relativa prova di necessità. La correttezza interna del controllo, il superamento dei suoi test o l'esistenza di componenti che già dipendono da esso non dimostrano la sua utilità o necessità. Il rimando mancante in una fonte corrente è drift documentale da correggere, non prova automatica che il controllo sia utile o inutile.
 
 La review DEVE verificare sia la conformità dell'implementazione alla fonte attiva sia la conformità della fonte attiva a questa RFC. Una fonte locale non diventa conforme soltanto perché è stata dichiarata `Active` o approvata in precedenza.
 
@@ -284,6 +288,18 @@ Test di dettagli implementativi, stringhe, topologie, comportamento upstream, co
 
 Non si DEVONO creare wrapper, runner, ledger, identity, permission graph, schema o workflow custom quando le capacità esistenti offrono già evidenza, isolamento, idempotenza, recovery o integrazione sufficienti.
 
+### Riconciliazione dei controlli preesistenti
+
+Per un controllo preesistente privo di una prova evidente si DEVE prima cercare la decisione e l'evidenza storica verificabile, quindi valutare nell'ordine:
+
+1. il failure mode concreto osservato;
+2. la copertura corrente e il gap ancora presente;
+3. le alternative di eliminazione, riuso, funzionalità nativa e tool standard;
+4. il costo e l'impatto cumulativo del controllo;
+5. la classificazione finale `KEEP`, `DELETE` o `REPLACE`.
+
+Fino alla classificazione, il controllo NON DEVE essere ampliato. Una non conformità o una verifica ineseguibile blocca soltanto il lavoro che dipende da quel controllo; il lavoro indipendente già autorizzato DEVE continuare. Tool, indici e skill esterni non sono prerequisiti universali salvo prova locale specifica: ispezione diretta, analisi dei caller, test focalizzati e strumenti equivalenti restano validi quando producono l'evidenza richiesta.
+
 ### Riesame cumulativo obbligatorio
 
 Quando una modifica amplia materialmente la superficie dei controlli e prima del closeout terminale, si DEVE riesaminare l'insieme completo dei controlli collegati alla missione. Il riesame DEVE:
@@ -297,6 +313,15 @@ Quando una modifica amplia materialmente la superficie dei controlli e prima del
 La review di una singola slice NON è sufficiente quando la complessità emerge dall'accumulo di più slice. Una soluzione può essere rifiutata anche quando ogni componente è localmente corretto, se l'apparato complessivo non supera la verifica di proporzionalità.
 
 Una modifica documentale non richiede test quando il documento non è consumato da codice. Un test fuori dallo scope corrente non autorizza un audit o una remediation laterale. Prima di eliminare un test o controllo esistente si DEVE verificare che non protegga un invariante unico.
+
+### Esiti dei controlli centrali riconciliati
+
+| Controllo | Esito | Evidenza e copertura corrente |
+|---|---|---|
+| Closeout documentale | `KEEP` | La [PR #23](https://github.com/skunklabs-uk/agent-os/pull/23) registra chiusure con codice e test validi ma fonti autorevoli non riallineate e successivi commit esclusivamente documentali; la [PR #26](https://github.com/skunklabs-uk/agent-os/pull/26) rende osservabile lo stesso requisito nel template. Le sezioni 2 e 6 coprono il failure mode senza nuovi stati o workflow. |
+| Guardia economica GitHub Actions | `KEEP` | I run Aeris [`30422769931`](https://github.com/skunklabs-uk/aeris/actions/runs/30422769931) e Homelab [`30607639763`](https://github.com/skunklabs-uk/homelab/actions/runs/30607639763) hanno fallito prima di eseguire step; le annotazioni GitHub indicano pagamenti falliti o spending limit insufficiente. La sezione 8 evita retry costosi e diagnosi applicative prive di segnale. |
+| Tassonomia obbligatoria delle priorità issue | `DELETE` | L'[issue #17](https://github.com/skunklabs-uk/agent-os/issues/17) e la [PR #18](https://github.com/skunklabs-uk/agent-os/pull/18) documentano decisione e normalizzazione, ma non un failure mode concreto né un gap che giustifichi tassonomia, bootstrap e fail-closed universali. Le label native e il triage locale restano disponibili senza controllo centrale. |
+| Burden of proof e riesame cumulativo | `KEEP` | La wave [`developer-workspace#33`](https://github.com/skunklabs-uk/developer-workspace/issues/33) ha rilevato controlli custom duplicati o auto-validanti in più repository; le PR [`homelab#768`](https://github.com/skunklabs-uk/homelab/pull/768), [`homelab#772`](https://github.com/skunklabs-uk/homelab/pull/772) e [`prosignal#82`](https://github.com/skunklabs-uk/prosignal/pull/82) ne mostrano la successiva eliminazione o sostituzione con capacità standard. Le sezioni 1 e 7 coprono sia la singola aggiunta sia l'accumulo. |
 
 ---
 
@@ -318,64 +343,7 @@ Ogni esecuzione o rerun di GitHub Actions DEVE essere trattato come uso di una r
 - L'autorizzazione di una wave autonoma NON autorizza implicitamente spesa CI illimitata.
 - Le istruzioni «continua fino al verde» o «non fermarti per failure tecniche» NON prevalgono su questa guardia economica.
 
----
-
-## 9. Priorità delle issue operative
-
-La priorità rappresenta l'urgenza operativa e l'impegno corrente. NON rappresenta tipo, stato, severità o complessità dell'attività.
-
-Ogni issue operativa DEVE avere esattamente una delle seguenti label:
-
-| Label | Colore | Criterio |
-|---|---|---|
-| `priority:urgent` | `B60205` | Intervento immediato: incidente attivo, rischio di sicurezza critico o blocco corrente. |
-| `priority:high` | `D93F0B` | Prossimo lavoro già impegnato, rischio elevato o scadenza vicina. |
-| `priority:medium` | `FBCA04` | Lavoro pianificato e pronto, senza blocco immediato. |
-| `priority:low` | `C5DEF5` | Backlog, attività sospesa o opzionale, oppure attesa di evidenze esterne. |
-
-### Classificazione
-
-Le condizioni DEVONO essere valutate nell'ordine seguente:
-
-1. Dependency Dashboard e altri tracker automatici NON DEVONO ricevere una label di priorità.
-2. Un incidente attivo, un rischio di sicurezza critico o un blocco corrente che richiede azione immediata è `priority:urgent`.
-3. Il prossimo lavoro già impegnato, un'attività ad alto rischio o con scadenza vicina è `priority:high`.
-4. Il lavoro pianificato e pronto, senza blocco immediato, è `priority:medium`.
-5. Il backlog, il lavoro sospeso o opzionale e le attività in attesa di evidenze esterne sono `priority:low`.
-
-Le pull request NON DEVONO ricevere una priorità propria: usano il contesto dell'issue collegata.
-
-La priorità NON si propaga automaticamente tra issue dipendenti. Ogni issue DEVE essere classificata in base al proprio impatto e alla propria urgenza. Una dipendenza modifica la priorità solo quando soddisfa direttamente uno dei criteri precedenti.
-
-Quando cambiano i fatti, la nuova priorità DEVE sostituire la precedente senza modificare le altre label dell'issue.
-
-### Creazione e triage
-
-Un agente DEVE determinare la priorità prima di creare un'issue operativa e applicarla nella stessa operazione. La creazione è fail-closed: se la label non è disponibile o non può essere applicata, l'issue non è considerata completata e l'agente DEVE segnalare il blocco.
-
-Le issue create da persone o sistemi esterni senza priorità DEVONO essere classificate al primo triage. Se un'issue operativa presenta più priorità, il triage DEVE conservarne una sola. Un tracker automatico classificato per errore DEVE essere privato di tutte le label di priorità.
-
-### Bootstrap dei repository GitHub
-
-Quando esiste il repository GitHub, le quattro label canoniche DEVONO essere predisposte prima della prima issue operativa. Il bootstrap locale definito da `scripts/init-project.sh` resta separato e non richiede accesso a GitHub.
-
-È sufficiente usare l'API GitHub, un connettore equivalente oppure i comandi nativi seguenti, sostituendo `OWNER/REPO`:
-
-```bash
-gh label create 'priority:urgent' --repo OWNER/REPO --color B60205 --description 'Act immediately: incident, critical security risk, or current blocker.' --force
-gh label create 'priority:high' --repo OWNER/REPO --color D93F0B --description 'Next committed work, high risk, or near-term deadline.' --force
-gh label create 'priority:medium' --repo OWNER/REPO --color FBCA04 --description 'Planned and ready work with no immediate blocker.' --force
-gh label create 'priority:low' --repo OWNER/REPO --color C5DEF5 --description 'Backlog, hold, optional work, or waiting on external evidence.' --force
-```
-
-L'opzione `--force` rende l'operazione idempotente aggiornando colore e descrizione quando una label esiste già.
-
-La verifica finale DEVE confermare:
-
-- le quattro label canoniche con nome, colore e descrizione attesi nel repository;
-- esattamente una priorità per ogni issue operativa sottoposta a creazione o triage;
-- nessuna priorità per pull request, Dependency Dashboard e altri tracker automatici.
-
+La stop condition si applica alle esecuzioni o ai retry GitHub Actions e alle operazioni che dipendono dalla loro evidenza; non blocca lavoro indipendente già autorizzato.
 
 ---
 
@@ -388,7 +356,7 @@ Prima di considerare completato un lavoro, verificare:
 | La soluzione soddisfa tutti i requisiti applicabili? |  |  |
 | Esiste un modo più semplice per ottenere lo stesso risultato? |  |  |
 | Ogni complessità introdotta ha una giustificazione verificabile? |  |  |
-| Per ogni nuovo controllo o custom esiste una prova di necessità accettata prima dell'implementazione? |  |  |
+| Per ogni nuovo controllo aggiuntivo o custom esiste una prova di necessità accettata prima dell'implementazione? |  |  |
 | La prova identifica requisito, failure mode, copertura esistente, alternative, gap, beneficio, costo e lifecycle? |  |  |
 | Nessun controllo è giustificato da dipendenze create dallo stesso controllo? |  |  |
 | La proporzionalità è stata valutata sull'intera soluzione e non solo sulla singola slice? |  |  |

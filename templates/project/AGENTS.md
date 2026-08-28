@@ -55,6 +55,10 @@ Non fermarsi per passaggi già approvati, errori locali correggibili, verifiche 
 
 Non rendere obbligatori per ogni modifica nuovi documenti, nuove RFC, pianificazione aggiuntiva, rilettura completa del repository o review non pertinenti.
 
+### Riconciliazione dei controlli preesistenti
+
+Applicare il percorso `KEEP` / `DELETE` / `REPLACE` definito dalla sezione 7 di RFC-0001. Non ampliare un controllo ancora da riconciliare; tool, indici e skill esterni diventano prerequisiti universali solo quando una prova locale ne dimostra la necessità. Un blocco resta limitato al perimetro che dipende dal controllo.
+
 ## Review e chiusura
 
 1. Ogni review deve indicare la revisione esaminata. Se modifiche successive cambiano materialmente la superficie valutata, riesaminare la parte interessata e ripetere le verifiche pertinenti.
