@@ -32,9 +32,9 @@ Per affidare un incarico al collegamento servono repository e thread ammessi, br
 
 Il report è distinto dalla pubblicazione: una modifica richiede `publish_paths` con i file esatti autorizzati e una PR Draft nello stesso repository. Il parent pubblica; il coordinatore rilegge SHA e diff e completa RETURN. Il child non esegue commit, push, merge o rollout.
 
-Agent OS contiene documentazione e lo script di bootstrap [`scripts/init-project.sh`](scripts/init-project.sh), con i test in [`scripts/test-init-project.sh`](scripts/test-init-project.sh). Al candidate iniziale dell'adozione non sono presenti workflow GitHub Actions. I test verificano il bootstrap dei nuovi progetti; per questo incarico documentale si svolgono la review tecnica del diff e la revisione della chiarezza del testo, senza eseguire gli script, creare progetti o introdurre CI.
+Agent OS contiene documentazione e lo script di bootstrap [`scripts/init-project.sh`](scripts/init-project.sh), con i test in [`scripts/test-init-project.sh`](scripts/test-init-project.sh). Il repository non contiene workflow GitHub Actions. I test verificano il bootstrap dei nuovi progetti; le modifiche solo documentali richiedono review tecnica del diff e revisione della chiarezza del testo, senza eseguire il bootstrap.
 
-Agent OS non distribuisce un'applicazione HTTP: la preview web è quindi **NON APPLICABILE** a questo incarico documentale. Restano necessari la review del diff e RETURN. Questa nota descrive l'adozione del repository nel collegamento e non attesta il completamento globale di REQ-0001.
+Agent OS non distribuisce un'applicazione HTTP: la preview web non è applicabile all'adozione documentale del repository. Restano necessari la review del diff e RETURN. Questa nota descrive l'adozione del repository nel collegamento e non attesta il completamento globale di REQ-0001.
 
 Per enrollment, selezione GitOps, recupero e stato persistente, consultare le fonti proprietarie: il [runbook del collegamento](https://github.com/skunklabs-uk/developer-workspace/blob/main/docs/WORKSPACE-HANDOFF.md) e il [README Homelab per il lifecycle runtime](https://github.com/skunklabs-uk/homelab/blob/main/gitops/apps/developer-workspace/README.md).
 
