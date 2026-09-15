@@ -26,6 +26,18 @@ Le istruzioni per lavorare nel repository sono definite in [`AGENTS.md`](AGENTS.
 
 Il repository deve rimanere essenziale. Nuovi documenti, cartelle, workflow o automazioni devono essere introdotti solo quando rispondono a un'esigenza reale e non possono essere evitati o accorpati.
 
+## Collegamento seriale del Developer Workspace
+
+Per affidare un incarico al collegamento servono repository e thread ammessi, branch e head esatti e il prompt corrente. Un solo consumer seriale esegue il task in un checkout isolato.
+
+Il report è distinto dalla pubblicazione: una modifica richiede `publish_paths` con i file esatti autorizzati e una PR Draft nello stesso repository. Il parent pubblica; il coordinatore rilegge SHA e diff e completa RETURN. Il child non esegue commit, push, merge o rollout.
+
+Agent OS contiene documentazione e lo script di bootstrap [`scripts/init-project.sh`](scripts/init-project.sh), con i test in [`scripts/test-init-project.sh`](scripts/test-init-project.sh). Il repository non contiene workflow GitHub Actions. I test verificano il bootstrap dei nuovi progetti; le modifiche solo documentali richiedono review tecnica del diff e revisione della chiarezza del testo, senza eseguire il bootstrap.
+
+Agent OS non distribuisce un'applicazione HTTP: la preview web non è applicabile all'adozione documentale del repository. Restano necessari la review del diff e RETURN. Questa nota descrive l'adozione del repository nel collegamento e non attesta il completamento globale di REQ-0001.
+
+Per enrollment, selezione GitOps, recupero e stato persistente, consultare le fonti proprietarie: il [runbook del collegamento](https://github.com/skunklabs-uk/developer-workspace/blob/main/docs/WORKSPACE-HANDOFF.md) e il [README Homelab per il lifecycle runtime](https://github.com/skunklabs-uk/homelab/blob/main/gitops/apps/developer-workspace/README.md).
+
 ## Scheletro iniziale per nuovi repository
 
 Lo scheletro iniziale dei progetti vive in `templates/project/`. Contiene le regole operative minime, l'indice documentale, il puntatore allo stato esecutivo e i template per issue, pull request e wave.
