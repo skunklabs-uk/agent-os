@@ -1,8 +1,8 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.9
-**Ultima modifica:** 2026-08-28
+**Versione:** 0.1.10
+**Ultima modifica:** 2026-10-01
 
 ## Scopo
 
@@ -42,12 +42,27 @@ Prima di aggiungere un'entità, uno stato, una regola, un concetto, un component
 2. È possibile eliminare o riutilizzare qualcosa invece di aggiungere?
 3. Il beneficio giustifica i costi di implementazione, manutenzione, test, operatività e documentazione?
 
+Quando è necessaria un'implementazione, le alternative DEVONO essere valutate nell'ordine seguente, fermandosi alla prima soluzione sufficiente:
+
+1. eliminare il bisogno di nuova implementazione;
+2. riutilizzare comportamento, codice, contratto o verifica già presenti;
+3. usare una funzionalità nativa della piattaforma o del linguaggio;
+4. riutilizzare una dipendenza o un tool già presente e adeguato;
+5. adottare un tool standard, stabile e mantenuto;
+6. introdurre il minimo custom necessario.
+
+L'ordine non impone il riuso di un elemento esistente quando è inadatto o produce più complessità complessiva dell'alternativa successiva.
+
+Per modifiche non banali, prima di cambiare il comportamento si DEVE verificare il comportamento corrente e il percorso interessato quanto basta a individuare il punto effettivo di cambiamento. Per un difetto riproducibile si DEVE preferire la correzione della causa verificata quando è fattibile e nello scope; una mitigazione del sintomo è ammessa quando tale correzione non è fattibile o non rientra nello scope, purché il limite sia dichiarato. Questa verifica NON autorizza audit o analisi laterali non necessari.
+
+Tra soluzioni equivalenti per requisiti e rischio, si DEVE preferire quella più leggibile, prevedibile e convenzionale. La semplicità e la minimalità si valutano sul perimetro e sul costo complessivo della soluzione, non sul solo numero di righe o sulla dimensione del diff.
+
 Questa verifica DEVE precedere l'implementazione. Per ogni controllo aggiuntivo o soluzione custom, una fonte autorevole DEVE contenere una prova di necessità accettata che identifichi almeno:
 
 1. il requisito, comportamento o invariante protetto;
 2. il failure mode concreto e la relativa evidenza;
 3. i controlli già esistenti e il gap non coperto;
-4. le alternative di eliminazione, riuso, funzionalità nativa e tool standard valutate;
+4. le alternative di eliminazione, riuso, funzionalità nativa, dipendenza o tool già presente e tool standard valutate;
 5. la ragione verificabile per cui tali alternative sono insufficienti;
 6. il beneficio osservabile atteso e la verifica che lo dimostrerà;
 7. il costo complessivo, il perimetro minimo, la reversibilità e, quando temporaneo, la condizione di rimozione.
@@ -259,8 +274,9 @@ Ogni controllo aggiuntivo parte come candidato `DELETE` o `REPLACE`, non come re
 1. eliminazione del controllo quando il rischio è già coperto o accettabile;
 2. riuso di un comportamento, contratto o verifica già presente;
 3. funzionalità nativa già disponibile;
-4. tool standard, stabile e mantenuto;
-5. implementazione custom.
+4. riuso di una dipendenza o di un tool già presente e adeguato;
+5. tool standard, stabile e mantenuto;
+6. implementazione custom.
 
 Un custom è ammesso solo quando la prova di necessità dimostra un gap concreto, l'insufficienza delle alternative precedenti, un vantaggio verificabile, un costo complessivo proporzionato e un perimetro minimo. La prova PUÒ essere registrata nell'issue, nella pull request, nell'ADR o nella fonte attiva già esistente; NON richiede automaticamente un nuovo documento.
 
@@ -271,7 +287,7 @@ La prova di necessità DEVE usare almeno la struttura seguente:
 | Requisito o invariante | Comportamento protetto e fonte autorevole |
 | Failure mode | Errore concreto, riproduzione o altra evidenza verificabile |
 | Copertura esistente | Controlli già presenti e ragione per cui non coprono il failure mode |
-| Alternative | `DELETE`, riuso, funzionalità nativa e tool standard valutati |
+| Alternative | `DELETE`, riuso, funzionalità nativa, dipendenza o tool già presente e tool standard valutati |
 | Gap comprovato | Evidenza che l'alternativa più semplice non è sufficiente |
 | Beneficio | Risultato osservabile e verifica che lo dimostrerà |
 | Costo e perimetro | Componenti, stati, identity, permission, dati, test, workflow, documenti e operatività introdotti |
@@ -294,7 +310,7 @@ Per un controllo preesistente privo di una prova evidente si DEVE prima cercare 
 
 1. il failure mode concreto osservato;
 2. la copertura corrente e il gap ancora presente;
-3. le alternative di eliminazione, riuso, funzionalità nativa e tool standard;
+3. le alternative di eliminazione, riuso, funzionalità nativa, dipendenza o tool già presente e tool standard;
 4. il costo e l'impatto cumulativo del controllo;
 5. la classificazione finale `KEEP`, `DELETE` o `REPLACE`.
 
@@ -355,6 +371,8 @@ Prima di considerare completato un lavoro, verificare:
 |---|---|---|
 | La soluzione soddisfa tutti i requisiti applicabili? |  |  |
 | Esiste un modo più semplice per ottenere lo stesso risultato? |  |  |
+| Per le modifiche non banali sono stati verificati comportamento corrente e percorso interessato quanto basta, e per i difetti la causa quando applicabile, senza ampliare lo scope? |  |  |
+| La soluzione minima è stata scelta per perimetro e costo complessivo, non per sola brevità del diff? |  |  |
 | Ogni complessità introdotta ha una giustificazione verificabile? |  |  |
 | Per ogni nuovo controllo aggiuntivo o custom esiste una prova di necessità accettata prima dell'implementazione? |  |  |
 | La prova identifica requisito, failure mode, copertura esistente, alternative, gap, beneficio, costo e lifecycle? |  |  |
