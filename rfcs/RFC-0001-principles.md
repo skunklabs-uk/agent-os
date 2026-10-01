@@ -57,7 +57,7 @@ Quando la correttezza di una modifica dipende dal comportamento corrente, prima 
 
 Tra soluzioni equivalenti per requisiti e rischio, si DEVE preferire quella più leggibile, prevedibile e convenzionale. La semplicità e la minimalità si valutano sul perimetro e sul costo complessivo della soluzione, non sul solo numero di righe o sulla dimensione del diff.
 
-Questa verifica DEVE precedere l'implementazione. Per ogni controllo aggiuntivo o soluzione custom, una fonte autorevole DEVE contenere una prova di necessità accettata che identifichi almeno:
+La valutazione di semplicità e proporzionalità descritta sopra DEVE precedere l'implementazione. Per ogni controllo aggiuntivo o soluzione custom, una fonte autorevole DEVE contenere una prova di necessità accettata che identifichi almeno:
 
 1. il requisito, comportamento o invariante protetto;
 2. il failure mode concreto e la relativa evidenza;
