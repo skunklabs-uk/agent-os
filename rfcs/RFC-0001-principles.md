@@ -42,7 +42,7 @@ Prima di aggiungere un'entità, uno stato, una regola, un concetto, un component
 2. È possibile eliminare o riutilizzare qualcosa invece di aggiungere?
 3. Il beneficio giustifica i costi di implementazione, manutenzione, test, operatività e documentazione?
 
-Quando è necessaria un'implementazione, le alternative DEVONO essere valutate nell'ordine seguente, fermandosi alla prima soluzione sufficiente:
+Quando è necessaria un'implementazione, le alternative DEVONO essere valutate nell'ordine seguente, preferendo la prima che soddisfa i requisiti con complessità e costo complessivo proporzionati:
 
 1. eliminare il bisogno di nuova implementazione;
 2. riutilizzare comportamento, codice, contratto o verifica già presenti;
@@ -51,9 +51,9 @@ Quando è necessaria un'implementazione, le alternative DEVONO essere valutate n
 5. adottare un tool standard, stabile e mantenuto;
 6. introdurre il minimo custom necessario.
 
-L'ordine non impone il riuso di un elemento esistente quando è inadatto o produce più complessità complessiva dell'alternativa successiva.
+L'ordine esprime una preferenza: non impone il riuso di un elemento inadatto e consente di passare all'alternativa successiva quando questa riduce la complessità complessiva senza perdere requisiti applicabili.
 
-Per modifiche non banali, prima di cambiare il comportamento si DEVE verificare il comportamento corrente e il percorso interessato quanto basta a individuare il punto effettivo di cambiamento. Per un difetto riproducibile si DEVE preferire la correzione della causa verificata quando è fattibile e nello scope; una mitigazione del sintomo è ammessa quando tale correzione non è fattibile o non rientra nello scope, purché il limite sia dichiarato. Questa verifica NON autorizza audit o analisi laterali non necessari.
+Quando la correttezza di una modifica dipende dal comportamento corrente, prima di intervenire si DEVE verificare quel comportamento e il percorso interessato quanto basta a individuare il punto effettivo di cambiamento. Per un difetto riproducibile si DEVE preferire la correzione della causa verificata quando è fattibile e nello scope; una mitigazione del sintomo è ammessa quando tale correzione non è fattibile o non rientra nello scope, purché il limite sia dichiarato. Questa verifica NON autorizza audit o analisi laterali non necessari.
 
 Tra soluzioni equivalenti per requisiti e rischio, si DEVE preferire quella più leggibile, prevedibile e convenzionale. La semplicità e la minimalità si valutano sul perimetro e sul costo complessivo della soluzione, non sul solo numero di righe o sulla dimensione del diff.
 
@@ -371,7 +371,7 @@ Prima di considerare completato un lavoro, verificare:
 |---|---|---|
 | La soluzione soddisfa tutti i requisiti applicabili? |  |  |
 | Esiste un modo più semplice per ottenere lo stesso risultato? |  |  |
-| Per le modifiche non banali sono stati verificati comportamento corrente e percorso interessato quanto basta, e per i difetti la causa quando applicabile, senza ampliare lo scope? |  |  |
+| Quando la correttezza della modifica dipende dal comportamento corrente, sono stati verificati quel comportamento e il percorso interessato quanto basta, e per i difetti la causa quando applicabile, senza ampliare lo scope? |  |  |
 | La soluzione minima è stata scelta per perimetro e costo complessivo, non per sola brevità del diff? |  |  |
 | Ogni complessità introdotta ha una giustificazione verificabile? |  |  |
 | Per ogni nuovo controllo aggiuntivo o custom esiste una prova di necessità accettata prima dell'implementazione? |  |  |
