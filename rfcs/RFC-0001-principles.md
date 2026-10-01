@@ -45,7 +45,7 @@ Prima di aggiungere un'entità, uno stato, una regola, un concetto, un component
 Quando è necessaria un'implementazione, le alternative DEVONO essere valutate nell'ordine seguente, preferendo la prima che soddisfa i requisiti con complessità e costo complessivo proporzionati:
 
 1. eliminare il bisogno di nuova implementazione;
-2. riutilizzare comportamento, codice, contratto o verifica già presenti;
+2. riutilizzare comportamento, codice, contratto o componente già presenti;
 3. usare una funzionalità nativa della piattaforma o del linguaggio;
 4. riutilizzare una dipendenza o un tool già presente e adeguato;
 5. adottare un tool standard, stabile e mantenuto;
@@ -62,7 +62,7 @@ Questa verifica DEVE precedere l'implementazione. Per ogni controllo aggiuntivo 
 1. il requisito, comportamento o invariante protetto;
 2. il failure mode concreto e la relativa evidenza;
 3. i controlli già esistenti e il gap non coperto;
-4. le alternative di eliminazione, riuso, funzionalità nativa, dipendenza o tool già presente e tool standard valutate;
+4. le alternative previste dall'ordine di preferenza precedente;
 5. la ragione verificabile per cui tali alternative sono insufficienti;
 6. il beneficio osservabile atteso e la verifica che lo dimostrerà;
 7. il costo complessivo, il perimetro minimo, la reversibilità e, quando temporaneo, la condizione di rimozione.
@@ -269,14 +269,7 @@ Un principio che non può essere verificato DEVE essere chiarito o riscritto pri
 
 ### Burden of proof dei controlli, dei test e degli strumenti
 
-Ogni controllo aggiuntivo parte come candidato `DELETE` o `REPLACE`, non come requisito implicito. Prima dell'implementazione si DEVE preferire, nell'ordine:
-
-1. eliminazione del controllo quando il rischio è già coperto o accettabile;
-2. riuso di un comportamento, contratto o verifica già presente;
-3. funzionalità nativa già disponibile;
-4. riuso di una dipendenza o di un tool già presente e adeguato;
-5. tool standard, stabile e mantenuto;
-6. implementazione custom.
+Ogni controllo aggiuntivo parte come candidato `DELETE` o `REPLACE`, non come requisito implicito. Prima dell'implementazione si DEVE applicare l'ordine di preferenza definito nella sezione 1. Per i controlli, il riuso comprende anche contratti e verifiche già presenti; l'eliminazione resta la scelta predefinita quando il rischio è già coperto o accettabile.
 
 Un custom è ammesso solo quando la prova di necessità dimostra un gap concreto, l'insufficienza delle alternative precedenti, un vantaggio verificabile, un costo complessivo proporzionato e un perimetro minimo. La prova PUÒ essere registrata nell'issue, nella pull request, nell'ADR o nella fonte attiva già esistente; NON richiede automaticamente un nuovo documento.
 
@@ -287,7 +280,7 @@ La prova di necessità DEVE usare almeno la struttura seguente:
 | Requisito o invariante | Comportamento protetto e fonte autorevole |
 | Failure mode | Errore concreto, riproduzione o altra evidenza verificabile |
 | Copertura esistente | Controlli già presenti e ragione per cui non coprono il failure mode |
-| Alternative | `DELETE`, riuso, funzionalità nativa, dipendenza o tool già presente e tool standard valutati |
+| Alternative | Alternative previste dalla sezione 1 valutate rispetto al failure mode |
 | Gap comprovato | Evidenza che l'alternativa più semplice non è sufficiente |
 | Beneficio | Risultato osservabile e verifica che lo dimostrerà |
 | Costo e perimetro | Componenti, stati, identity, permission, dati, test, workflow, documenti e operatività introdotti |
@@ -310,7 +303,7 @@ Per un controllo preesistente privo di una prova evidente si DEVE prima cercare 
 
 1. il failure mode concreto osservato;
 2. la copertura corrente e il gap ancora presente;
-3. le alternative di eliminazione, riuso, funzionalità nativa, dipendenza o tool già presente e tool standard;
+3. le alternative previste dalla sezione 1;
 4. il costo e l'impatto cumulativo del controllo;
 5. la classificazione finale `KEEP`, `DELETE` o `REPLACE`.
 
@@ -371,7 +364,7 @@ Prima di considerare completato un lavoro, verificare:
 |---|---|---|
 | La soluzione soddisfa tutti i requisiti applicabili? |  |  |
 | Esiste un modo più semplice per ottenere lo stesso risultato? |  |  |
-| Quando la correttezza della modifica dipende dal comportamento corrente, sono stati verificati quel comportamento e il percorso interessato quanto basta, e per i difetti la causa quando applicabile, senza ampliare lo scope? |  |  |
+| Quando la correttezza della modifica dipende dal comportamento corrente, sono stati verificati quel comportamento e il percorso interessato quanto basta, e per i difetti riproducibili la causa quando applicabile, senza ampliare lo scope? |  |  |
 | La soluzione minima è stata scelta per perimetro e costo complessivo, non per sola brevità del diff? |  |  |
 | Ogni complessità introdotta ha una giustificazione verificabile? |  |  |
 | Per ogni nuovo controllo aggiuntivo o custom esiste una prova di necessità accettata prima dell'implementazione? |  |  |
