@@ -1,8 +1,8 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.10
-**Ultima modifica:** 2026-10-01
+**Versione:** 0.1.11
+**Ultima modifica:** 2026-10-03
 
 ## Scopo
 
@@ -329,6 +329,7 @@ Una modifica documentale non richiede test quando il documento non è consumato 
 |---|---|---|
 | Closeout documentale | `KEEP` | La [PR #23](https://github.com/skunklabs-uk/agent-os/pull/23) registra chiusure con codice e test validi ma fonti autorevoli non riallineate e successivi commit esclusivamente documentali; la [PR #26](https://github.com/skunklabs-uk/agent-os/pull/26) rende osservabile lo stesso requisito nel template. Le sezioni 2 e 6 coprono il failure mode senza nuovi stati o workflow. |
 | Guardia economica GitHub Actions | `KEEP` | I run Aeris [`30422769931`](https://github.com/skunklabs-uk/aeris/actions/runs/30422769931) e Homelab [`30607639763`](https://github.com/skunklabs-uk/homelab/actions/runs/30607639763) hanno fallito prima di eseguire step; le annotazioni GitHub indicano pagamenti falliti o spending limit insufficiente. La sezione 8 evita retry costosi e diagnosi applicative prive di segnale. |
+| Divieto runner GitHub-hosted standard | `KEEP` | Il workflow di review di `txt-ai-adoption`, creato il 14 settembre 2026 dopo l'introduzione del guard organizzativo, ha usato `ubuntu-latest` su un repository privato e ha prodotto run GitHub-hosted costose; il Runner policy audit Homelab [`36405142856`](https://github.com/skunklabs-uk/homelab/actions/runs/36405142856) ha rilevato la violazione solo il 28 settembre. Il controllo sui soli default branch era quindi tardivo. Il blocco nativo organization-level dei runner hosted standard è una capacità GitHub Team/Enterprise e non è disponibile sul piano GitHub Free corrente; finché tale capacità non è disponibile e attiva, la sezione 8 impone il divieto pre-push e il guard Homelab ne verifica l'applicazione. |
 | Tassonomia obbligatoria delle priorità issue | `DELETE` | L'[issue #17](https://github.com/skunklabs-uk/agent-os/issues/17) e la [PR #18](https://github.com/skunklabs-uk/agent-os/pull/18) documentano decisione e normalizzazione, ma non un failure mode concreto né un gap che giustifichi tassonomia, bootstrap e fail-closed universali. Le label native e il triage locale restano disponibili senza controllo centrale. |
 | Burden of proof e riesame cumulativo | `KEEP` | La wave [`developer-workspace#33`](https://github.com/skunklabs-uk/developer-workspace/issues/33) ha rilevato controlli custom duplicati o auto-validanti in più repository; le PR [`homelab#768`](https://github.com/skunklabs-uk/homelab/pull/768), [`homelab#772`](https://github.com/skunklabs-uk/homelab/pull/772) e [`prosignal#82`](https://github.com/skunklabs-uk/prosignal/pull/82) ne mostrano la successiva eliminazione o sostituzione con capacità standard. Le sezioni 1 e 7 coprono sia la singola aggiunta sia l'accumulo. |
 
@@ -337,6 +338,18 @@ Una modifica documentale non richiede test quando il documento non è consumato 
 ## 8. Controllo dei costi e dei retry di GitHub Actions
 
 Ogni esecuzione o rerun di GitHub Actions DEVE essere trattato come uso di una risorsa esterna potenzialmente a pagamento.
+
+### Runner ammessi nell'Organization `skunklabs-uk`
+
+Per i repository dell'Organization `skunklabs-uk`, i workflow NON DEVONO usare i runner GitHub-hosted standard, inclusi i label `ubuntu-*`, `windows-*` e `macos-*`, né espressioni dinamiche di `runs-on` che possano risolversi a tali runner.
+
+I workflow DEVONO usare la classe self-hosted organization-level minima sufficiente tra quelle correnti e approvate dalla fonte operativa Homelab, oggi `ci-standard`, `ci-container` e `ci-build`.
+
+Prima di commit o push che creano o modificano un workflow, ogni `runs-on` interessato DEVE essere verificato. Se nessuna classe self-hosted corrente può eseguire il job, la modifica workflow DEVE fermarsi: si adatta il job, si esegue l'onboarding della classe appropriata oppure si richiede una deroga esplicita all'utente o al Product Owner. Il runner GitHub-hosted NON è un fallback implicito.
+
+Una deroga DEVE essere specifica per workflow e scopo, esplicitare il motivo e l'impatto di costo e non può essere dedotta da urgenza, sperimentazione o indisponibilità temporanea del runner self-hosted.
+
+Il guard organizzativo Homelab è una verifica di secondo livello e NON sostituisce la verifica pre-push. Quando il piano GitHub rende disponibile e viene attivato il blocco nativo dei runner hosted standard a livello Organization, i controlli procedurali o custom divenuti ridondanti DEVONO essere riesaminati secondo la sezione 7.
 
 - I rerun automatici di workflow o job sono vietati.
 - I rerun massivi e il rilancio indiscriminato di tutti i workflow sono vietati.
@@ -388,6 +401,7 @@ Prima di considerare completato un lavoro, verificare:
 | I documenti interessati hanno uno stato corretto? |  |  |
 | La documentazione attiva rappresenta lo stato finale del lavoro, quando la modifica richiede un aggiornamento documentale? |  |  |
 | Gli artefatti superati o non più applicabili sono stati aggiornati, sostituiti o archiviati secondo le regole esistenti? |  |  |
+| Le modifiche ai workflow usano esclusivamente classi runner approvate, oppure esiste una deroga esplicita conforme alla sezione 8? |  |  |
 | Le verifiche producono evidenze osservabili? |  |  |
 | Controlli, test, strumenti e workflow adottano la soluzione minima nell'ordine previsto e ogni custom supera il relativo burden of proof? |  |  |
 | Ogni controllo temporaneo ha owner, reversibilità e condizione di rimozione verificabili? |  |  |
