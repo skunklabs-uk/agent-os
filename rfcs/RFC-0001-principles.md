@@ -1,8 +1,8 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.11
-**Ultima modifica:** 2026-10-03
+**Versione:** 0.1.12
+**Ultima modifica:** 2026-10-06
 
 ## Scopo
 
@@ -296,6 +296,18 @@ Tool e framework DEVONO essere usati secondo documentazione upstream corrente, b
 Test di dettagli implementativi, stringhe, topologie, comportamento upstream, coverage fine a sé stessa o attestazioni procedurali partono come candidati `DELETE`, salvo che proteggano un contratto esplicito.
 
 Non si DEVONO creare wrapper, runner, ledger, identity, permission graph, schema o workflow custom quando le capacità esistenti offrono già evidenza, isolamento, idempotenza, recovery o integrazione sufficienti.
+
+### Strumenti specialistici di analisi dei repository
+
+La scelta predefinita è usare le capacità native dell'agente corrente, sia esso Codex, OMP o un altro agente. Uno strumento specialistico PUÒ essere attivato per una domanda concreta su relazioni del codice che l'ispezione ordinaria non ha risolto adeguatamente. La dimensione del repository, la disponibilità di un indice o la complessità dichiarata del task non costituiscono da sole una prova di necessità.
+
+Prima dell'attivazione, l'esecutore DEVE indicare la domanda irrisolta e il contributo atteso. L'uso DEVE restare circoscritto al task; l'indice DEVE essere coerente con il codice esaminato e i risultati DEVONO essere verificati nelle fonti correnti. Se lo strumento non aggiunge informazioni utili, si DEVE proseguire con le capacità native, senza ampliare automaticamente indexing o interrogazioni.
+
+Quando lo strumento viene usato, il report del task o la Pull Request già previsti DEVONO riportare domanda, contributo ottenuto e costo di preparazione o aggiornamento dell'indice, se osservabile. Non si DEVONO creare report, ledger o verifiche aggiuntive per i task che non lo usano. La review esistente DEVE valutare la necessità dell'attivazione e il beneficio complessivo, includendo setup e manutenzione; meno token o ricerche non dimostrano da soli risparmio economico o maggiore velocità.
+
+La configurazione predefinita NON DEVE attivare automaticamente questi strumenti. La procedura tecnica DEVE usare le capability native disponibili nel runtime effettivo, senza presumere che Codex e OMP abbiano configurazione o lifecycle equivalenti. Installare una skill non autorizza l'attivazione del relativo strumento. Le istruzioni e la review rendono l'uso contestabile; non costituiscono un blocco tecnico per un agente con accesso alla shell. Restrizioni ulteriori richiedono la prova di necessità della sezione 1.
+
+L'evidenza locale è il [POC #30](https://github.com/skunklabs-uk/agent-os/issues/30#issuecomment-6005134047): GitNexus ha contribuito al benchmark code-heavy, mentre nel benchmark context-heavy il server disponibile non è stato interrogato e non ha prodotto un beneficio dimostrato. Questo giustifica un impiego specialistico, non l'attivazione universale. GitNexus resta candidato sperimentale; prima dell'uso non sperimentale DEVE essere verificato il titolo di licenza. Headroom resta escluso dalla configurazione raccomandata secondo il [closeout proxy](https://github.com/skunklabs-uk/agent-os/issues/30#issuecomment-6011252473); Graphify e Memory conservano gli esiti già registrati nella stessa issue.
 
 ### Riconciliazione dei controlli preesistenti
 
