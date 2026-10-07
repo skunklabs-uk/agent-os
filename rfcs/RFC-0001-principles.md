@@ -1,8 +1,8 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.12
-**Ultima modifica:** 2026-10-06
+**Versione:** 0.1.13
+**Ultima modifica:** 2026-10-07
 
 ## Scopo
 
@@ -307,7 +307,9 @@ Quando lo strumento viene usato, il report del task o la Pull Request già previ
 
 La configurazione predefinita NON DEVE attivare automaticamente questi strumenti. La procedura tecnica DEVE usare le capability native disponibili nel runtime effettivo, senza presumere che Codex e OMP abbiano configurazione o lifecycle equivalenti. Installare una skill non autorizza l'attivazione del relativo strumento. Le istruzioni e la review rendono l'uso contestabile; non costituiscono un blocco tecnico per un agente con accesso alla shell. Restrizioni ulteriori richiedono la prova di necessità della sezione 1.
 
-L'evidenza locale è il [POC #30](https://github.com/skunklabs-uk/agent-os/issues/30#issuecomment-6005134047): GitNexus ha contribuito al benchmark code-heavy, mentre nel benchmark context-heavy il server disponibile non è stato interrogato e non ha prodotto un beneficio dimostrato. Questo giustifica un impiego specialistico, non l'attivazione universale. GitNexus resta candidato sperimentale; prima dell'uso non sperimentale DEVE essere verificato il titolo di licenza. Headroom resta escluso dalla configurazione raccomandata secondo il [closeout proxy](https://github.com/skunklabs-uk/agent-os/issues/30#issuecomment-6011252473); Graphify e Memory conservano gli esiti già registrati nella stessa issue.
+L'evidenza locale corrente è il [closeout della repeatability review del POC #30](https://github.com/skunklabs-uk/agent-os/issues/30#issuecomment-6042792240), che raccomanda **OMP puro** nel perimetro testato. Le [tre coppie Headroom per benchmark](https://github.com/skunklabs-uk/agent-os/issues/30#issuecomment-6041744868), con OMP 18.6.1 e Headroom 0.40.0, conservano la correttezza ma mostrano più exploration/model calls e input totale del task in tutte le coppie: Headroom è **DELETE** per quel percorso/default. La compressione dei payload non si traduce in beneficio netto; la decisione non dipende dal precedente hard gate del 20%, ritirato.
+
+Le [tre coppie GitNexus per benchmark](https://github.com/skunklabs-uk/agent-os/issues/30#issuecomment-6042759594), con OMP 18.5.0 e GitNexus 1.6.12, danno risultati misti: **INCONCLUSIVE**. Sul caso code-heavy le query al grafo sono state usate soltanto nella prima coppia; le nuove repliche non ne confermano il beneficio. Il POC non giustifica quindi una raccomandazione GitNexus neppure on-demand. Resta applicabile la regola generale sopra per una domanda concreta irrisolta, con necessità e contributo da verificare nel singolo task; prima dell'uso non sperimentale DEVE essere verificato il titolo di licenza. Questi esiti descrivono due benchmark e tre coppie per caso, senza significatività statistica o causalità forte; non autorizzano nuovi run automatici. Graphify AST/semantic restano DELETE e Memory/Mnemopi NON APPLICABILE secondo la stessa issue.
 
 ### Riconciliazione dei controlli preesistenti
 
