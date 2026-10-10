@@ -43,7 +43,7 @@ This is a semantic contract, not a JSON/API design. mobile-control and mcp-acces
 
 ## Tech stack and commands
 
-This is an approved Markdown behavioral specification in Agent OS. The runtime/configuration representation and runtime verification commands remain to be selected in Plan after approval, using verified native capabilities.
+This is an approved Markdown behavioral specification in Agent OS. Bounded verification uses OMP18.8.7 native CLI configuration and the existing MISSION.md artifact; the exercised configurations, commands and preserved results are recorded in [workflow-profiles evidence](tasks/workflow-profiles-evidence.md). This acceptance experiment does not select or replace the production Codex/Developer Workspace runtime.
 
 For a local checkout with origin/main and the specification branch:
 ```bash
