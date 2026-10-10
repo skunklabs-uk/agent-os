@@ -1,6 +1,6 @@
 # Spec: team-execution
 
-**Status:** Draft — Specify phase; user review required before Plan.
+**Status:** Active — approved by the user on 2026-10-10; Plan phase authorized.
 **Module:** team-execution.
 **Parent:** [approved capability map](CAPABILITY-MAP-agent-team.md).
 **Dependency:** [workflow-profiles](SPEC-workflow-profiles.md), accepted in its documented bounded scope.
@@ -106,7 +106,7 @@ Use small real acceptance slices and actual native transcripts, selected-source 
 
 This specification proposes the behavior to approve, not an implementation choice. The specific native/prompt/skill approach, exact ownership/pilot and executable commands are Plan decisions after approval; no attachment is required to approve these product requirements. The four closeout outcome labels are proposed vocabulary, not evidence already collected.
 
-Review this Draft before Plan. Approval of it alone does not authorize implementation, other-repository writes, deployment, migration or spending outside existing limits. The user-authorized continuation enables Specify; prior workflow-profiles merge authority does not automatically approve this new module's later phase gates.
+The user approved this specification in a later turn on 2026-10-10. Its approval alone does not authorize implementation, other-repository writes, deployment, migration or spending outside existing limits. The user’s specification approval enables Plan; prior workflow-profiles merge authority does not automatically approve this new module's later phase gates.
 
 ## Primary sources
 

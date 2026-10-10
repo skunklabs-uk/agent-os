@@ -41,10 +41,10 @@ Prefer homelab only with proportionate implementation/operating effort. Choose a
 ## Specification index
 
 - [workflow-profiles](SPEC-workflow-profiles.md): Active behavioral authority; bounded module acceptance is recorded in the outcome source below.
-- [team-execution](SPEC-team-execution.md): Draft in Specify; user review required before Plan.
+- [team-execution](SPEC-team-execution.md): Active — approved on 2026-10-10; implementation plan under review.
 - mobile-control, mcp-access: not yet specified; no corresponding specification files exist.
 
-The user explicitly approved workflow-profiles at Checkpoint B after independent review. [Accepted outcome, evidence and limitations](tasks/workflow-profiles-evidence.md#accepted-outcome-and-closeout) are the durable handoff for team-execution. The completed execution plan is historical, not an active work queue. team-execution is now in Specify under the user’s continuation; no Plan or implementation is approved yet. This acceptance does not replace the Active Codex/Workspace contract or authorize deployment.
+The user explicitly approved workflow-profiles at Checkpoint B after independent review. [Accepted outcome, evidence and limitations](tasks/workflow-profiles-evidence.md#accepted-outcome-and-closeout) are the durable handoff for team-execution. The completed execution plan is historical, not an active work queue. team-execution specification is approved; its implementation plan is being prepared for review. Implementation is not approved yet. This acceptance does not replace the Active Codex/Workspace contract or authorize deployment.
 
 ## Process trace
 

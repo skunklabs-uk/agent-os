@@ -1,121 +1,90 @@
-# Implementation Plan: workflow-profiles
+# Implementation Plan: team-execution
 
-**Status:** Archived — execution completed; Checkpoint B explicitly approved by the user on 2026-10-10. Retained only as execution history, not current instructions.
-**Scope:** [approved module spec](../SPEC-workflow-profiles.md).
-**Tracking:** [Agent OS issue 35](https://github.com/skunklabs-uk/agent-os/issues/35).
-**Method:** Osmani planning-and-task-breakdown at 1401c8b8030e023baeebb31781a6653fe8e93026.
-**Language:** English is authoritative.
+**Status:** Draft — Plan review required; specification approved on2026-10-10.
+**Scope:** [Active team-execution specification](../SPEC-team-execution.md).
+**Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
+**Method:** Osmani planning-and-task-breakdown at1401c8b8030e023baeebb31781a6653fe8e93026.
+**Tracking:** GitHub mission35 and dependency-scoped task issues created during the subsequent Tasks phase; no tasks/todo.md or second ledger.
+**Language:** English is authoritative by user instruction.
 
-Current accepted outcome, durable limits and the user's conditional merge authorization are recorded in [workflow-profiles evidence](workflow-profiles-evidence.md#accepted-outcome-and-closeout). The approved module spec remains the behavioral authority; this completed plan does not authorize another module, deployment or production runtime replacement.
+## Outcome and baseline
 
-## Outcome
+Demonstrate one accountable coordinator delivering a small approved change through real workers, source-faithful gates, functional verification, independent review, authorized integration and documentary closeout. Preserve separate Osmani/Pocock missions and expose genuine manual invocation limits. No production deployment is authorized.
 
-Demonstrate that a mission and its delegated agents retain one chosen workflow, exact upstream identities and applicable approval gates across execution and reconnection. Prefer native OMP configuration and existing authoritative mission artifacts. This plan covers workflow-profiles only; mobile UI, MCP, hosting and the complete specialist team belong to their respective modules.
+The accepted workflow-profiles outcome proves read-only observations, not write-worker isolation or full delivery. Its completed execution plan has moved to tasks/archive/workflow-profiles-plan.md; it remains Archived history. Historical transcript paths naming tasks/plan.md still describe the file used at that time, not this new plan.
 
-## Evidence and proposed approach
+Planning inputs: current main1f2f655df06039bb413f389b83d58a29a28ad3b1, approved capability map/specification, Active REQ-0001/RFC-0001, accepted workflow-profiles raw/evidence and mission35 clarifications. No previous incomplete plan is replaced; Tasks37–40 are closed. A candidate mission-team ZIP is described by the issue but not locally verified; absence of that attachment does not block native-first work.
 
-OMP revision b07a1c146d0d12cfc855a2c65d52f892ef319040 documents skill include/exclude filters, custom directories and explicit SDK skill lists. Children receive the parent session's skills. Differing name collisions preserve variants under namespaces; hiding a skill does not disable it. Agent autoloadSkills references parent skills by name and silently ignores unknown names.
+## Technical approach and proportionality
 
-Therefore, test exact source identity and the final resolved catalog, rather than assuming directory aliases or hidden entries provide separation. Try native configuration first. Explicit SDK skill selection is an existing fallback capability to evaluate, not approval to build a custom router.
+| Choice | Decision and reason |
+|---|---|
+| Coordinator/state | Start with existing mission artifact and native runtime context. The current issue/profile tracker remains the work ledger; evidence records observations without a duplicate task checklist. |
+| Runtime | Evaluate the installed OMP against studied18.8.7/b07a1c146d0d12cfc855a2c65d52f892ef319040. Record drift and check affected source compatibility; do not silently update tools or pins. |
+| Writer isolation | Prefer native isolated task capture with automatic application disabled. Verify the actual backend, owned paths and returned patch/branch before relying on it. Integrate serially. Standard disposable worktrees are the next existing option; sequential fallback is disclosed as a failed parallel-writer criterion, not full acceptance. |
+| Concurrency | Two independent tasks only after the shared contract is settled. Keep fixed authorized models, max concurrency2 and speculative launch off for bounded proofs; no role-based model expansion or advisor/fallback calls. |
+| Coordination prompt/skill | Compare no new guidance, minimal project context/prompt and candidate reusable skill in that order. Introduce only the minimum guidance for an observed coordination gap. A global skill or cross-repository installation requires separately approved ownership/scope. |
+| Safety | Reuse selected-author allowlists, exact-source checks, provider restrictions and auto-QA disabled at project/process startup. No global config, auth migration, consumer permission expansion or blocked SDK discovery. |
+| CI/checks | Use the owning repository's actual required checks. Current Agent OS has no workflow CI; inspect again at execution. Do not add Actions solely to manufacture a failure/green badge. Controlled local regression failure exercises correction; it does not claim CI-job coverage. Real CI behavior needs an already authorized environment or remains explicitly unproven. |
+| Delivery | Existing conditional merge authority is scoped to the work it approves. Confirm authority for this module/pilot delivery before merging. Smoke instructions follow an authorized merge; deployment needs a distinct user OK. |
 
-Approval gates and durable phase state are a separate hypothesis: skill filtering alone does not prove them. Distinguish instruction compliance from runtime enforcement in the evidence.
+Exact-version native documentation includes task.isolation.enabled, task.isolation.apply=false, patch/branch capture, batch tasks and task.maxConcurrency. Context7 current docs were queried and compared with pinned docs/tools/task.md; current examples are not assumed byte-compatible with18.8.7. Isolation lifecycle and inherited provider/tool capabilities must be checked at execution, including whether captured work survives child teardown. No new SDK runner, database, wrapper or policy engine is selected.
 
 ## Ordered work packages
 
-### 1. Native feasibility — Small
+These are proposed Plan slices, not approved executable task issues. After Plan approval, convert each to a small GitHub task with at most three acceptance bullets, focused verification, owned files and dependencies; obtain the separate upstream Tasks approval before implementation.
 
-Inspect pinned discovery/configuration and child-session behavior; reproduce a catalog for each profile in a disposable environment.
+| Slice | Acceptance and verification | Dependency; likely write scope |
+|---|---|---|
+| 1. Establish the authorized native sandbox | Verify installed version/source pins, login availability without secrets, provider/auto-QA restrictions and exact commands. Choose a disposable Agent OS worktree for non-production acceptance fixtures; no new repository. Record model-call ceilings/cost authority and stop prerequisites before inference. Verify no global/shared consumer changes. | None; native project config and eventual team-execution evidence, S–M. |
+| 2. Prove coordinator routing and invocation | One small mission per profile retains role assignments, sources, phase and authoritative state. Test actual user-only invocation/continuation, missing Pocock setup and missing/foreign skill; no methodological fallback. Compare native context to the candidate without installing it. Record minimum necessary guidance and unresolved manual actions. | 1; one mission artifact, native context and evidence, M. |
+| 3. Deliver two independent executable fixture slices | After contract approval, actual separate workers implement two disjoint bounded behaviors with selected-method RED/GREEN observations. Prove backend/workspace separation, owned writes and observed overlap; capture patches/branches without automatic parent mutation. Record failed isolation honestly. | 2; disposable feature/test paths only plus evidence, M per worker; shared contracts frozen. |
+| 4. Integrate and recover the corrected contract | Coordinator serially integrates validated returns and runs focused combined tests/functional acceptance. Exercise a blocked prerequisite while independent work finishes, then both same-session and artifact-only recovery of the corrected final contract. Test setup still absent after another gate approval; no reliance on historical chat. | 3; disposable integration artifact/tests and evidence, M. |
+| 5. Exercise independent review and correction | A real separate reviewer reads original requirements and exact base/head/diff/raw. Detect a controlled disposable defect/check failure; correct minimally, rerun relevant checks and re-review material fixes on final head. Verify stale head, missing authorization and failed required checks yield NO-GO. Local test failure is not reported as CI failure. | 4; fixture code/test correction, review/mission record and evidence, M. |
+| 6. Verify closeout and selected-profile inventory | Derive each chosen catalog from pinned manifest plus actual resolution; all entries receive the approved evidence-backed outcome and invocation/availability metadata. Render exercised route in the one closeout record. Verify user-invoked Pocock retro or explicit remaining manual prerequisite; Osmani retrospective is the user extension. No automatic process edits/issues. | 5; authoritative mission closeout and evidence, S–M. |
+| 7. Final acceptance and authorized delivery | Independent final-SHA review checks all ten spec scenarios and accumulated controls, resolves findings, inspects durable privacy-screened raw and authoritative reconciliation. Prepare PR/merge/smoke only within actual authority. Report live-pilot/CI/release gaps, keep mission35 open, and do not imply full mobile/MCP or production replacement. | 6; module evidence/map/spec/plan closeout and existing tracker, M. |
 
-Acceptance: only the selected author's methodological sources resolve, including namespaced variants; the Osmani TDD collision resolves to its pinned source; report unsupported behavior explicitly.
+Dependency chain:1→2→3→4→5→6→7. Only the two disjoint workers inside3 run concurrently; coordinator integration, state updates, review fixes and closeout stay sequential. Independent reviewer is never one of the implementers and does not inherit their conversation. Test Pocock separately; do not switch this mission's Osmani realization method.
 
-Verification: capture resolved names, physical paths and revisions for coordinator and child. This inspection does not require model calls.
+## Verification checkpoints
 
-Likely paths: upstream read-only sources; tasks/workflow-profiles-evidence.md.
+- After2: inspect routing/invocation results and RFC necessity comparison before adding coordination guidance or writer trials. Continue within approved scope if native facilities suffice; a global skill, persistent architecture or new spending needs the corresponding approval.
+- After4: inspect actual isolation/integration/recovery and source-faithful next actions. Failed parallel isolation blocks the parallel-delivery acceptance; independent approved diagnosis may continue. Do not convert sequential success into parallel proof.
+- After7: submit exact-head independent review, acceptance evidence and closeout for the profile-required final decision. No merge on missing proof/authority; deployment remains separate.
 
-### 2. One mission per profile — Medium
+These checks protect the module's unproven execution paths. They do not introduce additional universal hotfix approvals or a second task tracker. Plan and Tasks approvals remain the original selected-upstream phase gates.
 
-Use native configuration and the existing mission artifact to carry profile, sources, phase, scope, pending approvals and declared extensions. Exercise Osmani and Pocock separately.
+## Test scope, pilot and missing prerequisites
 
-Acceptance: a mission starts with an explicit choice, resumes with the same choice and stops an affected step at a required approval or missing/foreign skill.
+Initial executable trials stay in disposable Agent OS worktrees and are acceptance fixtures, not a real user-project pilot. Use the smallest self-contained logic/tests with tools already installed; the detailed task records the actual focused command and RED/GREEN before new logic. Fixture outputs do not become new production features in Agent OS.
 
-Verification: bounded runtime transcripts for both profiles, disconnect/resume and negative cases. Record actual invocations, not merely successful discovery.
+A complete user-project delivery proof still needs an explicitly selected and authorized pilot (new project or Waypoint/waypoint-db after read-only reality-check). That choice is not guessed from repository names, and this Plan does not authorize writes to those repositories. If sandbox fixtures leave a scenario requiring a live pilot/CI/release unproven, mark it unresolved and scope the required pilot approval before claiming full module acceptance. Deployment tests remain pending a separate explicit user OK.
 
-Likely paths: tasks/workflow-profiles-evidence.md; minimal native configuration/context files, selected after package 1 (no more than five files per task).
+Bounded model calls: reuse only an existing authorized provider/login; set wall-clock/request limits per task and account for parent/children before launching. No new spending envelope or infinite correction loop is granted by Plan approval. Missing operator login, candidate attachment or unavailable backend blocks only work dependent on it. Candidate adoption specifically requires its exact bytes/hash/privacy inspection; native-only comparison can proceed without it.
 
-### Checkpoint A
+Preserve raw prompts/configs/journals, before/after artifacts and negative cases in durable reviewer-accessible evidence after credential/privacy inspection. Hashes alone do not preserve data. Distinguish registered/visible/invoked catalogs and event timing from CPU parallelism. Review actually reads the full material it claims; limits are attributed, not hidden by coordinator summaries.
 
-Review packages 1–2 evidence. If native facilities fail, compare configuration changes, explicit SDK selection and alternative runtime support by effort and coverage. Request approval for any material architecture change before proceeding. Do not silently weaken the approved requirements.
+## Commands and verification
 
-### 3. Delegation and recovery — Medium
+Planning/document checks:
 
-Delegate two independent bounded tasks using the same approved mission contract; check returned identities and phase constraints. Verify a blocked action does not prevent unrelated authorized work.
-
-Acceptance: both children retain the profile and exact skill provenance; resume preserves pending decisions; deviations/extensions record source, reason, alternatives, impact, authorization and verification.
-
-Verification: child transcripts and recovered mission artifact. Parallelize the independent test activities only after the shared contract is settled.
-
-Likely paths: the same minimal configuration/context files and evidence document. No new state database is presumed.
-
-### 4. Independent review and closeout — Small
-
-Have a reviewer outside the implementation context compare the exact revision, approved spec and evidence. Correct findings and re-review material changes.
-
-Acceptance: every spec scenario has evidence or an explicit unresolved failure; documentation identifies limitations and the next module's dependency; affected Active sources are reconciled before changing the Codex/Developer Workspace contract.
-
-Verification: reviewer report with examined SHA and evidence links, followed by user review. Merge and deployment remain separate approvals.
-
-Likely paths: tasks/workflow-profiles-evidence.md; existing authoritative files only if an approved reconciliation is necessary, in separately scoped tasks.
-
-### Checkpoint B
-
-Review packages 3–4 and all acceptance scenarios before declaring the module complete. No completion claim while required runtime evidence is missing.
-
-## Task index
-
-1. [Task 1: task: verify native workflow profile isolation ](https://github.com/skunklabs-uk/agent-os/issues/37)
-2. [Task 2: task: verify profile selection gates and resume ](https://github.com/skunklabs-uk/agent-os/issues/38)
-3. [Task 3: task: verify delegated workflow fidelity and recovery ](https://github.com/skunklabs-uk/agent-os/issues/39)
-4. [Task 4: task: independently review workflow profiles and closeout ](https://github.com/skunklabs-uk/agent-os/issues/40)
-
-Tasks37–40 were approved on 2026-10-10 and completed in the accepted bounded scope. Their historical checkpoints were tracked in Tasks38 and40; tasks are closed after PR41 integration. Parent mission35 stays open for the remaining modules.
-
-## Tasks gate and tracking
-
-The separate Plan → Tasks gate was completed on 2026-10-10. Checkpoint A was accepted after fresh-context independent review; the subsequent continuation authorized Task39. The user explicitly approved Checkpoint B after independent review of `201fcaa` and authorized documentary closeout and a conditional merge. The [current outcome record](workflow-profiles-evidence.md#accepted-outcome-and-closeout) preserves evidence, integration status, limits and the deployment/runtime boundary; old pending-gate statements in this archived plan are historical.
-
-The coordination tracker is GitHub issue35; the linked detailed issues above are the single task tracker. Do not duplicate their checklists in tasks/todo.md. No existing incomplete plan or task list is overwritten.
-
-## Verification environment and commands
-
-Use an isolated checkout/test environment, not the production homelab. Establish the supported pinned OMP installation and focused commands during native feasibility; record exact commands before executable work. Do not invent installation/build/test commands.
-
-Documentation checks in a local checkout:
 ```bash
 git diff --check origin/main...HEAD
-git diff origin/main...HEAD -- CAPABILITY-MAP-agent-team.md SPEC-workflow-profiles.md tasks/plan.md
+git diff origin/main...HEAD -- SPEC-team-execution.md CAPABILITY-MAP-agent-team.md tasks/plan.md tasks/archive/workflow-profiles-plan.md
 ```
 
-No application build is required for the planning artifact. Model/provider access and any spending must comply with existing authorization and repository limits; unavailable access is a disclosed test prerequisite, not fabricated evidence.
+No product build/runtime/model call is needed for this Plan. Slice1 records exact supported commands from the actual version before execution; do not reuse obsolete CLI syntax blindly. Runtime test framework and actual pilot commands are selected from the verified environment in detailed tasks, not fabricated here.
 
-## Risks and decisions
+## Task tracker and approval gate
 
-| Risk | Response |
-|---|---|
-| Namespace or provider leakage | Inspect final catalogs and physical sources; test coordinator and children. |
-| Instructions appear to enforce gates but do not | Test blocked progression and report the enforcement level. |
-| Resume loses authoritative context | Exercise reconnection with an unresolved approval. |
-| Runtime choice conflicts with Active REQ-0001 | Reconcile before changing the existing architecture. |
-| Prototype grows into custom orchestration | Apply the repository's necessity test; obtain approval for material changes. |
+GitHub issue35 remains the coordination issue. Detailed tasks are not yet created or approved: Plan approval comes first, then the Tasks phase records a single ordered index of issue IDs here rather than duplicating their checklists. The archived workflow-profiles plan is historical, and its closed tasks are not reopened for this module.
 
-Homelab suitability and actual mobile MCP compatibility will be assessed in the appropriate module specifications; this plan does not decide or defer their inclusion.
-
-## Historical plan approval
-
-The sequence and native-first feasibility approach were approved before execution. The original plan approval alone did not authorize custom orchestration, source migration, merge, deployment or spending outside existing limits. Later module acceptance and conditional merge authority are recorded in the current outcome source.
+Approve the native-first sequence and sandbox-first proof scope. Plan approval authorizes preparation of the detailed Tasks, not their execution, cross-repository/global installation, new costs, production-runtime migration, merge outside existing authority or deployment. Any real-pilot or implementation ownership proposal will state its minimum scope and unresolved authority before work begins.
 
 ## Primary references
 
+- [Active specification](../SPEC-team-execution.md) and [capability map](../CAPABILITY-MAP-agent-team.md).
+- [Accepted native baseline](workflow-profiles-evidence.md#accepted-outcome-and-closeout).
 - [Osmani planning skill](https://github.com/addyosmani/agent-skills/blob/1401c8b8030e023baeebb31781a6653fe8e93026/skills/planning-and-task-breakdown/SKILL.md).
-- [OMP skill discovery](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/docs/skills.md).
-- [OMP SDK skill configuration](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/packages/coding-agent/examples/sdk/04-skills.ts).
-- [OMP agent discovery](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/docs/task-agent-discovery.md).
+- [OMP pinned task/isolation documentation](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/docs/tools/task.md).
+- [REQ-0001](../requirements/REQ-0001-software-factory.md), [RFC-0001](../rfcs/RFC-0001-principles.md) and [AGENTS](../AGENTS.md).
