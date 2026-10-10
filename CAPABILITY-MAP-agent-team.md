@@ -43,6 +43,8 @@ Prefer homelab only with proportionate implementation/operating effort. Choose a
 - [workflow-profiles](SPEC-workflow-profiles.md): Approved on 2026-10-10.
 - team-execution, mobile-control, mcp-access: not yet specified; no corresponding specification files exist.
 
+workflow-profiles has bounded native runtime evidence and accepted Checkpoint A; corrected delegation/recovery evidence is recorded for Task40/CheckpointB review in [workflow-profiles evidence](tasks/workflow-profiles-evidence.md). Full module acceptance and next-module work remain pending. This does not replace the Active Codex/Workspace contract.
+
 ## Process trace
 
 The issue was created after interview-me/idea-refine before specification. This was an unjustified sequencing deviation, explicitly acknowledged. Recovery: approve this map, then follow Specify → Plan → Tasks → Implement per module according to Osmani's spec-driven-development. Map approval does not approve any module spec, plan, implementation, merge or deployment.

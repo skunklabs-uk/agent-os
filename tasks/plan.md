@@ -79,9 +79,9 @@ Tasks are Active following human approval on 2026-10-10. Checkpoints A and B are
 
 ## Tasks gate and tracking
 
-These packages describe the proposed plan, not an execution authorization. Following spec-driven-development's separate Plan → Tasks gate, after plan approval prepare the detailed task list with dependencies, acceptance criteria, verified commands and checkpoints, then request its review before implementation.
+The separate Plan → Tasks gate was completed: the user approved this plan and detailed Tasks37–40 on2026-10-10. CheckpointA was accepted after fresh-context independent review under the user’s explicit decision delegation; the subsequent continuation authorizes Task39. Corrected runtime results and Task40 review state are recorded in [workflow-profiles evidence](workflow-profiles-evidence.md). CheckpointB still requires human review of the implemented module; no next-module progression, merge or deployment is inferred.
 
-The requested coordination tracker is GitHub issue 35. Detailed tasks will use linked GitHub issues as the single task tracker; this plan will index those links once created. Do not duplicate their checklists in tasks/todo.md. No existing incomplete plan or task list is overwritten.
+The coordination tracker is GitHub issue35; the linked detailed issues above are the single task tracker. Do not duplicate their checklists in tasks/todo.md. No existing incomplete plan or task list is overwritten.
 
 ## Verification environment and commands
 

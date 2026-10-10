@@ -43,7 +43,7 @@ This is a semantic contract, not a JSON/API design. mobile-control and mcp-acces
 
 ## Tech stack and commands
 
-This draft is a Markdown behavioral specification in Agent OS. The runtime/configuration representation and runtime verification commands remain to be selected in Plan after approval, using verified native capabilities.
+This is an approved Markdown behavioral specification in Agent OS. The runtime/configuration representation and runtime verification commands remain to be selected in Plan after approval, using verified native capabilities.
 
 For a local checkout with origin/main and the specification branch:
 ```bash
@@ -93,7 +93,7 @@ Never: mix methodological catalogs, silently update pinned sources, fabricate ap
 
 ## Open questions and approval scope
 
-Plan must determine whether native OMP discovery/configuration can isolate catalogs for coordinator and children and preserve phase/approval context without custom code. If not, compare alternatives and demonstrate necessity before proposing custom. Runtime suitability is not yet established.
+Plan must determine whether native OMP discovery/configuration can isolate catalogs for coordinator and children and preserve phase/approval context without custom code. If not, compare alternatives and demonstrate necessity before proposing custom. Bounded native discovery, delegation and artifact/gate recovery results are recorded in [workflow-profiles evidence](tasks/workflow-profiles-evidence.md). Their limitations and preserved failures are explicit; full module acceptance remains subject to Task40/CheckpointB. No production runtime, client, hosting or transport is selected by these proofs.
 
 Before execution changes the existing Codex/Developer Workspace contract, reconcile REQ-0001 and other affected Active sources. This module does not itself replace that architecture.
 
