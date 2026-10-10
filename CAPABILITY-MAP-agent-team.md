@@ -40,7 +40,7 @@ Prefer homelab only with proportionate implementation/operating effort. Choose a
 
 ## Specification index
 
-- [workflow-profiles](SPEC-workflow-profiles.md): Draft, awaiting review.
+- [workflow-profiles](SPEC-workflow-profiles.md): Approved on 2026-10-10.
 - team-execution, mobile-control, mcp-access: not yet specified; no corresponding specification files exist.
 
 ## Process trace
