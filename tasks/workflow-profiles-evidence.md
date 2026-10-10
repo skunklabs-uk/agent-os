@@ -654,7 +654,7 @@ The unrelated workflow-profiles-team archive/manifest were committed concurrentl
 
 ## Task 40 — acceptance mapping and source reconciliation
 
-**Status:** independent review completed against ec7731794b4f3394391599ce30cfc2869f927bd9; its required documentary correction is submitted for focused re-review. Task39 corrected runtime criteria are technically accepted for entry into this review, with the preserved negative runs excluded. CheckpointB remains a human module-review gate; no full module completion is declared here.
+**Status:** independent review completed against ec7731794b4f3394391599ce30cfc2869f927bd9; its required documentary correction passed focused re-review at f86645506b4a5442c33bef250df2fe5b39508c10. Task39 corrected runtime criteria are technically accepted for entry into this review, with the preserved negative runs excluded. CheckpointB remains a human module-review gate; no full module completion is declared here.
 
 | Approved acceptance scenario | Evidence available for independent review |
 |---|---|
@@ -681,3 +681,8 @@ A fresh-context, read-only reviewer examined ec7731794b4f3394391599ce30cfc2869f9
 Required documentary finding: the supplemental team archive was described as durable evidence despite being untracked and absent from the reviewed SHA. Correction: explicitly classify its entire subsection as external, unverified notes; remove archive links/hash and durable-access assertions; rely only on the two committed bundles. Preserve concurrently committed material without claiming its verification. Concurrent commit 7d535ee added the supplemental pair before the correction; the first re-review rejected inaccurate untracked wording. This follow-up states their tracked status and keeps them outside the accepted evidence. No runtime behavior or accepted raw bytes changed, so focused documentary re-review is sufficient.
 
 CheckpointB remains pending human module review. The technical recommendation is submission after this correction passes re-review, not full module signoff or permission to start another module.
+
+
+Focused independent re-review of f86645506b4a5442c33bef250df2fe5b39508c10 resolved the Required finding: the concurrently committed supplemental pair is explicitly present but unverified and excluded. Both accepted bundles are unchanged; eight scenario PASS results and bounded Task39 PASS remain valid. Recommendation: ready for CheckpointB human review, without module signoff, next-module authorization, merge or deployment.
+
+Verification: focused documentary git diff --check passes. The mandatory full origin/main...HEAD check was run and reports four inherited Markdown hard-break trailing spaces in README.md/README.it.md; these are outside this continuation and are not silently reported as a clean full diff. Checkout is clean after commits. The plan stays Active pending the human gate; mission35 remains open. **Next action: human CheckpointB decision on the bounded implementation and explicitly retained limits.**
