@@ -586,7 +586,7 @@ Exact-version sources: [native task batch/concurrency](https://github.com/can135
 
 ### Additional isolated native audit pair — external, not reviewed acceptance evidence
 
-The following supplemental observations were added concurrently. Their archive and manifest are untracked local material, absent from the reviewed commit and excluded from Task40 verification. Claims in this subsection are external notes, not independently verified committed evidence; no acceptance criterion relies on them.
+The following supplemental observations were added concurrently. Their archive and manifest were untracked at the original reviewed commit ec77317, then committed concurrently by 7d535ee before this correction. They are now tracked but remain excluded from Task40 verification. Claims in this subsection are external notes, not independently verified committed evidence; no acceptance criterion relies on them.
 
 Two independently assigned runtime slices used `/tmp/workflow-profiles-team-proof-20261010/{osmani,pocock}` without editing the repository, tracker or upstream sources. Each parent ran one real native batch of `catalog-observer` and `contract-reviewer`, then a new CLI process resumed its exact session. The activities inspect inherited catalog provenance and the pending mission contract; they do not invoke full upstream code review without a fixed diff or execute the checklist feature.
 
@@ -596,7 +596,7 @@ Coordinator replay directly checked the actual parent/child JSONL records: exact
 
 Child reviewers correctly treated SPEC FR7/8 and Task39 as inherited operator inputs, not independently inspected historical approvals or approval of their local checklist draft. Coordinator inspection grounded that authority against [the actual approved product SPEC](https://github.com/skunklabs-uk/agent-os/blob/04ef440eba7d6dd5aa1f80da324a7b1097cbd1ae/SPEC-workflow-profiles.md#functional-requirements) and the approved tracking task. A derived Pocock router-description discrepancy was withdrawn after comparison with raw native payloads and pinned blobs; the corrected overlap measurement uses request-start rather than session-header timestamps. No native transcript was rewritten or inference repeated for those inspection corrections.
 
-The supplemental archive and manifest remain local, untracked material. They are preserved without publication or inclusion in the accepted evidence set; no durable reviewer-access or hash-verification claim is made for them in this revision.
+The supplemental archive and manifest are tracked through concurrent commit 7d535ee. Their contents and hashes have not been independently verified by this Task40 reviewer; they are excluded from the accepted evidence set.
 
 Limits: `read`/`bash` worker capabilities and exercised traces are not an immutable read-only sandbox. Same-session restart includes history; artifact-only recovery remains the separate Checkpoint A proof. Preconfigured Pocock setup is input, not proof of interactive setup. No consumer workspace, module acceptance, merge, deployment or mission closure is changed by these additional observations.
 
@@ -648,7 +648,7 @@ The automatic-QA incident remains a real task-scope violation, not a passing res
 
 These proofs remain acceptance fixtures using read-only specialist observations and coordinator-owned mission state, not production implementation workers. They establish native profile propagation, blocked/independent work, declared observation extensions, recoverable evidence and gate state within the stated scope. They do not prove arbitrary-prompt enforcement, interactive setup, implementation/release fidelity, mobile recovery, crash supervision or replacement of the existing Codex/Workspace contract. Those boundaries remain applicable to downstream work.
 
-The unrelated workflow-profiles-team archive/manifest remain untracked and outside the reviewed revision. They are preserved, not staged, published or relied on. The two committed bundles alone support the acceptance mapping; no blanket cleanup/reset.
+The unrelated workflow-profiles-team archive/manifest were committed concurrently by 7d535ee and are present in the revision. They are preserved but excluded from this review and not relied on. The two committed bundles alone support the acceptance mapping; no blanket cleanup/reset.
 
 **Next action:** Task40 independent review of the exact committed evidence and all approved acceptance scenarios; then CheckpointB submission. No next-module work, module closure, merge to main, deployment or mission35 closure before the applicable final gate.
 
@@ -678,6 +678,6 @@ Downstream team-execution may consume selected profile, pinned skill roots, appl
 
 A fresh-context, read-only reviewer examined ec7731794b4f3394391599ce30cfc2869f927bd9 against the approved authorities, pinned upstream sources and both committed raw bundles. All eight acceptance scenarios and bounded Task39 were PASS. The reviewer verified 127/127 and 102/102 archived file hashes, four real child yields, source-faithful next actions, 64.140s/73.316s observed overlap and recorded usage. The unauthorized auto-QA incident remains excluded from passing evidence; old-queue/network effects remain unproven.
 
-Required documentary finding: the supplemental team archive was described as durable evidence despite being untracked and absent from the reviewed SHA. Correction: explicitly classify its entire subsection as external, unverified notes; remove archive links/hash and durable-access assertions; rely only on the two committed bundles. Preserve concurrent local material without staging it. No runtime behavior or accepted raw bytes changed, so focused documentary re-review is sufficient.
+Required documentary finding: the supplemental team archive was described as durable evidence despite being untracked and absent from the reviewed SHA. Correction: explicitly classify its entire subsection as external, unverified notes; remove archive links/hash and durable-access assertions; rely only on the two committed bundles. Preserve concurrently committed material without claiming its verification. Concurrent commit 7d535ee added the supplemental pair before the correction; the first re-review rejected inaccurate untracked wording. This follow-up states their tracked status and keeps them outside the accepted evidence. No runtime behavior or accepted raw bytes changed, so focused documentary re-review is sufficient.
 
 CheckpointB remains pending human module review. The technical recommendation is submission after this correction passes re-review, not full module signoff or permission to start another module.
