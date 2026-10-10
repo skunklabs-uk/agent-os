@@ -41,10 +41,10 @@ Prefer homelab only with proportionate implementation/operating effort. Choose a
 ## Specification index
 
 - [workflow-profiles](SPEC-workflow-profiles.md): Active behavioral authority; bounded module acceptance is recorded in the outcome source below.
-- [team-execution](SPEC-team-execution.md): Active specification; [implementation plan and Tasks43–50](tasks/plan.md) approved for temporary sandbox execution subject to dependencies, verification and stop conditions.
+- [team-execution](SPEC-team-execution.md): Active specification; approved temporary task set has [bounded native execution evidence and complete selected-profile inventories](tasks/team-execution-evidence.md). Exact-head final review is [Task50](https://github.com/skunklabs-uk/agent-os/issues/50); full pilot/Pocock progression/module delivery remain unproven.
 - mobile-control, mcp-access: not yet specified; no corresponding specification files exist.
 
-The user explicitly approved workflow-profiles at Checkpoint B after independent review. [Accepted outcome, evidence and limitations](tasks/workflow-profiles-evidence.md#accepted-outcome-and-closeout) are the durable handoff for team-execution. The completed execution plan is historical, not an active work queue. team-execution specification, Plan and Tasks43–50 are approved; the [current Plan/task index](tasks/plan.md#task-tracker-and-approval-gate) records exact authority and next action. Approval covers temporary proof execution only; it does not replace the Active Codex/Workspace contract or authorize production, unspecified merge or deployment.
+The user explicitly approved workflow-profiles at Checkpoint B after independent review. [Accepted outcome, evidence and limitations](tasks/workflow-profiles-evidence.md#accepted-outcome-and-closeout) remain unchanged. team-execution Spec/Plan/Tasks43–50 approval covers temporary proof only; native isolated writers, integration, corrected recovery and exact-code-head independent review now have bounded evidence. [Current handoff](tasks/plan.md#task-tracker-and-approval-gate) retains missing pilot/positive Pocock/delivery authority. No Active Codex/Workspace replacement, complete module acceptance, production, unspecified PR/merge or deployment is inferred; mission35 stays open.
 
 ## Process trace
 

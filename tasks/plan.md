@@ -94,7 +94,7 @@ GitHub issue35 remains the coordination issue. Tasks43–50 are approved native 
 
 The proposed executable fixture is an offline Markdown mission checklist: worker45 renders supplied profile/phase; worker46 renders supplied pending decisions. Task44 freezes the consumer contract/seam before either starts. It is disposable acceptance logic, not a custom workflow router, approval-enforcement layer or production feature.
 
-**Next permitted action:** execute Task43 prerequisite inspection, then proceed through the approved dependency graph. Commands, operator invocation prerequisites, safe isolation and existing cost authority must be established before their dependent actions. Approval permits bounded sandbox execution, not new providers/spending, global skill installation, other-repository writes, unspecified PR/merge or deployment. Record actual outcomes and blockers in the task/evidence source; do not reconstruct authority from historical chat.
+**Current handoff:** approved Tasks43–49 completed the bounded native sandbox observations; [execution evidence, inventories and unresolved scenarios](team-execution-evidence.md) and [Task50 exact-head final review/delivery decision](https://github.com/skunklabs-uk/agent-os/issues/50) own the outcome. Spec/Plan stay Active because the full user-project pilot, positive Pocock progression and authorized module delivery remain unproven. Do not restart Task43, infer full acceptance, create new tasks or prepare PR/merge/deploy without their applicable authority.
 
 ## Primary references
 
