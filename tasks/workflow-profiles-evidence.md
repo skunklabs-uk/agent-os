@@ -3,7 +3,7 @@
 **Status:** Draft — Checkpoint A accepted within Tasks 37–38 by coordinator decision under explicit user delegation on 2026-10-10. Full module acceptance remains pending.
 **Date:** 2026-10-10.
 **Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
-**Current task:** [39](https://github.com/skunklabs-uk/agent-os/issues/39) — native parallel delegation and recovery; corrected cases in progress following observed tool-reporting and approval-interpretation defects. Checkpoint A remains accepted; Task 40 and Checkpoint B are not complete.
+**Current task:** [39](https://github.com/skunklabs-uk/agent-os/issues/39) corrected bounded native scenarios verified; [40](https://github.com/skunklabs-uk/agent-os/issues/40) independent review and Checkpoint B submission follow. No full module acceptance or merge/deployment.
 **Method:** Osmani. Tasks 37–40 were approved by the user on 2026-10-10. The user subsequently requested a fresh-context independent review and delegated the checkpoint decision to the coordinator.
 
 The initial-environment sections preserve historical findings. Their missing-runtime blocker and restart instructions are superseded by the operator-host continuation and current handoff below.
@@ -558,7 +558,7 @@ The next planned work is Task 39. This user-requested review/decision turn ends 
 
 ## Task 39 — parallel delegation and recovery, 2026-10-10
 
-**Current status:** execution in progress; no final pass claim. The user explicitly authorized continuation after delegated Checkpoint A acceptance. Starting branch HEAD `04ef440eba7d6dd5aa1f80da324a7b1097cbd1ae` includes an additional independently documented checkpoint review; local/remote identity and clean evidence worktree were checked. Main checkout and pre-existing .vscode are preserved. No homelab/consumer workspace, VM, service, deployment or other repository mutation.
+**Historical initial status:** execution in progress; no final pass claim at that time. Final corrected results follow below. The user explicitly authorized continuation after delegated Checkpoint A acceptance. Starting branch HEAD `04ef440eba7d6dd5aa1f80da324a7b1097cbd1ae` includes an additional independently documented checkpoint review; local/remote identity and clean evidence worktree were checked. Main checkout and pre-existing .vscode are preserved. No homelab/consumer workspace, VM, service, deployment or other repository mutation.
 
 ### Method, environment and bounded setup
 
@@ -572,7 +572,7 @@ Per profile, one native task batch delegates GateObserver (eligibility of next m
 
 ### Preserved initial observations and corrections
 
-Initial native parent batches completed with actual children: inherited25 Osmani /27 Pocock catalogs, selected URI reads, physical identity commands, native yields, one blocked methodological action and a completed independently authorized checklist check. Outer native child-journal tool-result/yield timestamps establish overlapping execution intervals: Osmani50.951s, Pocock43.853s. Durations and batch submission alone were not treated as proof. Initial parent summaries could not inspect absolute timestamps through native history rendering and conservatively left overlap unverified; direct journal inspection supplied traceable TIMING.md pointers for subsequent recovery.
+Initial native parent batches completed with actual children: 25 visible Osmani /11 visible Pocock inherited skill previews (native Pocock registry contains27, including16 hidden user-only entries), selected URI reads, physical identity commands, native yields, one blocked methodological action and a completed independently authorized checklist check. Outer native child-journal tool-result/yield timestamps establish overlapping execution intervals: Osmani50.951s, Pocock43.853s. Durations and batch submission alone were not treated as proof. Initial parent summaries could not inspect absolute timestamps through native history rendering and conservatively left overlap unverified; direct journal inspection supplied traceable TIMING.md pointers for subsequent recovery.
 
 The first read-only Osmani resume recovered pending state but left the original extension-verification wording unchanged. Subsequent recovery turns were authorized to persist current verification and inspect raw timestamp boundaries. During inspection, overbroad returned approval language was found: additional seam approval in Osmani could be mistaken for an upstream universal gate; Pocock could treat approval of an unwritten spec/optional missing glossary/ADRs as prerequisites. Clean coordinator recovery corrected those interpretations against original source, separating fixture scope restrictions from upstream gates. Initial raw outputs remain preserved and are not accepted as fully faithful returned-next-action evidence. Corrected delegation reruns are now testing source-faithful child returns as well as coordinator state.
 
@@ -580,6 +580,72 @@ The first read-only Osmani resume recovered pending state but left the original 
 
 No global consent/auth/config cleanup or modification was attempted. The report is not silently erased. Necessary native correction: `dev.autoqa:false` only in disposable project configs, plus `PI_AUTO_QA=0` only for subsequent processes; explicit no-xd/write-only-MISSION instructions. Pinned source short-circuits auto-QA under these native settings, including dispatch. Two clean recovery event streams completed with writes only to MISSION.md, no xd call, unchanged phase/pending decision and verified timing; recent auto-QA metadata still contains only the observed row35. Original affected recovery is excluded from the passing set. No wire-level assurance is claimed.
 
-The additional native prerequisite instruction separates actual source gates from fixture scope and requires each methodological gate to cite its selected phase source, forbidding invented pre-draft approval/optional-document creation requirements. Corrected fresh batches for both profiles run under auto-QA disabled, with unchanged pinned skills/model/provider and no scope expansion. Results and durable raw bundle are pending before Task39 acceptance and Task40 independent review.
+The additional native prerequisite instruction separates actual source gates from fixture scope and requires each methodological gate to cite its selected phase source, forbidding invented pre-draft approval/optional-document creation requirements. Corrected fresh batches for both profiles run under auto-QA disabled, with unchanged pinned skills/model/provider and no scope expansion. The following corrected results and durable bundle supersede this initial pending status; original negative observations remain preserved.
 
 Exact-version sources: [native task batch/concurrency](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/docs/tools/task.md), [sync batch execution](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/packages/coding-agent/src/task/index.ts), [native auto-QA consent/record/flush](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/packages/coding-agent/src/tools/report-tool-issue.ts). Native auto-QA disabling is KEEP for these fixtures because an actual unauthorized report demonstrates necessity; no custom reporting/enforcement system is introduced.
+
+### Additional isolated native audit pair — retained, not full fidelity acceptance
+
+Two independently assigned runtime slices used `/tmp/workflow-profiles-team-proof-20261010/{osmani,pocock}` without editing the repository, tracker or upstream sources. Each parent ran one real native batch of `catalog-observer` and `contract-reviewer`, then a new CLI process resumed its exact session. The activities inspect inherited catalog provenance and the pending mission contract; they do not invoke full upstream code review without a fixed diff or execute the checklist feature.
+
+Coordinator replay directly checked the actual parent/child JSONL records: exactly two children per batch, one serialized parent MISSION write, no child write/spawn, no new write/delegation after restart, actual negative foreign-skill errors, and ten representative skill-URI bodies matching their pinned git blobs after outer whitespace normalization. Both original human decisions remain pending. Concurrent intervals measured from first native assistant request-start to successful yield completion overlap for 62.866 seconds (Osmani) and 62.685 seconds (Pocock); interleaved source/tool reads corroborate overlap.
+
+**Not a full Task39 pass:** the Osmani persisted next action adds separate explicit seam approval to the original spec-approval gate. Its successful identity/concurrency/recovery observations do not excuse this source-fidelity defect. Pocock's actual returns permit synthesis after seam approval and do not require preapproval of an unwritten spec; its unapproved-future-spec annotation is state, not another upstream prerequisite. Full fidelity acceptance must use the separately recorded source-cited corrective batches, not this supplemental pair.
+
+Child reviewers correctly treated SPEC FR7/8 and Task39 as inherited operator inputs, not independently inspected historical approvals or approval of their local checklist draft. Coordinator inspection grounded that authority against [the actual approved product SPEC](https://github.com/skunklabs-uk/agent-os/blob/04ef440eba7d6dd5aa1f80da324a7b1097cbd1ae/SPEC-workflow-profiles.md#functional-requirements) and the approved tracking task. A derived Pocock router-description discrepancy was withdrawn after comparison with raw native payloads and pinned blobs; the corrected overlap measurement uses request-start rather than session-header timestamps. No native transcript was rewritten or inference repeated for those inspection corrections.
+
+[Supplemental raw archive](evidence/workflow-profiles-team.tar.gz) and [manifest](evidence/workflow-profiles-team.sha256) retain all 69 input/output/configuration/session/inspection files, including the rejected Osmani next action. Archive SHA-256: `e880701f7369f7fbb839e868beb5b7161f7665f0871712d61d86b5291168b11d`; 969794 compressed bytes. Round-trip comparison verified 69/69 file bytes against the isolated roots. Targeted credential/private-key/bearer screening found no matches. Original paths/session IDs, seven credential-pin records and 143 credentialId fields remain provenance metadata; this is not an anonymity claim. No credential store is included.
+
+Limits: `read`/`bash` worker capabilities and exercised traces are not an immutable read-only sandbox. Same-session restart includes history; artifact-only recovery remains the separate Checkpoint A proof. Preconfigured Pocock setup is input, not proof of interactive setup. No consumer workspace, module acceptance, merge, deployment or mission closure is changed by these additional observations.
+
+### Final corrected Task 39 runtime results
+
+Coordinator technical decision: Task39's bounded delegation/recovery proof is sufficient to enter Task40 independent review. This accepts corrected runs only; the original reporting incident and misinterpreted approvals are not retroactively passed. Task40/CheckpointB still govern final module acceptance.
+
+| Corrected separate mission | Native observations |
+|---|---|
+| Osmani | Exactly one native task batch, GateObserver and IndependentObserver, both workflow-observer. Both selected router/phase reads, canonical physical files and observed HEAD match the pinned source. Both visible inherited catalogs contain the25 expected Osmani names. Actual child intervals overlap64.140s. GateObserver blocks Plan pending approval of the saved spec; IndependentObserver completes the authorized three-field checklist observation. No separate universal upstream seam gate is invented. |
+| Pocock | Exactly one batch with the same two independently owned read-only roles. Both selected ask-matt/to-spec URI reads succeed and canonical files/HEAD match pinned Pocock. Both visible inherited previews contain the11 non-hidden expected names; user-only ask-matt/to-spec remain callable by explicit invocation. Actual child intervals overlap73.316s. Human seam confirmation still blocks to-spec step3; checklist observation completes independently. No unwritten-spec preapproval, optional glossary/ADR creation, extra triage or rerunning completed fixture setup is imposed as an upstream gate. |
+| Corrected post-exit resume, both profiles | Separate completed CLI processes use native --resume, read MISSION.md, selected original phase, both native result pointers and only indicated raw timing lines. Both write only MISSION.md serially. Returned identities, extension fields and pending decisions remain consistent; timing/recovery outcomes now persist. No new task, phase advancement, spec, setup, external report or publication in these corrected streams. |
+
+Pocock's27-entry registered catalog and11-entry visible prompt are distinct: pinned `extensibility/skills.ts` sets hide for disable-model-invocation; `system-prompt.ts:952` filters hidden previews. Native child propagation retains the full parent skills array; actual explicit hidden-skill URI reads demonstrate the selected assigned entries remain resolvable. These runs do not individually invoke all27 entries; hiding is not disabling, and availability is not authorization.
+
+Corrected commands executed from actual `/tmp/workflow-profiles-task39-20261010/<profile>-corrected` working directory:
+
+```bash
+PI_AUTO_QA=0 omp -p --model openai-codex/gpt-6.1-sol \
+  --smol openai-codex/gpt-6.1-sol --thinking low \
+  --no-extensions --no-lsp --no-title --tools read,task,write \
+  --session-dir ../sessions-<profile>-corrected --max-time 300 --mode json \
+  @../<profile>-corrected-prompt.md > ../<profile>-corrected-parallel.jsonl \
+  2> ../<profile>-corrected-parallel-stderr.txt
+
+PI_AUTO_QA=0 omp -p --model openai-codex/gpt-6.1-sol \
+  --smol openai-codex/gpt-6.1-sol --thinking low \
+  --no-extensions --no-lsp --no-title --tools read,write \
+  --resume <absolute-native-session-path-below> --max-time 150 --mode json \
+  @../corrected-recover-prompt.md > ../<profile>-corrected-recovery.jsonl \
+  2> ../<profile>-corrected-recovery-stderr.txt
+```
+
+Native parent session paths relative to scratch root:
+- Osmani: `sessions-osmani-corrected/2026-10-10T14-51-07-769Z_01a1264b-da79-75cb-9a95-0fd4adf5bfec.jsonl`.
+- Pocock: `sessions-pocock-corrected/2026-10-10T14-51-07-745Z_01a1264b-da60-7775-a41a-49f42a93d8c4.jsonl`.
+
+Corresponding child files live in each session's sibling artifact directory as GateObserver.jsonl and IndependentObserver.jsonl. Initial runs used the same explicit roles/tools/flags with actual osmani/pocock directories, max-time300, initial parallel prompts and their own sessions; original recovery prompts/streams and configs before native auto-QA correction are retained. No corrected run reused the failed child outputs as its result. TIMING.md links exact outer tool-result/yield journal line boundaries; overlap means live child-session intervals, not continuous CPU/tool parallelism.
+
+Four corrected parent turns exit0, each with exactly one agent_end, empty stderr and no tool errors. Four corrected child journals each have an actual native yield, selected URI reads, selected-file canonicalization, observed pinned rev-parse and no child writes/spawns. Child phase/source/scope/pointer/approval consistency and coordinator corrections were also read directly against originals.79 relevant disposable observation checks pass, with no new product test framework. An earlier inspector overconstrained literal `realpath skill://` shell syntax; children actually read registered URIs and canonicalized the exact returned SKILL.md paths. Actual headers/outputs prove the same source identity, so the check was corrected to test behavior; initial failed inspection output and rationale are retained, without model rerun or acceptance of unavailable-URI substitution.
+
+Recorded native usage across all Task39 initial/corrective parent/child journals:106 assistant requests,2521325 cumulative totalTokens. Corrected passing subset:42 requests,747002 cumulative totalTokens. Repeated large contexts/cache are included; these numbers are not an invoice, pricing claim or total of unjournaled runtime helpers. All recorded requests use existing openai-codex/gpt-6.1-sol. Extra recovery/delegation calls were corrective bounded runs after actual defects, not new providers or retry/fallback loops. No further model calls are required for review.
+
+### Task 39 raw preservation and limits
+
+[Task39 raw archive](evidence/workflow-profiles-task39.tar.gz), [per-file manifest](evidence/workflow-profiles-task39.sha256):102 files,2236424 compressed bytes, archive SHA-256 `3bfe19a8d61aa208d2f83e1273cc60022dbd12470161a06f84abe5c02f5387b1`. Contains initial/corrected parent/child journals, event streams, prompts, mission-before/recovery snapshots, final missions, native configs/agents, supplied setup documents, timing, inspection reconciliation, usage and incident metadata. All102 hashes round-trip against archived bytes. Credential/token/private-key/Bearer/credential-field screening found zero matches; no auth/global-config/global-database file is archived. Local paths/session IDs are retained as provenance. The original reporting call/body and pushed-state metadata are preserved; no sensitive-store payload is copied. Actual initial AGENTS files were subsequently extended with native-scope corrections; current files and phase/input snapshots are retained, rather than falsely labeled immutable snapshots of every initial context version.
+
+The automatic-QA incident remains a real task-scope violation, not a passing result. Native dev.autoqa false and process override are now necessary startup conditions for the demonstrated bounded path; inherited operator consent is not task authorization. No complete network or old-queue audit exists. No global QA row deletion, permission change, consent reset, credential migration or remote cleanup was attempted.
+
+These proofs remain acceptance fixtures using read-only specialist observations and coordinator-owned mission state, not production implementation workers. They establish native profile propagation, blocked/independent work, declared observation extensions, recoverable evidence and gate state within the stated scope. They do not prove arbitrary-prompt enforcement, interactive setup, implementation/release fidelity, mobile recovery, crash supervision or replacement of the existing Codex/Workspace contract. Those boundaries remain applicable to downstream work.
+
+Untracked workflow-profiles-team archive/manifest appeared concurrently in the shared evidence checkout; they were not created, modified, staged or relied on by this execution. Preserve them. Only this execution's explicitly named evidence file and task39 bundle/manifest are committed. No blanket cleanup/reset.
+
+**Next action:** Task40 independent review of the exact committed evidence and all approved acceptance scenarios; then CheckpointB submission. No next-module work, module closure, merge to main, deployment or mission35 closure before the applicable final gate.
