@@ -1,9 +1,9 @@
 # workflow-profiles: native feasibility evidence
 
-**Status:** Draft — runtime evidence ready for human Checkpoint A review; not module acceptance.
+**Status:** Draft — Checkpoint A NOT READY for acceptance. Adversarial review of `0289aa06cef9fe4729dbc5186f301110c7e1212c` identified an unresolved Pocock missing-case next-action defect (P2); discriminating native rerun, context-only continuity proof and durable raw-evidence retention remain pending. Not module acceptance.
 **Date:** 2026-10-10.
 **Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
-**Current task:** Checkpoint A — [37](https://github.com/skunklabs-uk/agent-os/issues/37) and [38](https://github.com/skunklabs-uk/agent-os/issues/38) bounded runtime scenarios passed technically; the original Pocock prerequisite omission is recovered by the new runtime cases below. Independent re-review confirms the bounded recovery; human review is pending. Do not start 39–40.
+**Current task:** Checkpoint A — [37](https://github.com/skunklabs-uk/agent-os/issues/37) native-child result retains its bounded evidence. [38](https://github.com/skunklabs-uk/agent-os/issues/38) demonstrated that the omitted Pocock setup direction was surfaced, but an unresolved prerequisite was missing from the persisted `next permitted action`; see the adversarial review at the end of this document. No new runtime acceptance has been established. Do not start 39–40.
 **Method:** Osmani. Tasks 37–40 approved by the user on 2026-10-10; Checkpoint A evidence is ready; the checkpoint has not been approved.
 
 The initial-environment sections preserve historical findings. Their missing-runtime blocker and restart instructions are superseded by the operator-host continuation and current handoff below.
@@ -333,13 +333,13 @@ Reconnect coverage is **CLI process exit and a new process using native `--resum
 
 ### Current handoff — stop at Checkpoint A
 
-Repository: `skunklabs-uk/agent-os`; branch: `docs/agent-team-specs`; implementation scope: evidence document only. Task 37 native-child and Task 38 bounded scenarios are supported by runtime evidence; the independent review identified the original Pocock prerequisite omission below, recovered by the subsequent runtime cases. Human acceptance of Checkpoint A is still pending; all tracking issues remain open. No Task 39/40 execution, Task 40 independent-review completion, module closeout, merge, deployment or mission closure occurred. The separate user-requested Checkpoint A review is recorded below.
+Repository: `skunklabs-uk/agent-os`; branch: `docs/agent-team-specs`; implementation scope: evidence document only. Task 37 native-child and Task 38 bounded scenarios have genuine historical runtime evidence, including the Pocock setup-direction recovery. The later adversarial review identified a remaining next-action defect in Task 38; the recovery is partial and Checkpoint A is not ready for acceptance. All tracking issues remain open. No Task 39/40 execution, Task 40 independent-review completion, module closeout, merge, deployment or mission closure occurred.
 
 Read first: this continuation, approved `SPEC-workflow-profiles.md`, `tasks/plan.md` and current issues 37–38. The raw local native transcripts and fixture artifacts remain available under the scratch root for review. The original main checkout and its `.vscode/` were preserved; the evidence worktree is retained for the checkpoint.
 
 Cleanup note: automatic approval review rejected removal of the stopped, incomplete `/tmp/omp-checkpoint-a-source` clone because `rm -rf` commands are not permitted. No deletion retry or bypass was made; that scratch directory remains. This does not affect native runtime results. Final read-only checks confirmed a clean evidence worktree, matching local/remote branch HEAD, open issues 35 and 37–40, and the preserved main-checkout `.vscode/`.
 
-**One next action:** human review of Tasks 37–38 evidence at Checkpoint A, explicitly accepting or rejecting native instruction compliance and the demonstrated reconnect boundary. Do not start Task 39 until that approval exists. Any demand for stronger enforcement or a broader reconnect surface requires assessing the native alternatives and the applicable RFC-0001 necessity/approval process, not weakening the current requirements or adding custom by default.
+**Current next action:** resolve Task 38's missing-case persisted-next-action P2 with a fresh native discriminating test, then test artifact-only recovery in a clean session and preserve the raw evidence needed by the reviewer. Submit Checkpoint A for human review only after these results and an independent re-review of the exact updated revision. Do not start Tasks 39–40 before Checkpoint A approval; do not introduce a custom router, enforcement layer or broader reconnect infrastructure by default.
 
 Additional exact-revision sources used for the continuation:
 - [OMP provider restrictions and availability](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/docs/providers.md).
@@ -427,8 +427,50 @@ Focused transcript/artifact inspection passed 20 observations (`recovery-inspect
 
 ### Independent recovery re-review and final handoff
 
-The same independently initialized reviewer `checkpoint_a_independent_review` examined exact revision `074fd97ac659f0f8815c5a48fdd9521d9d913522` read-only. It independently confirmed all nine recorded hashes, the general context delta without the expected setup answer, the missing-case setup direction, the preserved incomplete case, all three supplied configuration reads, unchanged configs/templates, one MISSION.md write per case, absent specs, pending approval, three completed native streams, usage totals and all 20 observations. No new blocking finding or document correction was required. Recommendation: submit Checkpoint A for human decision; the original omission is recovered in the new bounded scenarios.
+**Historical re-review (later challenged at examined revision `0289aa06cef9fe4729dbc5186f301110c7e1212c`):** The same independently initialized reviewer `checkpoint_a_independent_review` examined exact revision `074fd97ac659f0f8815c5a48fdd9521d9d913522` read-only. It independently confirmed all nine recorded hashes, the general context delta without the expected setup answer, the missing-case setup direction, the preserved incomplete case, all three supplied configuration reads, unchanged configs/templates, one MISSION.md write per case, absent specs, pending approval, three completed native streams, usage totals and all 20 observations. No new blocking finding or document correction was required. Recommendation: submit Checkpoint A for human decision; the original omission is recovered in the new bounded scenarios.
+
+**Supersession:** The preceding statement that no document correction was needed does not clear the persisted next-action contract. The later adversarial review below identifies a P2 gap; original transcripts and this original historical re-review remain unchanged.
 
 Informational limitations remain: correction exists only in disposable native contexts; configured state is explicit fixture input and does not prove interactive setup execution; operator-assisted catalog selection, CLI-only resume and temporary raw transcript retention retain their original bounds. The reviewer did not approve the human checkpoint or Task 40. The coordinator applied only this review/status recording after the examined runtime-evidence revision.
 
-Human Checkpoint A approval is still required before Tasks 39–40; all issues remain open, with no merge, deployment or mission closure. Next action: human review of Tasks 37–38 and their documented limits at Checkpoint A. Preserve the raw scratch artifacts for that review.
+Human Checkpoint A approval is still required before Tasks 39–40; all issues remain open, with no merge, deployment or mission closure. **The earlier request for immediate Checkpoint A review is superseded:** address the outstanding P2 and evidence limits first, then request human review. Preserve the original raw scratch artifacts read-only; do not hand-edit a historical fixture and call it a runtime regression pass.
+
+
+## Adversarial Checkpoint A review — 2026-10-10 (hold and corrective verification)
+
+**Examined revision:** `0289aa06cef9fe4729dbc5186f301110c7e1212c`; evidence blob `f67739ead3005b8e2e00bf003e1f5901235ab934`. **Status:** Checkpoint A **NOT READY**. This record incorporates the externally supplied review of the operator-host raw artifacts. The raw scratch directory `/tmp/workflow-profiles-runtime-20261010` is **not accessible in the present reviewing environment**; its files, nine recovery hashes and model-call counts have not been independently rechecked during this documentary correction. Historical positive observations remain historical, not erased or retrospectively changed.
+
+### P2 — Missing-case persisted next action omits a prerequisite
+
+The reviewer reports these original lines in `pocock-recovery-missing/MISSION.md` (retain this file and its hash without editing it):
+- Line 15: `After explicit seam approval, proceed to the applicable spec-synthesis step [...]`.
+- Line 18: setup completion required before the first Pocock engineering flow is not established.
+- Line 19: tracker and triage-label vocabulary are not supplied.
+- Line 21: the blocked action is narrowed to tracker-dependent publication.
+
+The chosen upstream `mattpocock/skills@24fe0ef7737efae15c87225755e9f6f5965e4888`, `skills/engineering/ask-matt/SKILL.md`, explicitly requires `/setup-matt-pocock-skills` **before the first engineering flow**, not merely before tracker publication. The missing-case response correctly *mentioned* setup, but its durable `next permitted action` makes only seam approval explicit. Thus it is incomplete under approved [SPEC requirement 9](../SPEC-workflow-profiles.md#functional-requirements) and upstream sequencing. The reviewer reports that `pocock-recovery-ready/MISSION.md:27` already uses the correct conjunction: `After explicit seam approval and resolution of the setup/domain prerequisite [...]`.
+
+**Precise consequence:** inconsistent *persisted instructions for a successor*, **not** evidence that an unauthorized spec was written or a runtime gate was bypassed. Existing checks for actual setup direction, unchanged config and no spec/publication remain valid within their original scope. The previous “no document correction required” conclusion is now **superseded**.
+
+**Required repair and discriminating runtime proof (PENDING):**
+1. Preserve all original `pocock-recovery-{missing,ready,configured}` fixture files, raw transcripts and their hashes unmodified. Update only a **new** disposable native context/fixture, using a general source-faithful rule that every durable next action must state **all unmet prerequisites**, not just the immediately discussed human approval. Do not hard-code a particular Pocock answer or silently run a user-only setup.
+2. Run the decisive scenario with **seam approval supplied solely as explicit test-fixture input** but tracker/label/domain setup **still absent**. The agent must read the pinned selected skill and the existing mission state, keep the Pocock identity and explain in `MISSION.md` that **setup/domain resolution is mandatory before any first engineering flow or `to-spec` step**; it must not proceed with spec synthesis merely because the seam was approved. Track unavailable configuration separately from pending human invocation/approval.
+3. Expected next-action contract: `Obtain/verify tracker, triage-label and domain configuration and complete the required /setup-matt-pocock-skills prerequisite before the first engineering flow; if testing-seam approval remains pending, obtain it too; only after every applicable prerequisite and approval is satisfied may the to-spec/spec-synthesis step proceed.` A missing dependency may block only dependent actions; unrelated authorized read-only work is still possible. Inspect **the new native-written MISSION.md** and stream, not the agent's final chat reply alone.
+4. Report new tool/session evidence, SHA-256 and exact source revisions; verify no spec/publication/implementation occurred. If the new runtime still persists an incomplete next action, classify **NO** and keep Checkpoint A on hold. A manual rewrite of an old fixture is **not a new runtime proof**.
+
+### Distinct evidentiary gap — independence from prior chat (PENDING)
+
+The two recorded resume runs use native `--resume`, which restores session history as well as reading `MISSION.md`. The reviewer reports **32** preceding journal messages in Osmani and **17** in Pocock. Therefore observed resume establishes `new process + --resume + actual artifact read + preserved gate`; it does **not** isolate whether the artifact alone is sufficient “without reconstructing [state] from a chat” as required by SPEC-9.
+
+Run one targeted **fresh OMP session with a new session directory, no `--resume`, no prior chat/journal, and only existing authoritative pointers**. Check whether it reconstructs profile, pinned source identity, scope, phase, pending human approvals, setup/domain gaps and the fully conditional next permitted action from the artifact. Record the transcript and updated mission state. This is a bounded discriminator, **not** a requirement for mobile UI, crash recovery or a new database.
+
+### Distinct evidentiary risk — raw files live only under /tmp (PENDING)
+
+Hashes verify identity against bytes **while the bytes are available**; they do not preserve tool turns or the counterexample after temporary cleanup. Before human Checkpoint A review, **retain the minimum raw sessions, prompts, native configuration, before/after MISSION.md and inspection output in an existing durable location accessible to the independent reviewer**, after screening for credentials, account tokens, sensitive data and unintended personal content. Preserve original content/identity or explain any necessary redaction, with separate checksums. Do not publish sensitive raw data or introduce a new audit service or ledger. The operator-host artifacts are reported currently present, but durable retention has **not** been verified from this environment.
+
+### Status and gate
+
+- **KEEP, bounded:** selected skill catalogs, pinned identities, Task 37 child propagation, explicit setup direction, observed approval waits and `--resume` with history; do not overstate their scope.
+- **P2 BLOCKS Checkpoint A acceptance:** new, unedited native evidence must demonstrate the complete conjunction of setup/domain and seam prerequisites in the persisted next action, including the seam-approved/setup-missing discriminator.
+- **Evidence gaps remain open:** context-only fresh-session recovery and durable access to screened raw evidence. Do not relabel them bugs already demonstrated.
+- **NO-GO for Tasks 39–40**, module acceptance, merge or deployment pending corrective proof, independent re-review of the resulting exact SHA and human Checkpoint A decision. This documentary update is **not** runtime remediation.
