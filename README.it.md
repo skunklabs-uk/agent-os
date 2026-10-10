@@ -2,7 +2,7 @@
 
 # Software Factory
 
-**Stato:** Active. Traduzione italiana per comodità del [README inglese](README.md), che è la fonte autorevole. Mantenere questa traduzione allineata agli aggiornamenti della fonte. I documenti collegati conservano la lingua originale.
+**Stato:** Active. Traduzione italiana del [README inglese](README.md), che è la fonte autorevole. Mantenere questa traduzione allineata agli aggiornamenti della fonte. I documenti collegati conservano la lingua originale.
 
 Questo repository definisce e valida un processo per lo sviluppo software assistito da AI.
 
