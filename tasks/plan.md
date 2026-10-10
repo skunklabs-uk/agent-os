@@ -1,6 +1,6 @@
 # Implementation Plan: workflow-profiles
 
-**Status:** Archived — execution completed; Checkpoint B accepted by the coordinator under explicit user delegation on 2026-10-10. Retained only as execution history, not current instructions.
+**Status:** Archived — execution completed; Checkpoint B explicitly approved by the user on 2026-10-10. Retained only as execution history, not current instructions.
 **Scope:** [approved module spec](../SPEC-workflow-profiles.md).
 **Tracking:** [Agent OS issue 35](https://github.com/skunklabs-uk/agent-os/issues/35).
 **Method:** Osmani planning-and-task-breakdown at 1401c8b8030e023baeebb31781a6653fe8e93026.
@@ -77,11 +77,11 @@ Review packages 3–4 and all acceptance scenarios before declaring the module c
 3. [Task 3: task: verify delegated workflow fidelity and recovery ](https://github.com/skunklabs-uk/agent-os/issues/39)
 4. [Task 4: task: independently review workflow profiles and closeout ](https://github.com/skunklabs-uk/agent-os/issues/40)
 
-Tasks37–40 were approved on 2026-10-10 and completed in the accepted bounded scope. Their historical checkpoints were tracked in Tasks38 and40; task closure follows integration. Parent mission35 stays open for the remaining modules.
+Tasks37–40 were approved on 2026-10-10 and completed in the accepted bounded scope. Their historical checkpoints were tracked in Tasks38 and40; tasks are closed after PR41 integration. Parent mission35 stays open for the remaining modules.
 
 ## Tasks gate and tracking
 
-The separate Plan → Tasks gate was completed on2026-10-10. CheckpointA was accepted after fresh-context independent review; the subsequent continuation authorized Task39. The coordinator then accepted CheckpointB after independent review of201fcaa under the user’s delegation, which authorizes documentary closeout and a conditional merge. The [current outcome record](workflow-profiles-evidence.md#accepted-outcome-and-closeout) preserves evidence, limits and the deployment/runtime boundary; old pending-gate statements in this archived plan are historical.
+The separate Plan → Tasks gate was completed on 2026-10-10. Checkpoint A was accepted after fresh-context independent review; the subsequent continuation authorized Task39. The user explicitly approved Checkpoint B after independent review of `201fcaa` and authorized documentary closeout and a conditional merge. The [current outcome record](workflow-profiles-evidence.md#accepted-outcome-and-closeout) preserves evidence, integration status, limits and the deployment/runtime boundary; old pending-gate statements in this archived plan are historical.
 
 The coordination tracker is GitHub issue35; the linked detailed issues above are the single task tracker. Do not duplicate their checklists in tasks/todo.md. No existing incomplete plan or task list is overwritten.
 
