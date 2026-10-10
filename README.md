@@ -1,3 +1,5 @@
+[🇬🇧 English](README.en.md)
+
 # Software Factory
 
 Questo repository definisce e valida un processo per lo sviluppo software assistito da AI.
