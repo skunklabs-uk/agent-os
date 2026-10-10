@@ -1,6 +1,6 @@
 # Implementation Plan: team-execution
 
-**Status:** Active — the Product Owner approved the Plan sequence and sandbox proof scope; detailed Tasks43–50 are Draft and require separate approval before execution.
+**Status:** Active — the Product Owner approved the Plan and subsequently Tasks43–50 for execution in the temporary sandbox proof scope, subject to their dependencies and stop conditions.
 **Scope:** [Active team-execution specification](../SPEC-team-execution.md).
 **Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
 **Method:** Osmani planning-and-task-breakdown at1401c8b8030e023baeebb31781a6653fe8e93026.
@@ -32,7 +32,7 @@ Exact-version native documentation includes task.isolation.enabled, task.isolati
 
 ## Ordered work packages
 
-These approved Plan packages are decomposed into Draft GitHub Tasks43–50 below. Package3 has two independently owned worker tasks; no new work package is introduced. Every task records up to three acceptance criteria, focused verification, owned files, dependencies and the execution stop. Task-set approval remains required before implementation.
+These approved Plan packages are decomposed into approved GitHub Tasks43–50 below. Package3 has two independently owned worker tasks; no new work package is introduced. Every task records up to three acceptance criteria, focused verification, owned files, dependencies and stop conditions. Execution approval does not waive original methodological prerequisites or existing cost/access limits.
 
 | Slice | Acceptance and verification | Dependency; likely write scope |
 |---|---|---|
@@ -77,9 +77,9 @@ No product build/runtime/model call is needed for this Plan. Slice1 records exac
 
 ## Task tracker and approval gate
 
-The Product Owner approved this Plan in the current conversation and authorized preparation of detailed GitHub tasks for review before execution. Approval excludes deployment, production use, current-runtime replacement, other-repository writes and costs outside existing authorization. This record is the durable Plan-approval source; tracker updates refer here rather than creating another approval ledger.
+The Product Owner approved this Plan and then explicitly approved Tasks43–50 in a later turn, authorizing execution in the temporary proof scope while respecting dependencies, verification and stop conditions. Both approvals exclude deployment, production use, current-runtime replacement, other-repository writes and costs outside existing authorization; task approval additionally excludes unspecified merge. This is the durable approval source; tracker updates refer here rather than creating another approval ledger.
 
-GitHub issue35 remains the coordination issue. Tasks43–50 are created as its native sub-issues, with native blocked-by relationships, and remain Draft. Their issue bodies are the single authority for task acceptance criteria, verification and ownership. The archived workflow-profiles plan is historical; its closed tasks37–40 are not reopened.
+GitHub issue35 remains the coordination issue. Tasks43–50 are approved native sub-issues with native blocked-by relationships. Their issue bodies are the single authority for task acceptance criteria, verification and ownership. The archived workflow-profiles plan is historical; its closed tasks37–40 are not reopened.
 
 ## Ordered task index
 
@@ -94,7 +94,7 @@ GitHub issue35 remains the coordination issue. Tasks43–50 are created as its n
 
 The proposed executable fixture is an offline Markdown mission checklist: worker45 renders supplied profile/phase; worker46 renders supplied pending decisions. Task44 freezes the consumer contract/seam before either starts. It is disposable acceptance logic, not a custom workflow router, approval-enforcement layer or production feature.
 
-**Next permitted action:** Product Owner review and approval or requested changes for Tasks43–50. No task execution, model experiment, skill installation, PR/merge, cross-repository write or deployment is authorized by task creation or this Plan approval. Commands, operator invocation prerequisites, safe isolation and existing cost authority must be established before any later dependent execution.
+**Next permitted action:** execute Task43 prerequisite inspection, then proceed through the approved dependency graph. Commands, operator invocation prerequisites, safe isolation and existing cost authority must be established before their dependent actions. Approval permits bounded sandbox execution, not new providers/spending, global skill installation, other-repository writes, unspecified PR/merge or deployment. Record actual outcomes and blockers in the task/evidence source; do not reconstruct authority from historical chat.
 
 ## Primary references
 
