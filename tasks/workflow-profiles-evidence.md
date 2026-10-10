@@ -3,7 +3,7 @@
 **Status:** Draft — runtime evidence ready for human Checkpoint A review; not module acceptance.
 **Date:** 2026-10-10.
 **Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
-**Current task:** Checkpoint A — [37](https://github.com/skunklabs-uk/agent-os/issues/37) and [38](https://github.com/skunklabs-uk/agent-os/issues/38) bounded runtime scenarios passed technically; the original Pocock prerequisite omission is recovered by the new runtime cases below. Independent re-review and human review are pending. Do not start 39–40.
+**Current task:** Checkpoint A — [37](https://github.com/skunklabs-uk/agent-os/issues/37) and [38](https://github.com/skunklabs-uk/agent-os/issues/38) bounded runtime scenarios passed technically; the original Pocock prerequisite omission is recovered by the new runtime cases below. Independent re-review confirms the bounded recovery; human review is pending. Do not start 39–40.
 **Method:** Osmani. Tasks 37–40 approved by the user on 2026-10-10; Checkpoint A evidence is ready; the checkpoint has not been approved.
 
 The initial-environment sections preserve historical findings. Their missing-runtime blocker and restart instructions are superseded by the operator-host continuation and current handoff below.
@@ -425,4 +425,10 @@ Raw root: `/tmp/workflow-profiles-runtime-20261010`. Original choice prompt, `re
 
 Focused transcript/artifact inspection passed 20 observations (`recovery-inspection.txt`): completed streams, empty stderr, selected URI reads, writes confined to MISSION.md, absent specs, explicit setup direction in the missing case, all three prerequisite reads in the configured case, and approvals remaining pending. Human-readable responses and original requirements were inspected separately. This is instruction compliance in these cases, not unbypassable enforcement or a statistical reliability claim. The configuration correction currently exists only in disposable fixtures; no consumer workspace or production context has been changed.
 
-Independent re-review of this recovery is pending. Human Checkpoint A approval is still required before Tasks 39–40; all issues remain open, with no merge, deployment or mission closure.
+### Independent recovery re-review and final handoff
+
+The same independently initialized reviewer `checkpoint_a_independent_review` examined exact revision `074fd97ac659f0f8815c5a48fdd9521d9d913522` read-only. It independently confirmed all nine recorded hashes, the general context delta without the expected setup answer, the missing-case setup direction, the preserved incomplete case, all three supplied configuration reads, unchanged configs/templates, one MISSION.md write per case, absent specs, pending approval, three completed native streams, usage totals and all 20 observations. No new blocking finding or document correction was required. Recommendation: submit Checkpoint A for human decision; the original omission is recovered in the new bounded scenarios.
+
+Informational limitations remain: correction exists only in disposable native contexts; configured state is explicit fixture input and does not prove interactive setup execution; operator-assisted catalog selection, CLI-only resume and temporary raw transcript retention retain their original bounds. The reviewer did not approve the human checkpoint or Task 40. The coordinator applied only this review/status recording after the examined runtime-evidence revision.
+
+Human Checkpoint A approval is still required before Tasks 39–40; all issues remain open, with no merge, deployment or mission closure. Next action: human review of Tasks 37–38 and their documented limits at Checkpoint A. Preserve the raw scratch artifacts for that review.
