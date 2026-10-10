@@ -93,7 +93,7 @@ Never: mix methodological catalogs, silently update pinned sources, fabricate ap
 
 ## Open questions and approval scope
 
-The completed plan demonstrated native OMP discovery/configuration, delegation and artifact/gate recovery in the documented bounded experiment without custom orchestration. The coordinator accepted that module scope at Checkpoint B under explicit user delegation; [the outcome record](tasks/workflow-profiles-evidence.md#accepted-outcome-and-closeout) retains the corrected proofs, limitations and failures. No production runtime, client, hosting or transport is selected by these proofs.
+The completed plan demonstrated native OMP discovery/configuration, delegation and artifact/gate recovery in the documented bounded experiment without custom orchestration. The user explicitly approved that module scope at Checkpoint B; [the outcome record](tasks/workflow-profiles-evidence.md#accepted-outcome-and-closeout) retains the corrected proofs, limitations and failures. No production runtime, client, hosting or transport is selected by these proofs.
 
 Before execution changes the existing Codex/Developer Workspace contract, reconcile REQ-0001 and other affected Active sources. This module does not itself replace that architecture.
 
