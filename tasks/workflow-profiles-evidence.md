@@ -1,9 +1,9 @@
 # workflow-profiles: native feasibility evidence
 
-**Status:** Draft — Checkpoint A NOT READY for acceptance. Adversarial review of `0289aa06cef9fe4729dbc5186f301110c7e1212c` identified an unresolved Pocock missing-case next-action defect (P2); discriminating native rerun, context-only continuity proof and durable raw-evidence retention remain pending. Not module acceptance.
+**Status:** Draft — corrective runtime cases passed; durable raw bundle retained. Independent correction reviews confirmed runtime recovery; final packaging/status re-review pending. Human Checkpoint A decision pending; not module acceptance.
 **Date:** 2026-10-10.
 **Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
-**Current task:** Checkpoint A — [37](https://github.com/skunklabs-uk/agent-os/issues/37) native-child result retains its bounded evidence. [38](https://github.com/skunklabs-uk/agent-os/issues/38) demonstrated that the omitted Pocock setup direction was surfaced, but an unresolved prerequisite was missing from the persisted `next permitted action`; see the adversarial review at the end of this document. No new runtime acceptance has been established. Do not start 39–40.
+**Current task:** Checkpoint A — [37](https://github.com/skunklabs-uk/agent-os/issues/37) retains its native-child evidence; [38](https://github.com/skunklabs-uk/agent-os/issues/38) now has a seam-approved/setup-missing discriminator and fresh artifact-only sessions. Original failed state and challenged reviews are preserved. Do not start 39–40.
 **Method:** Osmani. Tasks 37–40 approved by the user on 2026-10-10; Checkpoint A evidence is ready; the checkpoint has not been approved.
 
 The initial-environment sections preserve historical findings. Their missing-runtime blocker and restart instructions are superseded by the operator-host continuation and current handoff below.
@@ -333,13 +333,13 @@ Reconnect coverage is **CLI process exit and a new process using native `--resum
 
 ### Current handoff — stop at Checkpoint A
 
-Repository: `skunklabs-uk/agent-os`; branch: `docs/agent-team-specs`; implementation scope: evidence document only. Task 37 native-child and Task 38 bounded scenarios have genuine historical runtime evidence, including the Pocock setup-direction recovery. The later adversarial review identified a remaining next-action defect in Task 38; the recovery is partial and Checkpoint A is not ready for acceptance. All tracking issues remain open. No Task 39/40 execution, Task 40 independent-review completion, module closeout, merge, deployment or mission closure occurred.
+Repository: `skunklabs-uk/agent-os`; branch: `docs/agent-team-specs`; implementation scope: evidence document and screened raw archive/manifest only. Task 37 native-child and Task 38 bounded scenarios have genuine historical runtime evidence, including the Pocock setup-direction recovery. The later adversarial review identified a remaining next-action defect in Task 38; the correction and new evidence are recorded in the final continuation below. Human Checkpoint A acceptance remains pending. All tracking issues remain open. No Task 39/40 execution, Task 40 independent-review completion, module closeout, merge, deployment or mission closure occurred.
 
 Read first: this continuation, approved `SPEC-workflow-profiles.md`, `tasks/plan.md` and current issues 37–38. The raw local native transcripts and fixture artifacts remain available under the scratch root for review. The original main checkout and its `.vscode/` were preserved; the evidence worktree is retained for the checkpoint.
 
 Cleanup note: automatic approval review rejected removal of the stopped, incomplete `/tmp/omp-checkpoint-a-source` clone because `rm -rf` commands are not permitted. No deletion retry or bypass was made; that scratch directory remains. This does not affect native runtime results. Final read-only checks confirmed a clean evidence worktree, matching local/remote branch HEAD, open issues 35 and 37–40, and the preserved main-checkout `.vscode/`.
 
-**Current next action:** resolve Task 38's missing-case persisted-next-action P2 with a fresh native discriminating test, then test artifact-only recovery in a clean session and preserve the raw evidence needed by the reviewer. Submit Checkpoint A for human review only after these results and an independent re-review of the exact updated revision. Do not start Tasks 39–40 before Checkpoint A approval; do not introduce a custom router, enforcement layer or broader reconnect infrastructure by default.
+**Current next action:** final read-only review of the corrected archive/status, then human Checkpoint A review of Tasks 37–38. Historical corrective requests are superseded by the last continuation; no Task 39–40 progression before human approval.
 
 Additional exact-revision sources used for the continuation:
 - [OMP provider restrictions and availability](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/docs/providers.md).
@@ -438,7 +438,7 @@ Human Checkpoint A approval is still required before Tasks 39–40; all issues r
 
 ## Adversarial Checkpoint A review — 2026-10-10 (hold and corrective verification)
 
-**Examined revision:** `0289aa06cef9fe4729dbc5186f301110c7e1212c`; evidence blob `f67739ead3005b8e2e00bf003e1f5901235ab934`. **Status:** Checkpoint A **NOT READY**. This record incorporates the externally supplied review of the operator-host raw artifacts. The raw scratch directory `/tmp/workflow-profiles-runtime-20261010` is **not accessible in the present reviewing environment**; its files, nine recovery hashes and model-call counts have not been independently rechecked during this documentary correction. Historical positive observations remain historical, not erased or retrospectively changed.
+**Examined revision:** `0289aa06cef9fe4729dbc5186f301110c7e1212c`; evidence blob `f67739ead3005b8e2e00bf003e1f5901235ab934`. **Historical status at that documentary review:** Checkpoint A **NOT READY**; see the subsequent corrective runtime evidence for current state. This record incorporates the externally supplied review of the operator-host raw artifacts. The raw scratch directory `/tmp/workflow-profiles-runtime-20261010` is **not accessible in the present reviewing environment**; its files, nine recovery hashes and model-call counts have not been independently rechecked during this documentary correction. Historical positive observations remain historical, not erased or retrospectively changed.
 
 ### P2 — Missing-case persisted next action omits a prerequisite
 
@@ -525,3 +525,9 @@ Issue-body drafts and the discarded wrong-context models listing are excluded as
 Independent re-review of this correction is pending. The earlier review's hold is not an acceptance decision. Checkpoint A remains unapproved; #39–#40, merge, deployment and mission closure remain prohibited.
 
 Archive packaging correction: review of `199fb15` identified a filter that excluded three `issue-tracker.md` inputs with root-level issue drafts. The final bundle uses an explicit selection of the original 124 files plus those three unchanged inputs. Unrelated concurrently appearing review files are excluded. Final archive/manifest above contain 127 files with verified byte identity; no inference rerun or historical fixture edit was needed.
+
+### Independent corrective reviews
+
+Reviewers `checkpoint_a_independent_review` and fresh-context `persisted_state_fresh_review` independently examined exact revision `199fb152c5beff7862ff9ef7549380e4a4385a2d`, original adversarial finding and committed raw archive. The latter was spawned with `fork_turns: none`, without this conversation or prior implementation conclusions. Both confirmed the original counterexample, actual native-written complete setup conjunction, no premature synthesis, zero prior messages in fresh sessions, recovered source/state/gates, recorded usage and archive integrity. Both found missing standalone tracker inputs in the archive; severity differed (medium versus low), but the coordinator treated this as a required correction. No further runtime inference was required. The original reviewer acknowledged that its previous clean recommendation had missed the state defect.
+
+The corrected 127-file archive adds all three original tracker inputs and excludes unrelated review-generated scratch files. Header and handoff now distinguish historical HOLD from the new runtime observations. Final review of these packaging/status corrections is pending. Human Checkpoint A decision remains pending; no Tasks 39–40, merge, deployment, module acceptance or mission closure.
