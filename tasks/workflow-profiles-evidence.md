@@ -3,7 +3,7 @@
 **Status:** Draft — runtime evidence ready for human Checkpoint A review; not module acceptance.
 **Date:** 2026-10-10.
 **Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
-**Current task:** Checkpoint A — [37](https://github.com/skunklabs-uk/agent-os/issues/37) and [38](https://github.com/skunklabs-uk/agent-os/issues/38) bounded runtime scenarios passed technically; independent review found a Pocock prerequisite omission. Human review is pending. Do not start 39–40.
+**Current task:** Checkpoint A — [37](https://github.com/skunklabs-uk/agent-os/issues/37) and [38](https://github.com/skunklabs-uk/agent-os/issues/38) bounded runtime scenarios passed technically; the original Pocock prerequisite omission is recovered by the new runtime cases below. Independent re-review and human review are pending. Do not start 39–40.
 **Method:** Osmani. Tasks 37–40 approved by the user on 2026-10-10; Checkpoint A evidence is ready; the checkpoint has not been approved.
 
 The initial-environment sections preserve historical findings. Their missing-runtime blocker and restart instructions are superseded by the operator-host continuation and current handoff below.
@@ -333,7 +333,7 @@ Reconnect coverage is **CLI process exit and a new process using native `--resum
 
 ### Current handoff — stop at Checkpoint A
 
-Repository: `skunklabs-uk/agent-os`; branch: `docs/agent-team-specs`; implementation scope: evidence document only. Task 37 native-child and Task 38 bounded scenarios are supported by runtime evidence; the independent review identified the Pocock prerequisite omission below. Human acceptance of Checkpoint A is still pending; all tracking issues remain open. No Task 39/40 execution, Task 40 independent-review completion, module closeout, merge, deployment or mission closure occurred. The separate user-requested Checkpoint A review is recorded below.
+Repository: `skunklabs-uk/agent-os`; branch: `docs/agent-team-specs`; implementation scope: evidence document only. Task 37 native-child and Task 38 bounded scenarios are supported by runtime evidence; the independent review identified the original Pocock prerequisite omission below, recovered by the subsequent runtime cases. Human acceptance of Checkpoint A is still pending; all tracking issues remain open. No Task 39/40 execution, Task 40 independent-review completion, module closeout, merge, deployment or mission closure occurred. The separate user-requested Checkpoint A review is recorded below.
 
 Read first: this continuation, approved `SPEC-workflow-profiles.md`, `tasks/plan.md` and current issues 37–38. The raw local native transcripts and fixture artifacts remain available under the scratch root for review. The original main checkout and its `.vscode/` were preserved; the evidence worktree is retained for the checkpoint.
 
@@ -369,4 +369,60 @@ The coordinator corrected the Pocock positive-case description and current hando
 
 Reviewer coverage confirmed the selected catalogs, pinned identity, actual child execution, explicit/missing choice, approval waits, negative skill behavior and native CLI resume within their stated bounds. Parallel delegation, independent continuation while blocked and full deviation records remain Task 39 work; mobile/browser/crash/supervision/deployment behavior remains untested. The solution remains native configuration plus existing artifact conventions, without a custom router or approval engine.
 
-**Next action remains human Checkpoint A review**, including the disclosed Pocock omission and whether the demonstrated operator-assisted startup and CLI resume are sufficient for this checkpoint. No Tasks 39–40, merge, deployment or mission closure is authorized by this review.
+**Historical next action at the original review:** human Checkpoint A review, including the then unresolved Pocock omission and whether the demonstrated operator-assisted startup and CLI resume are sufficient for this checkpoint. No Tasks 39–40, merge, deployment or mission closure is authorized by this review.
+
+## Pocock prerequisite recovery — 2026-10-10
+
+User authorized the recovery after the independent finding. Original sessions and findings remain unchanged: the earlier omission is real and is not retroactively passed. New isolated cases demonstrate recovery with a minimal native context correction. This is not a claim of full Pocock workflow execution or unconditional model compliance.
+
+### Change and source-based diagnosis
+
+The original fixture prohibited live publication and lacked tracker/triage configuration. The agent surfaced the seam gate but failed to communicate `to-spec`'s prerequisite. Osmani `debugging-and-error-recovery` preserves that failing observation; `context-engineering` supplies a general prerequisite-check instruction, `source-driven-development` checks pinned original requirements, and `incremental-implementation` verifies missing then supplied inputs. No application logic was introduced, so product TDD/build checks do not apply; real bounded native transcript inspection is the relevant regression check. Git/documentation/review skills remain the Osmani execution method; Pocock is the product under test.
+
+Appended native AGENTS instruction, identical in all three recovery cases:
+
+> Before progressing, check and communicate every prerequisite stated by the selected upstream skill. A restriction on publication does not satisfy missing configuration. Stop only steps that depend on the missing prerequisite; do not invoke user-only setup without explicit user invocation.
+
+This instruction does not include the expected `/setup-matt-pocock-skills` answer. The original `task38-pocock-choice.md` prompt was reused unchanged. Existing native config/provider restrictions and selected skill roots were copied unchanged into fresh directories; there was no router, database, custom enforcement, upstream edit or global configuration change. OMP version rechecked: 18.8.7; Osmani and Pocock HEADs rechecked: `1401c8b8030e023baeebb31781a6653fe8e93026` and `24fe0ef7737efae15c87225755e9f6f5965e4888`. OMP source remains `b07a1c146d0d12cfc855a2c65d52f892ef319040`.
+
+### Actual runtime results
+
+| Fresh fixture | Inputs and observed result |
+|---|---|
+| `pocock-recovery-missing` | Tracker and label vocabulary explicitly absent. Actual selected skill reads succeeded. Assistant explicitly said “Run `/setup-matt-pocock-skills` to supply them when setup is authorized”; final response repeated the direction and recorded the gap in MISSION.md. Setup was not read or invoked, configuration was not written, and no spec/publication/implementation occurred. Seam review was requested independently; its approval remained pending. |
+| `pocock-recovery-ready` | Tracker and triage templates supplied, but no domain configuration or setup-completion state. The agent read setup's requirements without executing its process and correctly disclosed the additional `ask-matt` precondition. This is a preserved intermediate incomplete fixture, not the fully configured positive case. |
+| `pocock-recovery-configured` | All three setup outputs supplied: local Markdown tracker, default triage labels and single-context domain rules. AGENTS explicitly records operator-approved preconfigured fixture state. Agent read all three, recognized prerequisites as supplied, routed to `to-spec` step 2, wrote only MISSION.md and requested human seam review. No setup invocation, spec, publication or implementation. |
+
+The final positive response states: “The tracker, triage vocabulary, and domain-layout prerequisites are supplied and approved; no setup invocation is needed.” The selected original `ask-matt` requires configuration before a first engineering flow; merely supplying tracker and labels was insufficient. These cases test missing prerequisites and a preconfigured workspace. They **do not prove execution of the interactive setup workflow**, its confirmation sequence, live tracker publication, label creation or completion of a real product mission. No missing glossary/ADR creation was required; the supplied domain consumer rules permit absent artifacts.
+
+Commands were executed with actual process working directory `/tmp/workflow-profiles-runtime-20261010/pocock-recovery-<case>`, for `case = missing, ready, configured`:
+
+```bash
+omp -p --model openai-codex/gpt-6.1-sol --smol openai-codex/gpt-6.1-sol \
+  --thinking low --no-extensions --no-lsp --no-title --tools read,write \
+  --session-dir ../sessions-38-recovery-<case> --max-time 120 --mode json \
+  @../task38-pocock-choice.md > ../task38-recovery-<case>.jsonl \
+  2> ../task38-recovery-<case>-stderr.txt
+```
+
+All three processes exited 0, produced native `agent_end` and empty stderr. Only existing authenticated `openai-codex/gpt-6.1-sol` was used: 6/6/9 recorded assistant requests, 33857/46068/63523 reported cumulative tokens respectively (143448 additional tokens, not an invoice). No SDK or provider-discovery subcommand was used. Original discovery uncertainty and all prior selection/resume boundaries remain disclosed.
+
+### Reproducible inputs, transcripts and checks
+
+Raw root: `/tmp/workflow-profiles-runtime-20261010`. Original choice prompt, `recovery-<case>-context.md`, `recovery-<case>-mission-before.md`, unchanged `.omp/config.yml`, and each fixture's supplied documents remain available. Tracker/triage/domain fixture files are unchanged copies of pinned setup templates `issue-tracker-local.md`, `triage-labels.md`, `domain.md`; approval state is explicit fixture input, not inferred from silence or evidence of a setup model run.
+
+| Native session or artifact | SHA-256 |
+|---|---|
+| `sessions-38-recovery-missing/2026-10-10T13-19-49-602Z_01a125f8-4362-7192-b99e-12808307608e.jsonl` | `eeb6e4a68bbb29b2e0ff189f7f0a44548b5bc77ba3c63d32ad53d211a1611802` |
+| `pocock-recovery-missing/MISSION.md` | `f11cd7deac7dda38340354491bc5b5cba8667aa3888463d8cdb8f0a0422011b4` |
+| `recovery-missing-context.md` | `e2e76a6f3f5a2bbd6cb3198d8e89b499f4c89cfe74687eab2b85321f7a71989c` |
+| `sessions-38-recovery-ready/2026-10-10T13-19-56-015Z_01a125f8-5c6f-70af-b089-d1dd2869ce86.jsonl` | `c1c1c07d3caee329f74da515dfa30ed4d792a5d39b73a340dcf176ab50abfcb6` |
+| `pocock-recovery-ready/MISSION.md` | `86a4544fed663a292ab363f85021c2b4bfd1893154eea4b101ba5820b9b50b7a` |
+| `recovery-ready-context.md` | `595f4f3e5c3a083c5be42fd082c3221e1cf766c2ecf64b10c59713d4b35ed0a2` |
+| `sessions-38-recovery-configured/2026-10-10T13-21-06-687Z_01a125f9-707f-724e-b2e5-afd13b6503aa.jsonl` | `2ae8fa3c68bc0a37cacdcd62e42a9d16df47e3aafe61685109e4c64d853e44bd` |
+| `pocock-recovery-configured/MISSION.md` | `f7e056c0d17cc76f2ab1c66d431caa3cbfd56f642563b0b33f22332414cad2c1` |
+| `recovery-configured-context.md` | `7db7396540688158a664ee5198a4654f83c799e998c8b09a94b49e51cdec38b0` |
+
+Focused transcript/artifact inspection passed 20 observations (`recovery-inspection.txt`): completed streams, empty stderr, selected URI reads, writes confined to MISSION.md, absent specs, explicit setup direction in the missing case, all three prerequisite reads in the configured case, and approvals remaining pending. Human-readable responses and original requirements were inspected separately. This is instruction compliance in these cases, not unbypassable enforcement or a statistical reliability claim. The configuration correction currently exists only in disposable fixtures; no consumer workspace or production context has been changed.
+
+Independent re-review of this recovery is pending. Human Checkpoint A approval is still required before Tasks 39–40; all issues remain open, with no merge, deployment or mission closure.
