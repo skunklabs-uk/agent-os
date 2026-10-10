@@ -474,3 +474,52 @@ Hashes verify identity against bytes **while the bytes are available**; they do 
 - **P2 BLOCKS Checkpoint A acceptance:** new, unedited native evidence must demonstrate the complete conjunction of setup/domain and seam prerequisites in the persisted next action, including the seam-approved/setup-missing discriminator.
 - **Evidence gaps remain open:** context-only fresh-session recovery and durable access to screened raw evidence. Do not relabel them bugs already demonstrated.
 - **NO-GO for Tasks 39–40**, module acceptance, merge or deployment pending corrective proof, independent re-review of the resulting exact SHA and human Checkpoint A decision. This documentary update is **not** runtime remediation.
+
+## Persisted-state correction and artifact-only recovery — 2026-10-10
+
+The adversarial P2 is confirmed against the original raw `pocock-recovery-missing/MISSION.md`; it remains unmodified with SHA-256 `f11cd7deac7dda38340354491bc5b5cba8667aa3888463d8cdb8f0a0422011b4`. The original omission of the setup direction was recovered, but the prior re-review missed an incomplete persisted next action. Its clean recommendation is superseded. This continuation repairs and tests that separate defect; it does not claim the old fixture passed.
+
+Remote correction `46c723c` was fetched and integrated with `git merge --ff-only origin/docs/agent-team-specs` before editing. No local changes or history were discarded. Applied Osmani debugging, context engineering, source-based verification and incremental execution; no production code or new tool/dependency was introduced. No application TDD/build is applicable; the old failing native artifact is the regression baseline and new bounded runtime observations are the verification.
+
+### Minimal native context correction
+
+New disposable directories reuse the existing native config and original mission artifacts. The appended instruction is general about persisted conjunctions:
+
+> Every persisted next action must list all unresolved upstream prerequisites and approvals that condition it. Approval of one gate does not resolve another prerequisite. When the selected upstream requires setup before the first engineering flow, absent setup blocks dependent methodological progression, including spec synthesis, rather than merely publication. Keep prerequisite status and next-action conditions consistent.
+
+No specific setup command, approval answer or tracker implementation is embedded in this correction. The original upstream revisions and provider restrictions are unchanged. The correction exists in acceptance fixtures only; it has not modified a consumer or production workspace.
+
+### Discriminating runtime observations
+
+| New session | Input and native observation |
+|---|---|
+| `state-missing` | Exact copy of the original defective mission, with new context. Prompt explicitly approves only its existing exported-Markdown seam while setup remains absent and unauthorized. Agent reads mission and pinned original ask-matt/to-spec, writes MISSION.md with approved seam and setup still absent, and stops synthesis. No spec, setup invocation, publication or implementation. |
+| `fresh-osmani` | New session, copied Osmani mission/spec and native context; only artifact-recovery prompt, no previous chat or journal. Reads mission, original router/spec skill, spec and recorded revision pointer. Recovers profile, phase, scope, sources and pending human review; writes a fully conditional next action without advancing. The recovered historical negative skill observations are identified as historical, not newly tested. |
+| `fresh-pocock` | New session, copied configured Pocock mission/context and three setup outputs; same artifact-recovery prompt, no chat/history. Reads mission, original ask-matt/to-spec and three config files; recovers sources/scope/phase, preconfigured setup state and pending seam decision. Requests review and leaves the already sufficient MISSION.md unchanged. No spec. |
+
+The discriminating native-written next action says:
+
+> Resume the applicable to-spec synthesis step only after explicit user authorization/invocation of setup and established completion of its prerequisites: issue tracker, triage-label vocabulary (including ready-for-agent for publication), and documentation layout.
+
+It separately preserves the already approved seam, unapproved spec and publication/implementation restrictions. Missing setup blocks methodological progression, rather than merely tracker-dependent publication. The final reply and the persisted artifact agree. This is observed instruction compliance, not an enforcement guarantee.
+
+Commands use actual working directories `/tmp/workflow-profiles-runtime-20261010/<case>` and new session directories, with **no `--resume`**:
+
+```bash
+omp -p --model openai-codex/gpt-6.1-sol --smol openai-codex/gpt-6.1-sol \
+  --thinking low --no-extensions --no-lsp --no-title --tools read,write \
+  --session-dir ../sessions-<case> --max-time 150 --mode json \
+  @../<prompt>.md > ../<case>.jsonl 2> ../<case>-stderr.txt
+```
+
+Cases: `state-missing` uses `state-missing-prompt`; `fresh-osmani` and `fresh-pocock` use `fresh-state-prompt`. Prompt for the fresh cases only asks recovery from AGENTS.md, MISSION.md and their authoritative pointers and grants no approval. The Osmani recorded revision pointer `../task37-prompt.md` was also read; it is a retained source/fixture pointer, not session history. Before-input artifacts and exact contexts are `<case>-before.md` and `<case>-context.md`.
+
+All three processes exit 0 with one agent_end and empty stderr. Native journals contain **zero preceding message entries before their first user prompt**; no prior session/journal was supplied. Thus these runs isolate artifact-based recovery in new sessions within the tested native context and selected skills, unlike the earlier history-bearing resume. The setup-missing discriminator also starts without history and recovers the setup gap from the defective input artifact before correcting it. New requests: 4/4/3; reported tokens 24221/32657/17324 = 74202, all openai-codex/gpt-6.1-sol. No new auth or external discovery path.
+
+### Durable reviewer-accessible raw evidence
+
+The user requested preservation before human review. [Raw evidence archive](evidence/workflow-profiles-checkpoint-a.tar.gz) and [per-file SHA-256 manifest](evidence/workflow-profiles-checkpoint-a.sha256) are now versioned alongside this document. Archive SHA-256: `80bd7442cb9203f6cec7e286cdf33cb559129ecc3a63595c9a6a10ac7eba601a`. It contains 124 unmodified files (696749 compressed bytes): native parent/child and coordinator sessions, original and corrected fixtures including hidden native configs, prompts, before/after mission artifacts, event streams, catalog observations and existing inspection outputs. Historical defective content is included unchanged. Existing document excerpts remain the authoritative interpretation; the archive preserves the underlying observations rather than introducing another tracker or audit service.
+
+Issue-body drafts and the discarded wrong-context models listing are excluded as unnecessary review material; discovery uncertainty remains documented. Selected files were screened for private-key headers, GitHub/OpenAI/AWS token formats, bearer values and JSON credential fields; zero matches. Content inspection confirms fixture tasks, selected upstream sources, local paths and model/session metadata, with no credential store or auth values included. Operator username in local paths and session IDs remain as provenance. No bytes were redacted or altered. Archive round-trip validation confirmed all 124 per-file hashes. Reviewers can download the committed archive and inspect locally; hashes now reference retained bytes rather than ephemeral /tmp alone.
+
+Independent re-review of this correction is pending. The earlier review's hold is not an acceptance decision. Checkpoint A remains unapproved; #39–#40, merge, deployment and mission closure remain prohibited.
