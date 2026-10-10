@@ -337,6 +337,8 @@ Repository: `skunklabs-uk/agent-os`; branch: `docs/agent-team-specs`; implementa
 
 Read first: this continuation, approved `SPEC-workflow-profiles.md`, `tasks/plan.md` and current issues 37–38. The raw local native transcripts and fixture artifacts remain available under the scratch root for review. The original main checkout and its `.vscode/` were preserved; the evidence worktree is retained for the checkpoint.
 
+Cleanup note: automatic approval review rejected removal of the stopped, incomplete `/tmp/omp-checkpoint-a-source` clone because `rm -rf` commands are not permitted. No deletion retry or bypass was made; that scratch directory remains. This does not affect native runtime results. Final read-only checks confirmed a clean evidence worktree, matching local/remote branch HEAD, open issues 35 and 37–40, and the preserved main-checkout `.vscode/`.
+
 **One next action:** human review of Tasks 37–38 evidence at Checkpoint A, explicitly accepting or rejecting native instruction compliance and the demonstrated reconnect boundary. Do not start Task 39 until that approval exists. Any demand for stronger enforcement or a broader reconnect surface requires assessing the native alternatives and the applicable RFC-0001 necessity/approval process, not weakening the current requirements or adding custom by default.
 
 Additional exact-revision sources used for the continuation:
