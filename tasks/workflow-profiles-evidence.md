@@ -584,7 +584,9 @@ The additional native prerequisite instruction separates actual source gates fro
 
 Exact-version sources: [native task batch/concurrency](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/docs/tools/task.md), [sync batch execution](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/packages/coding-agent/src/task/index.ts), [native auto-QA consent/record/flush](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/packages/coding-agent/src/tools/report-tool-issue.ts). Native auto-QA disabling is KEEP for these fixtures because an actual unauthorized report demonstrates necessity; no custom reporting/enforcement system is introduced.
 
-### Additional isolated native audit pair — retained, not full fidelity acceptance
+### Additional isolated native audit pair — external, not reviewed acceptance evidence
+
+The following supplemental observations were added concurrently. Their archive and manifest are untracked local material, absent from the reviewed commit and excluded from Task40 verification. Claims in this subsection are external notes, not independently verified committed evidence; no acceptance criterion relies on them.
 
 Two independently assigned runtime slices used `/tmp/workflow-profiles-team-proof-20261010/{osmani,pocock}` without editing the repository, tracker or upstream sources. Each parent ran one real native batch of `catalog-observer` and `contract-reviewer`, then a new CLI process resumed its exact session. The activities inspect inherited catalog provenance and the pending mission contract; they do not invoke full upstream code review without a fixed diff or execute the checklist feature.
 
@@ -594,7 +596,7 @@ Coordinator replay directly checked the actual parent/child JSONL records: exact
 
 Child reviewers correctly treated SPEC FR7/8 and Task39 as inherited operator inputs, not independently inspected historical approvals or approval of their local checklist draft. Coordinator inspection grounded that authority against [the actual approved product SPEC](https://github.com/skunklabs-uk/agent-os/blob/04ef440eba7d6dd5aa1f80da324a7b1097cbd1ae/SPEC-workflow-profiles.md#functional-requirements) and the approved tracking task. A derived Pocock router-description discrepancy was withdrawn after comparison with raw native payloads and pinned blobs; the corrected overlap measurement uses request-start rather than session-header timestamps. No native transcript was rewritten or inference repeated for those inspection corrections.
 
-[Supplemental raw archive](evidence/workflow-profiles-team.tar.gz) and [manifest](evidence/workflow-profiles-team.sha256) retain all 69 input/output/configuration/session/inspection files, including the rejected Osmani next action. Archive SHA-256: `e880701f7369f7fbb839e868beb5b7161f7665f0871712d61d86b5291168b11d`; 969794 compressed bytes. Round-trip comparison verified 69/69 file bytes against the isolated roots. Targeted credential/private-key/bearer screening found no matches. Original paths/session IDs, seven credential-pin records and 143 credentialId fields remain provenance metadata; this is not an anonymity claim. No credential store is included.
+The supplemental archive and manifest remain local, untracked material. They are preserved without publication or inclusion in the accepted evidence set; no durable reviewer-access or hash-verification claim is made for them in this revision.
 
 Limits: `read`/`bash` worker capabilities and exercised traces are not an immutable read-only sandbox. Same-session restart includes history; artifact-only recovery remains the separate Checkpoint A proof. Preconfigured Pocock setup is input, not proof of interactive setup. No consumer workspace, module acceptance, merge, deployment or mission closure is changed by these additional observations.
 
@@ -646,13 +648,13 @@ The automatic-QA incident remains a real task-scope violation, not a passing res
 
 These proofs remain acceptance fixtures using read-only specialist observations and coordinator-owned mission state, not production implementation workers. They establish native profile propagation, blocked/independent work, declared observation extensions, recoverable evidence and gate state within the stated scope. They do not prove arbitrary-prompt enforcement, interactive setup, implementation/release fidelity, mobile recovery, crash supervision or replacement of the existing Codex/Workspace contract. Those boundaries remain applicable to downstream work.
 
-The separate workflow-profiles-team archive/manifest preserve the additional isolated audit pair described above, including its rejected Osmani next action. They are corroboration/counterexample evidence, not the corrected passing set. Both native experiments used independent scratch roots; their preserved inputs and outputs are not overwritten or silently substituted. All three raw bundles are reviewer-accessible; no blanket cleanup/reset.
+The unrelated workflow-profiles-team archive/manifest remain untracked and outside the reviewed revision. They are preserved, not staged, published or relied on. The two committed bundles alone support the acceptance mapping; no blanket cleanup/reset.
 
 **Next action:** Task40 independent review of the exact committed evidence and all approved acceptance scenarios; then CheckpointB submission. No next-module work, module closure, merge to main, deployment or mission35 closure before the applicable final gate.
 
 ## Task 40 — acceptance mapping and source reconciliation
 
-**Status:** independent review pending against the exact committed continuation. Task39 corrected runtime criteria are technically accepted for entry into this review, with the preserved negative runs excluded. CheckpointB remains a human module-review gate; no full module completion is declared here.
+**Status:** independent review completed against ec7731794b4f3394391599ce30cfc2869f927bd9; its required documentary correction is submitted for focused re-review. Task39 corrected runtime criteria are technically accepted for entry into this review, with the preserved negative runs excluded. CheckpointB remains a human module-review gate; no full module completion is declared here.
 
 | Approved acceptance scenario | Evidence available for independent review |
 |---|---|
@@ -670,3 +672,12 @@ RFC-0001 proportionality: KEEP native profile allowlists and source checks for d
 Authoritative contract review: REQ-0001 stays Active and unchanged because no Codex/Workspace consumer or existing execution contract was replaced; this operator-host acceptance experiment does not approve replacing it. RFC-0001 remains unchanged. The approved capability map/spec remain durable authority, with implementation evidence pointers added rather than weakened requirements. The plan stays Active until CheckpointB/module closeout: it still governs the required final human module review and later work; archiving it now would incorrectly remove a live gate. Evidence remains the one authoritative outcome record; issue updates link it instead of copying raw findings. Historical HOLD/failures are retained as history, not current instructions. Raw artifacts are retained for reviewers; unrelated scratch is not deleted or published by this execution.
 
 Downstream team-execution may consume selected profile, pinned skill roots, applicable phase/scope/approval contract and source/result pointers, using the demonstrated native context and operator-assisted startup. Native startup for that path must retain the exact author filters, authorized provider/model restrictions, no implicit discovery/fallback and auto-QA disabled. Treat pending gates as instruction compliance; determine stronger enforcement only if the future consumer requires it and RFC-0001 necessity/authorization supports it. Read-only audit concurrency is not proof of implementation-worker isolation/merging, mobile control, MCP access or deployment reliability. No next-module specification/implementation is started here.
+
+
+### Independent Task40 review and correction
+
+A fresh-context, read-only reviewer examined ec7731794b4f3394391599ce30cfc2869f927bd9 against the approved authorities, pinned upstream sources and both committed raw bundles. All eight acceptance scenarios and bounded Task39 were PASS. The reviewer verified 127/127 and 102/102 archived file hashes, four real child yields, source-faithful next actions, 64.140s/73.316s observed overlap and recorded usage. The unauthorized auto-QA incident remains excluded from passing evidence; old-queue/network effects remain unproven.
+
+Required documentary finding: the supplemental team archive was described as durable evidence despite being untracked and absent from the reviewed SHA. Correction: explicitly classify its entire subsection as external, unverified notes; remove archive links/hash and durable-access assertions; rely only on the two committed bundles. Preserve concurrent local material without staging it. No runtime behavior or accepted raw bytes changed, so focused documentary re-review is sufficient.
+
+CheckpointB remains pending human module review. The technical recommendation is submission after this correction passes re-review, not full module signoff or permission to start another module.
