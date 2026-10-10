@@ -1,10 +1,12 @@
 # workflow-profiles: native feasibility evidence
 
-**Status:** Draft — partial execution evidence, not module acceptance.
+**Status:** Draft — runtime evidence ready for human Checkpoint A review; not module acceptance.
 **Date:** 2026-10-10.
 **Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
-**Current task:** [38](https://github.com/skunklabs-uk/agent-os/issues/38); Task 37 runtime checks passed on the operator host; Task 38 scenarios are in progress. Human Checkpoint A review remains pending.
-**Method:** Osmani. Tasks 37–40 approved by the user on 2026-10-10; Checkpoint A has not been reached.
+**Current task:** Checkpoint A — [37](https://github.com/skunklabs-uk/agent-os/issues/37) and [38](https://github.com/skunklabs-uk/agent-os/issues/38) runtime criteria passed technically; human review is pending. Do not start 39–40.
+**Method:** Osmani. Tasks 37–40 approved by the user on 2026-10-10; Checkpoint A evidence is ready; the checkpoint has not been approved.
+
+The initial-environment sections preserve historical findings. Their missing-runtime blocker and restart instructions are superseded by the operator-host continuation and current handoff below.
 
 ## Scope and baseline
 
@@ -93,7 +95,7 @@ Session construction then attempted an external request to hyper.charm.land. Aut
 
 Continuation requires an authorized OMP execution environment/provider and bounded model choice. Do not expand network access merely to complete a catalog check. Use documented native provider settings and verify their effects before session execution; never repurpose credentials from this ChatGPT session.
 
-## Restart handoff
+## Initial restart handoff (superseded)
 
 In the authenticated execution environment:
 1. Read current AGENTS.md, Active REQ-0001/RFC-0001, approved SPEC-workflow-profiles.md, tasks/plan.md and issues 35, 37–40. Verify actual branch/revision and existing working tree.
@@ -141,7 +143,7 @@ Earlier source-checkout test attempts failed during module loading, before asser
 
 The [current Workspace handoff runbook](https://github.com/skunklabs-uk/developer-workspace/blob/main/docs/WORKSPACE-HANDOFF.md) isolates the automatic child from parent credentials and disables its network. Therefore that consumer is not a demonstrated execution path for authenticated OMP subagent tests. Do not submit a doomed inbox job or expand its permissions. A direct operator/Codex session where OMP already runs is the minimal candidate; verify it first. No new VM/cluster service is needed for this bounded check.
 
-### Ready-to-run operator/Codex prompt
+### Prior operator/Codex prompt (superseded)
 
 Work in skunklabs-uk/agent-os, branch docs/agent-team-specs. Continue approved mission #35 and tasks #37–#38 only. Tasks #39–#40 await Checkpoint A.
 
@@ -176,7 +178,7 @@ Examined branch `docs/agent-team-specs` at `42e9801b7fd2a8b715317e2916b1eb4e475f
 
 Read AGENTS.md, Active REQ-0001/RFC-0001, the approved map/spec/plan, this evidence, issues 35 and 37–40 with their comments, and the relevant historical operator-auth evidence in issue 30. The user's current instruction authorizes bounded authenticated runtime calls for 37–38; it does not authorize 39–40, merge, deployment or mission closure.
 
-Applied Osmani `using-agent-skills`, `context-engineering`, `source-driven-development`, `incremental-implementation`, `debugging-and-error-recovery`, `git-workflow-and-versioning` and `documentation-and-adrs`. All used Osmani skill paths resolve to clean `addyosmani/agent-skills` checkouts at `1401c8b8030e023baeebb31781a6653fe8e93026`. Existing approved requirements replace repeating interview/spec/planning. No production logic was added, so RED/GREEN implementation, application build, UI, shipping and infrastructure skills are not applicable. No Superpowers or Pocock implementation workflow was used.
+Applied Osmani `using-agent-skills`, `context-engineering`, `source-driven-development`, `incremental-implementation`, `debugging-and-error-recovery`, `git-workflow-and-versioning`, `documentation-and-adrs` and `code-review-and-quality`. All used Osmani skill paths resolve to clean `addyosmani/agent-skills` checkouts at `1401c8b8030e023baeebb31781a6653fe8e93026`. Existing approved requirements replace repeating interview/spec/planning. No production logic was added, so RED/GREEN implementation, application build, UI, shipping and infrastructure skills are not applicable. No Superpowers or Pocock implementation workflow was used.
 
 Installed executable: `/home/iingenito/.local/share/mise/installs/oh-my-pi/18.8.7/omp`, reporting `omp/18.8.7`. The exact pinned OMP source was retrieved as a GitHub archive at `b07a1c146d0d12cfc855a2c65d52f892ef319040`; no version change. Context7 resolved `/can1357/oh-my-pi` and supplied current provider/SDK guidance, then exact-version docs/source were checked before commands. A full clone was stopped during history indexing and replaced with the pinned archive; no source revision was substituted.
 
@@ -190,7 +192,7 @@ Project settings disable all 91 pinned catalog provider IDs except `openai-codex
 
 Pinned `config/model-registry.ts` checks `disabledProviders` before both configured discovery and built-in/special provider discovery. `enabledProviders` is a capability-discovery setting, not a model allowlist. No retry of the rejected isolated SDK construction was made. Settings restrict the native runtime; network packets were not independently captured, so this is source/configuration evidence rather than a wire-level destination audit.
 
-A preliminary `omp --cwd <scratch> read ...` invocation incorrectly used the process directory: subcommands resolve `getProjectDir()`. Its global-catalog URI results were discarded. A preliminary models listing using the same shape establishes no isolation proof and is not relied on. Its wire requests were not captured. Corrected URI commands run with the actual process working directory set to the profile directory. This invocation issue was localized in `cli/read-cli.ts` and `cli/models-cli.ts`; no upstream patch or new router was introduced.
+A preliminary `omp --cwd <scratch> read ...` invocation incorrectly used the process directory: subcommands resolve `getProjectDir()`. Its global-catalog URI results were discarded. A preliminary models listing using the same shape establishes no isolation proof and is not relied on. Its wire requests were not captured, so unrelated provider discovery during that preliminary CLI invocation cannot be ruled out; no claim of a complete network-destination audit is made. It was not a retry/bypass of the rejected SDK construction. Corrected URI commands run with the actual process working directory set to the profile directory. This invocation issue was localized in `cli/read-cli.ts` and `cli/models-cli.ts`; no upstream patch or new router was introduced.
 
 ### Reproduced catalogs and URI exclusions
 
@@ -237,3 +239,109 @@ Local native transcript references (disposable, retained for review):
 - CLI event stream: `task37-parent.jsonl`; configuration, prompt and initial/contaminated catalogs remain under the scratch root. Generated raw transcripts are not committed; the durable observed results are the table above.
 
 Task 37's runtime criteria pass technically; human review is deferred to Checkpoint A. Task 38 is now permitted by the approved execution order. Tasks 39–40 and mission 35 remain open; no module acceptance is claimed.
+
+## Task 38 runtime evidence — Checkpoint A submission
+
+### Native context and separate missions
+
+Reused the same isolated profile directories, native skill configuration and native session manager. Each directory has a disposable `AGENTS.md` projecting the approved profile-selection/no-mixing/artifact requirements and one `MISSION.md` holding profile, source identity, phase, scope, artifact pointers, pending approval and next action. These are acceptance fixtures, not a second production source of mission truth. The real mission remains governed by issue 35, the approved spec/plan and this evidence.
+
+The fixture is one documentation capability: an offline Markdown checklist showing profile, phase and pending approval. Clarification is complete and specification work is authorized; no resulting spec/seam approval is supplied. This permits exercising upstream gates without writing implementation logic, publishing an extra issue or changing an external repository.
+
+Osmani first starts unselected with `skills.enabled: false`; no default author is assumed. The operator's explicit choice restores its original native catalog in the same mission. Pocock starts separately with an explicit user choice and explicit requests for its user-invoked `ask-matt` and `to-spec`. Hidden/user-invoked metadata is preserved; the runtime does not automatically select those skills. Pocock sources were used only by the product-test mission, not to implement this Agent OS continuation. The operator restored/selected native configuration between processes in accordance with the explicit choice supplied in the next prompt. Automatic loading of a different catalog from a conversational answer was not exercised; no dynamic bootstrap/router was implemented.
+
+Effective reusable configuration facts: `skills.customDirectories` contains only the selected pinned roots; `skills.includeSkills` is the exact catalog already listed above; all foreign/user-root toggles are false; project native discovery is true for collision fixtures only; `disabledProviders` excludes the other 91 pinned model providers and foreign/plugin/managed discovery sources; `extensions: []`; `memory.backend: off`; `autolearn.enabled: false`; `lsp.enabled: false`; `async.enabled: false`; `retry.maxRetries: 0`; no request-failure fallback chains. `modelRoles.default/smol/slow/plan/task/tiny` select `openai-codex/gpt-6.1-sol:low`. The custom native auditor uses the same model explicitly. This is a demonstrated local configuration, not an approved production deployment.
+
+### Commands and actual outcomes
+
+Seven completed authenticated Task 38 turns: missing choice once, then choice/gate, restart/resume and negative-skill checks once per profile. Every process exited 0 with empty stderr and an `agent_end` event. The original process finished before each separate process resumed its native session file.
+
+Launch shape (cwd is the actual profile directory, not a subcommand `--cwd` assumption):
+
+```bash
+omp -p --model openai-codex/gpt-6.1-sol --smol openai-codex/gpt-6.1-sol \
+  --thinking low --no-extensions --no-lsp --no-title --tools read,write \
+  --session-dir /tmp/workflow-profiles-runtime-20261010/sessions-38-osmani \
+  --max-time 90 --mode json @../task38-missing-choice.md
+```
+
+Later turns replace `--session-dir` with `--resume <exact-native-session-file>` and use these prompt files: `task38-osmani-choice.md` (150-second bound), `task38-pocock-choice.md` (120-second bound), `task38-resume-gate.md` and `task38-{osmani,pocock}-negative.md` (90-second bounds). Pocock's first launch uses its own `sessions-38-pocock` directory, without `--resume`. No external SDK session or simulated model was used.
+
+| Scenario | Runtime observation | Result |
+|---|---|---|
+| Choice absent | Agent reads `MISSION.md`, records the unresolved choice and asks “Which workflow profile do you choose: Osmani or Pocock?”; no spec or methodological skill invocation | YES |
+| Explicit Osmani choice | Reads original `using-agent-skills` and `spec-driven-development`; records pinned identity; writes `SPEC-operator-checklist.md`; requests review and ends the turn | YES |
+| Explicit Pocock choice | Reads original `ask-matt` and `to-spec` from the pinned engineering root; confirms routing to `to-spec`; proposes the existing Markdown seam and requests review before spec writing | YES |
+| Osmani approval wait | Specify gate remains pending; no Plan/Tasks/implementation artifact is written | YES |
+| Pocock approval wait | `to-spec` process step 2 remains pending; no spec/publication/implementation occurs | YES |
+| Osmani process restart/resume | Reads `MISSION.md`, recovers profile/source/phase/scope/artifacts/pending decision and refuses progression without spec approval | YES |
+| Pocock process restart/resume | Reads `MISSION.md`, recovers the same six fields and waits for testing-seam confirmation | YES |
+| Missing selected Osmani skill | Temporarily exclude `source-driven-development` from the native allowlist; actual `read skill://source-driven-development` returns unknown; dependent action is disclosed as blocked | YES |
+| Foreign skill in Osmani | Actual `read skill://to-spec` returns unknown; no substitution or foreign source read | YES |
+| Missing selected Pocock skill | Temporarily exclude `prototype`; actual `read skill://prototype` returns unknown; no physical-path fallback | YES |
+| Foreign skill in Pocock | Actual `read skill://spec-driven-development` returns unknown; no profile change or substitution | YES |
+
+Negative cases deliberately have catalogs of 24 Osmani and 26 Pocock skills; original 25/27 allowlists were restored afterward. The agent records the missing/foreign-skill observations in its existing `MISSION.md`, retaining its previous pending approval. No upstream skill file was modified.
+
+### Transcript excerpts and retained artifacts (formatting normalized)
+
+Actual Osmani resume response:
+
+```text
+Phase: Specify; draft awaiting human review.
+Authoritative artifacts: MISSION.md, SPEC-operator-checklist.md.
+Currently permitted: request human review and remain at the Specify gate.
+This reconnect supplies no approval; Plan cannot begin.
+```
+
+Actual Pocock resume response:
+
+```text
+Phase: specification, paused at to-spec step 2—human testing-seam review.
+Pending decision: approve or revise the existing exported-Markdown seam checking those three fields.
+Reconnect is not approval. No phase advance, spec writing, publication or implementation is permitted yet.
+```
+
+Osmani negative response states “No workflow substitution.” Pocock states “No physical-path fallback attempted.” The native tool results independently show both URI failures for each profile, rather than relying only on these agent summaries. Full responses include the selected author/revision, scope and next permitted action. Before/after-resume `MISSION.md` files were byte-identical for each profile; the later negative-case update adds observations while preserving the decision.
+
+Paths below are relative to `/tmp/workflow-profiles-runtime-20261010` and remain disposable local review material:
+
+| Native session | SHA-256 |
+|---|---|
+| `sessions-38-osmani/2026-10-10T11-48-19-820Z_01a125a4-7eec-7467-937c-7bd1386724b7.jsonl` | `5e59fd06823db14c1998472d81c75041a189e4b3a1ec98e072f343f7e11c1a6f` |
+| `sessions-38-pocock/2026-10-10T11-48-55-389Z_01a125a5-09dd-75fa-85ec-fa03db806fa8.jsonl` | `810f33904e3f45710c811fd945546417eb4b3bf6909ea32b771d7813a7f80ab6` |
+| Final `osmani/MISSION.md` | `ad8bc721c8b43769b669d8f6bcae6d13700d241b3cbd752c3967f6049999a1ff` |
+| Final `pocock/MISSION.md` | `aa22e487288cd08caeb1a31a5a3b25dd790efa00e268bb8984b0d9c276622dcf` |
+
+CLI event streams are `task38-missing-choice.jsonl`, `task38-{osmani,pocock}-{choice,resume,negative}.jsonl`. The full config snapshots, prompts, pending-before-resume snapshots and inspection output are retained beside them. Raw generated transcripts are not committed; the outcomes and excerpts above are the durable evidence. `/tmp` retention is not guaranteed after cleanup/reboot.
+
+Installed binary SHA-256: `b87f9835a0acdbb81bbbad8273aa2d999b608a208598421a9584cffeb3139a8a`. Pinned OMP source archive SHA-256: `fad2370c9fdeae80312a3311f2b736297e66ca1ae87497c263482a45f1ac18e6`. Binary version and pinned source version agree; these hashes do not claim binary/source byte identity.
+
+Across the retained native parent/child sessions, 39 assistant requests report provider `openai-codex`, model `gpt-6.1-sol`: 2 Task 37 parent requests, 6 child requests, 19 Osmani Task 38 requests and 12 Pocock requests. Reported cumulative `totalTokens` is 388548; it includes repeated contexts/cache and is not an invoice or final context size. No inference retry loop or new paid provider was introduced.
+
+### Verification, review and limits
+
+Focused observation of real native event/session files passed 30 checks: exact initial/contaminated catalogs and source containment; completed turns; write paths confined to mission/spec fixtures; successful skill reads and direct SKILL.md reads confined to selected roots; actual negative URI errors; restored catalogs; child resolver equality and selected TDD path; expected Osmani spec presence/Pocock absence. This was disposable transcript inspection, not a new product test framework or enforcement component. `acceptance-inspection.txt` retains the checks. The textual gate responses and complete fixture artifacts were also read and compared with the original upstream instructions and approved Task 38 criteria.
+
+Focused evidence diff checks pass. `git diff --check origin/main...HEAD` reports four inherited Markdown hard-break lines in `README.it.md` (13, 16, 24) and `README.md` (21), already present at `42e9801`; it is not reported as passing. These unrelated README lines were preserved. No application build/lint is applicable to the evidence-only repository change.
+
+Applied Osmani `code-review-and-quality` for a focused correctness/provenance/scope review of these observations and the evidence diff, and `humanize-writing` for editorial clarity as required by AGENTS.md. This is self-review, not Task 40's independent review. Mutation tests, performance profiling, security-tool installation and new ADRs are omitted because no application logic, dependency, auth strategy or architecture changed. Native source/identity checks, allowlist exclusions and actual bounded execution provide the relevant verification.
+
+Skill catalogs/URI resolution are native runtime controls. Profile selection, applicability, approval waits and semantic recovery in these scenarios are **instruction compliance**, not an unbypassable approval state machine or filesystem security boundary. Native tools can read ordinary paths; catalog exclusion is not a read sandbox. The tests observed no physical-path substitution, but do not prove prevention against arbitrary malicious prompts or different ambient configuration. No custom gate/router/database has been shown necessary or added.
+
+Reconnect coverage is **CLI process exit and a new process using native `--resume`**, with an unresolved semantic decision in the existing mission artifact. It does not prove mobile/browser transport reconnect, abrupt mid-stream crash recovery, automatic process supervision, UI question replay or a deployment's restart behavior. Those surfaces belong to later module work; they are not silently counted as passed here.
+
+### Current handoff — stop at Checkpoint A
+
+Repository: `skunklabs-uk/agent-os`; branch: `docs/agent-team-specs`; implementation scope: evidence document only. Task 37 native-child and Task 38 bounded scenario criteria pass technically. Human acceptance of Checkpoint A is still pending; all tracking issues remain open. No Task 39/40 execution, independent-review completion, module closeout, merge, deployment or mission closure occurred.
+
+Read first: this continuation, approved `SPEC-workflow-profiles.md`, `tasks/plan.md` and current issues 37–38. The raw local native transcripts and fixture artifacts remain available under the scratch root for review. The original main checkout and its `.vscode/` were preserved; the evidence worktree is retained for the checkpoint.
+
+**One next action:** human review of Tasks 37–38 evidence at Checkpoint A, explicitly accepting or rejecting native instruction compliance and the demonstrated reconnect boundary. Do not start Task 39 until that approval exists. Any demand for stronger enforcement or a broader reconnect surface requires assessing the native alternatives and the applicable RFC-0001 necessity/approval process, not weakening the current requirements or adding custom by default.
+
+Additional exact-revision sources used for the continuation:
+- [OMP provider restrictions and availability](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/docs/providers.md).
+- [OMP model roles](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/docs/models.md).
+- [OMP native task behavior](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/docs/tools/task.md).
+- [Osmani Specify review gate](https://github.com/addyosmani/agent-skills/blob/1401c8b8030e023baeebb31781a6653fe8e93026/skills/spec-driven-development/SKILL.md).
+- [Pocock testing-seam review gate](https://github.com/mattpocock/skills/blob/24fe0ef7737efae15c87225755e9f6f5965e4888/skills/engineering/to-spec/SKILL.md).
