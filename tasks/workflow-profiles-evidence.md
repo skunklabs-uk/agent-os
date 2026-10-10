@@ -3,7 +3,7 @@
 **Status:** Draft — runtime evidence ready for human Checkpoint A review; not module acceptance.
 **Date:** 2026-10-10.
 **Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
-**Current task:** Checkpoint A — [37](https://github.com/skunklabs-uk/agent-os/issues/37) and [38](https://github.com/skunklabs-uk/agent-os/issues/38) runtime criteria passed technically; human review is pending. Do not start 39–40.
+**Current task:** Checkpoint A — [37](https://github.com/skunklabs-uk/agent-os/issues/37) and [38](https://github.com/skunklabs-uk/agent-os/issues/38) bounded runtime scenarios passed technically; independent review found a Pocock prerequisite omission. Human review is pending. Do not start 39–40.
 **Method:** Osmani. Tasks 37–40 approved by the user on 2026-10-10; Checkpoint A evidence is ready; the checkpoint has not been approved.
 
 The initial-environment sections preserve historical findings. Their missing-runtime blocker and restart instructions are superseded by the operator-host continuation and current handoff below.
@@ -271,7 +271,7 @@ Later turns replace `--session-dir` with `--resume <exact-native-session-file>` 
 |---|---|---|
 | Choice absent | Agent reads `MISSION.md`, records the unresolved choice and asks “Which workflow profile do you choose: Osmani or Pocock?”; no spec or methodological skill invocation | YES |
 | Explicit Osmani choice | Reads original `using-agent-skills` and `spec-driven-development`; records pinned identity; writes `SPEC-operator-checklist.md`; requests review and ends the turn | YES |
-| Explicit Pocock choice | Reads original `ask-matt` and `to-spec` from the pinned engineering root; confirms routing to `to-spec`; proposes the existing Markdown seam and requests review before spec writing | YES |
+| Explicit Pocock choice | Reads original `ask-matt` and `to-spec` from the pinned engineering root; confirms routing and waits for seam review. The missing tracker/triage setup prerequisite was not communicated; see independent review below | YES for choice and seam gate; upstream prerequisite compliance NO |
 | Osmani approval wait | Specify gate remains pending; no Plan/Tasks/implementation artifact is written | YES |
 | Pocock approval wait | `to-spec` process step 2 remains pending; no spec/publication/implementation occurs | YES |
 | Osmani process restart/resume | Reads `MISSION.md`, recovers profile/source/phase/scope/artifacts/pending decision and refuses progression without spec approval | YES |
@@ -333,7 +333,7 @@ Reconnect coverage is **CLI process exit and a new process using native `--resum
 
 ### Current handoff — stop at Checkpoint A
 
-Repository: `skunklabs-uk/agent-os`; branch: `docs/agent-team-specs`; implementation scope: evidence document only. Task 37 native-child and Task 38 bounded scenario criteria pass technically. Human acceptance of Checkpoint A is still pending; all tracking issues remain open. No Task 39/40 execution, independent-review completion, module closeout, merge, deployment or mission closure occurred.
+Repository: `skunklabs-uk/agent-os`; branch: `docs/agent-team-specs`; implementation scope: evidence document only. Task 37 native-child and Task 38 bounded scenarios are supported by runtime evidence; the independent review identified the Pocock prerequisite omission below. Human acceptance of Checkpoint A is still pending; all tracking issues remain open. No Task 39/40 execution, Task 40 independent-review completion, module closeout, merge, deployment or mission closure occurred. The separate user-requested Checkpoint A review is recorded below.
 
 Read first: this continuation, approved `SPEC-workflow-profiles.md`, `tasks/plan.md` and current issues 37–38. The raw local native transcripts and fixture artifacts remain available under the scratch root for review. The original main checkout and its `.vscode/` were preserved; the evidence worktree is retained for the checkpoint.
 
@@ -347,3 +347,26 @@ Additional exact-revision sources used for the continuation:
 - [OMP native task behavior](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/docs/tools/task.md).
 - [Osmani Specify review gate](https://github.com/addyosmani/agent-skills/blob/1401c8b8030e023baeebb31781a6653fe8e93026/skills/spec-driven-development/SKILL.md).
 - [Pocock testing-seam review gate](https://github.com/mattpocock/skills/blob/24fe0ef7737efae15c87225755e9f6f5965e4888/skills/engineering/to-spec/SKILL.md).
+
+## Independent Checkpoint A review — 2026-10-10
+
+Requested explicitly by the user. Reviewer `checkpoint_a_independent_review` was spawned with `fork_turns: none`: no parent conversation or implementation conclusions were inherited. Its task supplied only the repository/revision, approved review scope, read-first sources and read-only constraints. Examined revision: `a425b4d0ae868603c41d1166e82ec740ce63bd62`. This review is limited to Checkpoint A; it does not execute Task 40 or approve progression into Tasks 39–40.
+
+The reviewer independently read repository authority, map/spec/plan, current GitHub issues and original skill/runtime sources. It verified the clean worktree and pinned upstream identities; four native session hashes and two final mission hashes; installed binary/source archive hashes; actual native task delegation and URI errors; eight completed native event streams; recorded provider/model/usage totals; and OMP's child skill propagation path. No new runtime inference, credential-value access or repository/configuration mutation was performed by the reviewer.
+
+### Findings and recommendation
+
+| Severity | Finding | Evidence and implication |
+|---|---|---|
+| Medium | Pocock prerequisite omitted | Pinned `skills/engineering/to-spec/SKILL.md:9` says to direct the user to `/setup-matt-pocock-skills` when tracker and triage-label vocabulary are absent. The fixture explicitly lacks these values; `sessions-38-pocock/2026-10-10T11-48-55-389Z_01a125a5-09dd-75fa-85ec-fa03db806fa8.jsonl:32` requests seam review but gives no setup direction. The choice/seam gate passes, but complete upstream instruction compliance is not demonstrated. |
+| Low | Operator-assisted catalog selection | Native configuration is selected/restored between processes after explicit profile choice. Automatic catalog switching from a conversational answer is not tested. |
+| Low | Temporary raw evidence | Hashes and durable excerpts are recorded, but `/tmp` transcripts can disappear. Preserve the necessary raw review material before deleting scratch. |
+| Informational | Preliminary discovery error and inherited whitespace | Wrong-context subcommand results were discarded and their discovery uncertainty disclosed. Four inherited README hard breaks prevent reporting the full branch whitespace check as passing. |
+
+Independent recommendation: technical acceptance of the demonstrated Checkpoint A scope, with the Pocock qualification corrected in the report and the declared selection/reconnect limits retained. This is a reviewer recommendation, not human acceptance or a claim of full module compliance.
+
+The coordinator corrected the Pocock positive-case description and current handoff to disclose the omission. This documentary correction does not retroactively satisfy the missing upstream instruction. Resolving or explicitly reconciling that gap remains necessary before claiming complete fidelity; no additional model call or methodology substitution was made during this review. Approved requirements are not weakened.
+
+Reviewer coverage confirmed the selected catalogs, pinned identity, actual child execution, explicit/missing choice, approval waits, negative skill behavior and native CLI resume within their stated bounds. Parallel delegation, independent continuation while blocked and full deviation records remain Task 39 work; mobile/browser/crash/supervision/deployment behavior remains untested. The solution remains native configuration plus existing artifact conventions, without a custom router or approval engine.
+
+**Next action remains human Checkpoint A review**, including the disclosed Pocock omission and whether the demonstrated operator-assisted startup and CLI resume are sufficient for this checkpoint. No Tasks 39–40, merge, deployment or mission closure is authorized by this review.
