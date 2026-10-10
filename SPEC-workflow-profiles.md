@@ -1,6 +1,6 @@
 # Spec: workflow-profiles
 
-**Status:** Draft — awaiting user approval.
+**Status:** Approved by the user on 2026-10-10.
 **Module:** workflow-profiles.
 **Parent:** [approved capability map](CAPABILITY-MAP-agent-team.md).
 **Tracking:** [issue 35](https://github.com/skunklabs-uk/agent-os/issues/35).
