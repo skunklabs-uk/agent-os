@@ -4,7 +4,7 @@
 **Date:** 2026-10-10.
 **Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
 **Current task:** Checkpoint A — [37](https://github.com/skunklabs-uk/agent-os/issues/37) native-child result retains its bounded evidence. [38](https://github.com/skunklabs-uk/agent-os/issues/38) demonstrated that the omitted Pocock setup direction was surfaced, but an unresolved prerequisite was missing from the persisted `next permitted action`; see the adversarial review at the end of this document. No new runtime acceptance has been established. Do not start 39–40.
-**Method:** Osmani. Tasks 37–40 approved by the user on 2026-10-10; Checkpoint A evidence is ready; the checkpoint has not been approved.
+**Method:** Osmani. Tasks 37–40 approved by the user on 2026-10-10; Checkpoint A is on HOLD pending the specified runtime and raw-evidence follow-up. The human checkpoint has not been approved.
 
 The initial-environment sections preserve historical findings. Their missing-runtime blocker and restart instructions are superseded by the operator-host continuation and current handoff below.
 
