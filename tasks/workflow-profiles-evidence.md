@@ -1,10 +1,10 @@
 # workflow-profiles: native feasibility evidence
 
-**Status:** Draft — corrective runtime cases passed; durable raw bundle retained. Independent correction reviews confirmed runtime recovery and final packaging/status. Human Checkpoint A decision pending; not module acceptance.
+**Status:** Draft — Checkpoint A accepted within Tasks 37–38 by coordinator decision under explicit user delegation on 2026-10-10. Full module acceptance remains pending.
 **Date:** 2026-10-10.
 **Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
-**Current task:** Checkpoint A — [37](https://github.com/skunklabs-uk/agent-os/issues/37) retains its native-child evidence; [38](https://github.com/skunklabs-uk/agent-os/issues/38) now has a seam-approved/setup-missing discriminator and fresh artifact-only sessions. Original failed state and challenged reviews are preserved. Do not start 39–40.
-**Method:** Osmani. Tasks 37–40 approved by the user on 2026-10-10; The specified corrective runtime and raw-evidence follow-up is complete and independently reviewed; human Checkpoint A approval remains pending.
+**Current task:** Checkpoint A completed — Tasks [37](https://github.com/skunklabs-uk/agent-os/issues/37) and [38](https://github.com/skunklabs-uk/agent-os/issues/38) have independently reviewed bounded native evidence. Tasks 39–40 were not executed in this review.
+**Method:** Osmani. Tasks 37–40 were approved by the user on 2026-10-10. The user subsequently requested a fresh-context independent review and delegated the checkpoint decision to the coordinator.
 
 The initial-environment sections preserve historical findings. Their missing-runtime blocker and restart instructions are superseded by the operator-host continuation and current handoff below.
 
@@ -339,7 +339,7 @@ Read first: this continuation, approved `SPEC-workflow-profiles.md`, `tasks/plan
 
 Cleanup note: automatic approval review rejected removal of the stopped, incomplete `/tmp/omp-checkpoint-a-source` clone because `rm -rf` commands are not permitted. No deletion retry or bypass was made; that scratch directory remains. This does not affect native runtime results. Final read-only checks confirmed a clean evidence worktree, matching local/remote branch HEAD, open issues 35 and 37–40, and the preserved main-checkout `.vscode/`.
 
-**Current next action:** final read-only review of the corrected archive/status, then human Checkpoint A review of Tasks 37–38. Historical corrective requests are superseded by the last continuation; no Task 39–40 progression before human approval.
+**Current next action:** Task 39 is the next planned work after this delegated Checkpoint A decision. This review ends at Checkpoint A; no Task 39–40 execution, module acceptance, merge to main, deployment or mission closure occurs here. Earlier pending-checkpoint statements are historical and superseded by the final decision below.
 
 Additional exact-revision sources used for the continuation:
 - [OMP provider restrictions and availability](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/docs/providers.md).
@@ -533,3 +533,23 @@ Reviewers `checkpoint_a_independent_review` and fresh-context `persisted_state_f
 The corrected 127-file archive adds all three original tracker inputs and excludes unrelated review-generated scratch files. Header and handoff now distinguish historical HOLD from the new runtime observations. Final read-only re-review by both reviewers examined exact revision `83635d2f50620f31f8033b358c81a284c1435ab6`. Both verified 127 archive members and all hashes, byte identity of the original 124 plus the three pinned tracker inputs, absence of unrelated review scratch and credential-pattern matches, and reconciled header/handoff. No residual finding requiring correction; both recommend submission for human Checkpoint A decision. This subsequent commit records their reports only; runtime bytes and archive are unchanged. Human Checkpoint A decision remains pending; no Tasks 39–40, merge, deployment, module acceptance or mission closure.
 
 Remote documentary correction `8705bc1` was merged without force push. Its historical HOLD is preserved in the adversarial-review record; the current header reflects the subsequent completed corrective proofs and pending human approval.
+
+## Fresh-context review and delegated Checkpoint A decision — 2026-10-10
+
+### Independent evidence review
+
+Reviewer `checkpoint_a_decision_review` was spawned with `fork_turns: none`, without the coordinator conversation or previous review conclusions. Examined exact revision: `18e84e2bb1dd1a24f8a703ba3ce35fc6ee17d81d`. It read repository authority, the approved spec/plan, pinned original sources and preserved raw evidence directly. No repository mutation, model inference, credential access, publication or Task 39–40 execution was performed.
+
+Recommendation: accept Checkpoint A within approved Tasks 37–38; no remaining blocking finding observed. Independently confirmed: actual native child and inherited Osmani catalog/provenance; missing/explicit choice and separate flows; actual missing/foreign URI errors without substitution; preserved original Pocock failures and corrected persisted setup conjunction; approval waits; fresh artifact-based recovery distinguished from history-bearing resume; all 127 archived files and manifest hashes including the three tracker inputs. Archive SHA remains `f022a78e28d976bb45ac2710b98e11a2311881314b54d16c2beb984fd58c0a74`.
+
+Informational limits remain: operator-assisted catalog selection between processes; instruction compliance rather than inviolable enforcement; Osmani-only native-child proof at this checkpoint; CLI/artifact recovery rather than mobile/mid-stream crash/supervision. Multiple delegated workers and fuller workflow fidelity remain Task 39, not silently accepted here. Interactive Pocock setup execution remains untested; configured state is explicit fixture input. Historical discovery uncertainty is retained.
+
+### Coordinator decision and authority
+
+The user requested “fai una review indipendente senza contesto e poi decidi”, after directing the coordinator to make technical decisions autonomously under best practices and RFC-0001. This is explicit delegation of the checkpoint decision following independent review. It supersedes the need to ask the user to repeat this technical decision; it does not fabricate an independent human review or any upstream sample-mission approval.
+
+**Decision: accept Checkpoint A within Tasks 37–38.** Facts supporting the decision: runtime observations satisfy the planned intermediate criteria; the persisted-state P2 is corrected in a discriminating actual run; artifact-only recovery is tested separately; raw evidence is retained and directly inspectable; a new independent reviewer found no blocking residual. Therefore native configuration plus existing mission artifacts is sufficiently demonstrated for the next planned experiment. No custom router, database or enforcement component has a demonstrated necessity under RFC-0001.
+
+Accepted limits remain explicit and are not waived requirements for the whole module. No product scope, architecture, provider authorization or REQ-0001 contract changes. The user-delegated decision concerns this technical checkpoint only, not final module/product acceptance or release. Tasks 39–40, Checkpoint B, final human review where required, merge to main, deployment and mission closure retain their applicable scope and authorization requirements.
+
+The next planned work is Task 39. This user-requested review/decision turn ends at Checkpoint A without starting Tasks 39–40. All tracking issues remain open; subsequent task/module closeout must reconcile completion status. Historical pending-checkpoint and HOLD statements above remain as chronology, superseded for current status by this explicit decision.
