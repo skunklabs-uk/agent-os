@@ -1,6 +1,6 @@
 # Implementation Plan: workflow-profiles
 
-**Status:** Draft — awaiting user review.
+**Status:** Active — plan approved by the user on 2026-10-10; detailed tasks await separate approval.
 **Scope:** [approved module spec](../SPEC-workflow-profiles.md).
 **Tracking:** [Agent OS issue 35](https://github.com/skunklabs-uk/agent-os/issues/35).
 **Method:** Osmani planning-and-task-breakdown at 1401c8b8030e023baeebb31781a6653fe8e93026.
@@ -67,6 +67,15 @@ Likely paths: tasks/workflow-profiles-evidence.md; existing authoritative files 
 ### Checkpoint B
 
 Review packages 3–4 and all acceptance scenarios before declaring the module complete. No completion claim while required runtime evidence is missing.
+
+## Task index
+
+1. [Task 1: task: verify native workflow profile isolation ](https://github.com/skunklabs-uk/agent-os/issues/37)
+2. [Task 2: task: verify profile selection gates and resume ](https://github.com/skunklabs-uk/agent-os/issues/38)
+3. [Task 3: task: verify delegated workflow fidelity and recovery ](https://github.com/skunklabs-uk/agent-os/issues/39)
+4. [Task 4: task: independently review workflow profiles and closeout ](https://github.com/skunklabs-uk/agent-os/issues/40)
+
+Tasks are Draft pending human review. Checkpoints A and B are tracked in Tasks 2 and 4 respectively.
 
 ## Tasks gate and tracking
 
