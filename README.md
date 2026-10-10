@@ -1,99 +1,101 @@
-[🇬🇧 English](README.en.md)
+[🇮🇹 Italiano](README.it.md)
 
 # Software Factory
 
-Questo repository definisce e valida un processo per lo sviluppo software assistito da AI.
+**Status:** Active. This English README is the authoritative version. An [Italian translation](README.it.md) is available for convenience. Keep it aligned when updating this page. Linked documents retain their original language.
 
-L'obiettivo è ridurre il lavoro manuale ripetitivo, mantenere le decisioni nel repository e automatizzare progressivamente solo le attività sufficientemente mature, verificabili e realmente implementabili.
+This repository defines and validates a process for AI-assisted software development.
 
-## Documenti attivi
+The goal is to reduce repetitive manual work, keep decisions in the repository, and gradually automate only activities that are mature enough, verifiable, and feasible with the available tools.
+
+## Active documents
 
 - [`requirements/REQ-0001-software-factory.md`](requirements/REQ-0001-software-factory.md)  
-  Requisito originario del progetto.
+  The project's original requirement.
 
 - [`rfcs/RFC-0001-principles.md`](rfcs/RFC-0001-principles.md)  
-  Principi fondanti che governano il progetto.
+  The founding principles that govern the project.
 
-## Documenti in validazione
+## Documents under validation
 
-- [`software-factory.md`](software-factory.md)
-  Workflow funzionale minimo della Software Factory.
+- [`software-factory.md`](software-factory.md)  
+  The Software Factory's minimal functional workflow.
 
 - [`backlog/decision-review-process.md`](backlog/decision-review-process.md)  
-  Ipotesi di processo di review da validare su ulteriori casi d'uso.
+  A proposed review process to validate against further use cases.
 
-## Regole operative
+## Operating rules
 
-Le istruzioni per lavorare nel repository sono definite in [`AGENTS.md`](AGENTS.md).
+Instructions for working in this repository are defined in [`AGENTS.md`](AGENTS.md).
 
-Il repository deve rimanere essenziale. Nuovi documenti, cartelle, workflow o automazioni devono essere introdotti solo quando rispondono a un'esigenza reale e non possono essere evitati o accorpati.
+Keep the repository lean. Introduce new documents, directories, workflows, or automation only when they address a real need and cannot be avoided or consolidated.
 
-## Collegamento seriale del Developer Workspace
+## Serial Developer Workspace connection
 
-Per affidare un incarico al collegamento servono repository e thread ammessi, branch e head esatti e il prompt corrente. Un solo consumer seriale esegue il task in un checkout isolato.
+An assignment requires permitted repositories and threads, the exact branch and head commit, and the current prompt. A single serial consumer executes the task in an isolated checkout.
 
-Il report è distinto dalla pubblicazione: una modifica richiede `publish_paths` con i file esatti autorizzati e una PR Draft nello stesso repository. Il parent pubblica; il coordinatore rilegge SHA e diff e completa RETURN. Il child non esegue commit, push, merge o rollout.
+Reporting and publication are separate: a change requires `publish_paths` listing the exact authorized files and a draft PR in the same repository. The parent publishes; the coordinator re-reads the SHA and diff and completes RETURN. The child does not commit, push, merge, or roll out changes.
 
-Agent OS contiene documentazione e lo script di bootstrap [`scripts/init-project.sh`](scripts/init-project.sh), con i test in [`scripts/test-init-project.sh`](scripts/test-init-project.sh). Il repository non contiene workflow GitHub Actions. I test verificano il bootstrap dei nuovi progetti; le modifiche solo documentali richiedono review tecnica del diff e revisione della chiarezza del testo, senza eseguire il bootstrap.
+Agent OS contains documentation and the bootstrap script [`scripts/init-project.sh`](scripts/init-project.sh), with tests in [`scripts/test-init-project.sh`](scripts/test-init-project.sh). The repository contains no GitHub Actions workflows. Tests verify the bootstrap of new projects; documentation-only changes require technical diff review and a clarity review, without running the bootstrap.
 
-Agent OS non distribuisce un'applicazione HTTP: la preview web non è applicabile all'adozione documentale del repository. Restano necessari la review del diff e RETURN. Questa nota descrive l'adozione del repository nel collegamento e non attesta il completamento globale di REQ-0001.
+Agent OS does not distribute an HTTP application, so a web preview does not apply to the repository's documentation adoption. Diff review and RETURN are still required. This note describes the repository's adoption within the connection and does not certify completion of REQ-0001 as a whole.
 
-Per enrollment, selezione GitOps, recupero e stato persistente, consultare le fonti proprietarie: il [runbook del collegamento](https://github.com/skunklabs-uk/developer-workspace/blob/main/docs/WORKSPACE-HANDOFF.md) e il [README Homelab per il lifecycle runtime](https://github.com/skunklabs-uk/homelab/blob/main/gitops/apps/developer-workspace/README.md).
+For enrollment, GitOps selection, recovery, and persistent state, consult the owning sources: the [connection runbook](https://github.com/skunklabs-uk/developer-workspace/blob/main/docs/WORKSPACE-HANDOFF.md) and the [Homelab README for the runtime lifecycle](https://github.com/skunklabs-uk/homelab/blob/main/gitops/apps/developer-workspace/README.md).
 
-## Scheletro iniziale per nuovi repository
+## Initial scaffold for new repositories
 
-Lo scheletro iniziale dei progetti vive in `templates/project/`. Contiene le regole operative minime, l'indice documentale, il puntatore allo stato esecutivo e i template per issue, pull request e wave.
+The project scaffold lives in `templates/project/`. It contains the minimum operating rules, the documentation index, a pointer to execution state, and templates for issues, pull requests, and waves.
 
 ```text
 agent-os
       │ scripts/init-project.sh
       ▼
-nuovo progetto locale
-      ├── crea directory (se necessaria)
+new local project
+      ├── creates directory (if needed)
       ├── git init
-      ├── copia templates/project/
-      └── progetto autonomo
-                └── origin (facoltativo)
+      ├── copies templates/project/
+      └── independent project
+                └── origin (optional)
 ```
 
-Il bootstrap crea un punto di partenza comune, non un collegamento permanente con Agent OS.
+The bootstrap provides a common starting point, not a permanent connection to Agent OS.
 
-Le skill riusabili non fanno parte dello scheletro del progetto: la loro sorgente autorevole è il [repository codex-skills](https://github.com/skunklabs-uk/codex-skills). I progetti devono installarle tramite symlink con `scripts/install-project.sh` e non devono tracciarne copie locali.
+Reusable skills are not part of the project scaffold: their authoritative source is the [codex-skills repository](https://github.com/skunklabs-uk/codex-skills). Projects must install them through symlinks using `scripts/install-project.sh` and must not track local copies.
 
-Per creare un nuovo progetto locale a partire dallo scheletro:
+To create a new local project from the scaffold:
 
 ```bash
-./scripts/init-project.sh /percorso/progetto
-./scripts/init-project.sh --no-prompt /percorso/progetto
-./scripts/init-project.sh --remote git@github.com:utente/progetto.git /percorso/progetto
+./scripts/init-project.sh /path/to/project
+./scripts/init-project.sh --no-prompt /path/to/project
+./scripts/init-project.sh --remote git@github.com:user/project.git /path/to/project
 ```
 
-Per vedere cosa verrebbe creato senza modificare la destinazione:
+To preview what would be created without changing the destination:
 
 ```bash
-./scripts/init-project.sh --dry-run /percorso/progetto
-./scripts/init-project.sh --dry-run --remote git@github.com:utente/progetto.git /percorso/progetto
+./scripts/init-project.sh --dry-run /path/to/project
+./scripts/init-project.sh --dry-run --remote git@github.com:user/project.git /path/to/project
 ```
 
-Lo script crea la directory quando manca, esegue `git init` se la destinazione non è già un repository Git autonomo e copia integralmente i file da `templates/project/`.
+The script creates the directory if it is missing, runs `git init` if the destination is not already an independent Git repository, and copies all files from `templates/project/`.
 
-La destinazione viene accettata solo quando non esiste, è vuota, contiene soltanto `.git`, oppure è un progetto già inizializzato con gli stessi file dello scheletro. In caso di contenuti diversi o file aggiuntivi, lo script termina con `ERROR` prima di modificare la destinazione.
+The destination is accepted only if it does not exist, is empty, contains only `.git`, or is a project already initialized with the same scaffold files. If contents differ or additional files exist, the script exits with `ERROR` before changing the destination.
 
-Il remote è facoltativo. Il default è nessun remote; in un terminale interattivo lo script può proporre di configurare `origin`. `--no-prompt` disabilita ogni domanda. `--remote` configura direttamente `origin` con l'URL indicato, senza creare il repository remoto e senza eseguire push. L'utente può configurare `origin` anche in seguito con i normali comandi Git.
+The remote is optional. By default, no remote is configured; in an interactive terminal, the script may offer to configure `origin`. `--no-prompt` disables all questions. `--remote` configures `origin` directly with the supplied URL, without creating a remote repository or pushing. The user can also configure `origin` later with standard Git commands.
 
-Lo script non crea commit o branch, non esegue push e non modifica configurazioni Git globali. Eventuali remote già presenti in un repository Git vuoto restano invariati.
+The script does not create commits or branches, push, or change global Git configuration. Existing remotes in an empty Git repository remain unchanged.
 
-Dopo l'inizializzazione, i file copiati appartengono al nuovo repository. Le modifiche future a `templates/project/` valgono solo per nuove inizializzazioni e non sincronizzano automaticamente i progetti già creati.
+After initialization, copied files belong to the new repository. Future changes to `templates/project/` apply only to new initializations and do not automatically synchronize existing projects.
 
-## Riallineare un progetto esistente
+## Aligning an existing project
 
-`init-project.sh` non deve essere usato per sovrascrivere un repository già popolato. Per riallineare un `AGENTS.md` locale al template corrente:
+Do not use `init-project.sh` to overwrite a populated repository. To align a local `AGENTS.md` with the current template:
 
-1. leggere `templates/project/AGENTS.md`, l'`AGENTS.md` locale e le fonti `Active` del progetto che governano il lavoro corrente;
-2. confrontare il comportamento delle regole, non la sola formulazione, e preservare i vincoli locali necessari al dominio;
-3. risolvere direttamente le differenze fattuali o correggibili in modo univoco;
-4. quando una differenza modifica autorità, autonomia, condizioni di stop o continuità della missione, usare `grill-with-docs` o `interview-me` per mostrare al Product Owner il comportamento attuale, quello proposto e la patch minima, chiedendo conferma della scelta;
-5. applicare solo le modifiche approvate, senza sostituire integralmente l'`AGENTS.md` locale con il template;
-6. verificare che ogni stop condition abbia un perimetro chiaro, che il blocco di un task non fermi automaticamente la missione e che il lavoro successivo già autorizzato e determinato continui senza conferme meccaniche.
+1. Read `templates/project/AGENTS.md`, the local `AGENTS.md`, and the project's `Active` sources governing the current work.
+2. Compare how the rules behave, not just their wording, and preserve local constraints required by the domain.
+3. Resolve factual differences or differences with a single clear correction directly.
+4. When a difference changes authority, autonomy, stop conditions, or mission continuity, use `grill-with-docs` or `interview-me` to show the Product Owner the current behavior, proposed behavior, and minimal patch, and ask them to confirm the choice.
+5. Apply only approved changes, without replacing the entire local `AGENTS.md` with the template.
+6. Verify that each stop condition has a clear scope, a blocked task does not automatically stop the mission, and already authorized and determined next steps continue without mechanical confirmations.
 
-Il primo riallineamento deve restare manuale. Automatizzare il confronto o la patch ha senso solo dopo aver osservato più casi in cui il processo risulta ripetibile senza perdere regole locali necessarie.
+The first alignment must remain manual. Automating comparison or patching makes sense only after observing several cases where the process is repeatable without losing necessary local rules.
