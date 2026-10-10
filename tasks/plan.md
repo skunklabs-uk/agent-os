@@ -1,10 +1,10 @@
 # Implementation Plan: team-execution
 
-**Status:** Draft — Plan review required; specification approved on2026-10-10.
+**Status:** Active — the Product Owner approved the Plan sequence and sandbox proof scope; detailed Tasks43–50 are Draft and require separate approval before execution.
 **Scope:** [Active team-execution specification](../SPEC-team-execution.md).
 **Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
 **Method:** Osmani planning-and-task-breakdown at1401c8b8030e023baeebb31781a6653fe8e93026.
-**Tracking:** GitHub mission35 and dependency-scoped task issues created during the subsequent Tasks phase; no tasks/todo.md or second ledger.
+**Tracking:** [mission35](https://github.com/skunklabs-uk/agent-os/issues/35) and its dependency-linked Tasks43–50 below; no tasks/todo.md or second ledger.
 **Language:** English is authoritative by user instruction.
 
 ## Outcome and baseline
@@ -32,7 +32,7 @@ Exact-version native documentation includes task.isolation.enabled, task.isolati
 
 ## Ordered work packages
 
-These are proposed Plan slices, not approved executable task issues. After Plan approval, convert each to a small GitHub task with at most three acceptance bullets, focused verification, owned files and dependencies; obtain the separate upstream Tasks approval before implementation.
+These approved Plan packages are decomposed into Draft GitHub Tasks43–50 below. Package3 has two independently owned worker tasks; no new work package is introduced. Every task records up to three acceptance criteria, focused verification, owned files, dependencies and the execution stop. Task-set approval remains required before implementation.
 
 | Slice | Acceptance and verification | Dependency; likely write scope |
 |---|---|---|
@@ -44,7 +44,7 @@ These are proposed Plan slices, not approved executable task issues. After Plan 
 | 6. Verify closeout and selected-profile inventory | Derive each chosen catalog from pinned manifest plus actual resolution; all entries receive the approved evidence-backed outcome and invocation/availability metadata. Render exercised route in the one closeout record. Verify user-invoked Pocock retro or explicit remaining manual prerequisite; Osmani retrospective is the user extension. No automatic process edits/issues. | 5; authoritative mission closeout and evidence, S–M. |
 | 7. Final acceptance and authorized delivery | Independent final-SHA review checks all ten spec scenarios and accumulated controls, resolves findings, inspects durable privacy-screened raw and authoritative reconciliation. Prepare PR/merge/smoke only within actual authority. Report live-pilot/CI/release gaps, keep mission35 open, and do not imply full mobile/MCP or production replacement. | 6; module evidence/map/spec/plan closeout and existing tracker, M. |
 
-Dependency chain:1→2→3→4→5→6→7. Only the two disjoint workers inside3 run concurrently; coordinator integration, state updates, review fixes and closeout stay sequential. Independent reviewer is never one of the implementers and does not inherit their conversation. Test Pocock separately; do not switch this mission's Osmani realization method.
+Dependency chain:43→44→(45 and46)→47→48→49→50. Only the two disjoint workers45/46 run concurrently; coordinator integration, state updates, review fixes and closeout stay sequential. Independent reviewer is never one of the implementers and does not inherit their conversation. Test Pocock separately; do not switch this mission's Osmani realization method.
 
 ## Verification checkpoints
 
@@ -77,9 +77,24 @@ No product build/runtime/model call is needed for this Plan. Slice1 records exac
 
 ## Task tracker and approval gate
 
-GitHub issue35 remains the coordination issue. Detailed tasks are not yet created or approved: Plan approval comes first, then the Tasks phase records a single ordered index of issue IDs here rather than duplicating their checklists. The archived workflow-profiles plan is historical, and its closed tasks are not reopened for this module.
+The Product Owner approved this Plan in the current conversation and authorized preparation of detailed GitHub tasks for review before execution. Approval excludes deployment, production use, current-runtime replacement, other-repository writes and costs outside existing authorization. This record is the durable Plan-approval source; tracker updates refer here rather than creating another approval ledger.
 
-Approve the native-first sequence and sandbox-first proof scope. Plan approval authorizes preparation of the detailed Tasks, not their execution, cross-repository/global installation, new costs, production-runtime migration, merge outside existing authority or deployment. Any real-pilot or implementation ownership proposal will state its minimum scope and unresolved authority before work begins.
+GitHub issue35 remains the coordination issue. Tasks43–50 are created as its native sub-issues, with native blocked-by relationships, and remain Draft. Their issue bodies are the single authority for task acceptance criteria, verification and ownership. The archived workflow-profiles plan is historical; its closed tasks37–40 are not reopened.
+
+## Ordered task index
+
+1. [Task43 — authorized native sandbox](https://github.com/skunklabs-uk/agent-os/issues/43).
+2. [Task44 — coordinator routing and invocation](https://github.com/skunklabs-uk/agent-os/issues/44), blocked by43.
+3. [Task45 — isolated checklist summary worker](https://github.com/skunklabs-uk/agent-os/issues/45), blocked by44.
+4. [Task46 — isolated pending-decisions worker](https://github.com/skunklabs-uk/agent-os/issues/46), blocked by44; independent of45.
+5. [Task47 — integration and final artifact-only recovery](https://github.com/skunklabs-uk/agent-os/issues/47), blocked by45 and46.
+6. [Task48 — independent review and correction](https://github.com/skunklabs-uk/agent-os/issues/48), blocked by47.
+7. [Task49 — selected-profile inventory and closeout](https://github.com/skunklabs-uk/agent-os/issues/49), blocked by48.
+8. [Task50 — final acceptance and delivery authority](https://github.com/skunklabs-uk/agent-os/issues/50), blocked by49.
+
+The proposed executable fixture is an offline Markdown mission checklist: worker45 renders supplied profile/phase; worker46 renders supplied pending decisions. Task44 freezes the consumer contract/seam before either starts. It is disposable acceptance logic, not a custom workflow router, approval-enforcement layer or production feature.
+
+**Next permitted action:** Product Owner review and approval or requested changes for Tasks43–50. No task execution, model experiment, skill installation, PR/merge, cross-repository write or deployment is authorized by task creation or this Plan approval. Commands, operator invocation prerequisites, safe isolation and existing cost authority must be established before any later dependent execution.
 
 ## Primary references
 
