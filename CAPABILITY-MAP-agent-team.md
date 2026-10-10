@@ -1,6 +1,6 @@
 # Capability Map: Mobile-controlled IT agent team
 
-**Status:** Approved by the user on 2026-10-10.
+**Status:** Active — approved by the user on 2026-10-10.
 **Tracking:** [Agent OS issue 35](https://github.com/skunklabs-uk/agent-os/issues/35).
 **Language:** English is authoritative for these artifacts, as explicitly requested by the user. Italian review translations are provided in the conversation.
 
@@ -40,10 +40,10 @@ Prefer homelab only with proportionate implementation/operating effort. Choose a
 
 ## Specification index
 
-- [workflow-profiles](SPEC-workflow-profiles.md): Approved on 2026-10-10.
+- [workflow-profiles](SPEC-workflow-profiles.md): Active behavioral authority; bounded module acceptance is recorded in the outcome source below.
 - team-execution, mobile-control, mcp-access: not yet specified; no corresponding specification files exist.
 
-workflow-profiles has bounded native runtime evidence and accepted Checkpoint A; corrected delegation/recovery evidence is recorded for Task40/CheckpointB review in [workflow-profiles evidence](tasks/workflow-profiles-evidence.md). Full module acceptance and next-module work remain pending. This does not replace the Active Codex/Workspace contract.
+The user accepted workflow-profiles at Checkpoint B after independent review. [Accepted outcome, evidence and limitations](tasks/workflow-profiles-evidence.md#accepted-outcome-and-closeout) are the durable handoff for team-execution. The completed execution plan is historical, not an active work queue. The other modules are not started here; this acceptance does not replace the Active Codex/Workspace contract or authorize deployment.
 
 ## Process trace
 

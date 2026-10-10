@@ -1,10 +1,12 @@
 # Implementation Plan: workflow-profiles
 
-**Status:** Active — plan approved by the user on 2026-10-10; detailed tasks approved on 2026-10-10.
+**Status:** Archived — execution completed; Checkpoint B approved by the user on 2026-10-10. Retained only as execution history, not current instructions.
 **Scope:** [approved module spec](../SPEC-workflow-profiles.md).
 **Tracking:** [Agent OS issue 35](https://github.com/skunklabs-uk/agent-os/issues/35).
 **Method:** Osmani planning-and-task-breakdown at 1401c8b8030e023baeebb31781a6653fe8e93026.
 **Language:** English is authoritative.
+
+Current accepted outcome, durable limits and the user's conditional merge authorization are recorded in [workflow-profiles evidence](workflow-profiles-evidence.md#accepted-outcome-and-closeout). The approved module spec remains the behavioral authority; this completed plan does not authorize another module, deployment or production runtime replacement.
 
 ## Outcome
 
@@ -75,11 +77,11 @@ Review packages 3–4 and all acceptance scenarios before declaring the module c
 3. [Task 3: task: verify delegated workflow fidelity and recovery ](https://github.com/skunklabs-uk/agent-os/issues/39)
 4. [Task 4: task: independently review workflow profiles and closeout ](https://github.com/skunklabs-uk/agent-os/issues/40)
 
-Tasks are Active following human approval on 2026-10-10. Checkpoints A and B are tracked in Tasks 2 and 4 respectively.
+Tasks37–40 were approved on 2026-10-10 and completed in the accepted bounded scope. Their historical checkpoints were tracked in Tasks38 and40; task closure follows integration. Parent mission35 stays open for the remaining modules.
 
 ## Tasks gate and tracking
 
-The separate Plan → Tasks gate was completed: the user approved this plan and detailed Tasks37–40 on2026-10-10. CheckpointA was accepted after fresh-context independent review under the user’s explicit decision delegation; the subsequent continuation authorizes Task39. Corrected runtime results and Task40 review state are recorded in [workflow-profiles evidence](workflow-profiles-evidence.md). CheckpointB still requires human review of the implemented module; no next-module progression, merge or deployment is inferred.
+The separate Plan → Tasks gate was completed on2026-10-10. CheckpointA was accepted after fresh-context independent review; the subsequent continuation authorized Task39. The user then accepted CheckpointB after independent review of201fcaa and authorized documentary closeout and a conditional merge. The [current outcome record](workflow-profiles-evidence.md#accepted-outcome-and-closeout) preserves evidence, limits and the deployment/runtime boundary; old pending-gate statements in this archived plan are historical.
 
 The coordination tracker is GitHub issue35; the linked detailed issues above are the single task tracker. Do not duplicate their checklists in tasks/todo.md. No existing incomplete plan or task list is overwritten.
 
@@ -107,9 +109,9 @@ No application build is required for the planning artifact. Model/provider acces
 
 Homelab suitability and actual mobile MCP compatibility will be assessed in the appropriate module specifications; this plan does not decide or defer their inclusion.
 
-## Approval requested
+## Historical plan approval
 
-Approve this sequence and its native-first feasibility approach. Approval does not authorize custom orchestration, source migration, implementation, merge, deployment or spending outside existing limits.
+The sequence and native-first feasibility approach were approved before execution. The original plan approval alone did not authorize custom orchestration, source migration, merge, deployment or spending outside existing limits. Later module acceptance and conditional merge authority are recorded in the current outcome source.
 
 ## Primary references
 

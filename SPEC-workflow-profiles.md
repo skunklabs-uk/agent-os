@@ -1,6 +1,6 @@
 # Spec: workflow-profiles
 
-**Status:** Approved by the user on 2026-10-10.
+**Status:** Active — approved by the user on 2026-10-10; retained as the module's durable behavioral authority.
 **Module:** workflow-profiles.
 **Parent:** [approved capability map](CAPABILITY-MAP-agent-team.md).
 **Tracking:** [issue 35](https://github.com/skunklabs-uk/agent-os/issues/35).
@@ -56,8 +56,8 @@ Build, lint, application test and dev-server commands are not applicable to this
 
 - CAPABILITY-MAP-agent-team.md: approved boundaries and specification index.
 - SPEC-workflow-profiles.md: this module's behavioral source.
-- Existing requirements/ and rfcs/: governing sources; this draft does not overwrite them.
-- Implementation/configuration/test paths: choose in Plan after reuse analysis.
+- Existing requirements/ and rfcs/: governing sources; this module does not overwrite them.
+- Bounded configuration/artifact paths, commands and results: the [accepted outcome source](tasks/workflow-profiles-evidence.md#accepted-outcome-and-closeout). Future executable changes require their own approved scope and plan.
 
 Use stable kebab-case ids and Markdown tables/lists, preserving upstream identifiers. Example semantic record, not a runtime schema:
 ```text
@@ -72,16 +72,16 @@ next-action: request-spec-approval
 
 No synthetic tests that merely repeat prose. Verify configuration and actual runtime behavior with bounded scenarios after implementation:
 
-- [ ] Start one mission per profile: only the chosen author's methodological skills are available/invoked, with exact source identity recorded.
-- [ ] Resolve the TDD name collision to Osmani's source in an Osmani mission; never load Superpowers as a substitute.
-- [ ] Delegate two independent bounded tasks under one profile; returned steps retain that profile and its phase constraints.
-- [ ] Attempt progression past a required approval: the affected action waits, while unrelated authorized work remains possible.
-- [ ] Resume after disconnect: recover profile, phase, authoritative artifacts and pending decision without switching.
-- [ ] Attempt an unavailable or foreign skill: disclose the gap instead of silently substituting.
-- [ ] Inspect a declared extension/deviation: reason, source, authorization and verification are present.
-- [ ] A reviewer can trace executed methodological steps to the chosen upstream and the exact examined revision.
+- Start one mission per profile: only the chosen author's methodological skills are available/invoked, with exact source identity recorded.
+- Resolve the TDD name collision to Osmani's source in an Osmani mission; never load Superpowers as a substitute.
+- Delegate two independent bounded tasks under one profile; returned steps retain that profile and its phase constraints.
+- Attempt progression past a required approval: the affected action waits, while unrelated authorized work remains possible.
+- Resume after disconnect: recover profile, phase, authoritative artifacts and pending decision without switching.
+- Attempt an unavailable or foreign skill: disclose the gap instead of silently substituting.
+- Inspect a declared extension/deviation: reason, source, authorization and verification are present.
+- A reviewer can trace executed methodological steps to the chosen upstream and the exact examined revision.
 
-The test framework depends on the selected implementation. These scenarios are acceptance requirements, not evidence that OMP already satisfies them.
+These scenarios remain acceptance requirements, not a duplicate task checklist. Their accepted bounded evidence and limitations are mapped in the [outcome record](tasks/workflow-profiles-evidence.md#accepted-outcome-and-closeout); acceptance does not prove arbitrary future runtime configurations.
 
 ## Boundaries
 
@@ -93,11 +93,11 @@ Never: mix methodological catalogs, silently update pinned sources, fabricate ap
 
 ## Open questions and approval scope
 
-Plan must determine whether native OMP discovery/configuration can isolate catalogs for coordinator and children and preserve phase/approval context without custom code. If not, compare alternatives and demonstrate necessity before proposing custom. Bounded native discovery, delegation and artifact/gate recovery results are recorded in [workflow-profiles evidence](tasks/workflow-profiles-evidence.md). Their limitations and preserved failures are explicit; full module acceptance remains subject to Task40/CheckpointB. No production runtime, client, hosting or transport is selected by these proofs.
+The completed plan demonstrated native OMP discovery/configuration, delegation and artifact/gate recovery in the documented bounded experiment without custom orchestration. The user accepted that module scope at Checkpoint B; [the outcome record](tasks/workflow-profiles-evidence.md#accepted-outcome-and-closeout) retains the corrected proofs, limitations and failures. No production runtime, client, hosting or transport is selected by these proofs.
 
 Before execution changes the existing Codex/Developer Workspace contract, reconcile REQ-0001 and other affected Active sources. This module does not itself replace that architecture.
 
-Approval accepts this module's behavioral requirements and boundaries. It does not approve a runtime, custom implementation, plan, source migration, merge or deployment.
+The original specification approval accepted these behavioral requirements and boundaries, not a runtime, custom implementation, source migration, merge or deployment. Subsequent bounded module acceptance and conditional merge authority are recorded in the outcome source; deployment and production runtime replacement remain unauthorized.
 
 ## Sources
 
