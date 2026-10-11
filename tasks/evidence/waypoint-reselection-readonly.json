@@ -1,0 +1,66 @@
+{
+  "status": "read-only component investigation; not pilot execution or full application smoke",
+  "method": "Managed isolated Chromium; about:blank; production JavaScript loaded unchanged into an in-memory fixture; no application server, database, external network or repository writes",
+  "sourceBaseline": {
+    "repo": "skunklabs-uk/waypoint-db",
+    "localHead": "b58a7f8d245f17a5cfdd78354c691e7a69ea51cb",
+    "files": [
+      {
+        "path": "web/table-search.js",
+        "sha256": "3a70974285309a5c9130911f562d2c5e64c6b05b9cb3e3a1413b30b95c5c214f",
+        "equalsCommittedHead": true
+      },
+      {
+        "path": "web/workspace.js",
+        "sha256": "340842ed668102022c1b59f45f7f7c52eed59fb76d3f7a86d2c048210261fbc6",
+        "equalsCommittedHead": false
+      }
+    ]
+  },
+  "fixtureHTML": "<!doctype html><html><body><h1>Isolated component check — no database or application server</h1><form data-analysis-selection><div data-table-picker><label for=\"table\">Source table</label><select id=\"table\" name=\"table\" required><option value=\"\">Choose</option><option value=\"dbo.A\" selected>Table A</option><option value=\"dbo.B\">Table B</option></select><div data-table-enhanced hidden><button id=\"table-trigger\" data-table-trigger popovertarget=\"table-popup\"><span data-table-value></span></button><div id=\"table-popup\" data-table-popup popover><input type=\"search\" aria-label=\"Search tables\"><ul id=\"table-options\" data-table-options></ul><p data-table-search-count></p></div></div><p data-table-selection></p></div></form><section id=\"analysis-results\"><h2>Existing analysis of Table A</h2><p>Must remain when the selection has not changed.</p></section></body></html>",
+  "steps": [
+    "Load fixture and unchanged picker/workspace scripts.",
+    "Open #table-trigger and click [data-table-choice=\"0\"] (already selected dbo.A).",
+    "Observe actual select value, analysis-results presence, and native change event; inspect screenshot.",
+    "Open #table-trigger and click [data-table-choice=\"1\"] (different dbo.B).",
+    "Close managed tab."
+  ],
+  "observed": {
+    "sameTable": {
+      "value": "dbo.A",
+      "analysisPresent": false,
+      "changeEvents": [
+        "dbo.A"
+      ]
+    },
+    "differentTable": {
+      "value": "dbo.B",
+      "analysisPresent": false,
+      "changeEvents": [
+        "dbo.A",
+        "dbo.B"
+      ]
+    }
+  },
+  "expected": {
+    "sameTable": {
+      "value": "dbo.A",
+      "analysisPresent": true,
+      "newChangeEvents": 0
+    },
+    "differentTable": {
+      "value": "dbo.B",
+      "newChangeEvents": 1
+    }
+  },
+  "limits": [
+    "Minimal DOM fixture, not rendered full Go application.",
+    "No HTMX script/backend is attached: actual discovery HTTP request count is not measured.",
+    "workspace.js is an uncommitted working-tree input; its exact body is retained only in the private local input file, not in this public record or a certified published commit.",
+    "Only source picker and mouse interaction exercised; target picker, keyboard, native fallback and full-page before/after await authorized pilot.",
+    "Initial observation attempted direct tab.evaluate after page.evaluate; different execution realms made the observer variable undefined. DOM was unchanged by this diagnostic error; final observations used page.evaluate in the original realm.",
+    "Managed browser is an existing harness tool, not the original skill Chrome DevTools MCP transport.",
+    "No implementation correction, paid model call or CI run."
+  ],
+  "privacy": "Agent OS is public; private application source bodies are deliberately excluded. Exact input bodies are retained only in /tmp/waypoint-reselection-private-inputs.json, not uploaded. This local path is not a durable public source URL; later reviewers need explicitly authorized access to the owning private repository or these retained inputs."
+}

@@ -3,8 +3,14 @@
 **Status:** Active — bounded sandbox evidence; full module acceptance remains unresolved. Exact documentary-head final review and task completion are recorded in [Task50](https://github.com/skunklabs-uk/agent-os/issues/50).
 **Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
 **Authority:** [approved specification](../SPEC-team-execution.md), [Plan and direct execution approval](plan.md#task-tracker-and-approval-gate), Active REQ-0001/RFC-0001.
-**Current result:** Tasks43–49 bounded proof completed; corrected code independently accepted on ced3ce3651129ae8e0b4615d5bf1ce76f8ac3b03. Final documentary acceptance is the exact-head Task50 record. No full pilot/module/delivery/deployment acceptance is inferred.
+**Current result:** The Product Owner directly accepted the bounded temporary result of Tasks43–50 after the independent review of8240a2180e59ada53fcba7ddaeb9bd16121b8035. This accepts the documented trial only, not the complete module, pilot, PR/merge or deployment.
 **Language:** English is authoritative; Product Owner updates are in Italian.
+
+## Direct Product Owner acceptance and current authority
+
+The subsequent user decision accepts Tasks43–50 within their documented limits and explicitly excludes full team-execution approval, merge and deployment. The original reviewed snapshot and raw remain immutable historical evidence; this acceptance does not extend that review to later edits.
+
+Current authorization is read-only reality-check of Waypoint/waypoint-db and preparation of a useful real-pilot proposal, reusing the approved module Spec/Plan. No candidate-repository writes, new paid execution, merge, deploy or runtime replacement. The remaining-scenarios table below and missing original startup stdout/stderr remain applicable. Mission35 stays open; the proposal must return to the Product Owner for pilot authorization.
 
 ## Task43: native prerequisites
 
