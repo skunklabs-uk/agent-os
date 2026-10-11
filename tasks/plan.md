@@ -1,6 +1,6 @@
 # Implementation Plan: team-execution
 
-**Status:** Active — accepted bounded sandbox result and directly approved real Osmani pilot Plan. Approval enables issue/task preparation only; detailed task execution, paid inference, publishing/CI, merge and deploy are not authorized.
+**Status:** Active — accepted bounded sandbox result and approved real Osmani pilot Plan. The Product Owner subsequently delegated pilot PR/CI and merge under the conditions below. Detailed task execution and paid model calls are not separately approved; no implementation starts during the requested handoff. Deploy and production remain excluded.
 **Scope:** [Active team-execution specification](../SPEC-team-execution.md).
 **Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
 **Method:** Osmani planning-and-task-breakdown at1401c8b8030e023baeebb31781a6653fe8e93026.
@@ -100,6 +100,12 @@ The proposed executable fixture is an offline Markdown mission checklist: worker
 
 The Product Owner directly approved this Plan after the proposal at `ef3604c8ecd03f57576b6ca0347a07f1c582ccf9`. This permits preparation of the owning issue and detailed tasks for a separate execution decision. It does not authorize implementation, paid calls, PR/CI, merge or deployment. The approved module specification is unchanged; mission35 remains the coordination tracker and the candidate issue/task bodies own detailed work.
 
+### Pilot delivery delegation
+
+After task preparation at `7d368981be0e09409925d3aafa6af43e5555f9c6`, the Product Owner expressly authorized “PR/CI e merge” for waypoint-db issue16/tasks17–20. This satisfies the pilot's publishing/CI and conditional merge authority: one PR-head initial run and one merged-main initial run of the existing `ci-container` workflow, after current local checks and independent final-head GO. Revalidate triggers/policy before push; no automatic or same-head rerun, workflow changes, hosted fallback, new scope, deploy, ECS/ECR publication or production use.
+
+This is not a grant to merge Agent OS itself, change other repositories beyond the requested Obsidian TODO, start paid model calls or bypass the selected Osmani task-execution gate. Tasks17–20 still await explicit execution approval, owner handoff and actual remaining cost/tooling prerequisites. Missing prerequisites block only dependent work. The current instruction requests a documentary handoff, not pilot execution.
+
 ### Pre-approval source snapshot
 
 | Source inspected | Observation | Consequence |
@@ -159,8 +165,8 @@ Proposed sequence:
 | Ready / RED | Owner handoff completed; fresh read-only duplicate check; base contains the relevant UI; allowed files unowned; runtime/provider limits and quota valid. In an isolated local application with disposable data and empty SQL write gate, record the failing browser regression before any fix. No production profiles, Cloud databases or credentials copied. |
 | Implement / GREEN | One actual isolated writer reads the pinned original Osmani sources and returns its narrow change and real checks. Coordinator integrates serially and verifies browser acceptance and the full relevant existing suite. No retries/fallback/advisors or recursive workers. |
 | Review | Reviewer gets original requirement, repository constraints, exact base/head/diff, RED/GREEN and raw pointers, not implementer conversation/verdict. Review correctness, simplicity, architecture, security and performance. Correct blocking findings minimally; material changes require fresh final-head review. |
-| PR / CI | Requires explicit pilot publishing/CI allowance: final feature-branch push, one PR and its initial existing `ci-container` run; a later authorized merge gets one initial main run. Current push trigger is main-only, avoiding duplicate feature-push CI. Revalidate triggers before publication. No workflow edit, hosted fallback, canary or same-head rerun; genuine failure/new-head correction needs applicable additional authority. |
-| Merge / smoke | Requires specifically delegated pilot merge authority, final-head independent GO and all applicable successful checks. If main moves, re-evaluate affected checks/review rather than reuse a stale verdict. Record PR/head/merge SHA and any separately authorized main-push check; build/run that SHA locally and exercise the browser outcome. No ECS/ECR push, deploy or production use. |
+| PR / CI | Explicit pilot delegation is recorded above. After execution prerequisites and final local checks/review, publish the final feature branch and one PR with one initial existing `ci-container` run; the later authorized merge gets one initial main run. Revalidate the current main-only push trigger; no workflow edit, hosted fallback, canary or same-head rerun. Genuine failure/new-head correction needs applicable additional authority. |
+| Merge / smoke | Conditional pilot merge authority is recorded above; independent final-head GO and all applicable successful checks remain mandatory. If main moves, re-evaluate affected checks/review rather than reuse a stale verdict. Record PR/head/merge SHA and the authorized main-push check, then build/run that SHA locally and exercise the browser outcome. No ECS/ECR push, deploy or production use. |
 | Closeout | One owning-issue outcome with links, remaining limits and user-facing smoke instructions; mission35 links it rather than duplicating it. Update the selected Osmani inventory/route and user-requested mission retrospective from actual execution. Complete module acceptance still requires its other open criteria. |
 
 Future commands, not executed here: `node --check web/table-search.js`, `npm run build:assets`, `go test -count=1 -timeout 20m ./...`, `go vet ./...`, and the owning workflow's existing container/HTTP checks. Native database integrations run only with authorized disposable fixture DSNs; absent DSNs mean SKIPPED, not PASS. Browser assertions cover both pickers, same/different selection, mouse/keyboard and native fallback. Existing runtime tooling is reused; no new wrapper or persistent harness.

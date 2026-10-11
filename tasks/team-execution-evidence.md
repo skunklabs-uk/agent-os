@@ -10,7 +10,7 @@
 
 The subsequent user decision accepts Tasks43–50 within their documented limits and explicitly excludes full team-execution approval, merge and deployment. The original reviewed snapshot and raw remain immutable historical evidence; this acceptance does not extend that review to later edits.
 
-The subsequent directly approved [pilot Plan](plan.md#approved-amendment-real-osmani-pilot) now permits owning issue/task preparation only; those tracker bodies and Plan own current pilot gates without duplicating this trial report. No application-file change, paid execution, PR/CI, merge, deploy or runtime replacement is authorized by Plan approval. The remaining-scenarios table and missing original startup stdout/stderr remain applicable. Mission35 stays open; detailed tasks must return for execution approval.
+The subsequently approved [pilot Plan and delivery delegation](plan.md#pilot-delivery-delegation) own current permissions: pilot PR/CI and conditional merge are expressly delegated, but task-execution approval, owner handoff and model-cost prerequisites remain separate. The current instruction requests an Obsidian handoff, not implementation. No deploy, production or runtime replacement. The remaining-scenarios table and missing original startup stdout/stderr remain applicable; mission35 stays open.
 
 ## Task43: native prerequisites
 
