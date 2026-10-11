@@ -1,6 +1,6 @@
 # Implementation Plan: team-execution
 
-**Status:** Active — accepted bounded sandbox result and approved real Osmani pilot Plan. The Product Owner subsequently delegated pilot PR/CI and merge under the conditions below. Detailed task execution and paid model calls are not separately approved; no implementation starts during the requested handoff. Deploy and production remain excluded.
+**Status:** Active — bounded sandbox result accepted; real Osmani pilot implemented and merged. Tasks17–19 are complete, initial PR/main CI passed, and the Product Owner confirmed the Alpha/Beta smoke on 2026-10-12. Pilot closeout remains pending an explicit decision on incomplete post-merge raw retention; [owning Task20](https://github.com/skunklabs-uk/waypoint-db/issues/20) records the exact boundary. Positive Pocock mission selection and full module acceptance remain open. No deploy or production.
 **Scope:** [Active team-execution specification](../SPEC-team-execution.md).
 **Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
 **Method:** Osmani planning-and-task-breakdown at1401c8b8030e023baeebb31781a6653fe8e93026.
@@ -104,7 +104,15 @@ The Product Owner directly approved this Plan after the proposal at `ef3604c8ecd
 
 After task preparation at `7d368981be0e09409925d3aafa6af43e5555f9c6`, the Product Owner expressly authorized “PR/CI e merge” for waypoint-db issue16/tasks17–20. This satisfies the pilot's publishing/CI and conditional merge authority: one PR-head initial run and one merged-main initial run of the existing `ci-container` workflow, after current local checks and independent final-head GO. Revalidate triggers/policy before push; no automatic or same-head rerun, workflow changes, hosted fallback, new scope, deploy, ECS/ECR publication or production use.
 
-This is not a grant to merge Agent OS itself, change other repositories beyond the requested Obsidian TODO, start paid model calls or bypass the selected Osmani task-execution gate. Tasks17–20 still await explicit execution approval, owner handoff and actual remaining cost/tooling prerequisites. Missing prerequisites block only dependent work. The current instruction requests a documentary handoff, not pilot execution.
+This pilot delegation does not authorize Agent OS module merge/acceptance or a new Pocock mission. The subsequent continuation approval authorized Tasks17–20, the three-file handoff and existing account use within the task limits on NOVBSCWOLaulMaU; readiness and actual native execution are recorded in the [owning pilot](https://github.com/skunklabs-uk/waypoint-db/issues/16). It supersedes the handoff-only boundary at snapshot0334d5e, not the exclusions on deploy, production or additional scope.
+
+### Pilot delivery and remaining closeout — 2026-10-12
+
+[PR22](https://github.com/skunklabs-uk/waypoint-db/pull/22) integrated the independently reviewed source39a206aae1b9ea605b3f9bf1985eb8a944bfaaee as merge92224ba8dd80033bfbc2044e120091d4b8534fb9. The owning Task20 holds CI, evidence inventory, route, retrospective and retention limits; mission35 links that outcome. Both initial allowed CI runs passed without rerun. The Product Owner reports that reselecting Alpha retains the analysis and changing to Beta removes it; do not infer additional user mouse/keyboard coverage from that report.
+
+Tasks17–19 and the accepted sandbox tasks are not reopened. Task20 and parent16 remain open only for the explicit retained-evidence decision: 102 original archived files verify against their existing manifest, while three original post-merge JSON files and post-merge screenshots are no longer available; captured original session outputs and existing CI records remain. New summaries or reruns cannot recreate the missing bytes. The coordinator requested acceptance of this declared limit, not renewed PR/CI/merge permission.
+
+Read-only Pocock preparation rechecked the approved source pin and existing tasks. No real slice is selected; waypoint-db#21 is an existing Osmani backlog with external prerequisites, not implicitly reassigned. The next decision is the real requirement/repository and its separate scope/ownership/execution authority. Mobile/MCP/hosting implementations still depend on team-execution acceptance and their own gates.
 
 ### Pre-approval source snapshot
 

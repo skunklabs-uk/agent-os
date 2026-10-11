@@ -10,7 +10,9 @@
 
 The subsequent user decision accepts Tasks43–50 within their documented limits and explicitly excludes full team-execution approval, merge and deployment. The original reviewed snapshot and raw remain immutable historical evidence; this acceptance does not extend that review to later edits.
 
-The subsequently approved [pilot Plan and delivery delegation](plan.md#pilot-delivery-delegation) own current permissions: pilot PR/CI and conditional merge are expressly delegated, but task-execution approval, owner handoff and model-cost prerequisites remain separate. The current instruction requests an Obsidian handoff, not implementation. No deploy, production or runtime replacement. The remaining-scenarios table and missing original startup stdout/stderr remain applicable; mission35 stays open.
+The [pilot Plan and delivery delegation](plan.md#pilot-delivery-delegation), followed by the continuation approval recorded in [waypoint-db#16](https://github.com/skunklabs-uk/waypoint-db/issues/16), authorized and enabled native Osmani execution on NOVBSCWOLaulMaU. PR22 is merged; initial PR/main CI passed, and the Product Owner confirmed the Alpha/Beta smoke on 2026-10-12. [Task20](https://github.com/skunklabs-uk/waypoint-db/issues/20) owns the retained-evidence inventory and unresolved post-merge raw-retention decision. No deploy, production or full-module acceptance is implied. Positive Pocock remains unexecuted; its useful mission, scope and authority are still to be selected.
+
+The ten-scenario table below records the accepted sandbox boundary and is not retroactively regraded by the pilot. The pilot adds real-project Osmani delivery, actual successful initial PR/main CI and reported user smoke, with the stated retention limit. It does not prove positive Pocock, a real CI failure/correction, recover the lost original startup log or authorize Agent OS module delivery. Final scenario reconciliation/review remains after the required separate Pocock result and pilot closeout decision; Tasks43–50 stay closed.
 
 ## Task43: native prerequisites
 
@@ -45,7 +47,7 @@ Confirmed fixture verification interface: `python3 -m unittest discover -s fixtu
 
 Native rcopy materialization, child teardown/capture survival and parent-not-applied behavior remain to be observed before accepting writer results. Native isolated workspaces are checkout separation, not an immutable filesystem/network permission sandbox. If native preparation fails, the already established standard disposable worktrees are the existing alternative; sequential work cannot satisfy the parallel-writer criterion.
 
-## Current remaining proof
+## Accepted sandbox boundary before the pilot
 
 The GitHub task set remains the single tracker, with final exact-head documentary decision in Task50. Authorized sandbox observations do not replace a user-project pilot, positive Pocock progression, real CI/release or merge permission. Mission35 stays open; deployment, production, runtime migration, other-repository writes and unspecified PR/merge remain excluded.
 
@@ -201,4 +203,4 @@ Final reviewer uses the exact published documentation head and this frozen bundl
 
 RFC-0001 control decision: KEEP native state/isolated capture, narrow project worker role, source pins, disjoint ownership, serial integration, real TDD/consumer checks and exact-head clean-context review. DELETE redundant coordinator skill/router/database/relay/always-on fixed team and speculative/advisor/retry expansion from the selected solution; no upstream tool is deleted. REPLACE inherited-open-stdin startup with explicit DEVNULL, vague result destinations with actual durable pointers, incidental wording assertions with consumer behavior, and stale review acceptance with corrected-head re-review. No new global process policy is enacted.
 
-Delivery decision is NO-GO for this module's PR/merge/deploy and full acceptance. Tasks43–50 authorize the bounded proof and documentary handoff only. Mission35 and Active module Spec/Plan remain open for missing authorized pilot/positive Pocock/delivery evidence; workflow-profiles acceptance/main remain unchanged. Smallest later product decision is an explicitly scoped pilot repository/slice and its method-specific permissions, followed by separate module delivery authority; production and deployment stay excluded. No new issues or other-repository writes are implied.
+Module delivery/full acceptance remains NO-GO; Tasks43–50 only accepted the bounded sandbox. The real Osmani pilot now has its own subsequent authority and delivery evidence linked above; its raw-retention closeout decision remains open. Mission35 and Active Spec/Plan stay open for the separate positive Pocock result, final scenario reconciliation and applicable module delivery authority. Workflow-profiles acceptance is unchanged. No production/deployment or new tracker is authorized by this reconciliation.
