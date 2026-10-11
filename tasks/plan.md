@@ -1,10 +1,10 @@
 # Implementation Plan: team-execution
 
-**Status:** Active — approved sandbox Plan/Tasks43–50; their bounded result is accepted. The real-pilot amendment below is Draft, awaiting Product Owner approval; no pilot execution or merge is authorized.
+**Status:** Active — accepted bounded sandbox result and directly approved real Osmani pilot Plan. Approval enables issue/task preparation only; detailed task execution, paid inference, publishing/CI, merge and deploy are not authorized.
 **Scope:** [Active team-execution specification](../SPEC-team-execution.md).
 **Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
 **Method:** Osmani planning-and-task-breakdown at1401c8b8030e023baeebb31781a6653fe8e93026.
-**Tracking:** [mission35](https://github.com/skunklabs-uk/agent-os/issues/35) and its dependency-linked Tasks43–50 below; no tasks/todo.md or second ledger.
+**Tracking:** [mission35](https://github.com/skunklabs-uk/agent-os/issues/35), completed sandbox Tasks43–50, and the owning [waypoint-db issue16/tasks17–20](https://github.com/skunklabs-uk/waypoint-db/issues/16). Task bodies own their detail; no tasks/todo.md or second ledger.
 **Language:** English is authoritative by user instruction.
 
 ## Outcome and baseline
@@ -96,11 +96,11 @@ The proposed executable fixture is an offline Markdown mission checklist: worker
 
 **Current handoff:** Tasks43–50 completed the bounded trial, subsequently accepted directly by the Product Owner. [Acceptance, inventories and unresolved scenarios](team-execution-evidence.md#direct-product-owner-acceptance-and-current-authority) and [Task50 exact-head review](https://github.com/skunklabs-uk/agent-os/issues/50) own that outcome. The following amendment owns the new proposal, not a second trial report. Spec/Plan stay Active; do not restart Task43 or infer full module acceptance.
 
-## Draft amendment: real Osmani pilot
+## Approved amendment: real Osmani pilot
 
-This amendment reuses the approved module specification and Plan. It changes only the proposed real-project slice, its prerequisites and delivery checks. It is not approved Tasks, a new product specification or permission to modify either candidate. Mission35 remains the single coordination tracker; after the applicable approval, the owning project's issue will own the bug and its acceptance.
+The Product Owner directly approved this Plan after the proposal at `ef3604c8ecd03f57576b6ca0347a07f1c582ccf9`. This permits preparation of the owning issue and detailed tasks for a separate execution decision. It does not authorize implementation, paid calls, PR/CI, merge or deployment. The approved module specification is unchanged; mission35 remains the coordination tracker and the candidate issue/task bodies own detailed work.
 
-### Current-source reality-check
+### Pre-approval source snapshot
 
 | Source inspected | Observation | Consequence |
 |---|---|---|
@@ -115,9 +115,18 @@ This amendment reuses the approved module specification and Plan. It changes onl
 
 This is an implementation/integration gap, not a request to rewrite the old main README to describe unmerged code. External metadata/controller limitations and unobserved deployment/Bitbucket state remain unknown or blocked, not solved by the proposed UI correction.
 
-### Recommended repository and draft issue
+**Task-preparation refresh:** main has independently advanced to `e22f21a6c162f9b704124693fd20f511a3e596cf` and now contains both picker/workspace scripts. The same-value `change` emission remains in the published picker source. There are still no open issues/PRs before our tracker preparation. This clears the absent-UI-base prerequisite, not owner handoff or task execution approval. The current workflow runs push only on main and PRs on applicable paths: one final feature-branch push does not trigger this workflow; opening the PR triggers one run, and a later authorized merge triggers one main run. No workflow change or CI run is made here. Detailed tasks also include the existing `CHANGELOG.md` for the fix record, not new product scope.
 
-Repository: **`skunklabs-uk/waypoint-db`**. Proposed issue title: **“Keep the current analysis when reselecting the same table.”** No issue number exists and no candidate issue has been created.
+### Owning pilot issue and proposed task index
+
+Repository: **`skunklabs-uk/waypoint-db`**. Owning bug [16 — Keep the current analysis when reselecting the same table](https://github.com/skunklabs-uk/waypoint-db/issues/16). Its native sub-issues own detailed acceptance, checks, ownership, cost bounds and stop conditions; all await separate execution approval.
+
+1. [17 — owner handoff and full-application RED reproduction](https://github.com/skunklabs-uk/waypoint-db/issues/17); external handoff/execution gates.
+2. [18 — narrow implementation and functional GREEN](https://github.com/skunklabs-uk/waypoint-db/issues/18), blocked by17.
+3. [19 — independent exact-head review](https://github.com/skunklabs-uk/waypoint-db/issues/19), blocked by18.
+4. [20 — separately authorized PR/CI/merge/local smoke and closeout](https://github.com/skunklabs-uk/waypoint-db/issues/20), blocked by19 and explicit publishing/merge authority.
+
+Native sub-issue and blocked-by relationships encode17→18→19→20. One developer, sequential stages; no artificial parallel split, second checklist or new project infrastructure. Publication/CI and merge permissions remain additional gates even after task execution approval.
 
 User outcome: reopening the source or target table picker and choosing its current table must not discard the analysis or repeat discovery. Choosing a different table must still invalidate stale analysis and perform the normal discovery. This is one small bug, not a new feature or redesign.
 
@@ -131,13 +140,13 @@ This investigation used an in-memory synthetic DOM, no application server, HTMX 
 2. Selecting a different table removes stale analysis, makes exactly one normal discovery request and no analysis request until explicit Analyze. Clearing, filtering, no results and Escape do not change selection or initiate SQL requests.
 3. Native-select fallback, validation and HTMX swaps still work; existing syntax/assets, Go/vet, container and authorized CI checks pass on the exact reviewed head. An authorized merge, if later granted, is followed by the same full-page smoke from its exact SHA in a disposable local environment.
 
-Likely writes: `web/table-search.js` and the behavior note in `docs/ui.md`. A regression must assert the consumer state and requests, not copy source text or mock event forwarding. No browser test suite exists in the inspected scripts/package configuration; use the existing isolated browser tooling and retain the repeatable RED/GREEN scenario and inputs on the owning issue. A new test framework/dependency is not part of this pilot. If a permanent test requires extra infrastructure or a wider refactor, stop and present that changed scope before implementing it.
+Likely writes: `web/table-search.js`, the behavior note in `docs/ui.md` and the existing `CHANGELOG.md`. A regression must assert consumer state and requests, not copy source text or mock event forwarding. No browser test suite exists in the inspected scripts/package configuration; use existing isolated browser tooling and retain the repeatable RED/GREEN scenario and inputs on the owning issue. No new framework/dependency. If a permanent test needs extra infrastructure or wider refactoring, stop and present changed scope first.
 
 Read-only context: `web/workspace.js`, `internal/app/view.go`, asset packaging and the existing workflow. Do not modify workspace/view while their owner is active. No SQL-engine, profile/authentication, CSRF, permissions, schema, controller, Docker/runtime configuration, dependencies, workflow, global skill/configuration or infrastructure changes.
 
 ### Readiness, responsibilities and gates
 
-The proposal is useful but **not ready to execute**: the required UI is not on main, and the owner's working tree is active. The first prerequisite is an explicit owner handoff and an exact integrated base containing the picker. Prefer the owner's normally authorized integration into main; that work remains outside this pilot. Do not add another stacked feature branch, take over the rollup, wait for a filename timestamp as approval, or broaden the pilot to make its base available.
+The UI-base prerequisite is now satisfied by the independently integrated main snapshot above. Execution remains blocked on the owner's explicit handoff, current isolated base, detailed task approval and actual cost/tooling prerequisites. Do not take over the ongoing rollup/dirty checkout, treat timestamps as handoff, add another stacked feature branch or broaden this pilot. Reproduce on the full application before correction; stop if already fixed.
 
 One frontend developer owns the correction. The coordinator owns source/phase, baseline and serial integration; functional QA/browser verification and DevOps/check inspection are responsibilities, not extra always-running agents. One clean-context reviewer did not implement the fix. No separate architect, data, security or performance worker is warranted by this scope. Two implementation activities are not naturally independent, so do not force two writers; the accepted sandbox already covers that criterion.
 
@@ -145,12 +154,12 @@ Proposed sequence:
 
 | Stage | Required result / stop |
 |---|---|
-| Plan gate | Product Owner approves this amendment and candidate write scope. This does not approve execution, spend or merge. |
+| Plan gate | Satisfied by direct Product Owner approval of this amendment; only issue/task preparation is authorized. |
 | Tasks gate | Only then prepare the owning bug issue with detailed checks, exact base, ownership, return destination, cost/CI scope and stop conditions. Submit the task details for approval before execution, as required by the selected Osmani workflow. |
 | Ready / RED | Owner handoff completed; fresh read-only duplicate check; base contains the relevant UI; allowed files unowned; runtime/provider limits and quota valid. In an isolated local application with disposable data and empty SQL write gate, record the failing browser regression before any fix. No production profiles, Cloud databases or credentials copied. |
 | Implement / GREEN | One actual isolated writer reads the pinned original Osmani sources and returns its narrow change and real checks. Coordinator integrates serially and verifies browser acceptance and the full relevant existing suite. No retries/fallback/advisors or recursive workers. |
 | Review | Reviewer gets original requirement, repository constraints, exact base/head/diff, RED/GREEN and raw pointers, not implementer conversation/verdict. Review correctness, simplicity, architecture, security and performance. Correct blocking findings minimally; material changes require fresh final-head review. |
-| PR / CI | Only with explicit pilot publishing/CI allowance: one PR, existing `ci-container` workflow, exact-head checks. Push/PR both trigger CI, so do not publish first and ask permission afterward. Resolve the duplicate-trigger/run-count question in the detailed task before first push; no workflow edit, hosted fallback, canary or same-head rerun. |
+| PR / CI | Requires explicit pilot publishing/CI allowance: final feature-branch push, one PR and its initial existing `ci-container` run; a later authorized merge gets one initial main run. Current push trigger is main-only, avoiding duplicate feature-push CI. Revalidate triggers before publication. No workflow edit, hosted fallback, canary or same-head rerun; genuine failure/new-head correction needs applicable additional authority. |
 | Merge / smoke | Requires specifically delegated pilot merge authority, final-head independent GO and all applicable successful checks. If main moves, re-evaluate affected checks/review rather than reuse a stale verdict. Record PR/head/merge SHA and any separately authorized main-push check; build/run that SHA locally and exercise the browser outcome. No ECS/ECR push, deploy or production use. |
 | Closeout | One owning-issue outcome with links, remaining limits and user-facing smoke instructions; mission35 links it rather than duplicating it. Update the selected Osmani inventory/route and user-requested mission retrospective from actual execution. Complete module acceptance still requires its other open criteria. |
 

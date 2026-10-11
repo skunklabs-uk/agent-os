@@ -10,7 +10,7 @@
 
 The subsequent user decision accepts Tasks43–50 within their documented limits and explicitly excludes full team-execution approval, merge and deployment. The original reviewed snapshot and raw remain immutable historical evidence; this acceptance does not extend that review to later edits.
 
-Current authorization is read-only reality-check of Waypoint/waypoint-db and preparation of a useful real-pilot proposal, reusing the approved module Spec/Plan. No candidate-repository writes, new paid execution, merge, deploy or runtime replacement. The remaining-scenarios table below and missing original startup stdout/stderr remain applicable. Mission35 stays open; the proposal must return to the Product Owner for pilot authorization.
+The subsequent directly approved [pilot Plan](plan.md#approved-amendment-real-osmani-pilot) now permits owning issue/task preparation only; those tracker bodies and Plan own current pilot gates without duplicating this trial report. No application-file change, paid execution, PR/CI, merge, deploy or runtime replacement is authorized by Plan approval. The remaining-scenarios table and missing original startup stdout/stderr remain applicable. Mission35 stays open; detailed tasks must return for execution approval.
 
 ## Task43: native prerequisites
 
