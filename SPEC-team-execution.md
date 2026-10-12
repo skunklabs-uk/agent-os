@@ -1,6 +1,6 @@
 # Spec: team-execution
 
-**Status:** Active — approved by the user on 2026-10-10; Plan phase authorized.
+**Status:** Active behavioral authority — specification approved on 2026-10-10; bounded module outcome accepted on 2026-10-12. [Acceptance, evidence and retained limits](tasks/team-execution-evidence.md#direct-product-owner-acceptance-and-current-authority) own the current delivery authority.
 **Module:** team-execution.
 **Parent:** [approved capability map](CAPABILITY-MAP-agent-team.md).
 **Dependency:** [workflow-profiles](SPEC-workflow-profiles.md), accepted in its documented bounded scope.
@@ -107,6 +107,8 @@ Use small real acceptance slices and actual native transcripts, selected-source 
 This specification proposes the behavior to approve, not an implementation choice. The specific native/prompt/skill approach, exact ownership/pilot and executable commands are Plan decisions after approval; no attachment is required to approve these product requirements. The four closeout outcome labels are proposed vocabulary, not evidence already collected.
 
 The user approved this specification in a later turn on 2026-10-10. Its approval alone does not authorize implementation, other-repository writes, deployment, migration or spending outside existing limits. The user’s specification approval enables Plan; prior workflow-profiles merge authority does not automatically approve this new module's later phase gates.
+
+The later module acceptance at9559131 authorizes Agent OS documentation PR/merge and subsequent mobile/MCP specification, subject to their own gates. It does not authorize IWANT main merge or deployment. The completed execution plan is archived; the requirements in this specification remain Active.
 
 ## Primary sources
 

@@ -16,6 +16,10 @@ The goal is to reduce repetitive manual work, keep decisions in the repository, 
 - [`rfcs/RFC-0001-principles.md`](rfcs/RFC-0001-principles.md)  
   The founding principles that govern the project.
 
+## Current mission
+
+[Mission35](https://github.com/skunklabs-uk/agent-os/issues/35) remains open. The bounded workflow-profiles and team-execution modules are accepted; the [capability map](CAPABILITY-MAP-agent-team.md) links their specifications and outcomes. Next are mobile-control and mcp-access specifications, with separate approval gates. This is not acceptance of the complete MVP or authorization to deploy.
+
 ## Documents under validation
 
 - [`software-factory.md`](software-factory.md)  

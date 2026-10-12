@@ -1,7 +1,7 @@
 # Implementation Plan: team-execution
 
-**Status:** Active — bounded sandbox result accepted; real Osmani pilot implemented and merged. Tasks17–19 are complete, initial PR/main CI passed, and the Product Owner confirmed the Alpha/Beta smoke on 2026-10-12. The Product Owner accepted the declared post-merge raw-retention loss on 2026-10-12; pilot closeout is authorized with that recorded exception; [owning Task20](https://github.com/skunklabs-uk/waypoint-db/issues/20) records the exact boundary. Positive Pocock IWANT#523 is implemented and delivered as Ready PR640 with independent review and authorized preview CI; final module reconciliation review/acceptance remains open. No deploy or production.
-**Scope:** [Active team-execution specification](../SPEC-team-execution.md).
+**Status:** Archived — completed bounded team-execution plan, 2026-10-12. The Product Owner accepted the module at9559131 and authorized Agent OS documentation PR/merge. [Current outcome and limits](../team-execution-evidence.md#direct-product-owner-acceptance-and-current-authority) own subsequent authority. The remaining text preserves historical phase decisions and is not an operative instruction or current task queue.
+**Scope:** [Active team-execution specification](../../SPEC-team-execution.md).
 **Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
 **Method:** Osmani planning-and-task-breakdown at1401c8b8030e023baeebb31781a6653fe8e93026.
 **Tracking:** [mission35](https://github.com/skunklabs-uk/agent-os/issues/35), completed sandbox Tasks43–50, and the owning [waypoint-db issue16/tasks17–20](https://github.com/skunklabs-uk/waypoint-db/issues/16). Task bodies own their detail; no tasks/todo.md or second ledger.
@@ -94,7 +94,7 @@ GitHub issue35 remains the coordination issue. Tasks43–50 are approved native 
 
 The proposed executable fixture is an offline Markdown mission checklist: worker45 renders supplied profile/phase; worker46 renders supplied pending decisions. Task44 freezes the consumer contract/seam before either starts. It is disposable acceptance logic, not a custom workflow router, approval-enforcement layer or production feature.
 
-**Current handoff:** Tasks43–50 completed the bounded trial, subsequently accepted directly by the Product Owner. [Acceptance, inventories and unresolved scenarios](team-execution-evidence.md#direct-product-owner-acceptance-and-current-authority) and [Task50 exact-head review](https://github.com/skunklabs-uk/agent-os/issues/50) own that outcome. The following amendment owns the new proposal, not a second trial report. Spec/Plan stay Active; do not restart Task43 or infer full module acceptance.
+**Current handoff:** Tasks43–50 completed the bounded trial, subsequently accepted directly by the Product Owner. [Acceptance, inventories and unresolved scenarios](../team-execution-evidence.md#direct-product-owner-acceptance-and-current-authority) and [Task50 exact-head review](https://github.com/skunklabs-uk/agent-os/issues/50) own that outcome. The following amendment owns the new proposal, not a second trial report. Spec/Plan stay Active; do not restart Task43 or infer full module acceptance.
 
 ## Approved amendment: real Osmani pilot
 
@@ -112,7 +112,7 @@ This pilot delegation does not authorize Agent OS module merge/acceptance or a n
 
 Tasks17–19 and the accepted sandbox tasks are not reopened. On 2026-10-12 the Product Owner answered “Sì” to the explicit request to accept the declared loss and close the pilot. This accepts a retention exception: 102 original archived files verify against their existing manifest, while three original post-merge JSON files and post-merge screenshots remain unavailable; captured original session outputs and existing CI records remain. Missing bytes are not marked recovered or PASS. Task20 and parent16 can close on this bounded decision and the reported user smoke. It grants no Pocock scope, Agent OS module acceptance/merge or deployment authority.
 
-The later user selected IWANT#523 and delegated technical coordination; its existing #638→#639 graph, delivery and limits are now recorded in the [current outcome](team-execution-evidence.md#positive-pocock-delivery--iwant523). waypoint-db#21 was not reassigned. Mobile/MCP/hosting implementations still depend on team-execution acceptance and their own gates.
+The later user selected IWANT#523 and delegated technical coordination; its existing #638→#639 graph, delivery and limits are now recorded in the [current outcome](../team-execution-evidence.md#positive-pocock-delivery--iwant523). waypoint-db#21 was not reassigned. Mobile/MCP/hosting implementations still depend on team-execution acceptance and their own gates.
 
 ### Pre-approval source snapshot
 
@@ -144,7 +144,7 @@ Native sub-issue and blocked-by relationships encode17→18→19→20. One devel
 
 User outcome: reopening the source or target table picker and choosing its current table must not discard the analysis or repeat discovery. Choosing a different table must still invalidate stale analysis and perform the normal discovery. This is one small bug, not a new feature or redesign.
 
-The existing `commit` in `web/table-search.js` emits `change` even when the value is unchanged. The current `web/workspace.js` captures that event and removes `#analysis-results`. An isolated real-Chromium observation, using the unchanged production scripts, confirmed that reselecting `dbo.A` leaves the value `dbo.A` but removes the existing analysis; selecting `dbo.B` changes the value normally. [Publication-safe observations](evidence/waypoint-reselection-readonly.json) retain fixture, hashes, steps and results. Exact private script bodies are retained only in `/tmp/waypoint-reselection-private-inputs.json`, outside this public repository; this local retention is not durable public raw or a certified published source. Later independent review needs authorized access to the owning private inputs and actual handed-off base.
+The existing `commit` in `web/table-search.js` emits `change` even when the value is unchanged. The current `web/workspace.js` captures that event and removes `#analysis-results`. An isolated real-Chromium observation, using the unchanged production scripts, confirmed that reselecting `dbo.A` leaves the value `dbo.A` but removes the existing analysis; selecting `dbo.B` changes the value normally. [Publication-safe observations](../evidence/waypoint-reselection-readonly.json) retain fixture, hashes, steps and results. Exact private script bodies are retained only in `/tmp/waypoint-reselection-private-inputs.json`, outside this public repository; this local retention is not durable public raw or a certified published source. Later independent review needs authorized access to the owning private inputs and actual handed-off base.
 
 This investigation used an in-memory synthetic DOM, no application server, HTMX backend or database. It proves the component interaction, not an actual HTTP count or full application failure. No correction was implemented. The authorized pilot must reproduce the behavior on the handed-off full application before changing code; if it is already fixed or cannot be reproduced there, stop this issue rather than invent a replacement.
 
@@ -185,11 +185,11 @@ Proposed inference uses only the existing `openai-codex/gpt-6.1-sol` account, no
 
 The authorized outcome would cover real user-project logic through a genuine worker return, project QA/browser acceptance, existing project CI on exact heads, independent real-project review and conditional PR/merge/post-merge local smoke. The issue naturally exercises source-specific worker ownership without pretending two independent changes exist.
 
-It does **not** cover positive Pocock setup/progression/retro, interrupted live-child restoration, CPU simultaneity, hard runtime confinement, production deployment/release or the missing original180s startup stdout/stderr. A successful real CI run does not prove a CI-failure/correction path: handle a genuine failure if encountered and authorized; do not break CI deliberately to fill the table. Preserve the [remaining-scenarios table](team-execution-evidence.md#task50-acceptance-boundary-and-durable-handoff) and original raw unchanged.
+It does **not** cover positive Pocock setup/progression/retro, interrupted live-child restoration, CPU simultaneity, hard runtime confinement, production deployment/release or the missing original180s startup stdout/stderr. A successful real CI run does not prove a CI-failure/correction path: handle a genuine failure if encountered and authorized; do not break CI deliberately to fill the table. Preserve the [remaining-scenarios table](../team-execution-evidence.md#task50-acceptance-boundary-and-durable-handoff) and original raw unchanged.
 
 ## Separate Pocock completion result and next gate
 
-The later explicit user selection and technical delegation supersede the former unselected-mission proposal. IWANT#523 now supplies a positive separate Pocock route at the original pin, native setup/graph/writers/mergers, exact-head independent parallel review, application/Ceph acceptance and a real retrospective. The [owning outcome](team-execution-evidence.md#positive-pocock-delivery--iwant523) records actual invocations, delegated-versus-literal-user attribution, complete inventory mapping, failures/recovery, SHA/raw pointers and limits. Do not replay the negative sandbox cases or create a new mission for this evidence.
+The later explicit user selection and technical delegation supersede the former unselected-mission proposal. IWANT#523 now supplies a positive separate Pocock route at the original pin, native setup/graph/writers/mergers, exact-head independent parallel review, application/Ceph acceptance and a real retrospective. The [owning outcome](../team-execution-evidence.md#positive-pocock-delivery--iwant523) records actual invocations, delegated-versus-literal-user attribution, complete inventory mapping, failures/recovery, SHA/raw pointers and limits. Do not replay the negative sandbox cases or create a new mission for this evidence.
 
 The coordinator now owns only serial reconciliation and exact-SHA module review. Module acceptance/PR/merge requires its applicable authority; neither Waypoint's merge delegation nor IWANT's preview permission supplies it. IWANT main merge remains excluded because it activates the deployment path. Ready PR640 is a reviewable delivery, not a production acceptance or a closed IWANT issue. #522 remains independently blocked by its recorded external prerequisites.
 
@@ -207,10 +207,10 @@ After independent final review, present the concrete module outcome and any real
 
 ## Primary references
 
-- [Active specification](../SPEC-team-execution.md) and [capability map](../CAPABILITY-MAP-agent-team.md).
-- [Accepted native baseline](workflow-profiles-evidence.md#accepted-outcome-and-closeout).
+- [Active specification](../../SPEC-team-execution.md) and [capability map](../../CAPABILITY-MAP-agent-team.md).
+- [Accepted native baseline](../workflow-profiles-evidence.md#accepted-outcome-and-closeout).
 - [Osmani planning skill](https://github.com/addyosmani/agent-skills/blob/1401c8b8030e023baeebb31781a6653fe8e93026/skills/planning-and-task-breakdown/SKILL.md).
 - [OMP pinned task/isolation documentation](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/docs/tools/task.md).
 - [Osmani browser verification](https://github.com/addyosmani/agent-skills/blob/1401c8b8030e023baeebb31781a6653fe8e93026/skills/browser-testing-with-devtools/SKILL.md) and [original TDD](https://github.com/addyosmani/agent-skills/blob/1401c8b8030e023baeebb31781a6653fe8e93026/skills/test-driven-development/SKILL.md).
 - [Pocock setup](https://github.com/mattpocock/skills/blob/24fe0ef7737efae15c87225755e9f6f5965e4888/skills/engineering/setup-matt-pocock-skills/SKILL.md), [route/context boundaries](https://github.com/mattpocock/skills/blob/24fe0ef7737efae15c87225755e9f6f5965e4888/skills/engineering/ask-matt/SKILL.md), [implementation graph](https://github.com/mattpocock/skills/blob/24fe0ef7737efae15c87225755e9f6f5965e4888/skills/engineering/implement-spec/SKILL.md) and [retro](https://github.com/mattpocock/skills/blob/24fe0ef7737efae15c87225755e9f6f5965e4888/skills/engineering/retro/SKILL.md).
-- [REQ-0001](../requirements/REQ-0001-software-factory.md), [RFC-0001](../rfcs/RFC-0001-principles.md) and [AGENTS](../AGENTS.md).
+- [REQ-0001](../../requirements/REQ-0001-software-factory.md), [RFC-0001](../../rfcs/RFC-0001-principles.md) and [AGENTS](../../AGENTS.md).

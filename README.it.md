@@ -16,6 +16,10 @@ L'obiettivo è ridurre il lavoro manuale ripetitivo, mantenere le decisioni nel 
 - [`rfcs/RFC-0001-principles.md`](rfcs/RFC-0001-principles.md)  
   Principi fondanti che governano il progetto.
 
+## Missione corrente
+
+La [missione35](https://github.com/skunklabs-uk/agent-os/issues/35) resta aperta. I moduli workflow-profiles e team-execution sono accettati nei rispettivi perimetri dichiarati; la [capability map](CAPABILITY-MAP-agent-team.md) collega specifiche ed esiti. Seguono le specifiche mobile-control e mcp-access, con i rispettivi gate di approvazione. Non costituisce accettazione dell’intero MVP né autorizzazione al deploy.
+
 ## Documenti in validazione
 
 - [`software-factory.md`](software-factory.md)
