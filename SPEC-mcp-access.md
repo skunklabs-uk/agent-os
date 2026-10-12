@@ -1,6 +1,6 @@
 # Spec: mcp-access
 
-**Status:** Draft — Specify; awaiting Product Owner approval. No implementation authorized.
+**Status:** Active — approved by the Product Owner on 2026-10-12 at `f55c2b7838104770766825e57b68129b019e951e`, together with the shared provider contract. Plan preparation authorized; implementation requires its subsequent gates.
 **Module:** mcp-access.
 **Parent:** [approved capability map](CAPABILITY-MAP-agent-team.md).
 **Depends on:** accepted [team-execution](SPEC-team-execution.md), delivered in [PR51](https://github.com/skunklabs-uk/agent-os/pull/51).
@@ -14,7 +14,7 @@ Availability in this account/client, supported authentication, network reachabil
 
 ## Required behavior
 
-1. Expose only the operations needed to delegate within approved repository/scope, inspect mission and specialist status/results, answer applicable pending questions/decisions and request interruption. Preserve the [single provider contract](SPEC-team-execution.md#proposed-remote-consumer-contract--draft-amendment); a consumer cannot invent its own mission or approval ledger.
+1. Expose only the operations needed to delegate within approved repository/scope, inspect mission and specialist status/results, answer applicable pending questions/decisions and request interruption. Preserve the [single provider contract](SPEC-team-execution.md#shared-remote-consumer-contract); a consumer cannot invent its own mission or approval ledger.
 2. Confirm the exact destination machine and mission. Delegation to an existing mission reuses its coordinator; no duplicate task solely because a request or connection is retried.
 3. Make long work observable after the initiating request returns or times out. Return a stable reference whose status/results can be retrieved; distinguish unknown outcome from failed work, and request acknowledgement from completed interruption.
 4. Authenticate the authorized operator, limit accessible repositories/operations and reject unauthenticated or out-of-scope mutations. Never transfer operator credentials into chat or publish them with evidence.
@@ -76,4 +76,4 @@ Use actual supported client calls and bounded synthetic data in the approved tes
 - **Ask first:** new access, costs, network exposure/provisioning, consumer permission changes, product-scope reduction or MCP deferral, and deployment after smoke.
 - **Never:** automate the ChatGPT UI through unsupported mechanisms, claim a server test proves client support, reuse pilot spending limits, or deploy on specification approval.
 
-Specification and shared-contract approval are the next gate. The actual client/account capabilities and permitted connectivity remain trial prerequisites; do not request secrets in chat. No implementation is selected, and MCP remains in scope until an explicit evidence-based decision changes it.
+Specification and shared-contract approval are acquired. The [current plan](tasks/plan.md) awaits its separate approval gate. The actual client/account capabilities and permitted connectivity remain trial prerequisites; do not request secrets in chat. No implementation is selected, and MCP remains in scope until an explicit evidence-based decision changes it.

@@ -1,6 +1,6 @@
 # Spec: mobile-control
 
-**Status:** Draft — Specify; awaiting Product Owner approval. No implementation authorized.
+**Status:** Active — approved by the Product Owner on 2026-10-12 at `f55c2b7838104770766825e57b68129b019e951e`, together with the shared provider contract. Plan preparation authorized; implementation requires its subsequent gates.
 **Module:** mobile-control.
 **Parent:** [approved capability map](CAPABILITY-MAP-agent-team.md).
 **Depends on:** accepted [team-execution](SPEC-team-execution.md), delivered in [PR51](https://github.com/skunklabs-uk/agent-os/pull/51).
@@ -17,13 +17,13 @@ The approved map selects a browser, not a new native application. No browser/dev
 1. Show which machine, repository and mission are controlled; prevent silent attachment to another mission or creation of a competing coordinator.
 2. Start an authorized mission and resume an existing one through the browser, preserving method, ownership and pending prerequisites. A host-only step is a disclosed gap, not completion of remote start/resume.
 3. Show coordinator and relevant specialists, current work, blocks, questions, returned artifacts and exact revisions where relevant. Delayed or disconnected state is visibly distinguished from current state.
-4. Allow answers, direction changes, interruption requests and scoped approvals/rejections using the [single provider contract](SPEC-team-execution.md#proposed-remote-consumer-contract--draft-amendment). The user can distinguish acknowledgement from actual execution or stoppage.
+4. Allow answers, direction changes, interruption requests and scoped approvals/rejections using the [single provider contract](SPEC-team-execution.md#shared-remote-consumer-contract). The user can distinguish acknowledgement from actual execution or stoppage.
 5. On disconnection, retain pending decisions at the host; after reconnect, show their current identity/status before accepting a response. Duplicate responses, stale links and changed sessions cannot authorize unrelated work.
 6. Support touch and keyboard access, legible compact layouts and visible mutation consequences. Use authentic application screenshots for evidence; keep secrets and control URLs out of public artifacts.
 
 ## Candidate support and limits
 
-Read-only preparation examined [native collab at b07a1c1](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/docs/collab.md): browser sharing and guest intervention exist, but host session transitions and guest command restrictions require verification. Documentation does not prove the user's remote journey. [omp-web package at0acce624](https://github.com/ddallabenetta/omp-web/blob/0acce6240b27eb7d44d5c9b78187bd95e01270f8/package.json) is another candidate; compatibility with the qualified runtime remains untested. No candidate is selected here and no install/update is authorized by this Draft.
+Read-only preparation examined [native collab at b07a1c1](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/docs/collab.md): browser sharing and guest intervention exist, but host session transitions and guest command restrictions require verification. Documentation does not prove the user's remote journey. [omp-web package at0acce624](https://github.com/ddallabenetta/omp-web/blob/0acce6240b27eb7d44d5c9b78187bd95e01270f8/package.json) is another candidate; compatibility with the qualified runtime remains untested. No candidate is selected here and no install/update is authorized by specification approval.
 
 Prefer existing native facilities that satisfy the criteria. If a required action is missing, report the precise gap and minimum justified extension during Plan; do not silently reduce the remote-control requirement. Hosting must be reachable from the actual device. A new relay, ingress, service, VM or cost requires authority in its owning repository before provisioning. Do not reopen the unrelated VM/OMX PoC merely to host this work.
 
@@ -67,6 +67,6 @@ Every scenario needs actual evidence before module acceptance. Product Owner smo
 
 - **Always:** preserve the provider contract, source-method gates, one coordinator and existing project authority; prefer the smallest sufficient native solution.
 - **Ask first:** product-scope changes, new access/costs/provisioning, owner-repository changes beyond approved scope, and deployment after smoke.
-- **Never:** claim desktop testing as user-device proof, weaken authentication, expose control links/secrets, or treat this Draft as execution authority.
+- **Never:** claim desktop testing as user-device proof, weaken authentication, expose control links/secrets, or treat specification approval as execution authority.
 
-Specification approval is the next gate. Device/browser and remote access details are required before the actual trial, not to approve these requirements. Runtime choice, exact test commands and any minimum hosting change belong to Plan. No Plan/Tasks/Implement advancement occurs until this specification and the shared provider amendment are approved.
+Specification approval is acquired; Plan approval is the next gate. Device/browser and remote access details are required before the actual trial, not to approve these requirements. Runtime choice, exact test commands and any minimum hosting change belong to Plan. The [current plan](tasks/plan.md) prepares the next phase; Tasks/Implement require their own approval gates.

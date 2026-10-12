@@ -110,9 +110,9 @@ The user approved this specification in a later turn on 2026-10-10. Its approval
 
 The later module acceptance at9559131 authorizes Agent OS documentation PR/merge and subsequent mobile/MCP specification, subject to their own gates. It does not authorize IWANT main merge or deployment. The completed execution plan is archived; the requirements in this specification remain Active.
 
-## Proposed remote-consumer contract — Draft amendment
+## Shared remote-consumer contract
 
-This section is a **Draft**, not part of the accepted module behavior. Approval is requested together with the mobile-control/mcp-access specifications; it does not reopen accepted proofs or select an implementation. The coordinator alone owns this provider boundary. Both consumers refer here instead of defining another state store or approval ledger.
+This behavioral amendment was approved by the Product Owner on 2026-10-12 at `f55c2b7838104770766825e57b68129b019e951e`, together with the mobile-control/mcp-access specifications. It is Active requirements authority, not evidence that remote consumers have been implemented or accepted. It does not reopen the accepted team-execution proofs or select an implementation. The coordinator alone owns this provider boundary. Both consumers refer here instead of defining another state store or approval ledger.
 
 - **Identity and state:** expose the owning repository/mission, selected method and phase, coordinator and specialist identities, current activity or blocked condition, source revision, results and pending questions/decisions. Distinguish unavailable or stale observations from completed work. Runtime state supplements, but does not replace, authoritative project artifacts.
 - **Commands:** start an authorized mission, resume an identified mission, inspect progress/results, answer a question, steer or request interruption. Return an acknowledgement tied to the target mission and a later observed result; accepted interruption is not proof that all processes stopped. Unsupported commands must be explicit, without silent substitution or a second coordinator.
