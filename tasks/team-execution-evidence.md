@@ -63,7 +63,7 @@ This table supplements the historical Task50 table; it does not reopen #43–#50
 | Restart corrected contract | PASS in observed boundary | Accepted same-session/fresh-artifact recovery plus resumed Pocock journals/durable bundles; no crash-proof live-child restoration or one process across planning/implementation claimed. |
 | Selected-profile closeout | PASS within accepted boundary | Current route, full catalog mapping, real retrospective and Ready delivery exist. Independent final review at9559131 has no remaining findings; the Product Owner accepted this bounded module and authorized Agent OS documentation PR/merge. IWANT remains Ready, not merged or user-smoked; production release is excluded. |
 
-Current decision: retain the team-execution specification and this outcome as Active authority; archive the completed execution plan. Keep #35 open. Complete the authorized documentary delivery, then Specify mobile-control and mcp-access with one shared state/commands/approvals contract and their own approval gates. Accepted sandbox proofs are not repeated. No implementation, provisioning or deployment is granted by this closeout.
+Current decision: the bounded module is accepted and its documentary delivery is complete via [PR51](https://github.com/skunklabs-uk/agent-os/pull/51), merge95528e6c0013f067702496902c40051fba973e48. The specification and this outcome remain Active; the completed execution plan is archived. The Product Owner subsequently approved mobile-control/mcp-access and the shared provider contract atf55c2b7. Mission35 stays open in [Plan](plan.md), pending its own next gate. Accepted sandbox proofs are not repeated; no deployment, IWANT merge or consumer implementation is authorized by this outcome.
 
 ## Task43: native prerequisites
 
