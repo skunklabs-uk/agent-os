@@ -18,7 +18,7 @@ L'obiettivo è ridurre il lavoro manuale ripetitivo, mantenere le decisioni nel 
 
 ## Missione corrente
 
-La [missione35](https://github.com/skunklabs-uk/agent-os/issues/35) resta aperta. I moduli workflow-profiles e team-execution sono accettati nei rispettivi perimetri dichiarati; la [capability map](CAPABILITY-MAP-agent-team.md) collega specifiche ed esiti. Le specifiche mobile-control e mcp-access e il contratto condiviso sono approvati; il [piano di implementazione](tasks/plan.md) è in revisione, con gate separati per Tasks e Implement. Non costituisce accettazione dell’intero MVP né autorizzazione al deploy.
+La [missione35](https://github.com/skunklabs-uk/agent-os/issues/35) resta aperta. I moduli workflow-profiles e team-execution sono accettati nei rispettivi perimetri dichiarati; la [capability map](CAPABILITY-MAP-agent-team.md) collega specifiche ed esiti. Le specifiche mobile-control e mcp-access e il contratto condiviso sono approvati; il [piano di implementazione](tasks/plan.md) procede con la readiness delegata, con esecuzione delimitata tramite i gate Tasks e Implement. Non costituisce accettazione dell’intero MVP né autorizzazione al deploy.
 
 ## Documenti in validazione
 

@@ -18,7 +18,7 @@ The goal is to reduce repetitive manual work, keep decisions in the repository, 
 
 ## Current mission
 
-[Mission35](https://github.com/skunklabs-uk/agent-os/issues/35) remains open. The bounded workflow-profiles and team-execution modules are accepted; the [capability map](CAPABILITY-MAP-agent-team.md) links their specifications and outcomes. The mobile-control and mcp-access specifications and shared contract are approved; their [implementation plan](tasks/plan.md) is under review, with separate Tasks and Implement gates. This is not acceptance of the complete MVP or authorization to deploy.
+[Mission35](https://github.com/skunklabs-uk/agent-os/issues/35) remains open. The bounded workflow-profiles and team-execution modules are accepted; the [capability map](CAPABILITY-MAP-agent-team.md) links their specifications and outcomes. The mobile-control and mcp-access specifications and shared contract are approved; their [implementation plan](tasks/plan.md) is in delegated readiness, with execution scoped through Tasks and Implement gates. This is not acceptance of the complete MVP or authorization to deploy.
 
 ## Documents under validation
 

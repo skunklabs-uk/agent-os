@@ -69,4 +69,4 @@ Every scenario needs actual evidence before module acceptance. Product Owner smo
 - **Ask first:** product-scope changes, new access/costs/provisioning, owner-repository changes beyond approved scope, and deployment after smoke.
 - **Never:** claim desktop testing as user-device proof, weaken authentication, expose control links/secrets, or treat specification approval as execution authority.
 
-Specification approval is acquired; Plan approval is the next gate. Device/browser and remote access details are required before the actual trial, not to approve these requirements. Runtime choice, exact test commands and any minimum hosting change belong to Plan. The [current plan](tasks/plan.md) prepares the next phase; Tasks/Implement require their own approval gates.
+Specification approval and subsequent Plan continuation are acquired; readiness is current. Device/browser and remote access details are required before the actual trial, not to approve these requirements. Runtime choice, exact test commands and any minimum hosting change belong to Plan. The [current plan](tasks/plan.md) prepares the next phase; Tasks/Implement require their own approval gates.
