@@ -1,0 +1,216 @@
+# Implementation Plan: team-execution
+
+**Status:** Archived — completed bounded team-execution plan, 2026-10-12. The Product Owner accepted the module at9559131 and authorized Agent OS documentation PR/merge. [Current outcome and limits](../team-execution-evidence.md#direct-product-owner-acceptance-and-current-authority) own subsequent authority. The remaining text preserves historical phase decisions and is not an operative instruction or current task queue.
+**Scope:** [Active team-execution specification](../../SPEC-team-execution.md).
+**Mission:** [35](https://github.com/skunklabs-uk/agent-os/issues/35).
+**Method:** Osmani planning-and-task-breakdown at1401c8b8030e023baeebb31781a6653fe8e93026.
+**Tracking:** [mission35](https://github.com/skunklabs-uk/agent-os/issues/35), completed sandbox Tasks43–50, and the owning [waypoint-db issue16/tasks17–20](https://github.com/skunklabs-uk/waypoint-db/issues/16). Task bodies own their detail; no tasks/todo.md or second ledger.
+**Language:** English is authoritative by user instruction.
+
+## Outcome and baseline
+
+Demonstrate one accountable coordinator delivering a small approved change through real workers, source-faithful gates, functional verification, independent review, authorized integration and documentary closeout. Preserve separate Osmani/Pocock missions and expose genuine manual invocation limits. No production deployment is authorized.
+
+The accepted workflow-profiles outcome proves read-only observations, not write-worker isolation or full delivery. Its completed execution plan has moved to tasks/archive/workflow-profiles-plan.md; it remains Archived history. Historical transcript paths naming tasks/plan.md still describe the file used at that time, not this new plan.
+
+Planning inputs: current main1f2f655df06039bb413f389b83d58a29a28ad3b1, approved capability map/specification, Active REQ-0001/RFC-0001, accepted workflow-profiles raw/evidence and mission35 clarifications. No previous incomplete plan is replaced; Tasks37–40 are closed. A candidate mission-team ZIP is described by the issue but not locally verified; absence of that attachment does not block native-first work.
+
+## Technical approach and proportionality
+
+| Choice | Decision and reason |
+|---|---|
+| Coordinator/state | Start with existing mission artifact and native runtime context. The current issue/profile tracker remains the work ledger; evidence records observations without a duplicate task checklist. |
+| Runtime | Evaluate the installed OMP against studied18.8.7/b07a1c146d0d12cfc855a2c65d52f892ef319040. Record drift and check affected source compatibility; do not silently update tools or pins. |
+| Writer isolation | Prefer native isolated task capture with automatic application disabled. Verify the actual backend, owned paths and returned patch/branch before relying on it. Integrate serially. Standard disposable worktrees are the next existing option; sequential fallback is disclosed as a failed parallel-writer criterion, not full acceptance. |
+| Concurrency | Two independent tasks only after the shared contract is settled. Keep fixed authorized models, max concurrency2 and speculative launch off for bounded proofs; no role-based model expansion or advisor/fallback calls. |
+| Coordination prompt/skill | Compare no new guidance, minimal project context/prompt and candidate reusable skill in that order. Introduce only the minimum guidance for an observed coordination gap. A global skill or cross-repository installation requires separately approved ownership/scope. |
+| Safety | Reuse selected-author allowlists, exact-source checks, provider restrictions and auto-QA disabled at project/process startup. No global config, auth migration, consumer permission expansion or blocked SDK discovery. |
+| CI/checks | Use the owning repository's actual required checks. Current Agent OS has no workflow CI; inspect again at execution. Do not add Actions solely to manufacture a failure/green badge. Controlled local regression failure exercises correction; it does not claim CI-job coverage. Real CI behavior needs an already authorized environment or remains explicitly unproven. |
+| Delivery | Existing conditional merge authority is scoped to the work it approves. Confirm authority for this module/pilot delivery before merging. Smoke instructions follow an authorized merge; deployment needs a distinct user OK. |
+
+Exact-version native documentation includes task.isolation.enabled, task.isolation.apply=false, patch/branch capture, batch tasks and task.maxConcurrency. Context7 current docs were queried and compared with pinned docs/tools/task.md; current examples are not assumed byte-compatible with18.8.7. Isolation lifecycle and inherited provider/tool capabilities must be checked at execution, including whether captured work survives child teardown. No new SDK runner, database, wrapper or policy engine is selected.
+
+## Ordered work packages
+
+These approved Plan packages are decomposed into approved GitHub Tasks43–50 below. Package3 has two independently owned worker tasks; no new work package is introduced. Every task records up to three acceptance criteria, focused verification, owned files, dependencies and stop conditions. Execution approval does not waive original methodological prerequisites or existing cost/access limits.
+
+| Slice | Acceptance and verification | Dependency; likely write scope |
+|---|---|---|
+| 1. Establish the authorized native sandbox | Verify installed version/source pins, login availability without secrets, provider/auto-QA restrictions and exact commands. Choose a disposable Agent OS worktree for non-production acceptance fixtures; no new repository. Record model-call ceilings/cost authority and stop prerequisites before inference. Verify no global/shared consumer changes. | None; native project config and eventual team-execution evidence, S–M. |
+| 2. Prove coordinator routing and invocation | One small mission per profile retains role assignments, sources, phase and authoritative state. Test actual user-only invocation/continuation, missing Pocock setup and missing/foreign skill; no methodological fallback. Compare native context to the candidate without installing it. Record minimum necessary guidance and unresolved manual actions. | 1; one mission artifact, native context and evidence, M. |
+| 3. Deliver two independent executable fixture slices | After contract approval, actual separate workers implement two disjoint bounded behaviors with selected-method RED/GREEN observations. Prove backend/workspace separation, owned writes and observed overlap; capture patches/branches without automatic parent mutation. Record failed isolation honestly. | 2; disposable feature/test paths only plus evidence, M per worker; shared contracts frozen. |
+| 4. Integrate and recover the corrected contract | Coordinator serially integrates validated returns and runs focused combined tests/functional acceptance. Exercise a blocked prerequisite while independent work finishes, then both same-session and artifact-only recovery of the corrected final contract. Test setup still absent after another gate approval; no reliance on historical chat. | 3; disposable integration artifact/tests and evidence, M. |
+| 5. Exercise independent review and correction | A real separate reviewer reads original requirements and exact base/head/diff/raw. Detect a controlled disposable defect/check failure; correct minimally, rerun relevant checks and re-review material fixes on final head. Verify stale head, missing authorization and failed required checks yield NO-GO. Local test failure is not reported as CI failure. | 4; fixture code/test correction, review/mission record and evidence, M. |
+| 6. Verify closeout and selected-profile inventory | Derive each chosen catalog from pinned manifest plus actual resolution; all entries receive the approved evidence-backed outcome and invocation/availability metadata. Render exercised route in the one closeout record. Verify user-invoked Pocock retro or explicit remaining manual prerequisite; Osmani retrospective is the user extension. No automatic process edits/issues. | 5; authoritative mission closeout and evidence, S–M. |
+| 7. Final acceptance and authorized delivery | Independent final-SHA review checks all ten spec scenarios and accumulated controls, resolves findings, inspects durable privacy-screened raw and authoritative reconciliation. Prepare PR/merge/smoke only within actual authority. Report live-pilot/CI/release gaps, keep mission35 open, and do not imply full mobile/MCP or production replacement. | 6; module evidence/map/spec/plan closeout and existing tracker, M. |
+
+Dependency chain:43→44→(45 and46)→47→48→49→50. Only the two disjoint workers45/46 run concurrently; coordinator integration, state updates, review fixes and closeout stay sequential. Independent reviewer is never one of the implementers and does not inherit their conversation. Test Pocock separately; do not switch this mission's Osmani realization method.
+
+## Verification checkpoints
+
+- After2: inspect routing/invocation results and RFC necessity comparison before adding coordination guidance or writer trials. Continue within approved scope if native facilities suffice; a global skill, persistent architecture or new spending needs the corresponding approval.
+- After4: inspect actual isolation/integration/recovery and source-faithful next actions. Failed parallel isolation blocks the parallel-delivery acceptance; independent approved diagnosis may continue. Do not convert sequential success into parallel proof.
+- After7: submit exact-head independent review, acceptance evidence and closeout for the profile-required final decision. No merge on missing proof/authority; deployment remains separate.
+
+These checks protect the module's unproven execution paths. They do not introduce additional universal hotfix approvals or a second task tracker. Plan and Tasks approvals remain the original selected-upstream phase gates.
+
+## Test scope, pilot and missing prerequisites
+
+Initial executable trials stay in disposable Agent OS worktrees and are acceptance fixtures, not a real user-project pilot. Use the smallest self-contained logic/tests with tools already installed; the detailed task records the actual focused command and RED/GREEN before new logic. Fixture outputs do not become new production features in Agent OS.
+
+A complete user-project delivery proof still needs an explicitly selected and authorized pilot (new project or Waypoint/waypoint-db after read-only reality-check). That choice is not guessed from repository names, and this Plan does not authorize writes to those repositories. If sandbox fixtures leave a scenario requiring a live pilot/CI/release unproven, mark it unresolved and scope the required pilot approval before claiming full module acceptance. Deployment tests remain pending a separate explicit user OK.
+
+Bounded model calls: reuse only an existing authorized provider/login; set wall-clock/request limits per task and account for parent/children before launching. No new spending envelope or infinite correction loop is granted by Plan approval. Missing operator login, candidate attachment or unavailable backend blocks only work dependent on it. Candidate adoption specifically requires its exact bytes/hash/privacy inspection; native-only comparison can proceed without it.
+
+Preserve raw prompts/configs/journals, before/after artifacts and negative cases in durable reviewer-accessible evidence after credential/privacy inspection. Hashes alone do not preserve data. Distinguish registered/visible/invoked catalogs and event timing from CPU parallelism. Review actually reads the full material it claims; limits are attributed, not hidden by coordinator summaries.
+
+## Commands and verification
+
+Planning/document checks:
+
+```bash
+git diff --check origin/main...HEAD
+git diff origin/main...HEAD -- SPEC-team-execution.md CAPABILITY-MAP-agent-team.md tasks/plan.md tasks/archive/workflow-profiles-plan.md
+```
+
+No product build/runtime/model call is needed for this Plan. Slice1 records exact supported commands from the actual version before execution; do not reuse obsolete CLI syntax blindly. Runtime test framework and actual pilot commands are selected from the verified environment in detailed tasks, not fabricated here.
+
+## Task tracker and approval gate
+
+The Product Owner approved this Plan and then explicitly approved Tasks43–50 in a later turn, authorizing execution in the temporary proof scope while respecting dependencies, verification and stop conditions. Both approvals exclude deployment, production use, current-runtime replacement, other-repository writes and costs outside existing authorization; task approval additionally excludes unspecified merge. This is the durable approval source; tracker updates refer here rather than creating another approval ledger.
+
+GitHub issue35 remains the coordination issue. Tasks43–50 are approved native sub-issues with native blocked-by relationships. Their issue bodies are the single authority for task acceptance criteria, verification and ownership. The archived workflow-profiles plan is historical; its closed tasks37–40 are not reopened.
+
+## Ordered task index
+
+1. [Task43 — authorized native sandbox](https://github.com/skunklabs-uk/agent-os/issues/43).
+2. [Task44 — coordinator routing and invocation](https://github.com/skunklabs-uk/agent-os/issues/44), blocked by43.
+3. [Task45 — isolated checklist summary worker](https://github.com/skunklabs-uk/agent-os/issues/45), blocked by44.
+4. [Task46 — isolated pending-decisions worker](https://github.com/skunklabs-uk/agent-os/issues/46), blocked by44; independent of45.
+5. [Task47 — integration and final artifact-only recovery](https://github.com/skunklabs-uk/agent-os/issues/47), blocked by45 and46.
+6. [Task48 — independent review and correction](https://github.com/skunklabs-uk/agent-os/issues/48), blocked by47.
+7. [Task49 — selected-profile inventory and closeout](https://github.com/skunklabs-uk/agent-os/issues/49), blocked by48.
+8. [Task50 — final acceptance and delivery authority](https://github.com/skunklabs-uk/agent-os/issues/50), blocked by49.
+
+The proposed executable fixture is an offline Markdown mission checklist: worker45 renders supplied profile/phase; worker46 renders supplied pending decisions. Task44 freezes the consumer contract/seam before either starts. It is disposable acceptance logic, not a custom workflow router, approval-enforcement layer or production feature.
+
+**Current handoff:** Tasks43–50 completed the bounded trial, subsequently accepted directly by the Product Owner. [Acceptance, inventories and unresolved scenarios](../team-execution-evidence.md#direct-product-owner-acceptance-and-current-authority) and [Task50 exact-head review](https://github.com/skunklabs-uk/agent-os/issues/50) own that outcome. The following amendment owns the new proposal, not a second trial report. Spec/Plan stay Active; do not restart Task43 or infer full module acceptance.
+
+## Approved amendment: real Osmani pilot
+
+The Product Owner directly approved this Plan after the proposal at `ef3604c8ecd03f57576b6ca0347a07f1c582ccf9`. This permits preparation of the owning issue and detailed tasks for a separate execution decision. It does not authorize implementation, paid calls, PR/CI, merge or deployment. The approved module specification is unchanged; mission35 remains the coordination tracker and the candidate issue/task bodies own detailed work.
+
+### Pilot delivery delegation
+
+After task preparation at `7d368981be0e09409925d3aafa6af43e5555f9c6`, the Product Owner expressly authorized “PR/CI e merge” for waypoint-db issue16/tasks17–20. This satisfies the pilot's publishing/CI and conditional merge authority: one PR-head initial run and one merged-main initial run of the existing `ci-container` workflow, after current local checks and independent final-head GO. Revalidate triggers/policy before push; no automatic or same-head rerun, workflow changes, hosted fallback, new scope, deploy, ECS/ECR publication or production use.
+
+This pilot delegation does not authorize Agent OS module merge/acceptance or a new Pocock mission. The subsequent continuation approval authorized Tasks17–20, the three-file handoff and existing account use within the task limits on NOVBSCWOLaulMaU; readiness and actual native execution are recorded in the [owning pilot](https://github.com/skunklabs-uk/waypoint-db/issues/16). It supersedes the handoff-only boundary at snapshot0334d5e, not the exclusions on deploy, production or additional scope.
+
+### Pilot delivery and remaining closeout — 2026-10-12
+
+[PR22](https://github.com/skunklabs-uk/waypoint-db/pull/22) integrated the independently reviewed source39a206aae1b9ea605b3f9bf1985eb8a944bfaaee as merge92224ba8dd80033bfbc2044e120091d4b8534fb9. The owning Task20 holds CI, evidence inventory, route, retrospective and retention limits; mission35 links that outcome. Both initial allowed CI runs passed without rerun. The Product Owner reports that reselecting Alpha retains the analysis and changing to Beta removes it; do not infer additional user mouse/keyboard coverage from that report.
+
+Tasks17–19 and the accepted sandbox tasks are not reopened. On 2026-10-12 the Product Owner answered “Sì” to the explicit request to accept the declared loss and close the pilot. This accepts a retention exception: 102 original archived files verify against their existing manifest, while three original post-merge JSON files and post-merge screenshots remain unavailable; captured original session outputs and existing CI records remain. Missing bytes are not marked recovered or PASS. Task20 and parent16 can close on this bounded decision and the reported user smoke. It grants no Pocock scope, Agent OS module acceptance/merge or deployment authority.
+
+The later user selected IWANT#523 and delegated technical coordination; its existing #638→#639 graph, delivery and limits are now recorded in the [current outcome](../team-execution-evidence.md#positive-pocock-delivery--iwant523). waypoint-db#21 was not reassigned. Mobile/MCP/hosting implementations still depend on team-execution acceptance and their own gates.
+
+### Pre-approval source snapshot
+
+| Source inspected | Observation | Consequence |
+|---|---|---|
+| `skunklabs-uk/waypoint-db` GitHub | No open issues or PRs. Main is `d997569060d19e22112a0bec4c1262afd776ac53`; its `test` check is successful ([exact-head job](https://github.com/skunklabs-uk/waypoint-db/actions/runs/38029338786/job/114146795494)). Recent functional PRs were merged into parent branches, not main. | No ready numbered issue can honestly be selected. A small new bug issue must remain a draft here until authorized. Historical green checks do not certify unpublished work. |
+| Published web stack | `553149ae7ae6f7733d0e3d577ba42a413a1fb83d`, [PR8](https://github.com/skunklabs-uk/waypoint-db/pull/8), has a successful [CI run](https://github.com/skunklabs-uk/waypoint-db/actions/runs/38053284673). Job steps confirm dependency/assets checks, Go tests/vet, Docker build and HTTP/UI smoke, on `ci-container`. The proposed picker scripts are absent from both this snapshot and main. | Do not open a tiny PR against an incompatible base or smuggle the unpublished application rollup into the pilot. |
+| Local waypoint-db | Checkout uses the empty personal repository as origin and the organization repository as upstream. Observed HEAD `b58a7f8d245f17a5cfdd78354c691e7a69ea51cb`, branch `fix/unrestricted-connection-profiles`, with an active MVP plan, separate repair/completion worktrees and user-owned changes in CI, SQL metadata, view, workspace and documentation. | Zero open PRs is not absence of ongoing work. Do not write, reset, cherry-pick or integrate the owner's work. Local evidence is reported by its documents, not recertified by our checks. |
+| Local test evidence | `docs/implementation-status.md` distinguishes earlier native database runs from later six-package Go/vet checks with database integration skipped. UI/browser, syntax/assets and Docker checks are documented; Cloud metadata and Maintenance-controller prerequisites remain unresolved. It now records separate, tightly limited CI permission for its existing integration. | Reuse adequate observations. Do not call skipped integrations passed, transfer that mission's CI allowance to this pilot, or claim the MVP complete. |
+| `ignazio-ingenito/waypoint-db` GitHub | Empty repository, no branches, open issues or PRs. | Not the delivery target; do not initialize or synchronize a second application repository. |
+| Waypoint | The discovered `waypoint/` is an ECS/Terraform deployment directory in private Bitbucket `novigo-consulting/r-d-infra`, not a second GitHub application repository. Its README reports preparation, not deployment; active local work includes additional foundation/bootstrap files. Read-only SSH works; local baseline `c48023a97d251fc016c00d5611b7d1318b813e10` differs from remote feature tip `a2da8ee650224a62754a74d45835a1ae7138bfa8`. | Reject an infrastructure pilot: ongoing ownership plus IAM, credentials, provisioning and recurring costs. No AWS, Terraform or database operation is performed; documentation is not proof of live deployment. |
+| Bitbucket tracker/CI | The unauthenticated private PR API returns HTTP404. No pipeline configuration is present in the inspected local root; SSH refs do not establish PR/issue/pipeline status. | Open issues, PRs and remote CI remain NOT_VERIFIED. Do not interpret inaccessible APIs or absent advertised PR refs as an empty tracker. No new login or credential inspection to resolve this. |
+| Repository constraints | Agent OS RFC-0001 governs cost, source fidelity and delivery; candidate plans restrict external database writes and deployment. Application main reports `protected=false`; rulesets API returns HTTP403 requiring a plan upgrade. | Do not upgrade or alter protections. Inspect actual final-head checks and enforce review/authority explicitly; runtime gate behavior is not an immutable ACL. |
+
+This is an implementation/integration gap, not a request to rewrite the old main README to describe unmerged code. External metadata/controller limitations and unobserved deployment/Bitbucket state remain unknown or blocked, not solved by the proposed UI correction.
+
+**Task-preparation refresh:** main has independently advanced to `e22f21a6c162f9b704124693fd20f511a3e596cf` and now contains both picker/workspace scripts. The same-value `change` emission remains in the published picker source. There are still no open issues/PRs before our tracker preparation. This clears the absent-UI-base prerequisite, not owner handoff or task execution approval. The current workflow runs push only on main and PRs on applicable paths: one final feature-branch push does not trigger this workflow; opening the PR triggers one run, and a later authorized merge triggers one main run. No workflow change or CI run is made here. Detailed tasks also include the existing `CHANGELOG.md` for the fix record, not new product scope.
+
+### Owning pilot issue and proposed task index
+
+Repository: **`skunklabs-uk/waypoint-db`**. Owning bug [16 — Keep the current analysis when reselecting the same table](https://github.com/skunklabs-uk/waypoint-db/issues/16). Its native sub-issues own detailed acceptance, checks, ownership, cost bounds and stop conditions; all await separate execution approval.
+
+1. [17 — owner handoff and full-application RED reproduction](https://github.com/skunklabs-uk/waypoint-db/issues/17); external handoff/execution gates.
+2. [18 — narrow implementation and functional GREEN](https://github.com/skunklabs-uk/waypoint-db/issues/18), blocked by17.
+3. [19 — independent exact-head review](https://github.com/skunklabs-uk/waypoint-db/issues/19), blocked by18.
+4. [20 — separately authorized PR/CI/merge/local smoke and closeout](https://github.com/skunklabs-uk/waypoint-db/issues/20), blocked by19 and explicit publishing/merge authority.
+
+Native sub-issue and blocked-by relationships encode17→18→19→20. One developer, sequential stages; no artificial parallel split, second checklist or new project infrastructure. Publication/CI and merge permissions remain additional gates even after task execution approval.
+
+User outcome: reopening the source or target table picker and choosing its current table must not discard the analysis or repeat discovery. Choosing a different table must still invalidate stale analysis and perform the normal discovery. This is one small bug, not a new feature or redesign.
+
+The existing `commit` in `web/table-search.js` emits `change` even when the value is unchanged. The current `web/workspace.js` captures that event and removes `#analysis-results`. An isolated real-Chromium observation, using the unchanged production scripts, confirmed that reselecting `dbo.A` leaves the value `dbo.A` but removes the existing analysis; selecting `dbo.B` changes the value normally. [Publication-safe observations](../evidence/waypoint-reselection-readonly.json) retain fixture, hashes, steps and results. Exact private script bodies are retained only in `/tmp/waypoint-reselection-private-inputs.json`, outside this public repository; this local retention is not durable public raw or a certified published source. Later independent review needs authorized access to the owning private inputs and actual handed-off base.
+
+This investigation used an in-memory synthetic DOM, no application server, HTMX backend or database. It proves the component interaction, not an actual HTTP count or full application failure. No correction was implemented. The authorized pilot must reproduce the behavior on the handed-off full application before changing code; if it is already fixed or cannot be reproduced there, stop this issue rather than invent a replacement.
+
+### Acceptance and scope
+
+1. Reselecting the current source or target table, by mouse and keyboard, preserves the current analysis and selection, produces zero new `/discovery` or `/analyze` requests, closes the picker and restores focus.
+2. Selecting a different table removes stale analysis, makes exactly one normal discovery request and no analysis request until explicit Analyze. Clearing, filtering, no results and Escape do not change selection or initiate SQL requests.
+3. Native-select fallback, validation and HTMX swaps still work; existing syntax/assets, Go/vet, container and authorized CI checks pass on the exact reviewed head. An authorized merge, if later granted, is followed by the same full-page smoke from its exact SHA in a disposable local environment.
+
+Likely writes: `web/table-search.js`, the behavior note in `docs/ui.md` and the existing `CHANGELOG.md`. A regression must assert consumer state and requests, not copy source text or mock event forwarding. No browser test suite exists in the inspected scripts/package configuration; use existing isolated browser tooling and retain the repeatable RED/GREEN scenario and inputs on the owning issue. No new framework/dependency. If a permanent test needs extra infrastructure or wider refactoring, stop and present changed scope first.
+
+Read-only context: `web/workspace.js`, `internal/app/view.go`, asset packaging and the existing workflow. Do not modify workspace/view while their owner is active. No SQL-engine, profile/authentication, CSRF, permissions, schema, controller, Docker/runtime configuration, dependencies, workflow, global skill/configuration or infrastructure changes.
+
+### Readiness, responsibilities and gates
+
+The UI-base prerequisite is now satisfied by the independently integrated main snapshot above. Execution remains blocked on the owner's explicit handoff, current isolated base, detailed task approval and actual cost/tooling prerequisites. Do not take over the ongoing rollup/dirty checkout, treat timestamps as handoff, add another stacked feature branch or broaden this pilot. Reproduce on the full application before correction; stop if already fixed.
+
+One frontend developer owns the correction. The coordinator owns source/phase, baseline and serial integration; functional QA/browser verification and DevOps/check inspection are responsibilities, not extra always-running agents. One clean-context reviewer did not implement the fix. No separate architect, data, security or performance worker is warranted by this scope. Two implementation activities are not naturally independent, so do not force two writers; the accepted sandbox already covers that criterion.
+
+Proposed sequence:
+
+| Stage | Required result / stop |
+|---|---|
+| Plan gate | Satisfied by direct Product Owner approval of this amendment; only issue/task preparation is authorized. |
+| Tasks gate | Only then prepare the owning bug issue with detailed checks, exact base, ownership, return destination, cost/CI scope and stop conditions. Submit the task details for approval before execution, as required by the selected Osmani workflow. |
+| Ready / RED | Owner handoff completed; fresh read-only duplicate check; base contains the relevant UI; allowed files unowned; runtime/provider limits and quota valid. In an isolated local application with disposable data and empty SQL write gate, record the failing browser regression before any fix. No production profiles, Cloud databases or credentials copied. |
+| Implement / GREEN | One actual isolated writer reads the pinned original Osmani sources and returns its narrow change and real checks. Coordinator integrates serially and verifies browser acceptance and the full relevant existing suite. No retries/fallback/advisors or recursive workers. |
+| Review | Reviewer gets original requirement, repository constraints, exact base/head/diff, RED/GREEN and raw pointers, not implementer conversation/verdict. Review correctness, simplicity, architecture, security and performance. Correct blocking findings minimally; material changes require fresh final-head review. |
+| PR / CI | Explicit pilot delegation is recorded above. After execution prerequisites and final local checks/review, publish the final feature branch and one PR with one initial existing `ci-container` run; the later authorized merge gets one initial main run. Revalidate the current main-only push trigger; no workflow edit, hosted fallback, canary or same-head rerun. Genuine failure/new-head correction needs applicable additional authority. |
+| Merge / smoke | Conditional pilot merge authority is recorded above; independent final-head GO and all applicable successful checks remain mandatory. If main moves, re-evaluate affected checks/review rather than reuse a stale verdict. Record PR/head/merge SHA and the authorized main-push check, then build/run that SHA locally and exercise the browser outcome. No ECS/ECR push, deploy or production use. |
+| Closeout | One owning-issue outcome with links, remaining limits and user-facing smoke instructions; mission35 links it rather than duplicating it. Update the selected Osmani inventory/route and user-requested mission retrospective from actual execution. Complete module acceptance still requires its other open criteria. |
+
+Future commands, not executed here: `node --check web/table-search.js`, `npm run build:assets`, `go test -count=1 -timeout 20m ./...`, `go vet ./...`, and the owning workflow's existing container/HTTP checks. Native database integrations run only with authorized disposable fixture DSNs; absent DSNs mean SKIPPED, not PASS. Browser assertions cover both pickers, same/different selection, mouse/keyboard and native fallback. Existing runtime tooling is reused; no new wrapper or persistent harness.
+
+Proposed inference uses only the existing `openai-codex/gpt-6.1-sol` account, no new provider/login/billing: one implementer and one reviewer, with one further reviewer only for a material correction; no parallel implementation needed. Reuse the bounded sandbox's no-retry/auto-QA-off/isolation controls and supported wall-clock limits. These are proposed bounds, not a monetary estimate or proof of remaining quota. The old sandbox allowance does not authorize these calls; detailed task approval must explicitly cover them and actual remaining cost authority, otherwise stop before inference.
+
+### Which module gaps this can cover
+
+The authorized outcome would cover real user-project logic through a genuine worker return, project QA/browser acceptance, existing project CI on exact heads, independent real-project review and conditional PR/merge/post-merge local smoke. The issue naturally exercises source-specific worker ownership without pretending two independent changes exist.
+
+It does **not** cover positive Pocock setup/progression/retro, interrupted live-child restoration, CPU simultaneity, hard runtime confinement, production deployment/release or the missing original180s startup stdout/stderr. A successful real CI run does not prove a CI-failure/correction path: handle a genuine failure if encountered and authorized; do not break CI deliberately to fill the table. Preserve the [remaining-scenarios table](../team-execution-evidence.md#task50-acceptance-boundary-and-durable-handoff) and original raw unchanged.
+
+## Separate Pocock completion result and next gate
+
+The later explicit user selection and technical delegation supersede the former unselected-mission proposal. IWANT#523 now supplies a positive separate Pocock route at the original pin, native setup/graph/writers/mergers, exact-head independent parallel review, application/Ceph acceptance and a real retrospective. The [owning outcome](../team-execution-evidence.md#positive-pocock-delivery--iwant523) records actual invocations, delegated-versus-literal-user attribution, complete inventory mapping, failures/recovery, SHA/raw pointers and limits. Do not replay the negative sandbox cases or create a new mission for this evidence.
+
+The coordinator now owns only serial reconciliation and exact-SHA module review. Module acceptance/PR/merge requires its applicable authority; neither Waypoint's merge delegation nor IWANT's preview permission supplies it. IWANT main merge remains excluded because it activates the deployment path. Ready PR640 is a reviewable delivery, not a production acceptance or a closed IWANT issue. #522 remains independently blocked by its recorded external prerequisites.
+
+After independent final review, present the concrete module outcome and any real remaining acceptance decision once. Preserve historical #43–#50 and the Waypoint retention exception. Only after provider-module acceptance may mobile-control/mcp-access advance through their own approved Osmani gates and shared state/command/approval contract; no provisioning or deploy follows from this plan.
+
+## Skills actually applied and explicit deviations
+
+- Original Osmani `using-agent-skills`: selected the existing-spec maintenance/bug path, not a new idea interview. `spec-driven-development`: retained approved Spec unchanged and the human Plan/Tasks boundaries. `planning-and-task-breakdown`: amended the incomplete Plan in place, one complete slice, dependencies/acceptance and one tracker.
+- `documentation-and-adrs` and `git-workflow-and-versioning`: record the decision where it belongs, preserve historical evidence, use an atomic documentary commit. No ADR: no expensive architectural choice or new dependency. `humanize-writing` is the repository-required editorial integration aid, not a methodological import; English authority follows the user's explicit instruction.
+- Original Osmani `test-driven-development` was read through `osmani-test-driven-development` at the approved pin. A generic same-name definition from another upstream was initially inspected, then excluded; it supplies no methodological rule or proof here. Stack discovery and the original prove-it requirement informed the proposal; only a read-only component reproduction occurred. No GREEN, implementation TDD or full original browser workflow is claimed.
+- Original `browser-testing-with-devtools` informed profile isolation, visual inspection and browser-before-fix verification. Its Chrome DevTools MCP setup/transport was not installed: the existing managed Chromium tool supplied the bounded component observation without global changes. DOM mutation was limited to a newly authored, isolated in-memory fixture, not the user's live application/session; this is an explicit investigative deviation from its confirmation-first JS rule, justified by no external state or repository effect. Full rendered application, network/fallback and before/after checks remain execution gates.
+- The user-requested local `reality-check` is a source-reconciliation integration aid, not claimed as an original Osmani skill. It classified unpublished implementation, external blockers and unavailable evidence instead of rerunning adequate tests or reading Terraform state/secrets.
+- `doubt-driven-development` and `code-review-and-quality` were read. Challenges corrected assumptions about repository identity, nonexistent ready issues, main versus stacked PRs, skipped integrations, CI permission and uncommitted inputs. No fresh-context or cross-model reviewer was launched because new paid execution is prohibited; this is **not** a completed independent/doubt review. Such review, and the original interactive cross-model offer, remain for an authorized phase; no CLI/provider installation or automatic spend.
+- New spec/interview, architecture/design workshop, performance profile, exhaustive WCAG audit, shipping/deployment and new CI/tooling are omitted: the proposal is a small existing-behavior correction, not those activities. No candidate installation/configuration/write or sandbox rerun is useful in this preparation phase. Original Pocock sources are inspection-only; none of its user-only steps was executed.
+
+## Primary references
+
+- [Active specification](../../SPEC-team-execution.md) and [capability map](../../CAPABILITY-MAP-agent-team.md).
+- [Accepted native baseline](../workflow-profiles-evidence.md#accepted-outcome-and-closeout).
+- [Osmani planning skill](https://github.com/addyosmani/agent-skills/blob/1401c8b8030e023baeebb31781a6653fe8e93026/skills/planning-and-task-breakdown/SKILL.md).
+- [OMP pinned task/isolation documentation](https://github.com/can1357/oh-my-pi/blob/b07a1c146d0d12cfc855a2c65d52f892ef319040/docs/tools/task.md).
+- [Osmani browser verification](https://github.com/addyosmani/agent-skills/blob/1401c8b8030e023baeebb31781a6653fe8e93026/skills/browser-testing-with-devtools/SKILL.md) and [original TDD](https://github.com/addyosmani/agent-skills/blob/1401c8b8030e023baeebb31781a6653fe8e93026/skills/test-driven-development/SKILL.md).
+- [Pocock setup](https://github.com/mattpocock/skills/blob/24fe0ef7737efae15c87225755e9f6f5965e4888/skills/engineering/setup-matt-pocock-skills/SKILL.md), [route/context boundaries](https://github.com/mattpocock/skills/blob/24fe0ef7737efae15c87225755e9f6f5965e4888/skills/engineering/ask-matt/SKILL.md), [implementation graph](https://github.com/mattpocock/skills/blob/24fe0ef7737efae15c87225755e9f6f5965e4888/skills/engineering/implement-spec/SKILL.md) and [retro](https://github.com/mattpocock/skills/blob/24fe0ef7737efae15c87225755e9f6f5965e4888/skills/engineering/retro/SKILL.md).
+- [REQ-0001](../../requirements/REQ-0001-software-factory.md), [RFC-0001](../../rfcs/RFC-0001-principles.md) and [AGENTS](../../AGENTS.md).
