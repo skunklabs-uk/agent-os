@@ -110,6 +110,16 @@ The user approved this specification in a later turn on 2026-10-10. Its approval
 
 The later module acceptance at9559131 authorizes Agent OS documentation PR/merge and subsequent mobile/MCP specification, subject to their own gates. It does not authorize IWANT main merge or deployment. The completed execution plan is archived; the requirements in this specification remain Active.
 
+## Proposed remote-consumer contract — Draft amendment
+
+This section is a **Draft**, not part of the accepted module behavior. Approval is requested together with the mobile-control/mcp-access specifications; it does not reopen accepted proofs or select an implementation. The coordinator alone owns this provider boundary. Both consumers refer here instead of defining another state store or approval ledger.
+
+- **Identity and state:** expose the owning repository/mission, selected method and phase, coordinator and specialist identities, current activity or blocked condition, source revision, results and pending questions/decisions. Distinguish unavailable or stale observations from completed work. Runtime state supplements, but does not replace, authoritative project artifacts.
+- **Commands:** start an authorized mission, resume an identified mission, inspect progress/results, answer a question, steer or request interruption. Return an acknowledgement tied to the target mission and a later observed result; accepted interruption is not proof that all processes stopped. Unsupported commands must be explicit, without silent substitution or a second coordinator.
+- **Decisions:** bind approval/rejection to the exact pending request, scope and applicable revision. Display consequences and preserve existing method gates. Expired or already resolved decisions cannot authorize new work. Reconnecting or replaying a command cannot apply an approval twice or to a different session. These are behavior requirements, not a mandate to build a custom approval engine.
+- **Access and recovery:** authenticate the authorized operator, distinguish observation from mutation, redact credentials and control links from public artifacts, and fail closed for unauthorized mutations. After reconnect, reconcile current mission identity, outstanding decisions and actual command outcome before offering further mutations. Do not claim crash recovery or child-process restoration without testing it.
+- **Evidence:** preserve exact host/runtime/client versions, target identity, observed outcomes and remaining limits in the owning module's existing mission evidence. Product Owner device smoke, coordinator testing, merge authority and deployment authority remain distinct.
+
 ## Primary sources
 
 - [Osmani specification workflow](https://github.com/addyosmani/agent-skills/blob/1401c8b8030e023baeebb31781a6653fe8e93026/skills/spec-driven-development/SKILL.md).
