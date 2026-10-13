@@ -337,6 +337,13 @@ La ricognizione MCP read-only sullo stesso SHA trova un seam per riusare il regi
 
 Task59 ha ora un candidato nel branch privato OMP: [PR #1](https://github.com/skunklabs-uk/omp-web/pull/1) Draft, head `8143d5276661b5ec8b74d7e0acce5604b2cc230e` su base `bd102be`. Il primo head `6114b5` aveva un Required reale: il gate delle radici respingeva con 403 il primo avvio su repository pulito; il writer lo ha corretto e il reviewer Osmani indipendente ha riesaminato lo SHA finale senza Required/Critical. Il probe senza mock, ripetuto dal reviewer, ha osservato root inizialmente vuota, richiesta generica 403, missione configurata 200 due volte con identico ID e un solo JSONL. Test mirati, typecheck e diff-check sono PASS direttamente in review; il writer riporta suite completa 596 PASS / 1 SKIP / 0 FAIL e build isolata exit0 sullo stesso SHA. Questa prova locale non adotta sessioni storiche non marcate, non trasferisce l'ownership di #35 e non prova auth, accesso remoto, tablet o ChatGPT. Actions della copia privata restano disabilitate, quindi nessuna CI è attribuita alla PR; nessun merge o deploy. La prossima slice tecnica deve mantenere il medesimo riferimento di missione nelle operazioni di lettura/comando e introdurre identità/scope prima di MCP remoto, con task e review propri; il trasporto Cloudflare resta dipendente dal piano Homelab completo e da un successivo OK per applicarlo.
 
+**Storia non operativa del tentativo di handoff.** I tre paragrafi seguenti
+registrano proposta, turno e review precedenti. La riconferma Codex/Osmani
+ha superato l'opzione di trasferire il coordinamento a OMP: i passi futuri
+di handoff descritti sotto sono ritirati, non sono condizioni della delega
+subordinata corrente. Restano durevoli le evidenze, i NO GO e i limiti
+consumati; nessun passaggio di ownership è autorizzato.
+
 **Handoff OMP approvato, non ancora attivato.** Il PO ha scelto il trasferimento verificato di #35 a una nuova sessione OMP dedicata. Il coordinatore corrente resta unico proprietario fino a una sessione OMP file-backed che abbia letto e ricostruito #35, le SPEC Active, questo Plan, Task52 e i blocchi correnti; il marker `missionId+cwd` da solo non costituisce passaggio di consegne. Il worktree separato `mission/35-omp-coordinator` su NOVBSCWOLaulMaU era pulito al preflight su `c7f2cdcdaa7e82b9c8ac699f043f1053881728db`; il binario OMP18.8.7 corrisponde al digest ufficiale `b87f9835a0acdbb81bbbad8273aa2d999b608a208598421a9584cffeb3139a8a`. Il PO ha autorizzato **un solo turno** di lettura con `openai-codex/gpt-6.1-sol` low, massimo 10 minuti e 20 richieste modello, senza subagenti, scritture, servizi, deploy, retry o fallback; l'allowance storica del pilota non si trasferisce. L'accesso dal tablet e ChatGPT resta separatamente BLOCCATO finché non verificato end-to-end.
 
 Il turno OMP delimitato ha usato la sessione durevole `01a131c7-ecba-7000-a4fb-ff906f642f4f` nel profilo privato `~/.local/state/agent-os/remote-control/mission35/agent`, con JSONL `sessions/-projects-personal-.worktrees-agent-os-omp-coordinator/2026-10-12T20-22-28-282Z_01a131c7-ecba-7000-a4fb-ff906f642f4f.jsonl` (SHA256 `e1b8be7a433f99d0f1b5f7026a904b55a4e87040337bc3ee95b60ad9cb87502e`). Il runner ha verificato il binding prima del prompt; un processo successivo senza modello ha ritrovato lo stesso ID, un marker e l'unico JSONL (`handoff/check-binding.mjs`, output `check-binding.json`, SHA256 `2873be338993f93cf8f36933add2887095447044ebb9018b69497097f6ab8c9b`). Il turno è terminato normalmente in circa 77 secondi: un prompt, 14 turni modello, 13 letture, zero retry automatici, nessun tool diverso da `read`, worker, servizio o modifica. La risposta ha ricostruito fase, fonti e blocchi e ha rifiutato esplicitamente di rivendicare l'ownership. Raw e runner restano privati in `~/.local/state/agent-os/remote-control/mission35/handoff/`; il log del turno ha SHA256 `5e0841acec5a8d452d86a40f76cfc5c7fef85545a236d4090b858df74b499dd8`. Le skill erano intenzionalmente disabilitate per quella sola lettura: non attribuirle al turno. Successivamente, senza modello, `omp skill list <worktree> --json` con `PI_CODING_AGENT_DIR` sul profilo privato ha prodotto `handoff/skills-resolved.json` (SHA256 `5235a9b6468f6e7ddcfc17ef674610c4b19e67d9386128c56908f3983fea1674`): 25 skill originali Osmani dal checkout al pin `1401c8b8030e023baeebb31781a6653fe8e93026`, incluso il router, zero warning e nessuna skill estranea nel risultato. L'invocazione effettiva di una skill in una futura sessione operativa non è ancora provata.
@@ -358,6 +365,12 @@ Task60 ha ora il candidato verificato `df3e8d86af0afa9c3c976c2be291d46d37136313`
 ### Prossima slice mobile — vista missione in sola lettura, Task61
 
 La ricognizione sul nuovo head OMP conferma che `AppShell` e `useAgentSession` ordinari dipendono da API ora vietate e dal bootstrap di sessioni generiche: sbloccarli integralmente aggirerebbe il gate. Il wrapper offre attività, specialisti e ID pending solo nello stato live; il marker non conserva fase, metodo, ownership o decisioni. [Task61](https://github.com/skunklabs-uk/agent-os/issues/61) delimita una root autenticata e una proiezione minima del solo ID bound, con stato sconosciuto/non aggiornato esplicito e senza auto-`ensure_session`. Writer separato, test locali e review indipendente; una prova browser richiede distinta autorità operativa. Il percorso dei comandi/approvazioni richiederà successivi task e la verifica dell'ownership OMP; l'allowance dei due turni modello non si trasferisce a questa UI. Nessun accesso fuori rete o deploy è autorizzato da Task61.
+
+**Rimando corrente:** il futuro percorso comandi/approvazioni di questa
+slice storica è sostituito dagli incrementi di Task52 nella ripresa sotto.
+Occorrono incarico subordinato, owner Codex, scope e revisioni applicabili
+verificabili; non un trasferimento dell'ownership a OMP. Il requisito
+read-only e il divieto di avvio implicito restano invariati.
 
 Il codice di Task61 è ora nel ramo della [PR OMP #1 Draft](https://github.com/skunklabs-uk/omp-web/pull/1) a `dc8cee17ed662a4c732c5b202c9cb9f3888f66e5` (base di slice `df3e8d86af0afa9c3c976c2be291d46d37136313`). Due candidati intermedi non hanno avuto GO: `ef625a7` lasciava live uno snapshot dopo una fetch sospesa e mancavano test comportamentali; `a2c87fe` convertiva campi runtime assenti in falsi/array vuoti e usava testo che attribuiva senza prova la perdita del contatto. Il writer ha aggiunto deadline, abort, controllo dell'età della risposta anche con timer sospesi, proiezione rigorosa e test fake-clock/fetch; il reviewer Osmani indipendente ha riesaminato l'head finale senza Critical/Required nel codice. Verifiche sull'esatto head: typecheck exit0, lint dei file cambiati exit0 (ripetuto anche dal coordinatore dopo l'integrazione fast-forward), suite Bun607 PASS / 1 SKIP / 0 FAIL, build Next exit0 in275,53s con warning export preesistente; `git diff --check` e worktree puliti. I primi run della suite erano FAIL per leak di mock e poi timeout sotto build concorrente; i build intermedi terminati con exit143 non sono PASS. Raw privati `~/.local/state/agent-os/remote-control/mobile-compat/port/logs/task61-*.log`; il build ha generato solo include temporanei in `tsconfig.json` e output `.next-task61`, rimossi dopo controllo. Actions della PR restano disabilitate, zero run; nessun merge o deploy. La pagina è osservativa, non consente ancora resume da UI, comandi, risposte o approvazioni, e non prova il trasferimento della coordinazione a OMP.
 
@@ -425,9 +438,11 @@ Il lint standard conserva sette errori di memoization in file non toccati:
 non viene dichiarato PASS pieno e non si sopprime la regola.
 Il client SDK MCP2.3.1 reale, con crypto/JWKS sintetici e route/proxy
 Request/Response nello stesso processo isolato, ha exit0 sul candidato
-`63a88c4`; non è il client ChatGPT personale. Review del nuovo SHA e
-smoke app integrato restano gate distinti. I risultati precedenti non
-costituiscono GO automatico alla nuova revisione.
+`63a88c4`; non è il client ChatGPT personale. Il reviewer indipendente
+del delta `63a88c4→c5f3111` non trova Required/Critical e chiude il finding
+`onPromptAdmitted`; il GO consumer precedente è limitato ai file invariati.
+Il successivo smoke app nativo ha exit0 sul medesimo `c5f3111`.
+I risultati precedenti non costituiscono GO automatico ad altri SHA.
 Il SessionManager resta la sola storia; web e MCP consumano lo stesso
 provider. Non viene creato un altro tracker, coordinatore o ledger.
 
@@ -445,6 +460,22 @@ confermano l'accesso locale, non accettazione MVP. Il digest del JSONL #35
 è invariato prima/dopo. Credenziale privata0600, non pubblicata.
 La preview mostrava ancora la vista diagnostica; non è tablet fuori rete,
 connessione ChatGPT o nuovo turno OMP. Raw privati `port/logs/local-panel-RHfD2a`.
+
+**Smoke UI integrato.** Due tentativi autorizzati distintamente sono
+falliti nel solo harness: il primo pretendeva overflow nel viewport
+820×1180, il secondo aspettava l'apertura automatica di B dopo A mentre
+la UI chiude intenzionalmente il dialogo. Il `B=false` allo shutdown di
+quel secondo tentativo non è contato come rifiuto dell'operatore.
+Corrette soltanto le aspettative, il PO ha autorizzato un ultimo avvio
+entro120s, namespace rete/PID separato e profilo/repository sintetici.
+Il run `codex-control-NVtLAj/app-live-final-CU9N9d` è exit0:
+pagina compilata reale, 820×640/touch emulato, scroll verticale1181→640
+senza overflow orizzontale, controlli touch≥44px, Escape locale con
+focus ripristinato e nessun POST, conferma A, riapertura esplicita e
+rifiuto B, tre ricevute native completed e GET sull'ID originale.
+Zero eccezioni browser/richieste esterne, zero messaggi user/assistant.
+Screenshot autentici e stato OMP SDK18.8.7 **solo della fixture**:
+non tablet fisico, non ChatGPT personale, non modello/lavoro #35.
 
 **Accesso personale e Cloudflare.** Il workspace personale e i form
 ChatGPT sono osservati/dichiarati nelle evidenze precedenti; account,
