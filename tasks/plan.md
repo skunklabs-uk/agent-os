@@ -2,6 +2,13 @@
 
 **Status:** Active — after reviewing the presented Plan at `aed6fdaf43bb91591ca372ed9a7231fcb4959ea6`, the Product Owner instructed the coordinator to continue through completion under Osmani/RFC-0001. Technical coordination proceeds within that delegation; no new resources or deployment are implicitly approved.
 **Mission:** [Agent OS35](https://github.com/skunklabs-uk/agent-os/issues/35), sole coordinator on NOVBSCWOLaulMaU.
+**Coordinator:** codex
+**Coordinator session:** questa conversazione Codex; identificativo runtime non verificato
+**Provider role:** observer
+**Provider session:** 01a131c7-ecba-7000-a4fb-ff906f642f4f
+**Permitted scope:** mobile-control/mcp-access-readiness-and-port
+**Permitted commands:** observe
+**Phase:** implementazione e qualificazione locale; accettazione MVP non acquisita
 **Authority:** [mobile-control](../SPEC-mobile-control.md), [mcp-access](../SPEC-mcp-access.md) and the [shared provider contract](../SPEC-team-execution.md#shared-remote-consumer-contract), explicitly approved on 2026-10-12 at `f55c2b7838104770766825e57b68129b019e951e`. Team-execution is accepted and delivered by [PR51](https://github.com/skunklabs-uk/agent-os/pull/51), merge `95528e6c0013f067702496902c40051fba973e48`.
 **Method:** original Osmani spec-driven-development and planning-and-task-breakdown at `1401c8b8030e023baeebb31781a6653fe8e93026`. The current phase is Tasks/readiness, including bounded local qualification without inference after the PO’s instruction to continue. Subsequent executable slices retain the selected-method gates and require concrete scope; delegation is recorded as such, not fabricated literal approval of unseen task details.
 **Tracking:** GitHub issue35 and its native sub-issues; no tasks/todo.md or second ledger. [Task52](https://github.com/skunklabs-uk/agent-os/issues/52) owns readiness and the complete local port checkpoint after the reviewed component increments53–58. Current scope and outcomes appear below; recheck duplicates before any necessary new task. The former team-execution plan is Archived history and is not overwritten.
@@ -375,3 +382,80 @@ L'audit indipendente sul candidato OMP `f7338b746602e40f888996350502ce8dc8ed4cf6
 Il PO ha autorizzato un solo altro turno sulla **stessa** sessione #35 `01a131c7-ecba-7000-a4fb-ff906f642f4f`: `openai-codex/gpt-6.1-sol` low, massimo 15 minuti/30 richieste, sola lettura, senza subagenti, scritture di progetto, servizi, tunnel, deploy, retry o fallback. L'autorizzazione è **consumata**. Il preflight ha trovato il worktree OMP pulito a `b0b4db9f83d5277bea2700ff6d5335a84f7b27f5`, OMP18.8.7 e le due skill Osmani lette al pin `1401c8b8030e023baeebb31781a6653fe8e93026`; il runner ha controllato il livello low. L'esecuzione è durata 2m48s: 16 turni modello, 15 chiamate `read`, zero retry osservati, nessun altro tool nel delta JSONL. Le 104 righe iniziali corrispondono byte per byte al transcript precedente; le 49 nuove contengono un prompt, letture, risposta e `session_exit` normale. Il log privato `handoff/run-handoff-prep-turn3.log` ha SHA256 `3a94ce257c503f3217866e6dc7cbcd8fa34e946f335ad1b8b18f37136b4260ab`; JSONL finale SHA256 `d1329031fb1abed4a51106c41bf53fb265b25c843597595b4cf85c7823a0bb6b`. Il worktree è rimasto pulito. Le letture iniziali delle issue erano troncate; i commenti recenti sono stati recuperati, ma i body non sono stati interamente riverificati. Non si attribuisce al turno una slash invocation delle skill o assenza assoluta di effetti di inizializzazione runtime.
 
 La review indipendente privata in `~/.local/state/agent-os/remote-control/mission35/handoff/turn3-runtime-review.md`, SHA256 `dbbe49387b8383b6f2d22c4e16a82698217b83a2104e17e1745c7aac03f10a25`, dà **GO alla sola ricognizione read-only, NO GO al passaggio di ownership**. L'output del launcher mostrava `turn_exit=0`, ma il wrapper del tool riportava `exit_code:1`: la discordanza resta irrisolta, mentre log e `session_exit` attestano la fine del turno OMP. Non sono stati osservati nello stato live fase, attività e pending con ID/scope/revisione; né la continuità delle decisioni dopo restart, né una registrazione di esclusività e limiti per turni operativi successivi. Il marker/JSONL non colmano queste lacune. **Codex rimane l'unico coordinatore**. Prossima azione indipendente: ricostruire nelle fonti esistenti il legame fra decisione, scope e revisione e delimitare una prova live che possa confutarlo, senza aprire un secondo ledger o avviare un modello sotto l'allowance consumata. Comandi, approvazioni, tablet fuori LAN, ChatGPT/MCP, merge e deploy restano fuori da questo GO.
+
+### Ripresa Codex e confine corrente — 2026-10-14
+
+Il PO ha riconfermato **Codex unico coordinatore e Osmani** dopo una modifica
+concorrente locale del Plan a OMP/Pocock; la riconferma è tracciata in
+[Task52](https://github.com/skunklabs-uk/agent-os/issues/52#issuecomment-6155324659).
+L'autorità di lavoro deriva dalla richiesta e dalle SPEC Active, non dal nome
+del processo, da marker o JSONL. Questo candidato documentale è isolato dal
+worktree condiviso ancora riscritto da un altro writer; non dichiara che il
+conflitto d'integrazione sia risolto. Non trasferire l'ownership a OMP.
+
+Il raccordo di codice autorizzato rende OMP un **esecutore subordinato**,
+senza avviarlo né concedergli nuovi turni. La sessione reale resta observer:
+le operazioni consentite sopra non comprendono prompt, steering,
+interruzione o risposte. L'attivazione operativa richiede autorità e limiti
+nuovi; i tre turni read-only precedenti restano consumati.
+
+**Gap decisionale #52.** Il RED già riprodotto sul port `f7338b7` manteneva
+richiesta e piano invariati con il solo HEAD avanzato: 14 PASS, 1 FAIL.
+Il fix isolato Codex `af45c1676ce8e075c7ea429d7ca8757fd588fe09`
+ha 46 focali PASS, typecheck/lint exit0, suite 642 PASS/1 SKIP/0 FAIL e
+review indipendente GO nel solo perimetro byte/revisione/autorità.
+Una mutazione che rimuove il confronto HEAD produce il FAIL atteso.
+La prova SDK nativa senza inferenza, in namespace usa-e-getta e nuova
+autorità delimitata, osserva: HEAD stale non applicato, revisione invariata
+applicata, duplicato rifiutato. Non prova ownership o continuità di #35.
+Raw privati nel laboratorio `port/logs/decision-revision-20261013`.
+
+**Comandi/UI/MCP.** Si riusano i candidati isolati provider `66863d4` e
+consumer `16247e9`, composti in `codex-control@9164f55` e non pubblicati.
+Le due review indipendenti sono NO GO: vincolo Codex/Osmani insufficiente,
+esiti nativi non correttamente correlati, byte/BOM da preservare,
+script restart invalido; nel consumer scroll non raggiungibile,
+persistenza del riferimento ignorata in caso di errore ed Escape interno
+senza effetto. Le correzioni isolate sono composte a `63a88c4`; la re-review
+consumer non trova Critical/Required nel delta. Il reviewer del provider
+trova ancora la mancata correlazione dei prompt trasformati nativamente:
+corretta con `onPromptAdmitted` a `c5f3111add7abee1050a21cb2a0283db3eeeda69`.
+Typecheck e lint del delta exit0; suite 661 PASS/1 SKIP/0 FAIL; build exit0.
+Il lint standard conserva sette errori di memoization in file non toccati:
+non viene dichiarato PASS pieno e non si sopprime la regola.
+Il client SDK MCP2.3.1 reale, con crypto/JWKS sintetici e route/proxy
+Request/Response nello stesso processo isolato, ha exit0 sul candidato
+`63a88c4`; non è il client ChatGPT personale. Review del nuovo SHA e
+smoke app integrato restano gate distinti. I risultati precedenti non
+costituiscono GO automatico alla nuova revisione.
+Il SessionManager resta la sola storia; web e MCP consumano lo stesso
+provider. Non viene creato un altro tracker, coordinatore o ledger.
+
+**Preview locale autorizzata.** Il PO ha concesso sola osservazione per
+30 minuti sulla revisione `af45c167`: il listener era su `127.0.0.1:30141`,
+autenticato, con blocco runtime di ogni POST e delle API fuori scope.
+Scadenza massima: `2026-10-13T22:43:28.622Z`.
+Il supervisore ha poi riportato exit137 dopo 27m10s: la causa precisa
+dell'uscita anticipata non è provata, né si attesta uno shutdown regolare.
+Il listener è chiuso e la credenziale è stata invalidata; nessun riavvio.
+Build exit0; pagina autenticata HTTP200, anonima401, startup/lavoro e
+Host estraneo403; GET restituisce `unknown/running:false`, SSE409 perché
+OMP non è avviato. Browser reale del coordinatore e screenshot del PO
+confermano l'accesso locale, non accettazione MVP. Il digest del JSONL #35
+è invariato prima/dopo. Credenziale privata0600, non pubblicata.
+La preview mostrava ancora la vista diagnostica; non è tablet fuori rete,
+connessione ChatGPT o nuovo turno OMP. Raw privati `port/logs/local-panel-RHfD2a`.
+
+**Accesso personale e Cloudflare.** Il workspace personale e i form
+ChatGPT sono osservati/dichiarati nelle evidenze precedenti; account,
+permessi e chiamate effettive restano non qualificati. Il riuso minimo
+da verificare è Access Managed OAuth su URL HTTPS, con token opaco risolto
+all'edge e JWT Access user-only verificato all'origin; il Secure MCP Tunnel
+non è autorizzazione. Nessun issuer custom, Worker o Auth0 selezionato.
+Il candidato Homelab locale `a57e2ed` dichiara provider5.28.0 e full plan
+108 con 4 create/77 no-op/0 update/0 delete; quella dichiarazione non
+trasferisce a Codex una verifica non eseguita. La PR1515 remota è ancora
+`cf618eec`, ora non-Draft, con descrizione del vecchio drift: serve
+riconciliazione con l'owner sullo SHA realmente proposto prima di apply.
+Nessun apply/deploy/merge IWANT, tunnel, CI o smoke tablet/ChatGPT eseguito.
+#35 e #52 restano aperte fino ai rispettivi criteri e al closeout RFC-0001.
