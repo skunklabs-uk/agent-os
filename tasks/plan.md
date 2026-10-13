@@ -470,7 +470,7 @@ Corrette soltanto le aspettative, il PO ha autorizzato un ultimo avvio
 entro120s, namespace rete/PID separato e profilo/repository sintetici.
 Il run `codex-control-NVtLAj/app-live-final-CU9N9d` è exit0:
 pagina compilata reale, 820×640/touch emulato, scroll verticale1181→640
-senza overflow orizzontale, controlli touch≥44px, Escape locale con
+senza overflow orizzontale, altezza dei pulsanti toccati≥44px, Escape locale con
 focus ripristinato e nessun POST, conferma A, riapertura esplicita e
 rifiuto B, tre ricevute native completed e GET sull'ID originale.
 Zero eccezioni browser/richieste esterne, zero messaggi user/assistant.
@@ -488,5 +488,16 @@ Il candidato Homelab locale `a57e2ed` dichiara provider5.28.0 e full plan
 trasferisce a Codex una verifica non eseguita. La PR1515 remota è ancora
 `cf618eec`, ora non-Draft, con descrizione del vecchio drift: serve
 riconciliazione con l'owner sullo SHA realmente proposto prima di apply.
+Verifica API Cloudflare in sola lettura: identità collegata e un account
+accessibile; GET account, Access, organizzazione, tunnel e DNS tutti200.
+L'organizzazione è `skunklabs.cloudflareaccess.com`, zona `skunklabs.uk`
+Active. La ricerca esatta non trova app Access né record DNS per
+`omp-panel.skunklabs.uk`; nessuno dei due tunnel non cancellati ha nome
+OMP/agent-os. Questo verifica permessi di lettura, non permessi di
+provisioning né autorizzazione OAuth del ChatGPT personale.
+Raccordo owner sul tracker esistente:
+https://github.com/skunklabs-uk/homelab/issues/1514#issuecomment-6157551168.
+La review indipendente del flusso UI concede GO al solo percorso locale
+esercitato; non trasferisce evidenza al modello #35 o all'MVP.
 Nessun apply/deploy/merge IWANT, tunnel, CI o smoke tablet/ChatGPT eseguito.
 #35 e #52 restano aperte fino ai rispettivi criteri e al closeout RFC-0001.
