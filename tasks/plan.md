@@ -213,6 +213,10 @@ e Spec GO su9aaf23e e Plan44811c6; entrambi i Trivy del run38644934233
 SUCCESS sullo head esatto, senza retry. Pod ancora pronto con zero restart
 al controllo finale. La ricognizione JWT/sessioni sopra integra quelle
 review con nuove osservazioni read-only, senza cambiare il contratto.
+Verifica finale del connector riutilizzato:2/2 repliche pronte, entrambi
+i pod hanno caricato la configurazione118 con origin10.10.20.240,
+Access required e AUD coincidente. Argo Synced/Healthy anche sulla
+revisione finalebb1f243; nessuna sostituzione o nuovo token connector.
 
 ## Outcome and scope
 
