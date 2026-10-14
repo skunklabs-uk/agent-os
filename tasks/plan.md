@@ -485,9 +485,20 @@ all'edge e JWT Access user-only verificato all'origin; il Secure MCP Tunnel
 non è autorizzazione. Nessun issuer custom, Worker o Auth0 selezionato.
 Il candidato Homelab locale `a57e2ed` dichiara provider5.28.0 e full plan
 108 con 4 create/77 no-op/0 update/0 delete; quella dichiarazione non
-trasferisce a Codex una verifica non eseguita. La PR1515 remota è ancora
-`cf618eec`, ora non-Draft, con descrizione del vecchio drift: serve
-riconciliazione con l'owner sullo SHA realmente proposto prima di apply.
+trasferisce a Codex una verifica non eseguita. Alla prima lettura la PR1515
+era `cf618eec`; la nuova review specialistica verifica head remoto
+`a57e2ed6464a26275a1f423fde487db0d801345c`, base `95c194e`, OPEN/non-Draft.
+Il disallineamento degli SHA è risolto; descrizione obsoleta riconciliata
+dal coordinatore, senza commit/push IaC, CI, merge o apply.
+Review read-only: nessun Required/Critical provato nel diff; log protetti
+conservati attestano init5.28, validate valido e 4 create/0 change/0 destroy,
+con HCL/lock corrispondenti. Il coordinatore ha inoltre calcolato SHA256
+del piano binario senza decodificarlo: `37f5eaa37fb913d8dceb3d7f69fb8d09fa329071f1d144937eed8dd51154cc3f`.
+77 no-op, serial108, input e associazione incontrovertibile piano↔SHA
+non derivano dal solo log/hash: la provenienza redatta resta da raccordare.
+Origin/team/AUD e binding host devono essere configurati prima del GO
+operativo; il consumer rende 503 se mancano. Forme callback Managed OAuth
+supportate non provano callback/account o coesistenza Basic/OAuth reali.
 Verifica API Cloudflare in sola lettura: identità collegata e un account
 accessibile; GET account, Access, organizzazione, tunnel e DNS tutti200.
 L'organizzazione è `skunklabs.cloudflareaccess.com`, zona `skunklabs.uk`
@@ -527,9 +538,11 @@ avviata. `c5f3111` è lo SHA del codice qualificato, `7373c4e` aggiunge solo
 README: non si attribuiscono prove esecutive a un nuovo codice.
 `origin` nel port punta all'upstream `ddallabenetta/omp-web`, non alla custodia.
 Il checkout condiviso `port/source` osservato a
-`064ce5d88389bcfc9ec2464a56db810228c3559d` sulla stessa branch locale è un
-candidato divergente: non è stato resettato, integrato o usato come base
-implicita. Nessun merge o deploy è autorizzato da questa pubblicazione.
+`064ce5d88389bcfc9ec2464a56db810228c3559d` resta intatto. Il controllo
+`merge-base --is-ancestor 064ce5d 7373c4e` è exit0: quel commit è già incluso
+nella storia pubblicata, non un candidato Git divergente. Non si trasferiscono
+le prove da/a quel checkout o a sue modifiche non committate.
+Nessun merge o deploy è autorizzato da questa pubblicazione.
 
 **Raccordo documentale:** l'archivio locale risolve la sessione esplicita
 `01a136e1-3183-72bb-aeca-d82f1bc60b6c` nel progetto Homelab; è contesto,
@@ -541,12 +554,14 @@ Non è disponibile un canale supportato per inviare stop-writer/rilascio:
 nessun messaggio è dichiarato consegnato, nessun token o JSONL privato letto
 e nessun processo avviato/interrotto per ottenerlo.
 
-L'integrazione documentale compete a Codex: applicare il delta di
-`1403d832..docs/codex35-checkpoint` su un checkout posseduto e pulito,
-senza sovrascrivere il Plan condiviso dirty. La condizione per pubblicare
-sulla branch condivisa è il rilascio esplicito delle scritture documentali
-e l'assenza di un avanzamento remoto non riconciliato; PID, mtime, archive e
-marker non la soddisfano. Fino ad allora il candidato resta isolato e
-completo, senza chiedere al PO di coordinare il writer e senza bloccare
-l'integrazione codice già conclusa. Le prove effimere descritte sopra sono
-concluse: nessuna istruzione storica di avvio concede una nuova esecuzione.
+L'integrazione documentale compete a Codex secondo la richiesta corrente.
+Pubblicare il delta `1403d832..docs/codex35-checkpoint` dal solo checkout
+posseduto, con push normale in fast-forward; non resettare né sovrascrivere
+il checkout condiviso dirty. Un avanzamento remoto non incluso nel candidato
+fa rifiutare il push: riconciliarlo prima di riprovare, senza force.
+Non introdurre una conferma umana di rilascio writer come prerequisito
+aggiuntivo: l'autorità Codex è già esplicita e il fast-forward preserva
+la storia remota, mentre il checkout altrui rimane intatto.
+PID, mtime, archive e marker non concedono autorità o allowance.
+Le prove effimere descritte sopra sono concluse: nessuna istruzione storica
+di avvio concede una nuova esecuzione.
