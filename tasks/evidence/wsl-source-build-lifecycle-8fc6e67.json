@@ -32,5 +32,19 @@
     "unitLoadState": "not-found",
     "mainPid": 0,
     "port30141Listening": false
+  },
+  "authorityProbe": {
+    "provenance": "Executed by incoming coordinator at original CWD after explicit fast-forward; no AgentSession opened.",
+    "applicationCode": "8fc6e67c021be66547e76f9d216c9a7b0340f924",
+    "boundSourceRevision": "fd4f8207f3ba447474f4d459e61910511a4f00f6",
+    "sourceRevision": "6b9f5473e46d7f3e7725d2af92bc7b2bae71a9b1829fb3698a0a9e68e838843a",
+    "coordinatorSession": "01a13b77-fd88-778e-97cc-aadb754902d5",
+    "providerSession": "01a131c7-ecba-7000-a4fb-ff906f642f4f",
+    "providerRole": "observer",
+    "commands": ["observe"],
+    "allFiveMutationsDenied": true,
+    "originalJournalUnchanged": true,
+    "externalNetwork": "namespace-disabled",
+    "temporaryProfileRemoved": true
   }
 }

@@ -668,9 +668,9 @@ verifica dei risultati e continuità: coordinatore OMP corrente.
 | #52/OUTCOMES — P0 | Coordinatore OMP; implementazione `IntegrateNativeOutcomes` conclusa / qualificato localmente | Base16faf8d e hunk pertinenti PR1 | Esiti answer/abort correlati e flush fallito non presentato come durable completion; nessun replay o regressione prompt/steer/P1 | Browser production: confirm/editor/Plan e abort nativi con ricevute completed; route MCP restituisce gli stessi esiti. Reload e doppio click senza replay; failure di flush coperta dalla regressione / prova originale dopo ACCESSO |
 | #52/SPECIALISTI — P0 | Coordinatore OMP; implementazione `ExposeNativeSpecialists` conclusa / qualificato localmente | Snapshot e API native esistenti | Stato e risultati di specialisti attivi/conclusi nella proiezione comune, senza journal o campi privati | Due P2 riprodotti con4 test RED e corretti; browser/MCP concordi, risultato completo distinto dall'anteprima, follow-up stesso ID/file senza risultato vecchio. Bus e writer SDK reali con dati sintetici, non esecuzione specialisti / verificare sul percorso originale |
 | #52/SCROLL — P0 | Coordinatore OMP / qualificato localmente | Layout missione esistente | Contenuto raggiungibile con scroll reale del pannello a390/820, non solo assenza overflow orizzontale | RED16fa conservato; GREEN8fc: main844px, scrollHeight2669px, scrollTop1825px e fondo visibile, windowY0; screenshot390/820 / acceptance sul tablet reale dopo rilascio |
-| #35/ACCESSO — P0 | Coordinatore OMP sul WSL originale / disponibile | Identità originale e checkout preservati | Operare sul WSL senza cambiare ID/CWD/auth | Host/utente verificati direttamente; trial originale recuperato, nessun nuovo lancio / riallineare soltanto il Plan bound con FF e verificare il parser senza aprire una sessione |
+| #35/ACCESSO — P0 | Coordinatore OMP sul WSL originale / disponibile | Identità originale e checkout preservati | Operare sul WSL senza cambiare ID/CWD/auth | CWD bound portato solo FF e87c349→fd4f820; parser applicativo reale legge successore01a13b77 e observer/observe, cinque mutazioni negate, journal invariato / mantenere queste authority e identità nei gate successivi |
 | #35/TRIAL — P1 | Coordinatore OMP / concluso nel perimetro read-only | Nessuna nuova allowance | Unico trial bound con cap/deadline ed esito/metodo revisionati | Report operatore exit0,107097ms,14HTTPmodello/30,0blocked/failed; review indipendente positiva per la lettura pertinente, limite delle fonti arretrate preservato; risposta e preload temporanei archiviati e rimossi / nessun retry o secondo trial, non promuovere observer |
-| #1514/RILASCIO — P1 | Coordinatore OMP / preparazione, non GO live | Custodia token, lifecycle e check applicabili del candidato | Rilascio nello stesso WSL con gate Cloudflare e smoke HTTPS/Access/SSE/POST soddisfatti | Full plan fresco su root11dea14f:4createOMP/0update/0delete, state invariato; contesto sensibile rimosso / qualificare custodia e servizi; prima dell'apply usare un nuovo piano corrente, non il binario eliminato |
+| #1514/RILASCIO — P1 | Coordinatore OMP; operatore per custodia / bloccato dallo sblocco Vaultwarden | Custodia token scelta dal PO, servizio permanente e piano allora corrente | Rilascio nello stesso WSL con gate Cloudflare e smoke HTTPS/Access/SSE/POST soddisfatti | Full plan4createOMP/0update/0delete e canary user-manager qualificati, no apply; Vaultwarden scelto esplicitamente, destinazione vault.skunklabs.uk e CLI locked / operatore sblocca nel proprio terminale privato; completare custodia del solo nuovo token senza condividere BW_SESSION, poi piano fresco e servizi |
 | #35/MOBILE — P1 | Coordinatore OMP; operatore per dispositivo/login / bloccato | #1514/RILASCIO | Criteri mobile-control provati sul tablet reale fuori LAN | Solo viewport390/820 provati / guidare l'operatore sul percorso reale dopo il rilascio |
 | #35/CHATGPT — P1 | Coordinatore OMP; operatore per account/login / bloccato | #1514/RILASCIO | OAuth e tool MCP reali dal ChatGPT personale, stessa sessione e receipt/outcome | Nessuna acceptance personale / esercitare il client reale dopo il rilascio |
 | #35/COORDINAMENTO — P0 | Coordinatore entrante OMP/Pocock / fonti riconciliate, preparazione operativa | Esiti verificati e limiti del PO | Unico writer, provider observer e fonti recuperabili | Successore01a13b77, checkout nuovi e prove recuperate; trial originario non attribuito al successore / pubblicare il Plan senza overwrite dei branch concorrenti; completare solo gate raggiungibili, nessuna acceptance anticipata |
@@ -911,14 +911,32 @@ OMP in esecuzione. Le richieste sono state respinte dal proxy, senza
 aprire una sessione nativa; SHA del journal bound invariato prima/dopo.
 [Prova build/lifecycle](evidence/wsl-source-build-lifecycle-8fc6e67.json).
 
-Il parser applicativo originale legge il Plan successore e mantiene
-provider observer/observe, rifiutando tutte le cinque mutazioni.
-Questo smoke non apre il provider e non consuma modelli.
+Il parser applicativo originale è stato esercitato anche nel CWD bound
+dopo il FF e87c349→`fd4f8207f3ba447474f4d459e61910511a4f00f6`:
+successore01a13b77, stesso provider observer/observe, cinque mutazioni
+negate; sourceRevision
+`6b9f5473e46d7f3e7725d2af92bc7b2bae71a9b1829fb3698a0a9e68e838843a`.
+Journal invariato, rete isolata, nessuna sessione aperta e profilo temporaneo
+rimosso. Il presente successore documentale non cambia quei campi authority;
+il riferimento e l'hash della fonte restano specifici allo smoke fd4f820.
 
-**Prossimo confine:** custodire il nuovo token del solo connector nella
-custodia operativa autorizzata e qualificare il servizio permanente.
-Bitwarden locked non viene aggirato leggendo cache/token di altri servizi
-o memorizzando una sessione unlock. Nessuna richiesta di segreti in chat.
+Review indipendenti della ripresa su fd4f820: Standards0finding e
+Spec0finding, assi statici separati; nessuna verifica runtime attribuita
+ai reviewer. App `485840f43e4188ac48cb193338a80c5c8edad629` pubblicata
+FF sul branch proprio: successor di8fc6e67 con la sola correzione
+README19, che distingue storia native e attach/ownership/pending live.
+Riesame Standards0 e Spec0 sul solo delta documentale, senza nuovi check
+di codice identico né trasferimento della qualifica runtime a un codice nuovo.
+
+**Decisione corrente del PO:** custodia **Vaultwarden esistente**, scelta
+esplicita nella ripresa. Destinazione nativa verificata:
+`https://vault.skunklabs.uk`; la CLI è locked. Non adottare SOPS come
+custodia alternativa del token senza nuova scelta del PO.
+Prima dell'apply occorre lo sblocco interattivo nel terminale privato
+dell'operatore e la procedura di custodia del solo token OMP; `BW_SESSION`
+resta soltanto nella shell autenticata, fuori chat, Git e file persistenti.
+La custodia sarà completata da quella shell, non copiando la sessione
+unlock al coordinatore. Nessuna richiesta di master password o token.
 Il full plan positivo non autorizza apply prima di quel gate; il provider
 observer e l'allowance consumata non autorizzano lavoro lungo/interruzione
 reali. Tablet fuori LAN e ChatGPT personale restano acceptance del PO.
