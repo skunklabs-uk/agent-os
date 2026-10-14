@@ -670,7 +670,7 @@ verifica dei risultati e continuità: coordinatore OMP corrente.
 | #52/SCROLL — P0 | Coordinatore OMP / qualificato localmente | Layout missione esistente | Contenuto raggiungibile con scroll reale del pannello a390/820, non solo assenza overflow orizzontale | RED16fa conservato; GREEN8fc: main844px, scrollHeight2669px, scrollTop1825px e fondo visibile, windowY0; screenshot390/820 / acceptance sul tablet reale dopo rilascio |
 | #35/ACCESSO — P0 | Coordinatore OMP sul WSL originale / disponibile | Identità originale e checkout preservati | Operare sul WSL senza cambiare ID/CWD/auth | CWD bound portato solo FF e87c349→fd4f820; parser applicativo reale legge successore01a13b77 e observer/observe, cinque mutazioni negate, journal invariato / mantenere queste authority e identità nei gate successivi |
 | #35/TRIAL — P1 | Coordinatore OMP / concluso nel perimetro read-only | Nessuna nuova allowance | Unico trial bound con cap/deadline ed esito/metodo revisionati | Report operatore exit0,107097ms,14HTTPmodello/30,0blocked/failed; review indipendente positiva per la lettura pertinente, limite delle fonti arretrate preservato; risposta e preload temporanei archiviati e rimossi / nessun retry o secondo trial, non promuovere observer |
-| #1514/RILASCIO — P1 | Coordinatore OMP; operatore per custodia / bloccato dallo sblocco Vaultwarden | Custodia token scelta dal PO, servizio permanente e piano allora corrente | Rilascio nello stesso WSL con gate Cloudflare e smoke HTTPS/Access/SSE/POST soddisfatti | Full plan4createOMP/0update/0delete e canary user-manager qualificati, no apply; Vaultwarden scelto esplicitamente, destinazione vault.skunklabs.uk e CLI locked / operatore sblocca nel proprio terminale privato; completare custodia del solo nuovo token senza condividere BW_SESSION, poi piano fresco e servizi |
+| #1514/RILASCIO — P1 | Coordinatore OMP / bloccato dal canale di custodia autenticato | Custodia token scelta dal PO, servizio permanente e piano allora corrente | Rilascio nello stesso WSL con gate Cloudflare e smoke HTTPS/Access/SSE/POST soddisfatti | Full plan4createOMP/0update/0delete e canary qualificati, no apply; PO riporta Vaultwarden unlocked nella propria shell, template Login acquisito / completare custodia via canale autenticato senza trasferire BW_SESSION; nessuna nuova conferma generica o interrogazione preparatoria al PO |
 | #35/MOBILE — P1 | Coordinatore OMP; operatore per dispositivo/login / bloccato | #1514/RILASCIO | Criteri mobile-control provati sul tablet reale fuori LAN | Solo viewport390/820 provati / guidare l'operatore sul percorso reale dopo il rilascio |
 | #35/CHATGPT — P1 | Coordinatore OMP; operatore per account/login / bloccato | #1514/RILASCIO | OAuth e tool MCP reali dal ChatGPT personale, stessa sessione e receipt/outcome | Nessuna acceptance personale / esercitare il client reale dopo il rilascio |
 | #35/COORDINAMENTO — P0 | Coordinatore entrante OMP/Pocock / fonti riconciliate, preparazione operativa | Esiti verificati e limiti del PO | Unico writer, provider observer e fonti recuperabili | Successore01a13b77, checkout nuovi e prove recuperate; trial originario non attribuito al successore / pubblicare il Plan senza overwrite dei branch concorrenti; completare solo gate raggiungibili, nessuna acceptance anticipata |
@@ -929,14 +929,23 @@ Riesame Standards0 e Spec0 sul solo delta documentale, senza nuovi check
 di codice identico né trasferimento della qualifica runtime a un codice nuovo.
 
 **Decisione corrente del PO:** custodia **Vaultwarden esistente**, scelta
-esplicita nella ripresa. Destinazione nativa verificata:
-`https://vault.skunklabs.uk`; la CLI è locked. Non adottare SOPS come
-custodia alternativa del token senza nuova scelta del PO.
-Prima dell'apply occorre lo sblocco interattivo nel terminale privato
-dell'operatore e la procedura di custodia del solo token OMP; `BW_SESSION`
-resta soltanto nella shell autenticata, fuori chat, Git e file persistenti.
-La custodia sarà completata da quella shell, non copiando la sessione
-unlock al coordinatore. Nessuna richiesta di master password o token.
+esplicita nella ripresa, destinazione `https://vault.skunklabs.uk`.
+Il PO ha riportato `unlocked` dalla propria shell e il template nativo
+Login (`type: 1`, `secureNote: null`, `fields: []`): sblocco acquisito,
+non custodia del token. Non ripetere lo status per confermare il suo riscontro.
+Il successivo mandato richiede autonomia operativa e ritorni per decisioni
+di prodotto, non ulteriori template o conferme meccaniche.
+
+Limite osservato dal coordinatore: `BW_SESSION` assente nel proprio ambiente;
+nessun server tmux sul socket predefinito; nessun listener del servizio
+Bitwarden CLI; discovery del browser originale tramite relay scaduta dopo10s.
+Non è prova che la shell del PO sia locked: manca un canale supportato per
+eseguire la custodia in quella shell autenticata. Nessuna lettura degli
+environment di altri processi, estrazione di credenziali o iniezione nella TTY.
+`BW_SESSION` resta nella shell originale, fuori chat, Git e file persistenti.
+Non cambiare custodia in SOPS né introdurre un relay custom per aggirare il
+limite. Il blocco riguarda apply/connector e prove dipendenti, non il mandato
+di autonomia. Nessuna nuova master password, sessione o token richiesta.
 Il full plan positivo non autorizza apply prima di quel gate; il provider
 observer e l'allowance consumata non autorizzano lavoro lungo/interruzione
 reali. Tablet fuori LAN e ChatGPT personale restano acceptance del PO.
