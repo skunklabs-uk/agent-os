@@ -950,3 +950,10 @@ Il full plan positivo non autorizza apply prima di quel gate; il provider
 observer e l'allowance consumata non autorizzano lavoro lungo/interruzione
 reali. Tablet fuori LAN e ChatGPT personale restano acceptance del PO.
 Nessun cambio credenziali, profilo globale, unità altrui, cluster, costi o CI.
+
+**Correzione della prosecuzione:** lo stop precedente ha trattato il blocker
+di custodia come stop dell'intera missione. Preparazione operativa indipendente
+ripresa; verifica nativa locale exit0 e prerequisiti mancanti distinti dal
+rilascio effettivo. Dettagli host restano nella custodia locale prescritta da
+Homelab, non nel repository. Nessun apply, attivazione permanente o nuova
+prova di autenticazione/acceptance; il gate dipendente resta invariato.
