@@ -684,3 +684,36 @@ rendere obbligatorio il browser storage duplicherebbe il journal nativo
 senza necessità ancora provata. ALS, continuazioni implicite e compressione
 skill restano esclusi finché i confini della base già eliminano quel bisogno.
 Non si riabilitano funzionalità negate per poi aggiungere nuovi controlli.
+
+### Sblocco manuale minimo del WSL originale
+
+Questi passi identificano il contesto: non avviano OMP, trial o deploy e non
+richiedono nuove porte o credenziali. Eseguirli soltanto sul PC Windows
+originale, non nel terminale del Developer Workspace.
+
+1. Aprire dal menu Start la distribuzione WSL usata per il lavoro originale
+   oppure il suo terminale già aperto. Se non è riconoscibile, PowerShell
+   `wsl.exe --list --verbose` elenca le distribuzioni; non crearne una nuova.
+2. Nel terminale Linux eseguire `hostname` e `id -un`. L'utenza attesa è
+   `iingenito`; verificare poi soltanto la presenza dei materiali, senza
+   aprire il file sessione o la directory delle credenziali:
+
+   ```bash
+   p=/home/iingenito/projects/personal/.worktrees/agent-os-omp-coordinator
+   test -d "$p" && printf 'CWD originale presente\n' || printf 'CWD originale mancante\n'
+   s=/home/iingenito/.local/state/agent-os/remote-control/mission35/agent/sessions/-projects-personal-.worktrees-agent-os-omp-coordinator/2026-10-12T20-22-28-282Z_01a131c7-ecba-7000-a4fb-ff906f642f4f.jsonl
+   test -f "$s" && printf 'Sessione originale presente\n' || printf 'Sessione originale mancante\n'
+   ```
+
+3. Lasciare il terminale disponibile e comunicare solo se CWD/sessione sono
+   presenti e se esiste già un accesso remoto autorizzato utilizzabile.
+   Non avviare un'altra OMP e non terminare il writer precedente: il
+   coordinatore deve prima verificarne lo stato. La presenza dei file non
+   dimostra né writer unico né validità dell'auth.
+
+Se il solo terminale locale è disponibile, il passo successivo sarà
+un'istruzione assistita precisa sullo stesso WSL. Se esiste un canale remoto
+già autorizzato, serve soltanto il riferimento non segreto per riusarlo.
+Se il PC non è disponibile, #35/ACCESSO resta bloccato: non è un motivo per
+simulare continuità sul Pod. Un nuovo SSH/tunnel/permesso non è installato
+implicitamente come diagnostica.
