@@ -597,16 +597,14 @@ skill/tool, non introdurre altro ledger o coordinator. Se manca un hook
 nativo per la compressione, estendere solo il seam del catalogo nel
 meccanismo patch Bun già necessario, con default non-mission invariato.
 
-Due writer isolati, base `7373c4e`: A possiede patch riproducibile SDK,
-compression admission/cache-preview e regressioni; B possiede guard host,
-rpc-manager/mission-control/goal-mode e regressioni di send/side-turn/nudge.
-Non modificano node_modules condivisi, pin/lock, checkout source o fonti
-condivise. Codex integra A→B serialmente e reviewer indipendente riesamina
-il nuovo SHA. Test comportamentali con sink-spy/SDK isolato senza modelli:
-ensure-only, observer, stale/revoked e contesto invariato autorizzato;
-skill/UI ancora disponibili e nessun prestito di autorità successiva.
-Verifiche parent entro i limiti locali già approvati, senza CI o nuovo
-live: nessuna nuova allowance OMP, servizi, inferenza remota o deploy.
+Perimetro dei due writer conclusi, base `7373c4e`: A ha prodotto patch
+SDK, compression admission/cache-preview e regressioni; B ha prodotto
+guard host, rpc-manager/mission-control/goal-mode e regressioni di
+send/side-turn/nudge. Il perimetro escludeva node_modules condivisi,
+pin/lock, checkout source e fonti condivise. Codex ha integrato A→B
+serialmente. Il checkpoint seguente registra verifiche, review e limiti.
+Questa slice non è più una coda esecutiva: non autorizza ulteriori writer,
+CI, live, turni OMP, servizi, inferenza remota o deploy.
 
 ### Checkpoint admission e build — 2026-10-14
 
