@@ -640,12 +640,12 @@ verifica dei risultati e continuità: coordinatore OMP corrente.
 | #52/OUTCOMES — P0 | Coordinatore OMP; implementazione `IntegrateNativeOutcomes` conclusa / qualificato localmente | Base16faf8d e hunk pertinenti PR1 | Esiti answer/abort correlati e flush fallito non presentato come durable completion; nessun replay o regressione prompt/steer/P1 | Browser production: confirm/editor/Plan e abort nativi con ricevute completed; route MCP restituisce gli stessi esiti. Reload e doppio click senza replay; failure di flush coperta dalla regressione / prova originale dopo ACCESSO |
 | #52/SPECIALISTI — P0 | Coordinatore OMP; implementazione `ExposeNativeSpecialists` conclusa / qualificato localmente | Snapshot e API native esistenti | Stato e risultati di specialisti attivi/conclusi nella proiezione comune, senza journal o campi privati | Due P2 riprodotti con4 test RED e corretti; browser/MCP concordi, risultato completo distinto dall'anteprima, follow-up stesso ID/file senza risultato vecchio. Bus e writer SDK reali con dati sintetici, non esecuzione specialisti / verificare sul percorso originale |
 | #52/SCROLL — P0 | Coordinatore OMP / qualificato localmente | Layout missione esistente | Contenuto raggiungibile con scroll reale del pannello a390/820, non solo assenza overflow orizzontale | RED16fa conservato; GREEN8fc: main844px, scrollHeight2669px, scrollTop1825px e fondo visibile, windowY0; screenshot390/820 / acceptance sul tablet reale dopo rilascio |
-| #35/ACCESSO — P0 | Coordinatore OMP; operatore nel terminale originale / preflight metadata verificato | Terminale originale disponibile al PO; nessun accesso remoto diretto | Operare sul WSL originale senza cambiare ID/CWD/auth | `metadata-ready` in3875ms su fonte `e87c349`: identità/authority/config/27skill verificati, zero dispatch e nessun prompt; OS senza writer applicativo rilevato / mantenere fermo ogni altro accesso in scrittura alla sessione durante il trial; nessuna garanzia universale ricavata dallo snapshot OS |
-| #35/TRIAL — P1 | Coordinatore OMP; operatore per lancio originale / pronto, in attesa di esecuzione unica | ACCESSO e fonti verificati; auth nativa esistente | Unico trial bound nei limiti già approvati, cap/deadline osservati e review del metodo; nessuna identità sostitutiva | Nove scenari locali già qualificati e metadata originale positivo / un solo lancio `--trial`, watchdog900s e SDK890s, cap30modello, nessun retry/fallback manuale; poi review della risposta privata e cleanup |
-| #1514/RILASCIO — P1 | Coordinatore OMP / bloccato | #35/ACCESSO, candidato unico qualificato, custodia e full plan corrente | Rilascio nello stesso WSL con gate Cloudflare e smoke HTTPS/Access/SSE/POST soddisfatti | IaC1515 già merged, nessun apply / recuperare custodia e piano operativo soltanto sul contesto autorizzato |
+| #35/ACCESSO — P0 | Coordinatore OMP; operatore nel terminale originale / preflight metadata verificato | Terminale originale disponibile al PO; nessun accesso remoto diretto | Operare sul WSL originale senza cambiare ID/CWD/auth | `metadata-ready` in3875ms su fonte `e87c349`: identità/authority/config/27skill verificati, zero dispatch e nessun prompt; OS senza writer applicativo rilevato / conservare identità e auth originali per i gate successivi; nessuna garanzia universale ricavata dallo snapshot OS |
+| #35/TRIAL — P1 | Coordinatore OMP; operatore per lancio originale / eseguito, review pendente | Risposta finale privata da sottoporre a review | Unico trial bound nei limiti già approvati, cap/deadline osservati e review del metodo; nessuna identità sostitutiva | Exit0,107097ms,14HTTPmodello/30,0blocked/failed, terminal stop; identità/binding/prefisso storico invariati, un prompt aggiunto / acquisire solo risposta finale privata per review indipendente, poi cleanup; allowance del lancio consumata, nessun retry |
+| #1514/RILASCIO — P1 | Coordinatore OMP / bloccato | #35/TRIAL(review), candidato unico qualificato, custodia e full plan corrente | Rilascio nello stesso WSL con gate Cloudflare e smoke HTTPS/Access/SSE/POST soddisfatti | IaC1515 già merged, nessun apply; trial eseguito ma review pendente / dopo review recuperare custodia e piano operativo sul contesto autorizzato, senza usare il vecchio piano |
 | #35/MOBILE — P1 | Coordinatore OMP; operatore per dispositivo/login / bloccato | #1514/RILASCIO | Criteri mobile-control provati sul tablet reale fuori LAN | Solo viewport390/820 provati / guidare l'operatore sul percorso reale dopo il rilascio |
 | #35/CHATGPT — P1 | Coordinatore OMP; operatore per account/login / bloccato | #1514/RILASCIO | OAuth e tool MCP reali dal ChatGPT personale, stessa sessione e receipt/outcome | Nessuna acceptance personale / esercitare il client reale dopo il rilascio |
-| #35/COORDINAMENTO — P0 | Coordinatore OMP / qualifica metadata originale conclusa, trial in preparazione | Esiti delle slice e riscontro operatore | Nessun task eseguibile senza owner; risultati verificati e successori avviati; fonti recuperabili | Output originale redatto conservato e invarianti verificati:96messaggi e binding invariati,153→154entry persistite, byte diversi / guidare unica prova reale già autorizzata, senza trasferimento ownership o GO rilascio; rivalutare errori senza rilancio |
+| #35/COORDINAMENTO — P0 | Coordinatore OMP / trial originale concluso, raccolta risposta per review | Esiti delle slice e riscontro operatore | Nessun task eseguibile senza owner; risultati verificati e successori avviati; fonti recuperabili | Report originale ed exit0 forniti dal PO, JSON conservato e catena metadata→trial verificata / leggere la sola risposta finale nuova, non il journal; valutare applicazione del metodo e drift prima del GO; nessuna qualifica automatica per rilascio o ownership |
 
 **Supervisione:** i job della sessione notificano esiti e messaggi al
 coordinatore. Il lavoro indipendente procede mentre sono attivi; nessun
@@ -810,3 +810,29 @@ lancio,30richieste HTTP modello, stesso ID/CWD/auth, solo read, nessun
 retry/fallback manuale. Rete necessaria al trial, non al preflight isolato.
 Esito e metodo richiedono review prima di qualunque GO; nessun apply/deploy,
 acceptance tablet/ChatGPT o closeout acquisito dal metadata.
+
+### Trial originale concluso — review del metodo ancora pendente
+
+Riscontro del PO: unico lancio `--trial` nel WSL originale, exit0,
+`trial-read-only-complete-review-required`, stage dispose,107097ms dal
+lancio. Report redatto in `tasks/evidence/native-trial-original-e87c349.json`,
+con provenienza operatore esplicita. Il SHA prima del trial coincide col
+SHA dopo il metadata: catena delle due osservazioni verificata.
+
+Counter HTTP:14 richieste modello ammesse su30,0bloccate,0fallite,
+reason null. `modelDispatches:1` è il marker del primo dispatch principale,
+non il totale HTTP. Il lancio unico è consumato: remaining16 non concede
+un retry o un secondo trial. Deadline SDK890s e watchdog OS900s non raggiunti.
+
+Stesso ID/CWD, modello/thinking, authority observer/observe e binding;
+prefisso dei96messaggi precedenti invariato. Aggiunti un messaggio utente,
+14assistant e13toolResult; totale124messaggi. Fine nativa terminale,
+stopReason stop; nessun trasferimento ownership o continuità dei pending
+dimostrata. Letture riuscite: ask-matt1, currentPlan4, boundPlan2, altre6.
+Questi conteggi non sostituiscono la review dell'applicazione del metodo.
+
+Risposta finale nuova in
+`/tmp/mission35-native-pocock-review-1dBwvK/final-response.txt`, directory
+privata da rimuovere dopo la review. Non acquisire il journal o le auth.
+Restano acquisizione della sola risposta finale, review indipendente,
+cleanup dei file temporanei e gate operativi del rilascio già delimitati.
