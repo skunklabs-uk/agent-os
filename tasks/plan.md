@@ -10,7 +10,7 @@
 **Permitted commands:** observe
 **Authority:** [mobile-control](../SPEC-mobile-control.md), [mcp-access](../SPEC-mcp-access.md) and the [shared provider contract](../SPEC-team-execution.md#shared-remote-consumer-contract), explicitly approved on 2026-10-12 at `f55c2b7838104770766825e57b68129b019e951e`. Team-execution is accepted and delivered by [PR51](https://github.com/skunklabs-uk/agent-os/pull/51), merge `95528e6c0013f067702496902c40051fba973e48`.
 **Method:** skill originali Matt Pocock a `24fe0ef7737efae15c87225755e9f6f5965e4888`, scelte esplicitamente per il lavoro residuo. Riusare specifiche, ticket e seam accettati; non ripetere acceptance dei pilot. Le decisioni tecniche seguono la delega del Product Owner, senza inventare invocazioni letterali di skill.
-**Phase:** Correzione hostname qualificata e consegnata in Homelab PR1537; custodia, rilascio WSL e acceptance personali da completare
+**Phase:** Correzione hostname consegnata in PR1537 con review/CI verdi; scelta origin WSL/Kubernetes da risolvere prima del rilascio
 **Tracking:** GitHub issue35 and its native sub-issues; no tasks/todo.md or second ledger. [Task52](https://github.com/skunklabs-uk/agent-os/issues/52) owns readiness and the complete local port checkpoint after the reviewed component increments53–58. Current scope and outcomes appear below; recheck duplicates before any necessary new task. The former team-execution plan is Archived history and is not overwritten.
 
 ## Prima successione OMP/Pocock — 2026-10-14, storia
@@ -95,6 +95,38 @@ trasferire `BW_SESSION` o leggere credenziali da processi altrui. La
 consegna del candidato prosegue indipendentemente; custodia, servizi
 WSL e acceptance restano non completati. Il CWD bound deve consumare
 la fonte corrente con FF esplicito prima di attribuirle effetti runtime.
+
+### Reality-check prima dell'integrazione — due origin per lo stesso hostname
+
+Durante la consegna, Homelab main è avanzato a
+`69f465cec07f184615af8ce7b85f01b5cb27f858`: PR1535 introduce
+`omp-web` in Kubernetes e HTTPRoute `apps/omp-web` per
+`omp.skunklabs.uk`; PR1536 fissa l'immagine
+`harbor.lab.skunklabs.uk/private-ghcr/skunklabs-uk/omp-web:sha-3fa2c78`.
+Questi cambi dell'utente sono preservati, non sostituiti dalla proposta WSL.
+
+Verifica live read-only: Argo `omp-web` Synced a69f465c ma Degraded;
+HTTPRoute Accepted=True/ResolvedRefs=True; deployment senza replica ready,
+pod Running con sei restart. Gli eventi attestano readiness e liveness
+HTTP401, con riavvii causati dalla liveness. L'immagine è stata scaricata:
+non è un ImagePullBackOff né una prova di OOM. Nel deployment non sono
+configurati AGENT_OS_MISSION_ID/CWD: il nuovo pannello non prova il
+controllo della sessione WSL bound o le acceptance della missione.
+
+PR1537 head71bf1f6 ha Trivy Config e FS SUCCESS nel run38639230470,
+oltre alle due review sorgente. Il nuovo contesto non era incluso nelle
+review precedenti: la PR è riportata Draft e non viene unita/applicata
+finché non è risolta la destinazione del dominio. Il candidato usa il
+connector WSL verso loopback; il deployment Kubernetes usa il Gateway.
+Non si cambia DNS per scegliere implicitamente tra questi due runtime.
+
+Serve una decisione del PO: preservare il percorso approvato della
+missione originale su WSL, oppure adottare il nuovo pannello Kubernetes
+con scope/criteri espliciti per il rapporto con la sessione originale.
+Nel secondo caso, correggere le probe401 e riusare il percorso Gateway/
+tunnel Homelab pertinente prima di pubblicare il DNS; non applicare
+automaticamente il connector WSL. Nessun cambiamento live eseguito.
+
 
 ## Outcome and scope
 
@@ -708,10 +740,10 @@ verifica dei risultati e continuità: coordinatore OMP corrente.
 | #52/SCROLL — P0 | Coordinatore OMP / qualificato localmente | Layout missione esistente | Contenuto raggiungibile con scroll reale del pannello a390/820, non solo assenza overflow orizzontale | RED16fa conservato; GREEN8fc: main844px, scrollHeight2669px, scrollTop1825px e fondo visibile, windowY0; screenshot390/820 / acceptance sul tablet reale dopo rilascio |
 | #35/ACCESSO — P0 | Coordinatore nel Developer Workspace / canale WSL diretto assente | Identità originale e checkout preservati | Operare sul WSL senza cambiare ID/CWD/auth | Ultimo smoke WSL su fd4f820: parser leggeva01a13b77 e observer/observe, cinque mutazioni negate, journal invariato / rendere eseguibili i passi nella shell autorizzata e consumare il nuovo Plan con FF; nessuna qualifica runtime trasferita al mandato corrente |
 | #35/TRIAL — P1 | Coordinatore OMP / concluso nel perimetro read-only | Nessuna nuova allowance | Unico trial bound con cap/deadline ed esito/metodo revisionati | Report operatore exit0,107097ms,14HTTPmodello/30,0blocked/failed; review indipendente positiva per la lettura pertinente, limite delle fonti arretrate preservato; risposta e preload temporanei archiviati e rimossi / nessun retry o secondo trial, non promuovere observer |
-| #1514/RILASCIO — P1 | Coordinatore OMP / candidato consegnato in PR1537; apply bloccato dalla custodia | Custodia token, servizi WSL, review/check e piano allora corrente | Rilascio su omp.skunklabs.uk con HTTPS/Access/SSE/POST verificati | Candidato71bf1f6, Standards/Spec GO sorgente, full plan4createOMP/77no-op/0update/delete; nessun apply. Vaultwarden unlocked riportato dal PO, canale autenticato assente / verificare CI del candidato; completare custodia senza trasferire BW_SESSION, poi piano fresco e servizi |
+| #1514/RILASCIO — P1 | Coordinatore OMP / PR1537 Draft, scelta origin da risolvere | Decisione WSL/Kubernetes; poi custodia e gate del percorso scelto | Rilascio su omp.skunklabs.uk con origin corretto e verifiche reali | Head71bf1f6 con Standards/Spec GO sorgente e due Trivy SUCCESS. Main69f465c aggiunge pannello Kubernetes degradato (probe401), non bound a#35 / acquisire decisione del PO senza migrazione implicita, poi aggiornare candidato e verifiche pertinenti |
 | #35/MOBILE — P1 | Coordinatore OMP; operatore per dispositivo/login / bloccato | #1514/RILASCIO | Criteri mobile-control provati sul tablet reale fuori LAN | Solo viewport390/820 provati / guidare l'operatore sul percorso reale dopo il rilascio |
 | #35/CHATGPT — P1 | Coordinatore OMP; operatore per account/login / bloccato | #1514/RILASCIO | OAuth e tool MCP reali dal ChatGPT personale, stessa sessione e receipt/outcome | Nessuna acceptance personale / esercitare il client reale dopo il rilascio |
-| #35/COORDINAMENTO — P0 | Coordinatore operativo01a139d2 nel Developer Workspace / mandato corrente | Esiti verificati e limiti del PO | Unico writer, provider observer e responsabilità fino al risultato verificato | Richiesta diretta corrente acquisita; storia7fdd889 preservata / pubblicare la successione e la consegna DNS nelle issue esistenti; nessun completamento anticipato di rilascio o acceptance |
+| #35/COORDINAMENTO — P0 | Coordinatore operativo01a139d2 nel Developer Workspace / mandato pubblicato | Esiti verificati e limiti del PO | Unico writer, provider observer e responsabilità fino al risultato verificato | Successione da7e1b6 e commento#35 6178773512 pubblicati; correzione DNS in PR1537 / risolvere il conflitto di origin, proseguire solo sul percorso approvato; nessun completamento anticipato di rilascio o acceptance |
 
 **Supervisione:** i job della sessione notificano esiti e messaggi al
 coordinatore. Il lavoro indipendente procede mentre sono attivi; nessun
