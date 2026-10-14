@@ -1,17 +1,34 @@
 # Plan: mobile-control and mcp-access
 
 **Status:** Active — dopo il conflitto di coordinamento, l'ultima decisione del Product Owner conferma questa sessione OMP come unico coordinatore Matt Pocock/RFC-0001. Gli esiti Osmani precedenti restano storia accettata. Il rilascio operativo è approvato soltanto dopo review sullo SHA esatto e check applicabili verdi.
-**Mission:** [Agent OS35](https://github.com/skunklabs-uk/agent-os/issues/35), coordinatore unico su NOVBSCWOLaulMaU.
+**Mission:** [Agent OS35](https://github.com/skunklabs-uk/agent-os/issues/35), coordinatore corrente nel Developer Workspace; provider bound su NOVBSCWOLaulMaU.
 **Coordinator:** omp-current-session
-**Coordinator session:** 01a136e1-3183-72bb-aeca-d82f1bc60b6c
+**Coordinator session:** 01a139d2-93a6-704a-a1cc-570907f479a9
 **Provider role:** observer
 **Provider session:** 01a131c7-ecba-7000-a4fb-ff906f642f4f
 **Permitted scope:** mobile-control/mcp-access-readiness-and-port
 **Permitted commands:** observe
 **Authority:** [mobile-control](../SPEC-mobile-control.md), [mcp-access](../SPEC-mcp-access.md) and the [shared provider contract](../SPEC-team-execution.md#shared-remote-consumer-contract), explicitly approved on 2026-10-12 at `f55c2b7838104770766825e57b68129b019e951e`. Team-execution is accepted and delivered by [PR51](https://github.com/skunklabs-uk/agent-os/pull/51), merge `95528e6c0013f067702496902c40051fba973e48`.
 **Method:** skill originali Matt Pocock a `24fe0ef7737efae15c87225755e9f6f5965e4888`, scelte esplicitamente per il lavoro residuo. Riusare specifiche, ticket e seam accettati; non ripetere acceptance dei pilot. Le decisioni tecniche seguono la delega del Product Owner, senza inventare invocazioni letterali di skill.
-**Phase:** implementazione e qualificazione — nessun rilascio operativo eseguito
+**Phase:** P1 qualificato localmente; trial, rilascio WSL e acceptance personale in attesa dei prerequisiti operativi
 **Tracking:** GitHub issue35 and its native sub-issues; no tasks/todo.md or second ledger. [Task52](https://github.com/skunklabs-uk/agent-os/issues/52) owns readiness and the complete local port checkpoint after the reviewed component increments53–58. Current scope and outcomes appear below; recheck duplicates before any necessary new task. The former team-execution plan is Archived history and is not overwritten.
+
+## Successione OMP/Pocock — 2026-10-14
+
+La richiesta diretta del PO di riprendere l'handoff conferma questa nuova
+sessione come unico coordinatore. Sostituisce il coordinatore uscente
+`01a136e1-3183-72bb-aeca-d82f1bc60b6c`, non il provider observer.
+I checkout esistenti restano intatti; i bundle verificati sono recuperati in
+`/workspaces/mission35-omp-web` e `/workspaces/mission35-agent-os`.
+Il remoto documentale `449feab` e la PR app `f861bb8` conservano lavoro
+concorrente Codex: nessun overwrite, force-push o GO ereditato.
+Le dichiarazioni concorrenti di ownership non prevalgono sulla richiesta
+diretta corrente. Primo lavoro: P1 bootstrap su app `91319e0`, risposta e
+interruzione indipendenti dall'avvio pendente, con ricevuta originale
+consultabile e senza replay. Seam già autorizzati dall'handoff: commander
+pubblico e pannello Next reale con domanda nativa `session_start`.
+Nessun trial modello, apply o rilascio eseguito nella ripresa.
+
 
 ## Outcome and scope
 
@@ -544,3 +561,60 @@ non aggiungere un'altra implementazione parallela. Il remoto privato
 si chiama `custody`, non `origin`: verificare il target prima del fetch
 evita di interrogare il repository upstream sbagliato. Il closeout
 terminale resta NO finché mancano review, rilascio e acceptance reali.
+
+## Qualifica P1 e stop operativo delimitato — 2026-10-14
+
+**Candidato:** [`16faf8d63130981f771e404d40f314d4543ba93b`](https://github.com/skunklabs-uk/omp-web/commit/16faf8d63130981f771e404d40f314d4543ba93b),
+base `91319e0a3c9dcea4978f6bb9fd7b2da373353de5`, custodito nel branch
+`mission35/pocock-bootstrap-controls`. Il branch concorrente della PR1
+`f861bb8` e il remoto documentale `449feab` restano intatti: questa qualifica
+non si trasferisce alle loro superfici né costituisce un merge.
+
+**Prove:** [archivio P1](evidence/mobile-bootstrap-16faf8d.tar.gz), SHA256
+`f2a288a490f55d7579d22c18e36a74fcbfbb86e0977a4c4415029fdd76e44320`.
+Contiene manifest di 38 file, log dei check, review originali, JSON nativi,
+screenshot e fixture riproducibili; esclude assertion, auth, journal e state.
+Il controllo privacy è delimitato all'allowlist e ai pattern dichiarati.
+Le fixture sono temporanee: i percorsi WSL del preflight non sono portabili
+sul Pod e non autorizzano l'esecuzione del trial con identità sostitutive.
+
+| Gate | Esito ed evidenza osservata | Residuo |
+|---|---|---|
+| Causa e regressione | SÌ: test RED sulla ricevuta sovrascritta; build originale con `confirm` reale di `session_start`, risposta/abort disabilitati anche dopo timeout | Nessun risultato della prima fixture `.mjs`, non scoperta dal loader, è usato come prova |
+| P1 sul candidato | SÌ: canali lavoro/risposta/abort distinti; controlli attivi a 6435 ms con HTTP iniziale pendente; in una prova dedicata click di risposta a2969ms, native future `false` e readiness completata; doppio click reale produce un solo POST risposta | L'ack dell'abort non risolve da solo la domanda startup |
+| Timeout e continuità | SÌ: dopo 11210 ms abort nativo chiamato e risolto una volta; domanda ancora pendente, poi risposta `true`; reload conserva tre ID, GET dell'ID iniziale senza nuovi POST | Non prova continuità dopo restart del processo |
+| Decisioni e confini | SÌ: confirm `false`, editor e Plan approvato verificati nel runtime prima del teardown; stale/401 e reconnect senza POST; observer, scope errato, cross-site e binding estraneo respinti | Viewport 390/820 senza overflow; non è tablet personale |
+| Check e review | SÌ locale: 629 PASS, 1 skip, 0 FAIL; lint pertinente; build production con typecheck; warning preesistente sull'export dinamico. Standards 0 rilievi, Spec 0 rilievi sullo SHA esatto | Check GitHub sul nuovo SHA: 0 check-run e 0 status, aggregato `pending`; nessun retry o merge |
+| Seam e limiti trial | SÌ locale: registry nativo costruito prima del budget, discovery GET passa nel fetch late-bound; cap30 blocca il31, deadline e stream abortiti, OAuth sintetico escluso, retry503 conteggiati3/3, errore SSE bloccato al cap2 | Nove scenari sintetici, zero richieste a pagamento; non esecuzione del provider bound |
+| Deadline dal lancio | SÌ in scala: refresh OAuth nativo tenuto pendente prima del primo modello; timer SDK a1501ms, timeout OS a3009ms con exit124; POST modello0 | Prima del trial reale servono watchdog OS900s e guard SDK890s, installati prima degli import |
+| Trial originale | NO: SSH verso `192.168.1.22:22` rifiutato; nessun host WSL configurato tra gli accessi disponibili | Operatore: rendere disponibile accesso autorizzato al WSL originale e verificare assenza di altro writer; poi riconciliare Plan/binding/auth senza copie |
+| Rilascio e acceptance | NO: origin WSL e custodia operativa non raggiungibili, full plan corrente non prodotto | Riprendere dal gate Cloudflare esistente; dopo il rilascio, operatore su tablet reale fuori LAN e ChatGPT personale |
+
+Le esecuzioni early/late/ordinary, early-input e doubletap hanno verificato
+zero messaggi d'inferenza,
+zero POST modello esterni e cleanup nativo con exit0. Le schede sono chiuse
+prima del teardown. L'aspettativa del coordinator nel preflight è aggiornata
+alla successione corrente, preservando il controllo fail-closed; lo script
+bound non è stato eseguito né il provider promosso da `observer/observe`.
+
+**Riesame cumulativo RFC-0001 §§2/6/7:** KEEP identità/sessione e autorità
+native, ricevute persistite, source pin, CF Access/MCP nativo e pilot accettati.
+DELETE dalla soluzione proposta ledger, broker, coordinator e preload
+permanenti aggiuntivi; nessun servizio o codice concorrente è stato rimosso.
+REPLACE il gate globale e lo slot browser condiviso con tre istanze del
+commander esistente; conteggi di bottoni/testo con l'invariante senza POST;
+aspettative fixture con future e stato nativi osservati.
+
+**Retro intermedia:** il loader scarta `.mjs`; le risposte mantengono
+`acknowledged` anche quando la future è risolta; un dialogo chiuso si riapre
+dal controllo reale. Le fixture sono state corrette, non gli esiti di
+prodotto adattati alle asserzioni. Applicati TDD, code-review a due assi e
+writing-for-agents originali al pin scelto; `ask-matt` letto per il percorso,
+senza attestare nuove invocazioni user-only. Retro terminale, metodo del
+provider nel trial, tablet e ChatGPT restano non attestati; humanize-writing
+non disponibile. Nessun nuovo framework, issue, servizio o retry CI.
+
+**Decisione:** SÌ alla correzione P1 locale, NO al closeout della missione.
+Plan Active, #35/#52 aperte. Il solo blocco operativo non invalida il lavoro
+locale concluso; per riprendere occorre l'accesso WSL descritto sopra,
+non una conferma meccanica né un trasferimento dell'ownership.
