@@ -640,12 +640,12 @@ verifica dei risultati e continuità: coordinatore OMP corrente.
 | #52/OUTCOMES — P0 | Coordinatore OMP; implementazione `IntegrateNativeOutcomes` conclusa / qualificato localmente | Base16faf8d e hunk pertinenti PR1 | Esiti answer/abort correlati e flush fallito non presentato come durable completion; nessun replay o regressione prompt/steer/P1 | Browser production: confirm/editor/Plan e abort nativi con ricevute completed; route MCP restituisce gli stessi esiti. Reload e doppio click senza replay; failure di flush coperta dalla regressione / prova originale dopo ACCESSO |
 | #52/SPECIALISTI — P0 | Coordinatore OMP; implementazione `ExposeNativeSpecialists` conclusa / qualificato localmente | Snapshot e API native esistenti | Stato e risultati di specialisti attivi/conclusi nella proiezione comune, senza journal o campi privati | Due P2 riprodotti con4 test RED e corretti; browser/MCP concordi, risultato completo distinto dall'anteprima, follow-up stesso ID/file senza risultato vecchio. Bus e writer SDK reali con dati sintetici, non esecuzione specialisti / verificare sul percorso originale |
 | #52/SCROLL — P0 | Coordinatore OMP / qualificato localmente | Layout missione esistente | Contenuto raggiungibile con scroll reale del pannello a390/820, non solo assenza overflow orizzontale | RED16fa conservato; GREEN8fc: main844px, scrollHeight2669px, scrollTop1825px e fondo visibile, windowY0; screenshot390/820 / acceptance sul tablet reale dopo rilascio |
-| #35/ACCESSO — P0 | Coordinatore OMP; operatore nel terminale originale / fonti allineate, metadata-only pendente | Terminale originale disponibile al PO; nessun accesso remoto diretto | Operare sul WSL originale senza cambiare ID/CWD/auth | Operatore conferma FF a `e87c349`, nessun conflitto; script recuperati in `mission35/handoff/preflight-current.arXmlK`, hash esatti `32c2cd0b` e `3e32ae11` / un solo preflight senza `--trial`, Bun1.3.14/SDK18.8.7, rete isolata e timeout; verificare JSON redatto prima del trial |
-| #35/TRIAL — P1 | Coordinatore OMP / bloccato | #35/ACCESSO, fonti e unico writer verificati | Unico trial bound nei limiti già approvati, cap/deadline osservati e review del metodo; nessuna identità sostitutiva | Nove scenari locali già qualificati / eseguire solo quando i prerequisiti originali diventano raggiungibili |
+| #35/ACCESSO — P0 | Coordinatore OMP; operatore nel terminale originale / preflight metadata verificato | Terminale originale disponibile al PO; nessun accesso remoto diretto | Operare sul WSL originale senza cambiare ID/CWD/auth | `metadata-ready` in3875ms su fonte `e87c349`: identità/authority/config/27skill verificati, zero dispatch e nessun prompt; OS senza writer applicativo rilevato / mantenere fermo ogni altro accesso in scrittura alla sessione durante il trial; nessuna garanzia universale ricavata dallo snapshot OS |
+| #35/TRIAL — P1 | Coordinatore OMP; operatore per lancio originale / pronto, in attesa di esecuzione unica | ACCESSO e fonti verificati; auth nativa esistente | Unico trial bound nei limiti già approvati, cap/deadline osservati e review del metodo; nessuna identità sostitutiva | Nove scenari locali già qualificati e metadata originale positivo / un solo lancio `--trial`, watchdog900s e SDK890s, cap30modello, nessun retry/fallback manuale; poi review della risposta privata e cleanup |
 | #1514/RILASCIO — P1 | Coordinatore OMP / bloccato | #35/ACCESSO, candidato unico qualificato, custodia e full plan corrente | Rilascio nello stesso WSL con gate Cloudflare e smoke HTTPS/Access/SSE/POST soddisfatti | IaC1515 già merged, nessun apply / recuperare custodia e piano operativo soltanto sul contesto autorizzato |
 | #35/MOBILE — P1 | Coordinatore OMP; operatore per dispositivo/login / bloccato | #1514/RILASCIO | Criteri mobile-control provati sul tablet reale fuori LAN | Solo viewport390/820 provati / guidare l'operatore sul percorso reale dopo il rilascio |
 | #35/CHATGPT — P1 | Coordinatore OMP; operatore per account/login / bloccato | #1514/RILASCIO | OAuth e tool MCP reali dal ChatGPT personale, stessa sessione e receipt/outcome | Nessuna acceptance personale / esercitare il client reale dopo il rilascio |
-| #35/COORDINAMENTO — P0 | Coordinatore OMP / qualifica locale conclusa, preflight originale in preparazione | Esiti delle slice e riscontro operatore | Nessun task eseguibile senza owner; risultati verificati e successori avviati; fonti recuperabili | FF e hash acquisiti dal WSL; script/default/output/teardown riletti dalla copia custodita. Metadata-only non invia prompt ma il SDK può scrivere metadati/cache native / eseguire isolato senza rete e senza `--trial`, poi valutare esito, identità, authority e variazioni del journal; nessun trial o GO operativo ancora |
+| #35/COORDINAMENTO — P0 | Coordinatore OMP / qualifica metadata originale conclusa, trial in preparazione | Esiti delle slice e riscontro operatore | Nessun task eseguibile senza owner; risultati verificati e successori avviati; fonti recuperabili | Output originale redatto conservato e invarianti verificati:96messaggi e binding invariati,153→154entry persistite, byte diversi / guidare unica prova reale già autorizzata, senza trasferimento ownership o GO rilascio; rivalutare errori senza rilancio |
 
 **Supervisione:** i job della sessione notificano esiti e messaggi al
 coordinatore. Il lavoro indipendente procede mentre sono attivi; nessun
@@ -780,3 +780,33 @@ Scansione di materiale con forma JWT/token/chiave privata superata.
 custodia/full plan, rilascio, tablet fuori LAN e ChatGPT personale restano
 bloccati nelle rispettive slice; nessun apply, deploy o trial originale.
 Non esiste monitoraggio persistente dopo la fine di questa sessione.
+
+### Preflight metadata sul WSL originale — riscontro operatore
+
+Il PO ha eseguito il comando isolato nel WSL `NOVBSCWOLaulMaU`, utente
+`iingenito`, dopo il fast-forward del CWD bound a `e87c349`. Gli hash dei
+due script recuperati coincidono con le copie custodite. Risultato completo
+redatto in `tasks/evidence/native-metadata-original-e87c349.json`, con
+provenienza esplicita: output fornito dall'operatore, non esecuzione diretta
+dal Developer Workspace.
+
+`metadata-ready`, stage `dispose`,3875ms; Bun1.3.14, SDK18.8.7,
+sessione/CWD originali, modello `openai-codex/gpt-6.1-sol` low,27skill al
+pin originale, auth nativa disponibile, solo read, retry/fallback/AutoQA
+disabilitati. Coordinatore corrente e provider observer/observe corretti.
+Zero dispatch modello, nessun prompt; metodo del trial non ancora provato.
+
+Il journal non è byte-identico:153→154entry persistite, tipo dell'entry
+aggiunta non identificato in questo output. Restano96messaggi con identico
+hash del prefisso originale, ruoli invariati, un binding con hash invariato,
+nessun cambio modello/thinking. Non si promette immutabilità dei metadati.
+Il controllo OS non ha rilevato writer applicativi sul file; le sole
+eccezioni di accesso erano systemd e sd-pam. Non è un lock globale né una
+garanzia contro avvii successivi: durante il trial non si avviano altri
+writer e non si aggiorna il checkout originale.
+
+Segue l'unico trial reale già autorizzato, non ancora eseguito:15min dal
+lancio,30richieste HTTP modello, stesso ID/CWD/auth, solo read, nessun
+retry/fallback manuale. Rete necessaria al trial, non al preflight isolato.
+Esito e metodo richiedono review prima di qualunque GO; nessun apply/deploy,
+acceptance tablet/ChatGPT o closeout acquisito dal metadata.
