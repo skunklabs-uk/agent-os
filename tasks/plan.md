@@ -608,3 +608,57 @@ skill/UI ancora disponibili e nessun prestito di autorità successiva.
 Verifiche parent entro i limiti locali già approvati, senza CI o nuovo
 live: nessuna nuova allowance OMP, servizi, inferenza remota o deploy.
 
+### Checkpoint admission e build — 2026-10-14
+
+Codice materiale verificato: `f03db15a77f05b478b4b916d3ea2594f9c02e093`
+nel writer isolato `port/worktrees/codex-control`. Integrate serialmente
+le due slice: compressione skill con admission dopo semaforo/credenziali;
+send, side-turn e goal con contesto originale propagato da storage async
+condiviso fra istanze del modulo. Identità del provider e file del
+transcript sono confrontati separatamente. Observer, revoca e cambio
+di HEAD/fonte/scope rifiutano lavoro implicito; nessuna nuova autorità.
+
+Evidenze conservate in `port/logs/implicit-admission-bslxhg`:
+RED del bootstrap senza guard; RED del reload su modulo distinto;
+GREEN mirato 60 PASS, 0 FAIL; smoke con AgentSession/initializer SDK18.8.7
+reali, una domanda UI, due send e un side-turn negati, zero messaggi
+user/assistant e transcript preservato. Sono prove locali senza modello,
+non stato vivo della missione35 o accettazione del tablet/ChatGPT.
+
+Suite completa sul successor test-only `9012f30`: 660 PASS, 1 SKIP,
+0 FAIL in 120 file. Rimossi assert strutturali e un caso duplicato;
+corretti i timeout dei worker pagina/SSE senza indebolire i contratti.
+Typecheck e lint dei file modificati: exit0 nelle evidenze conservate.
+Il lint generale precedente resta negativo su file non modificati;
+non è soppresso né dichiarato PASS.
+
+Il build con worker TypeScript API su `9012f30` non concludeva entro
+600 secondi. Il typecheck diretto sui tipi generati aveva exit0.
+Su `f03db15` è usato il checker CLI nativo Next16.2.12, senza
+`ignoreBuildErrors` o upgrade: verifica `--project`/`--noEmit` e fallisce
+su errori. Review indipendente di HostAdmissionFinalReview sul delta
+`f03db15`: nessun finding statico, nessuna verifica runtime rivendicata
+dal reviewer. Build eseguito dal coordinatore: exit0, TypeScript concluso
+in 63 secondi, 14 pagine statiche generate; warning preesistente sulla
+dipendenza dinamica di `app/api/sessions/[id]/export/route.ts` invariato.
+Raw privati in `port/logs/build-cli-resume-7YJcZx`, rete disabilitata,
+profilo usa-e-getta, nessun servizio o modello avviato.
+
+Gate residui, senza riduzione dello scope: autorità e limite operativo
+per lavoro reale/start/resume/interruzione della35; configurazione e
+attivazione Cloudflare/Homelab solo dopo OK esplicito e piano fresco;
+OAuth e chiamate dal ChatGPT personale; flusso dal tablet fisico fuori
+LAN con HTTP/SSE/POST e riconnessione; accettazione umana e closeout.
+Tre motivi concreti di rifiuto dell'MVP: manca la prova operativa della
+missione reale; manca la connessione OAuth dal client ChatGPT effettivo;
+manca l'interazione dal tablet fuori rete. Nessun merge, deploy, apply,
+CI o nuovo turno OMP; #35 e #52 restano aperte.
+
+
+Pubblicazione del port in fast-forward nella PR OMP-web1 esistente:
+`7373c4e` → `f861bb83aa08bc7f00b831190b166d0235847134`.
+Il successor `f861bb8` modifica soltanto README dopo il codice verificato
+`f03db15`. La PR resta Draft; GitHub Actions risulta `enabled:false`.
+Il ramo `docs/mobile-mcp-plan` osservato prima di questo checkpoint era
+`c9d25e7e36862dfc114d01729b07c8220eb030af`, non il checkpoint iniziale
+`1403d832124605a7d1aed55fd512d81dde3d4c9b`.
