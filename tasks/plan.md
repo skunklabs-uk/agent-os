@@ -662,3 +662,8 @@ Il successor `f861bb8` modifica soltanto README dopo il codice verificato
 Il ramo `docs/mobile-mcp-plan` osservato prima di questo checkpoint era
 `c9d25e7e36862dfc114d01729b07c8220eb030af`, non il checkpoint iniziale
 `1403d832124605a7d1aed55fd512d81dde3d4c9b`.
+
+Nella ripresa, il tentativo read-only di elencare le tab del browser
+personale tramite relay termina in timeout dopo 3 secondi. Nessuna tab
+adottata o navigata, nessun browser avviato; il client ChatGPT effettivo
+resta non raggiungibile da questa verifica, non dichiarato incompatibile.
