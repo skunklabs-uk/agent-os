@@ -636,16 +636,16 @@ verifica dei risultati e continuità: coordinatore OMP corrente.
 | ID / priorità | Responsabile / stato | Dipendenze | Risultato atteso e done verificabile | Ultima attività / prossima azione |
 |---|---|---|---|---|
 | #52/P1 — P0 | Coordinatore OMP / completato | Nessuna | Risposta e abort indipendenti dal bootstrap; ricevuta originale e scoping preservati | `16faf8d`, browser production, check e due review sopra / riusare le prove; ripeterle solo sul codice materialmente cambiato |
-| #52/INTEGRAZIONE — P0 | Coordinatore OMP / in corso | OUTCOMES, SPECIALISTI, SCROLL | Candidato unico con P1 preservato, check/smoke e review pertinenti sul nuovo SHA | Ricognizione verificata; due implementer assegnati / integrare i risultati e qualificare una sola volta il candidato risultante |
-| #52/OUTCOMES — P0 | `IntegrateNativeOutcomes` / in corso | Base16faf8d e hunk pertinenti PR1 | Esiti answer/abort correlati e flush fallito non presentato come durable completion; nessun replay o regressione prompt/steer/P1 | Agent assegnato a mission-control/rpc-manager e test pertinenti / consegna senza check intermedi; verifica al coordinatore |
-| #52/SPECIALISTI — P0 | `ExposeNativeSpecialists` / in corso | Snapshot e API native esistenti | Stato e risultati di specialisti attivi/conclusi nella proiezione comune, senza journal o campi privati | Agent assegnato a mission-observation e test / comunicare contratto dati al coordinatore per UI |
-| #52/SCROLL — P0 | Coordinatore OMP / in corso | Layout missione esistente | Contenuto raggiungibile con scroll reale del pannello a390/820, non solo assenza overflow orizzontale | RED browser16fa: main1359px dentro antenato844px overflow:hidden e viewport non scorribile / riusare layout scroll della PR1 e verificare sul build finale |
+| #52/INTEGRAZIONE — P0 | Coordinatore OMP / qualificato localmente | OUTCOMES, SPECIALISTI, SCROLL | Candidato unico con P1 preservato, check/smoke e review pertinenti sul nuovo SHA | `8fc6e67` pubblicato sul branch proprio; suite627 PASS/1skip/0FAIL, typecheck/lint/build exit0, Standards GO e Spec GO / usare questo candidato nei gate di rilascio, senza trasferire il GO alla PR1 concorrente |
+| #52/OUTCOMES — P0 | Coordinatore OMP; implementazione `IntegrateNativeOutcomes` conclusa / qualificato localmente | Base16faf8d e hunk pertinenti PR1 | Esiti answer/abort correlati e flush fallito non presentato come durable completion; nessun replay o regressione prompt/steer/P1 | Browser production: confirm/editor/Plan e abort nativi con ricevute completed; route MCP restituisce gli stessi esiti. Reload e doppio click senza replay; failure di flush coperta dalla regressione / prova originale dopo ACCESSO |
+| #52/SPECIALISTI — P0 | Coordinatore OMP; implementazione `ExposeNativeSpecialists` conclusa / qualificato localmente | Snapshot e API native esistenti | Stato e risultati di specialisti attivi/conclusi nella proiezione comune, senza journal o campi privati | Due P2 riprodotti con4 test RED e corretti; browser/MCP concordi, risultato completo distinto dall'anteprima, follow-up stesso ID/file senza risultato vecchio. Bus e writer SDK reali con dati sintetici, non esecuzione specialisti / verificare sul percorso originale |
+| #52/SCROLL — P0 | Coordinatore OMP / qualificato localmente | Layout missione esistente | Contenuto raggiungibile con scroll reale del pannello a390/820, non solo assenza overflow orizzontale | RED16fa conservato; GREEN8fc: main844px, scrollHeight2669px, scrollTop1825px e fondo visibile, windowY0; screenshot390/820 / acceptance sul tablet reale dopo rilascio |
 | #35/ACCESSO — P0 | Coordinatore OMP; operatore per il terminale originale / bloccato | Canale WSL o operatore locale disponibile | Operare sul WSL originale senza cambiare ID/CWD/auth | Ricognizione conclusa: nessun alias/canale WSL identificato, catalogo SSH vuoto; nessun retry SSH / consegnare passi manuali e raccogliere solo l'informazione indispensabile sul canale disponibile |
 | #35/TRIAL — P1 | Coordinatore OMP / bloccato | #35/ACCESSO, fonti e unico writer verificati | Unico trial bound nei limiti già approvati, cap/deadline osservati e review del metodo; nessuna identità sostitutiva | Nove scenari locali già qualificati / eseguire solo quando i prerequisiti originali diventano raggiungibili |
 | #1514/RILASCIO — P1 | Coordinatore OMP / bloccato | #35/ACCESSO, candidato unico qualificato, custodia e full plan corrente | Rilascio nello stesso WSL con gate Cloudflare e smoke HTTPS/Access/SSE/POST soddisfatti | IaC1515 già merged, nessun apply / recuperare custodia e piano operativo soltanto sul contesto autorizzato |
 | #35/MOBILE — P1 | Coordinatore OMP; operatore per dispositivo/login / bloccato | #1514/RILASCIO | Criteri mobile-control provati sul tablet reale fuori LAN | Solo viewport390/820 provati / guidare l'operatore sul percorso reale dopo il rilascio |
 | #35/CHATGPT — P1 | Coordinatore OMP; operatore per account/login / bloccato | #1514/RILASCIO | OAuth e tool MCP reali dal ChatGPT personale, stessa sessione e receipt/outcome | Nessuna acceptance personale / esercitare il client reale dopo il rilascio |
-| #35/COORDINAMENTO — P0 | Coordinatore OMP / in corso | Esiti delle slice | Nessun task eseguibile senza owner; risultati verificati e successori avviati; fonti recuperabili | Due scout conclusi e verificati, due implementer indipendenti assegnati; parent su UI/layout e integrazione / qualificare e aggiornare fonti e tracker |
+| #35/COORDINAMENTO — P0 | Coordinatore OMP / qualifica locale conclusa, attesa sblocco esterno | Esiti delle slice | Nessun task eseguibile senza owner; risultati verificati e successori avviati; fonti recuperabili | Implementer verificati, due P2 corretti, entrambe le review finali GO; tre fixture native exit0, browser chiusi e archivio recuperato30/30 / raccogliere disponibilità del terminale WSL originale o di un canale già autorizzato |
 
 **Supervisione:** i job della sessione notificano esiti e messaggi al
 coordinatore. Il lavoro indipendente procede mentre sono attivi; nessun
@@ -717,3 +717,66 @@ già autorizzato, serve soltanto il riferimento non segreto per riusarlo.
 Se il PC non è disponibile, #35/ACCESSO resta bloccato: non è un motivo per
 simulare continuità sul Pod. Un nuovo SSH/tunnel/permesso non è installato
 implicitamente come diagnostica.
+
+### Candidato integrato qualificato — 2026-10-14
+
+Fonte esatta `8fc6e67c021be66547e76f9d216c9a7b0340f924`, pubblicata
+fast-forward in `skunklabs-uk/omp-web`, branch
+`mission35/pocock-bootstrap-controls`. La PR1 a `f861bb8` e il branch
+documentale concorrente a `449feab` restano preservati; nessun merge.
+
+**Standards:** GO codice, nessun finding sul cumulativo dal fixed point
+`f7338b746602e40f888996350502ce8dc8ed4cf6`, con le dodici euristiche Fowler
+della skill originale Pocock. Il precedente NO-GO di `5c9e26a` conteneva
+due P2: un yield terminale senza dati sovrascriveva le sezioni incrementali;
+un follow-up poteva recuperare risultati dei turni precedenti nello stesso
+journal. Quattro regressioni RED conservate, poi GREEN con leaf nativa e
+assembler nativo, senza secondo registry.
+
+**Spec:** GO codice, nessun finding sul medesimo SHA e fixed point.
+Entrambe le review sono statiche; il runtime è stato verificato dal
+coordinatore. Nessuno dei verdetti certifica rilascio o acceptance remota.
+
+**Verifiche eseguite:** suite627 PASS/1 SKIP/0 FAIL; typecheck, lint
+pertinente e build exit0. Build ID `xZaoa-In3fKM-Mh3eVOd7`;
+warning preesistente della dipendenza dinamica nella route export conservato.
+GitHub sullo SHA pubblicato: check-run0, status0, aggregato `pending`,
+Actions disabilitato; nessun verde CI dichiarato, retry o merge.
+
+Sul build production esatto, tre fixture concluse con cleanup nativo exit0:
+
+- Risposta bootstrap effettiva a2953ms; doppio click reale, un solo POST.
+- Dopo oltre8s, lavoro `unknown` ma risposta e abort disponibili; abort SDK
+  una volta, confirm ancora pendente, poi risposta e readiness. Ricevute
+  answer/abort `completed` e stessa correlazione via route MCP.
+- Reload e query del comando originale: in totale un POST ensure_session,
+  uno answer e uno abort, nessun replay. Gli altri canali ripartono
+  conservativamente da `unknown` finché non si consulta la loro ricevuta;
+  il risultato nativo completato resta osservabile separatamente.
+- Confirm falso, editor e Plan approvato verificati sullo stato SDK prima
+  del teardown; stale401 e reconnect senza POST, observer e confini respinti.
+- Specialisti attivi, risultato completo di20 righe, errore e unavailable
+  visibili; browser e route MCP concordi. Il follow-up sullo stesso ID/file
+  cancella il vecchio risultato e mostra soltanto quello del turno corrente.
+- Scroll interno effettivo e fondo raggiunto; nessun overflow orizzontale
+  a390/820. Screenshot reali inclusi, non equivalenti al tablet fuori LAN.
+
+I lifecycle e i messaggi specialisti sono sintetici, su bus, AgentSession,
+SessionManager e writer SDK reali; nessuno specialista/modello è stato
+eseguito. JWT/JWKS sono sintetici, verifier e gate applicativi originali.
+Il client HTTP MCP esercita la route reale, non ChatGPT personale.
+Trasporto fetch esterno negato, tentativi GET negati conservati nei raw;
+nessun dispatch modello POST o credenziale originale.
+
+**Prove durevoli:** `tasks/evidence/mobile-integration-8fc6e67.tar.gz`,
+SHA256 `59f45443e363f0e7209c1222e1b41ec5ee81a99c237b102368d56cfbdeccf351`.
+Archivio estratto in directory nuova: manifest30/30 OK. Include raw
+suite/build/RED, entrambe le review finali e il NO-GO precedente, risultati
+nativi/browser, screenshot e tre sorgenti di riproduzione. Solo allowlist:
+nessuna assertion, chiave privata, auth, SQLite o sessione JSONL originale.
+Scansione di materiale con forma JWT/token/chiave privata superata.
+
+**Prossima azione:** sblocco ACCESSO con i passi manuali sopra. Trial,
+custodia/full plan, rilascio, tablet fuori LAN e ChatGPT personale restano
+bloccati nelle rispettive slice; nessun apply, deploy o trial originale.
+Non esiste monitoraggio persistente dopo la fine di questa sessione.
