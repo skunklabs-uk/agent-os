@@ -618,3 +618,44 @@ non disponibile. Nessun nuovo framework, issue, servizio o retry CI.
 Plan Active, #35/#52 aperte. Il solo blocco operativo non invalida il lavoro
 locale concluso; per riprendere occorre l'accesso WSL descritto sopra,
 non una conferma meccanica né un trasferimento dell'ownership.
+
+## Coda operativa condivisa — mandato del PO del 2026-10-14
+
+**Obiettivo e done:** completare i due percorsi delle SPEC Active, sullo
+stesso provider bound: pannello mobile reale e ChatGPT personale, compreso
+il rilascio autorizzato. Il P1 locale già qualificato non chiude la missione.
+La richiesta corrente autorizza lavoro non distruttivo, integrazione,
+verifica e documentazione; costi nuovi, rischi rilevanti e operazioni
+irreversibili restano al PO. Restano applicabili i gate di deploy esistenti.
+
+Questa sezione è la coda corrente, non un secondo ledger: gli ID sotto sono
+slice delle issue già esistenti. Priorità e dipendenze sono proiezioni del
+lavoro approvato, non nuove condizioni di stop. Owner di integrazione,
+verifica dei risultati e continuità: coordinatore OMP corrente.
+
+| ID / priorità | Responsabile / stato | Dipendenze | Risultato atteso e done verificabile | Ultima attività / prossima azione |
+|---|---|---|---|---|
+| #52/P1 — P0 | Coordinatore OMP / completato | Nessuna | Risposta e abort indipendenti dal bootstrap; ricevuta originale e scoping preservati | `16faf8d`, browser production, check e due review sopra / riusare le prove; ripeterle solo sul codice materialmente cambiato |
+| #52/INTEGRAZIONE — P0 | `ReconcileDeliveryHead`, integrazione al coordinatore / in corso | Confronto delle superfici `16faf8d` e PR1 `f861bb8` | Identificare e integrare solo differenze necessarie ai criteri approvati, oppure motivare equivalenza; nessun GO trasferito tra head | Scout avviato su diff e SPEC / esaminare prove e assegnare subito l'eventuale integrazione |
+| #35/ACCESSO — P0 | `RecoverWslAccessPath`, esito al coordinatore / in corso | Fonti e strumenti disponibili | Recuperare un accesso WSL già supportato, oppure consegnare istruzioni manuali minime e sicure | Scout avviato; rifiuto SSH22 già documentato, non ripetuto / verificare percorso proposto senza installare servizi o copiare auth |
+| #35/TRIAL — P1 | Coordinatore OMP / bloccato | #35/ACCESSO, fonti e unico writer verificati | Unico trial bound nei limiti già approvati, cap/deadline osservati e review del metodo; nessuna identità sostitutiva | Nove scenari locali già qualificati / eseguire solo quando i prerequisiti originali diventano raggiungibili |
+| #1514/RILASCIO — P1 | Coordinatore OMP / bloccato | #35/ACCESSO, candidato unico qualificato, custodia e full plan corrente | Rilascio nello stesso WSL con gate Cloudflare e smoke HTTPS/Access/SSE/POST soddisfatti | IaC1515 già merged, nessun apply / recuperare custodia e piano operativo soltanto sul contesto autorizzato |
+| #35/MOBILE — P1 | Coordinatore OMP; operatore per dispositivo/login / bloccato | #1514/RILASCIO | Criteri mobile-control provati sul tablet reale fuori LAN | Solo viewport390/820 provati / guidare l'operatore sul percorso reale dopo il rilascio |
+| #35/CHATGPT — P1 | Coordinatore OMP; operatore per account/login / bloccato | #1514/RILASCIO | OAuth e tool MCP reali dal ChatGPT personale, stessa sessione e receipt/outcome | Nessuna acceptance personale / esercitare il client reale dopo il rilascio |
+| #35/COORDINAMENTO — P0 | Coordinatore OMP / in corso | Esiti delle slice | Nessun task eseguibile senza owner; risultati verificati e successori avviati; fonti recuperabili | RFC0.1.13 riletta e due scout indipendenti avviati / integrare gli esiti, aggiornare questa coda e le issue esistenti |
+
+**Supervisione:** i job della sessione notificano esiti e messaggi al
+coordinatore. Il lavoro indipendente procede mentre sono attivi; nessun
+polling o retry cieco sostituisce la verifica. Alla consegna di un risultato,
+il coordinatore controlla fonti, diff e prove prima di dichiararlo concluso.
+Un errore correggibile porta a correzione o cambio strategia; un prerequisito
+esterno mancante lascia bloccata soltanto la slice dipendente.
+
+**Continuità:** nessun supervisore persistente esterno è qui configurato.
+La fine della sessione non implica che agenti o monitoraggio continuino.
+Prima della sospensione si registrano owner, esito, blocker e prossima
+azione reali; alla ripresa si rilegge questa coda e lo stato dei job, senza
+presumere processi attivi. Non si avviano daemon, scheduler o nuovi tracker.
+`interview-me` non è disponibile tra le skill montate: eventuali decisioni
+indispensabili saranno raccolte con lo strumento di domande disponibile;
+le operazioni manuali avranno passi e risultato atteso, senza segreti.
