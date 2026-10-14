@@ -1,16 +1,16 @@
 # Plan: mobile-control and mcp-access
 
-**Status:** Active — dopo il conflitto di coordinamento, l'ultima decisione del Product Owner conferma questa sessione OMP come unico coordinatore Matt Pocock/RFC-0001. Gli esiti Osmani precedenti restano storia accettata. Il rilascio operativo è approvato soltanto dopo review sullo SHA esatto e check applicabili verdi.
-**Mission:** [Agent OS35](https://github.com/skunklabs-uk/agent-os/issues/35), coordinatore corrente e provider bound sul WSL originale NOVBSCWOLaulMaU.
+**Status:** Active — l'ultima richiesta diretta del Product Owner assegna a questa chat il coordinamento operativo e la responsabilità del completamento verificato. Gli esiti precedenti restano storia accettata. Il rilascio operativo è approvato soltanto dopo review sullo SHA esatto e check applicabili verdi.
+**Mission:** [Agent OS35](https://github.com/skunklabs-uk/agent-os/issues/35), coordinatore nel Developer Workspace e provider bound sul WSL originale NOVBSCWOLaulMaU.
 **Coordinator:** omp-current-session
-**Coordinator session:** 01a13b77-fd88-778e-97cc-aadb754902d5
+**Coordinator session:** 01a139d2-93a6-704a-a1cc-570907f479a9
 **Provider role:** observer
 **Provider session:** 01a131c7-ecba-7000-a4fb-ff906f642f4f
 **Permitted scope:** mobile-control/mcp-access-readiness-and-port
 **Permitted commands:** observe
 **Authority:** [mobile-control](../SPEC-mobile-control.md), [mcp-access](../SPEC-mcp-access.md) and the [shared provider contract](../SPEC-team-execution.md#shared-remote-consumer-contract), explicitly approved on 2026-10-12 at `f55c2b7838104770766825e57b68129b019e951e`. Team-execution is accepted and delivered by [PR51](https://github.com/skunklabs-uk/agent-os/pull/51), merge `95528e6c0013f067702496902c40051fba973e48`.
 **Method:** skill originali Matt Pocock a `24fe0ef7737efae15c87225755e9f6f5965e4888`, scelte esplicitamente per il lavoro residuo. Riusare specifiche, ticket e seam accettati; non ripetere acceptance dei pilot. Le decisioni tecniche seguono la delega del Product Owner, senza inventare invocazioni letterali di skill.
-**Phase:** P1 e integrazione qualificati localmente; trial read-only revisionato; custodia, full plan, rilascio WSL e acceptance personali da completare
+**Phase:** Correzione hostname qualificata e consegnata in Homelab PR1537; custodia, rilascio WSL e acceptance personali da completare
 **Tracking:** GitHub issue35 and its native sub-issues; no tasks/todo.md or second ledger. [Task52](https://github.com/skunklabs-uk/agent-os/issues/52) owns readiness and the complete local port checkpoint after the reviewed component increments53–58. Current scope and outcomes appear below; recheck duplicates before any necessary new task. The former team-execution plan is Archived history and is not overwritten.
 
 ## Prima successione OMP/Pocock — 2026-10-14, storia
@@ -57,6 +57,44 @@ Il Plan successore deve essere consumabile dal parser nativo nel CWD
 originale mediante fast-forward esplicito; nessun cambio ID/CWD/auth.
 
 
+
+## Nuovo mandato operativo nel Developer Workspace — 2026-10-14
+
+Il PO richiede esplicitamente a questa chat di assumere il ruolo di
+«Coordinatore operativo e responsabile del completamento della missione»,
+senza fermarsi a pianificazione o delega. Il coordinamento torna a
+`01a139d2-93a6-704a-a1cc-570907f479a9`; la ripresa WSL di
+`01a13b77-fd88-778e-97cc-aadb754902d5` resta storia e fonte delle prove
+già prodotte, non un secondo coordinamento concorrente. Nessun processo
+o checkout di quella sessione viene arrestato o sovrascritto.
+
+Il provider resta observer/observe con ID, CWD e auth originali.
+L'allowance del trial è consumata: il nuovo mandato non concede da solo
+nuove richieste modello, una promozione executor o una deroga alla custodia.
+La responsabilità include integrazione, review, rilascio condizionato,
+verifica dei due percorsi reali e closeout delle fonti; un blocco esterno
+ferma soltanto il lavoro dipendente.
+
+Hostname richiesto dal PO: **`omp.skunklabs.uk`**. Candidato Homelab
+`71bf1f64b3d535a5c86ca92b4ac32de31d25c313`, base `11dea14f`,
+consegnato nella [PR Homelab1537](https://github.com/skunklabs-uk/homelab/pull/1537), nei soli file `agent-os-omp-panel.tf`,
+README del root Cloudflare e CHANGELOG. La local HCL aggiorna insieme
+CNAME, dominio/destinazione Access e ingress; il runbook prescrive
+`OMP_WEB_PUBLIC_ORIGIN=https://omp.skunklabs.uk` e il nuovo URL MCP.
+Full plan reale sullo state108: 4 create OMP,77 no-op,0 update/delete;
+validate senza errori/warning, hostname coerente nei quattro riferimenti
+e state originale byte-identico. Hash e limiti nel runbook Homelab.
+Contesto decifrato e piano eliminati; nessun apply o DNS pubblicato.
+Review indipendenti Standards e Spec sullo SHA esatto: GO sorgente,
+zero rilievi; entrambe statiche e senza GO rilascio. I verdetti e le
+verifiche del coordinatore sono registrati nella PR1537.
+
+Il Developer Workspace non dispone del canale autenticato alla shell WSL
+con Vaultwarden già sbloccato. Nessuna richiesta di ripetere lo sblocco,
+trasferire `BW_SESSION` o leggere credenziali da processi altrui. La
+consegna del candidato prosegue indipendentemente; custodia, servizi
+WSL e acceptance restano non completati. Il CWD bound deve consumare
+la fonte corrente con FF esplicito prima di attribuirle effetti runtime.
 
 ## Outcome and scope
 
@@ -668,12 +706,12 @@ verifica dei risultati e continuità: coordinatore OMP corrente.
 | #52/OUTCOMES — P0 | Coordinatore OMP; implementazione `IntegrateNativeOutcomes` conclusa / qualificato localmente | Base16faf8d e hunk pertinenti PR1 | Esiti answer/abort correlati e flush fallito non presentato come durable completion; nessun replay o regressione prompt/steer/P1 | Browser production: confirm/editor/Plan e abort nativi con ricevute completed; route MCP restituisce gli stessi esiti. Reload e doppio click senza replay; failure di flush coperta dalla regressione / prova originale dopo ACCESSO |
 | #52/SPECIALISTI — P0 | Coordinatore OMP; implementazione `ExposeNativeSpecialists` conclusa / qualificato localmente | Snapshot e API native esistenti | Stato e risultati di specialisti attivi/conclusi nella proiezione comune, senza journal o campi privati | Due P2 riprodotti con4 test RED e corretti; browser/MCP concordi, risultato completo distinto dall'anteprima, follow-up stesso ID/file senza risultato vecchio. Bus e writer SDK reali con dati sintetici, non esecuzione specialisti / verificare sul percorso originale |
 | #52/SCROLL — P0 | Coordinatore OMP / qualificato localmente | Layout missione esistente | Contenuto raggiungibile con scroll reale del pannello a390/820, non solo assenza overflow orizzontale | RED16fa conservato; GREEN8fc: main844px, scrollHeight2669px, scrollTop1825px e fondo visibile, windowY0; screenshot390/820 / acceptance sul tablet reale dopo rilascio |
-| #35/ACCESSO — P0 | Coordinatore OMP sul WSL originale / disponibile | Identità originale e checkout preservati | Operare sul WSL senza cambiare ID/CWD/auth | CWD bound portato solo FF e87c349→fd4f820; parser applicativo reale legge successore01a13b77 e observer/observe, cinque mutazioni negate, journal invariato / mantenere queste authority e identità nei gate successivi |
+| #35/ACCESSO — P0 | Coordinatore nel Developer Workspace / canale WSL diretto assente | Identità originale e checkout preservati | Operare sul WSL senza cambiare ID/CWD/auth | Ultimo smoke WSL su fd4f820: parser leggeva01a13b77 e observer/observe, cinque mutazioni negate, journal invariato / rendere eseguibili i passi nella shell autorizzata e consumare il nuovo Plan con FF; nessuna qualifica runtime trasferita al mandato corrente |
 | #35/TRIAL — P1 | Coordinatore OMP / concluso nel perimetro read-only | Nessuna nuova allowance | Unico trial bound con cap/deadline ed esito/metodo revisionati | Report operatore exit0,107097ms,14HTTPmodello/30,0blocked/failed; review indipendente positiva per la lettura pertinente, limite delle fonti arretrate preservato; risposta e preload temporanei archiviati e rimossi / nessun retry o secondo trial, non promuovere observer |
-| #1514/RILASCIO — P1 | Coordinatore OMP / bloccato dal canale di custodia autenticato | Custodia token scelta dal PO, servizio permanente e piano allora corrente | Rilascio nello stesso WSL con gate Cloudflare e smoke HTTPS/Access/SSE/POST soddisfatti | Full plan4createOMP/0update/0delete e canary qualificati, no apply; PO riporta Vaultwarden unlocked nella propria shell, template Login acquisito / completare custodia via canale autenticato senza trasferire BW_SESSION; nessuna nuova conferma generica o interrogazione preparatoria al PO |
+| #1514/RILASCIO — P1 | Coordinatore OMP / candidato consegnato in PR1537; apply bloccato dalla custodia | Custodia token, servizi WSL, review/check e piano allora corrente | Rilascio su omp.skunklabs.uk con HTTPS/Access/SSE/POST verificati | Candidato71bf1f6, Standards/Spec GO sorgente, full plan4createOMP/77no-op/0update/delete; nessun apply. Vaultwarden unlocked riportato dal PO, canale autenticato assente / verificare CI del candidato; completare custodia senza trasferire BW_SESSION, poi piano fresco e servizi |
 | #35/MOBILE — P1 | Coordinatore OMP; operatore per dispositivo/login / bloccato | #1514/RILASCIO | Criteri mobile-control provati sul tablet reale fuori LAN | Solo viewport390/820 provati / guidare l'operatore sul percorso reale dopo il rilascio |
 | #35/CHATGPT — P1 | Coordinatore OMP; operatore per account/login / bloccato | #1514/RILASCIO | OAuth e tool MCP reali dal ChatGPT personale, stessa sessione e receipt/outcome | Nessuna acceptance personale / esercitare il client reale dopo il rilascio |
-| #35/COORDINAMENTO — P0 | Coordinatore entrante OMP/Pocock / fonti riconciliate, preparazione operativa | Esiti verificati e limiti del PO | Unico writer, provider observer e fonti recuperabili | Successore01a13b77, checkout nuovi e prove recuperate; trial originario non attribuito al successore / pubblicare il Plan senza overwrite dei branch concorrenti; completare solo gate raggiungibili, nessuna acceptance anticipata |
+| #35/COORDINAMENTO — P0 | Coordinatore operativo01a139d2 nel Developer Workspace / mandato corrente | Esiti verificati e limiti del PO | Unico writer, provider observer e responsabilità fino al risultato verificato | Richiesta diretta corrente acquisita; storia7fdd889 preservata / pubblicare la successione e la consegna DNS nelle issue esistenti; nessun completamento anticipato di rilascio o acceptance |
 
 **Supervisione:** i job della sessione notificano esiti e messaggi al
 coordinatore. Il lavoro indipendente procede mentre sono attivi; nessun
