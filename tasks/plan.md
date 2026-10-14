@@ -493,3 +493,54 @@ chiamate secondarie, consuma il massimo30 entro15 minuti. Restano vietati
 retry manuali e fallback. Prima del provider reale occorre provare counter
 globale/deadline e copertura dei binding di fetch su endpoint locale, senza
 crediti. I turni e i soli span non attestano questo conteggio.
+
+### Ripresa e raccordo del candidato — 2026-10-14
+
+La PR Homelab1515 è **merged** a
+`c766e746703501073e71472ed5787ec144c18acf`: il merge ha vincolato
+`a57e2ed6464a26275a1f423fde487db0d801345c`, già coperto dalle due review GO
+e dai check Trivy indicati sopra. Questo completa la consegna IaC,
+**non l'apply**: nessun servizio o risorsa OMP è qui attestato come attivo.
+
+Il candidato port `8f8e91811500cd3e9a4e328276a360adc3f962a8` ha
+628 PASS, 1 skip, 0 FAIL nella suite finale; typecheck, lint pertinente e
+build sono verdi. Il browser sulla build Next reale, senza modelli, ha
+mostrato rifiuto della conferma e risposta editor applicati alla sessione
+nativa originale, senza overflow a 390 e 820 pixel. L'approvazione finale
+del piano **non è provata**: la fixture è scaduta prima della lettura
+dell'esito. Queste prove non sostituiscono tablet o ChatGPT personali.
+Le due review finali non hanno restituito un verdetto per
+`turn_rate_limit_exceeded`: nessun GO trasferito dal checkpoint precedente.
+
+Il remoto privato `custody` conserva il candidato concorrente della PR1
+`7373c4e2a3c48b3d3d4e5b97df36ca50b7637dc7`. Non è sovrascritto.
+Le correzioni di admission/outcome nei commit `63a88c4` e `c5f3111`
+sono confrontate con il provider locale prima della qualificazione finale.
+La dichiarazione Codex/Osmani del checkpoint concorrente non supera
+la scelta esplicita OMP/Pocock del PO riportata in questa fonte e nel
+commento #35 `6155470815`; non si termina alcun processo altrui.
+
+**Cap temporaneo, owner coordinatore OMP:** il limite approvato non è
+coperto dal solo primo dispatch, dai turni o da `retry.enabled:false`.
+Il SDK mantiene retry HTTP autonomi e richieste secondarie; si riusa
+il binding fetch nativo con un preload locale, senza proxy, nuovo
+ledger o modifica del SDK. Il beneficio da provare è bloccare ogni
+dispatch modello oltre il cap/deadline, compresi quelli secondari.
+Il preload viene rimosso alla conclusione del trial; non diventa
+infrastruttura permanente. La qualificazione della copertura resta
+necessaria prima dell'inferenza.
+
+Sul solo loopback isolato il counter ha osservato: cap30 con 30 POST
+fisici e blocco del31; deadline25ms con una richiesta ammessa,
+abort e blocco successivo; retry503 con3 POST fisici e3 conteggiati;
+errore SSE con2 POST fisici e blocco del terzo al cap2. Nessuna
+richiesta a pagamento. Il modello della fixture è materializzato
+dal builder nativo: il precedente oggetto incompleto falliva prima
+del trasporto e non qualificava i retry.
+
+**Retro intermedia:** la correzione richiesta è chiudere il ciclo
+comportamento → prova app reale → review SHA → rilascio → acceptance,
+non aggiungere un'altra implementazione parallela. Il remoto privato
+si chiama `custody`, non `origin`: verificare il target prima del fetch
+evita di interrogare il repository upstream sbagliato. Il closeout
+terminale resta NO finché mancano review, rilascio e acceptance reali.
