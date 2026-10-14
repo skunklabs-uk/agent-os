@@ -193,6 +193,27 @@ richiesta modello; #35/#52 restano aperte.
 
 
 
+Ricognizione read-only completata senza creare provider o chiamare modelli:
+`GET /api/sessions` autenticato restituisce200, `sessions=[]` e
+`runningSessionIds=[]`; nessun ID/CWD Kubernetes disponibile dall'API.
+I parametri JWT non sono un blocker informativo: team domain
+`https://skunklabs.cloudflareaccess.com`, AUD
+`1e877d8bcc206477606395d8bf6dd9f0e2965544bec31e7ffe9fd33055f015f5`,
+coincidente con l'AUD richiesto dal tunnel. Non sono impostati nel deployment
+come sostituto di un binding mancante. Il challenge MCP401 indica
+`/.well-known/cloudflare-access-protected-resource/api/mission-mcp`:
+metadata200, resource `https://omp.skunklabs.uk/api/mission-mcp` e
+authorization server `https://skunklabs.cloudflareaccess.com`.
+Sono prove del raccordo edge, non dei tool o dell'identità del provider.
+
+Recovery e runbook pubblicati su main tramite PR1540, head
+`9aaf23e8078c7fd87d1926522d24b3876b8461c6`, merge
+`bb1f2437c97536d6c145191db253b3570e4b330a`. Review incrementali Standards
+e Spec GO su9aaf23e e Plan44811c6; entrambi i Trivy del run38644934233
+SUCCESS sullo head esatto, senza retry. Pod ancora pronto con zero restart
+al controllo finale. La ricognizione JWT/sessioni sopra integra quelle
+review con nuove osservazioni read-only, senza cambiare il contratto.
+
 ## Outcome and scope
 
 Deliver two real user journeys: control the host mission from the user's mobile browser, and delegate/inspect/interrupt it through the user's actual ChatGPT MCP surface. Both use the same provider identity, state and decisions. Acceptance is per module, then reconciled for the MVP; accepted Waypoint/Pocock proofs are not repeated. No deployment, IWANT merge, runtime replacement, new infrastructure or spending is authorized by this plan's creation or approval.
@@ -805,11 +826,11 @@ verifica dei risultati e continuità: coordinatore OMP corrente.
 | #52/SCROLL — P0 | Coordinatore OMP / qualificato localmente | Layout missione esistente | Contenuto raggiungibile con scroll reale del pannello a390/820, non solo assenza overflow orizzontale | RED16fa conservato; GREEN8fc: main844px, scrollHeight2669px, scrollTop1825px e fondo visibile, windowY0; screenshot390/820 / acceptance sul tablet reale dopo rilascio |
 | #35/ACCESSO — P0 | Coordinatore nel Developer Workspace / pubblicazione tecnica verificata | Sessione WSL originale preservata | Nuovo pannello sano e autenticato senza attribuirgli il vecchio binding | PR1539 integrata a98b984a, Argo Synced/Healthy e zero restart; origin401/200, login Access reale / acceptance personali distinte e binding da risolvere |
 | #35/TRIAL — P1 | Coordinatore OMP / concluso nel perimetro read-only | Nessuna nuova allowance | Unico trial bound con cap/deadline ed esito/metodo revisionati | Report operatore exit0,107097ms,14HTTPmodello/30,0blocked/failed; review indipendente positiva per la lettura pertinente, limite delle fonti arretrate preservato; risposta e preload temporanei archiviati e rimossi / nessun retry o secondo trial, non promuovere observer |
-| #1514/RILASCIO — P1 | Coordinatore OMP / applicato e verificato | Recovery corrente109 da pubblicare con evidenze | omp.skunklabs.uk sul tunnel/Gateway esistente, app sana e autenticata | Apply2create/1update exit0, state109 protetto e SOPS round-trip; full plan successivo79no-op; DNS pubblico e Access verificati / pubblicare snapshot e prove; non chiudere la missione o dichiarare MCP pronto |
-| #52/BINDING-K3S — P0 | Coordinatore OMP / bloccato sul contratto del provider | Decisione PO sull'identità canonica dopo il cambio target | Due client sulla stessa identità reale, con ID/CWD/prefix verificati, senza continuità inventata | Native MCP503, quattro variabili di accesso/binding assenti; provider WSL originale invariato / chiarire il nuovo binding prima di configurare o qualificare i tool; nessun trial autorizzato |
+| #1514/RILASCIO — P1 | Coordinatore OMP / pubblicazione tecnica applicata e verificata | Recovery109 pubblicata su main via PR1540 | omp.skunklabs.uk sul tunnel/Gateway esistente, app sana e autenticata | PR1539merge98b984a; state109 protetto/SOPS round-trip; full plan79no-op; PR1540mergebb1f243 con dueTrivySUCCESS e due review / restano binding e acceptance personali; non chiudere la missione o dichiarare MCP pronto |
+| #52/BINDING-K3S — P0 | Coordinatore OMP / bloccato sul contratto del provider | Decisione PO sull'identità canonica dopo il cambio target | Due client sulla stessa identità reale, con ID/CWD/prefix verificati, senza continuità inventata | Native MCP503; parametri JWT recuperati, API sessioni200 ma nessun ID/CWD disponibile; provider WSL originale invariato / chiarire il nuovo binding prima di creare/adottare un provider e qualificare i tool; nessun trial autorizzato |
 | #35/MOBILE — P1 | Coordinatore OMP; operatore per dispositivo/login / bloccato | Binding coerente e login personale | Criteri mobile-control provati sul tablet reale fuori LAN | Login pubblico osservato a820×1180, origin autenticato via HTTP; nessuna acceptance tablet / guidare l'operatore dopo la risoluzione del binding |
 | #35/CHATGPT — P1 | Coordinatore OMP; operatore per account/login / bloccato | #52/BINDING-K3S e accesso personale | OAuth e tool MCP reali dal ChatGPT personale, stessa sessione e receipt/outcome | Managed OAuth al bordo verificato; origin MCP503, non operativo / non avviare una falsa acceptance dei tool senza binding |
-| #35/COORDINAMENTO — P0 | Coordinatore operativo01a139d2 nel Developer Workspace / mandato attivo | Esiti verificati e limiti del PO | Unico writer e responsabilità fino al risultato verificato | Nuovo target rilasciato; missione non conclusa / consegnare evidenze e recovery, poi risolvere il contratto del provider con il PO e le acceptance personali |
+| #35/COORDINAMENTO — P0 | Coordinatore operativo01a139d2 nel Developer Workspace / mandato attivo | Esiti verificati e limiti del PO | Unico writer e responsabilità fino al risultato verificato | Nuovo target, recovery ed evidenze consegnati; missione non conclusa / risolvere il contratto del provider con il PO, poi configurare il binding autorizzato e completare le acceptance personali |
 
 **Supervisione:** i job della sessione notificano esiti e messaggi al
 coordinatore. Il lavoro indipendente procede mentre sono attivi; nessun
