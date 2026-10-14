@@ -10,7 +10,7 @@
 **Permitted commands:** observe
 **Authority:** [mobile-control](../SPEC-mobile-control.md), [mcp-access](../SPEC-mcp-access.md) and the [shared provider contract](../SPEC-team-execution.md#shared-remote-consumer-contract), explicitly approved on 2026-10-12 at `f55c2b7838104770766825e57b68129b019e951e`. Team-execution is accepted and delivered by [PR51](https://github.com/skunklabs-uk/agent-os/pull/51), merge `95528e6c0013f067702496902c40051fba973e48`.
 **Method:** skill originali Matt Pocock a `24fe0ef7737efae15c87225755e9f6f5965e4888`, scelte esplicitamente per il lavoro residuo. Riusare specifiche, ticket e seam accettati; non ripetere acceptance dei pilot. Le decisioni tecniche seguono la delega del Product Owner, senza inventare invocazioni letterali di skill.
-**Phase:** PO sceglie nuovo pannello Kubernetes; correzione probe e pubblicazione omp.skunklabs.uk sul tunnel/Gateway esistente in esecuzione
+**Phase:** accesso al nuovo pannello Kubernetes rilasciato e verificato; binding di missione sul nuovo runtime e acceptance personali restano aperti
 **Tracking:** GitHub issue35 and its native sub-issues; no tasks/todo.md or second ledger. [Task52](https://github.com/skunklabs-uk/agent-os/issues/52) owns readiness and the complete local port checkpoint after the reviewed component increments53–58. Current scope and outcomes appear below; recheck duplicates before any necessary new task. The former team-execution plan is Archived history and is not overwritten.
 
 ## Prima successione OMP/Pocock — 2026-10-14, storia
@@ -142,6 +142,55 @@ Access dedicato con Admin Only e Managed OAuth già scelti, CNAME verso
 il tunnel privato e una sola nuova regola ingress verso10.10.20.240.
 Rimuovere dalla proposta i due oggetti del tunnel WSL mai creati.
 Nessun workaround che disattivi auth, nessun relay o nuovo secret.
+
+### Rilascio del nuovo pannello Kubernetes — verifiche del coordinatore
+
+PR1537 chiusa senza merge/apply perché superata. PR1538 ha portato le
+identiche probe TCP prima della PR1539; il delta concorrente riguarda
+soltanto quelle probe e viene preservato. PR1539 head
+`cf893e90fbe02dceb60b5fa441f9567055de186e`: Standards e Spec GO sorgente,
+nessun rilievo; Trivy Config e FS SUCCESS nel run38642209904, senza retry.
+Merge `98b984af878b978338f76cc5744214e1a269aae6`, Argo osservato
+Synced/Healthy, rollout concluso, pod pronto con zero restart.
+Un primo watch180s è scaduto prima del reconcile; il successivo è concluso
+senza patch live, refresh forzati o modifiche RBAC. La CLI Argo è priva di
+server configurato: nessun diff attestato, verifica tramite API Kubernetes.
+
+Full plan fresco con provider5.28.0 sullo state108:
+**2 create,1 update,76 no-op,0 delete**. Solo Access, DNS e tunnel privato;
+ingress precedenti e catch-all identici. SHA256 applicato
+`0ea930cf0a50a1d14d038ad78c041d07f3ded6b4c0eb347f48b8320212ad3734`.
+Apply exit0, state109 della stessa lineage,79 istanze, SHA256
+`6fcd661f1ab8703231065778108ade1592cf229e6c0863dd737022a5374ae9c3`.
+State salvato nel Developer Workspace mode0600; snapshot SOPS integrale,
+round-trip binario identico. Non attestato l'aggiornamento della copia
+PC/WSL108: va confrontata con la recovery corrente prima di altri apply.
+Full plan post-apply exit0,79 no-op, SHA256
+`2eed2408f35e92ced25a8658abf9dfde6676be0ed970ec5c5a9cc045de1dc4fb`.
+Il runbook e lo snapshot sono nel root Homelab
+`infra/opentofu/cloudflare-zero-trust/`.
+
+DoH pubblico Status0 con indirizzi Cloudflare. HTTPS Accept HTML302 verso
+Access e login reale «Agent OS OMP Panel» osservato nel browser820×1180;
+Accept JSON401 Bearer `invalid_token`, challenge Managed OAuth atteso.
+Origin Gateway401 senza credenziali e200 HTML con Basic valido; Origin
+estraneo403 e hostname non instradato404 del Gateway. Nessuna password
+stampata o persistita dal consumer di smoke. La UI privata non è stata
+verificata visivamente: override Host Chromium rifiutato e browser
+isolato in timeout. La prova autenticata è HTTP, non acceptance personale.
+
+**MCP non operativo, non solo «non provato»:** l'origin restituisce503
+«Mission access is unavailable». Il sorgente effettivo3fa2c78 e il
+deployment confermano l'assenza di `OMP_WEB_ACCESS_TEAM_DOMAIN`,
+`OMP_WEB_ACCESS_AUD` e `AGENT_OS_MISSION_ID/CWD`. Il solo Managed OAuth
+non rende disponibili i tool. Il contratto corrente resta legato al
+provider WSL preservato; la scelta di un nuovo pannello non autorizza a
+inventare continuità, cambiare il provider canonico o assegnare un CWD
+fittizio. Prima di configurare il binding occorre risolvere questo punto
+con il PO e aggiornare il contratto della stessa identità sui due client.
+Login/tablet e ChatGPT personali non eseguiti. Nessuna nuova allowance o
+richiesta modello; #35/#52 restano aperte.
+
 
 
 ## Outcome and scope
@@ -754,12 +803,13 @@ verifica dei risultati e continuità: coordinatore OMP corrente.
 | #52/OUTCOMES — P0 | Coordinatore OMP; implementazione `IntegrateNativeOutcomes` conclusa / qualificato localmente | Base16faf8d e hunk pertinenti PR1 | Esiti answer/abort correlati e flush fallito non presentato come durable completion; nessun replay o regressione prompt/steer/P1 | Browser production: confirm/editor/Plan e abort nativi con ricevute completed; route MCP restituisce gli stessi esiti. Reload e doppio click senza replay; failure di flush coperta dalla regressione / prova originale dopo ACCESSO |
 | #52/SPECIALISTI — P0 | Coordinatore OMP; implementazione `ExposeNativeSpecialists` conclusa / qualificato localmente | Snapshot e API native esistenti | Stato e risultati di specialisti attivi/conclusi nella proiezione comune, senza journal o campi privati | Due P2 riprodotti con4 test RED e corretti; browser/MCP concordi, risultato completo distinto dall'anteprima, follow-up stesso ID/file senza risultato vecchio. Bus e writer SDK reali con dati sintetici, non esecuzione specialisti / verificare sul percorso originale |
 | #52/SCROLL — P0 | Coordinatore OMP / qualificato localmente | Layout missione esistente | Contenuto raggiungibile con scroll reale del pannello a390/820, non solo assenza overflow orizzontale | RED16fa conservato; GREEN8fc: main844px, scrollHeight2669px, scrollTop1825px e fondo visibile, windowY0; screenshot390/820 / acceptance sul tablet reale dopo rilascio |
-| #35/ACCESSO — P0 | Coordinatore nel Developer Workspace / nuovo target Kubernetes approvato | Conservazione della sessione WSL originale | Rilasciare il nuovo pannello senza attribuirgli il vecchio binding | API Kubernetes read-only disponibile; exec e lettura secret negati dal RBAC corrente / usare GitOps e custodie native autorizzate, senza ampliare ruoli o trasferire credenziali |
+| #35/ACCESSO — P0 | Coordinatore nel Developer Workspace / pubblicazione tecnica verificata | Sessione WSL originale preservata | Nuovo pannello sano e autenticato senza attribuirgli il vecchio binding | PR1539 integrata a98b984a, Argo Synced/Healthy e zero restart; origin401/200, login Access reale / acceptance personali distinte e binding da risolvere |
 | #35/TRIAL — P1 | Coordinatore OMP / concluso nel perimetro read-only | Nessuna nuova allowance | Unico trial bound con cap/deadline ed esito/metodo revisionati | Report operatore exit0,107097ms,14HTTPmodello/30,0blocked/failed; review indipendente positiva per la lettura pertinente, limite delle fonti arretrate preservato; risposta e preload temporanei archiviati e rimossi / nessun retry o secondo trial, non promuovere observer |
-| #1514/RILASCIO — P1 | Coordinatore OMP / target Kubernetes approvato, implementazione in corso | Review/check candidato nuovo e full plan corrente | omp.skunklabs.uk sul tunnel/Gateway esistente, app sana e autenticata | Decisione PO «Nuovo pannello Kubernetes» acquisita; probe401 riprodotte in eventi, nuovo candidato per TCP e DNS/Access in preparazione / qualificare, consegnare e verificare Argo e percorso pubblico; PR1537 WSL non applicabile |
-| #35/MOBILE — P1 | Coordinatore OMP; operatore per dispositivo/login / bloccato | #1514/RILASCIO | Criteri mobile-control provati sul tablet reale fuori LAN | Solo viewport390/820 provati / guidare l'operatore sul percorso reale dopo il rilascio |
-| #35/CHATGPT — P1 | Coordinatore OMP; operatore per account/login / bloccato | #1514/RILASCIO | OAuth e tool MCP reali dal ChatGPT personale, stessa sessione e receipt/outcome | Nessuna acceptance personale / esercitare il client reale dopo il rilascio |
-| #35/COORDINAMENTO — P0 | Coordinatore operativo01a139d2 nel Developer Workspace / mandato pubblicato | Esiti verificati e limiti del PO | Unico writer e responsabilità fino al risultato verificato | Successione e conflitto registrati; scelta Kubernetes risolta dal PO / proseguire sul nuovo target, preservare sessione originale e non trasferire qualifiche tra immagini |
+| #1514/RILASCIO — P1 | Coordinatore OMP / applicato e verificato | Recovery corrente109 da pubblicare con evidenze | omp.skunklabs.uk sul tunnel/Gateway esistente, app sana e autenticata | Apply2create/1update exit0, state109 protetto e SOPS round-trip; full plan successivo79no-op; DNS pubblico e Access verificati / pubblicare snapshot e prove; non chiudere la missione o dichiarare MCP pronto |
+| #52/BINDING-K3S — P0 | Coordinatore OMP / bloccato sul contratto del provider | Decisione PO sull'identità canonica dopo il cambio target | Due client sulla stessa identità reale, con ID/CWD/prefix verificati, senza continuità inventata | Native MCP503, quattro variabili di accesso/binding assenti; provider WSL originale invariato / chiarire il nuovo binding prima di configurare o qualificare i tool; nessun trial autorizzato |
+| #35/MOBILE — P1 | Coordinatore OMP; operatore per dispositivo/login / bloccato | Binding coerente e login personale | Criteri mobile-control provati sul tablet reale fuori LAN | Login pubblico osservato a820×1180, origin autenticato via HTTP; nessuna acceptance tablet / guidare l'operatore dopo la risoluzione del binding |
+| #35/CHATGPT — P1 | Coordinatore OMP; operatore per account/login / bloccato | #52/BINDING-K3S e accesso personale | OAuth e tool MCP reali dal ChatGPT personale, stessa sessione e receipt/outcome | Managed OAuth al bordo verificato; origin MCP503, non operativo / non avviare una falsa acceptance dei tool senza binding |
+| #35/COORDINAMENTO — P0 | Coordinatore operativo01a139d2 nel Developer Workspace / mandato attivo | Esiti verificati e limiti del PO | Unico writer e responsabilità fino al risultato verificato | Nuovo target rilasciato; missione non conclusa / consegnare evidenze e recovery, poi risolvere il contratto del provider con il PO e le acceptance personali |
 
 **Supervisione:** i job della sessione notificano esiti e messaggi al
 coordinatore. Il lavoro indipendente procede mentre sono attivi; nessun
