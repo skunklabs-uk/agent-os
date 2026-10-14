@@ -10,7 +10,7 @@
 **Permitted commands:** observe
 **Authority:** [mobile-control](../SPEC-mobile-control.md), [mcp-access](../SPEC-mcp-access.md) and the [shared provider contract](../SPEC-team-execution.md#shared-remote-consumer-contract), explicitly approved on 2026-10-12 at `f55c2b7838104770766825e57b68129b019e951e`. Team-execution is accepted and delivered by [PR51](https://github.com/skunklabs-uk/agent-os/pull/51), merge `95528e6c0013f067702496902c40051fba973e48`.
 **Method:** skill originali Matt Pocock a `24fe0ef7737efae15c87225755e9f6f5965e4888`, scelte esplicitamente per il lavoro residuo. Riusare specifiche, ticket e seam accettati; non ripetere acceptance dei pilot. Le decisioni tecniche seguono la delega del Product Owner, senza inventare invocazioni letterali di skill.
-**Phase:** Correzione hostname consegnata in PR1537 con review/CI verdi; scelta origin WSL/Kubernetes da risolvere prima del rilascio
+**Phase:** PO sceglie nuovo pannello Kubernetes; correzione probe e pubblicazione omp.skunklabs.uk sul tunnel/Gateway esistente in esecuzione
 **Tracking:** GitHub issue35 and its native sub-issues; no tasks/todo.md or second ledger. [Task52](https://github.com/skunklabs-uk/agent-os/issues/52) owns readiness and the complete local port checkpoint after the reviewed component increments53–58. Current scope and outcomes appear below; recheck duplicates before any necessary new task. The former team-execution plan is Archived history and is not overwritten.
 
 ## Prima successione OMP/Pocock — 2026-10-14, storia
@@ -120,12 +120,28 @@ finché non è risolta la destinazione del dominio. Il candidato usa il
 connector WSL verso loopback; il deployment Kubernetes usa il Gateway.
 Non si cambia DNS per scegliere implicitamente tra questi due runtime.
 
-Serve una decisione del PO: preservare il percorso approvato della
-missione originale su WSL, oppure adottare il nuovo pannello Kubernetes
-con scope/criteri espliciti per il rapporto con la sessione originale.
-Nel secondo caso, correggere le probe401 e riusare il percorso Gateway/
-tunnel Homelab pertinente prima di pubblicare il DNS; non applicare
-automaticamente il connector WSL. Nessun cambiamento live eseguito.
+**Decisione esplicita del PO acquisita:** «Nuovo pannello Kubernetes».
+Il target operativo diventa il deployment già in main: correggere le
+probe401 mantenendo l'autenticazione e pubblicare `omp.skunklabs.uk`
+tramite il tunnel privato e il Gateway esistenti. Non creare il connector
+WSL proposto nella PR1537, ora superata dalla scelta di target; nessun
+nuovo token tunnel o passaggio di custodia Vaultwarden è necessario per
+il riuso del connector Kubernetes.
+
+La sessione WSL originale resta preservata e observer/observe; non viene
+adottata, trasferita o dichiarata continua nel nuovo pannello. L'immagine
+distribuita3fa2c78 diverge dal candidato8fc6e67: le qualifiche funzionali
+precedenti non si trasferiscono a quell'immagine. Il rilascio e le prove
+di questo incremento riguardano il nuovo pannello; tablet/ChatGPT,
+binding di missione e qualifica dei relativi comandi restano da provare.
+Nessuna nuova allowance modello è implicita.
+
+Piano di esecuzione minimo: probe TCP native secondo la convenzione
+Homelab già usata da baialupo-webcam, origin HTTPS esplicito nel deployment,
+Access dedicato con Admin Only e Managed OAuth già scelti, CNAME verso
+il tunnel privato e una sola nuova regola ingress verso10.10.20.240.
+Rimuovere dalla proposta i due oggetti del tunnel WSL mai creati.
+Nessun workaround che disattivi auth, nessun relay o nuovo secret.
 
 
 ## Outcome and scope
@@ -738,12 +754,12 @@ verifica dei risultati e continuità: coordinatore OMP corrente.
 | #52/OUTCOMES — P0 | Coordinatore OMP; implementazione `IntegrateNativeOutcomes` conclusa / qualificato localmente | Base16faf8d e hunk pertinenti PR1 | Esiti answer/abort correlati e flush fallito non presentato come durable completion; nessun replay o regressione prompt/steer/P1 | Browser production: confirm/editor/Plan e abort nativi con ricevute completed; route MCP restituisce gli stessi esiti. Reload e doppio click senza replay; failure di flush coperta dalla regressione / prova originale dopo ACCESSO |
 | #52/SPECIALISTI — P0 | Coordinatore OMP; implementazione `ExposeNativeSpecialists` conclusa / qualificato localmente | Snapshot e API native esistenti | Stato e risultati di specialisti attivi/conclusi nella proiezione comune, senza journal o campi privati | Due P2 riprodotti con4 test RED e corretti; browser/MCP concordi, risultato completo distinto dall'anteprima, follow-up stesso ID/file senza risultato vecchio. Bus e writer SDK reali con dati sintetici, non esecuzione specialisti / verificare sul percorso originale |
 | #52/SCROLL — P0 | Coordinatore OMP / qualificato localmente | Layout missione esistente | Contenuto raggiungibile con scroll reale del pannello a390/820, non solo assenza overflow orizzontale | RED16fa conservato; GREEN8fc: main844px, scrollHeight2669px, scrollTop1825px e fondo visibile, windowY0; screenshot390/820 / acceptance sul tablet reale dopo rilascio |
-| #35/ACCESSO — P0 | Coordinatore nel Developer Workspace / canale WSL diretto assente | Identità originale e checkout preservati | Operare sul WSL senza cambiare ID/CWD/auth | Ultimo smoke WSL su fd4f820: parser leggeva01a13b77 e observer/observe, cinque mutazioni negate, journal invariato / rendere eseguibili i passi nella shell autorizzata e consumare il nuovo Plan con FF; nessuna qualifica runtime trasferita al mandato corrente |
+| #35/ACCESSO — P0 | Coordinatore nel Developer Workspace / nuovo target Kubernetes approvato | Conservazione della sessione WSL originale | Rilasciare il nuovo pannello senza attribuirgli il vecchio binding | API Kubernetes read-only disponibile; exec e lettura secret negati dal RBAC corrente / usare GitOps e custodie native autorizzate, senza ampliare ruoli o trasferire credenziali |
 | #35/TRIAL — P1 | Coordinatore OMP / concluso nel perimetro read-only | Nessuna nuova allowance | Unico trial bound con cap/deadline ed esito/metodo revisionati | Report operatore exit0,107097ms,14HTTPmodello/30,0blocked/failed; review indipendente positiva per la lettura pertinente, limite delle fonti arretrate preservato; risposta e preload temporanei archiviati e rimossi / nessun retry o secondo trial, non promuovere observer |
-| #1514/RILASCIO — P1 | Coordinatore OMP / PR1537 Draft, scelta origin da risolvere | Decisione WSL/Kubernetes; poi custodia e gate del percorso scelto | Rilascio su omp.skunklabs.uk con origin corretto e verifiche reali | Head71bf1f6 con Standards/Spec GO sorgente e due Trivy SUCCESS. Main69f465c aggiunge pannello Kubernetes degradato (probe401), non bound a#35 / acquisire decisione del PO senza migrazione implicita, poi aggiornare candidato e verifiche pertinenti |
+| #1514/RILASCIO — P1 | Coordinatore OMP / target Kubernetes approvato, implementazione in corso | Review/check candidato nuovo e full plan corrente | omp.skunklabs.uk sul tunnel/Gateway esistente, app sana e autenticata | Decisione PO «Nuovo pannello Kubernetes» acquisita; probe401 riprodotte in eventi, nuovo candidato per TCP e DNS/Access in preparazione / qualificare, consegnare e verificare Argo e percorso pubblico; PR1537 WSL non applicabile |
 | #35/MOBILE — P1 | Coordinatore OMP; operatore per dispositivo/login / bloccato | #1514/RILASCIO | Criteri mobile-control provati sul tablet reale fuori LAN | Solo viewport390/820 provati / guidare l'operatore sul percorso reale dopo il rilascio |
 | #35/CHATGPT — P1 | Coordinatore OMP; operatore per account/login / bloccato | #1514/RILASCIO | OAuth e tool MCP reali dal ChatGPT personale, stessa sessione e receipt/outcome | Nessuna acceptance personale / esercitare il client reale dopo il rilascio |
-| #35/COORDINAMENTO — P0 | Coordinatore operativo01a139d2 nel Developer Workspace / mandato pubblicato | Esiti verificati e limiti del PO | Unico writer, provider observer e responsabilità fino al risultato verificato | Successione da7e1b6 e commento#35 6178773512 pubblicati; correzione DNS in PR1537 / risolvere il conflitto di origin, proseguire solo sul percorso approvato; nessun completamento anticipato di rilascio o acceptance |
+| #35/COORDINAMENTO — P0 | Coordinatore operativo01a139d2 nel Developer Workspace / mandato pubblicato | Esiti verificati e limiti del PO | Unico writer e responsabilità fino al risultato verificato | Successione e conflitto registrati; scelta Kubernetes risolta dal PO / proseguire sul nuovo target, preservare sessione originale e non trasferire qualifiche tra immagini |
 
 **Supervisione:** i job della sessione notificano esiti e messaggi al
 coordinatore. Il lavoro indipendente procede mentre sono attivi; nessun
