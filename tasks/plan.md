@@ -1,19 +1,19 @@
 # Plan: mobile-control and mcp-access
 
 **Status:** Active — dopo il conflitto di coordinamento, l'ultima decisione del Product Owner conferma questa sessione OMP come unico coordinatore Matt Pocock/RFC-0001. Gli esiti Osmani precedenti restano storia accettata. Il rilascio operativo è approvato soltanto dopo review sullo SHA esatto e check applicabili verdi.
-**Mission:** [Agent OS35](https://github.com/skunklabs-uk/agent-os/issues/35), coordinatore corrente nel Developer Workspace; provider bound su NOVBSCWOLaulMaU.
+**Mission:** [Agent OS35](https://github.com/skunklabs-uk/agent-os/issues/35), coordinatore corrente e provider bound sul WSL originale NOVBSCWOLaulMaU.
 **Coordinator:** omp-current-session
-**Coordinator session:** 01a139d2-93a6-704a-a1cc-570907f479a9
+**Coordinator session:** 01a13b77-fd88-778e-97cc-aadb754902d5
 **Provider role:** observer
 **Provider session:** 01a131c7-ecba-7000-a4fb-ff906f642f4f
 **Permitted scope:** mobile-control/mcp-access-readiness-and-port
 **Permitted commands:** observe
 **Authority:** [mobile-control](../SPEC-mobile-control.md), [mcp-access](../SPEC-mcp-access.md) and the [shared provider contract](../SPEC-team-execution.md#shared-remote-consumer-contract), explicitly approved on 2026-10-12 at `f55c2b7838104770766825e57b68129b019e951e`. Team-execution is accepted and delivered by [PR51](https://github.com/skunklabs-uk/agent-os/pull/51), merge `95528e6c0013f067702496902c40051fba973e48`.
 **Method:** skill originali Matt Pocock a `24fe0ef7737efae15c87225755e9f6f5965e4888`, scelte esplicitamente per il lavoro residuo. Riusare specifiche, ticket e seam accettati; non ripetere acceptance dei pilot. Le decisioni tecniche seguono la delega del Product Owner, senza inventare invocazioni letterali di skill.
-**Phase:** P1 qualificato localmente; trial, rilascio WSL e acceptance personale in attesa dei prerequisiti operativi
+**Phase:** P1 e integrazione qualificati localmente; trial read-only revisionato; custodia, full plan, rilascio WSL e acceptance personali da completare
 **Tracking:** GitHub issue35 and its native sub-issues; no tasks/todo.md or second ledger. [Task52](https://github.com/skunklabs-uk/agent-os/issues/52) owns readiness and the complete local port checkpoint after the reviewed component increments53–58. Current scope and outcomes appear below; recheck duplicates before any necessary new task. The former team-execution plan is Archived history and is not overwritten.
 
-## Successione OMP/Pocock — 2026-10-14
+## Prima successione OMP/Pocock — 2026-10-14, storia
 
 La richiesta diretta del PO di riprendere l'handoff conferma questa nuova
 sessione come unico coordinatore. Sostituisce il coordinatore uscente
@@ -28,6 +28,34 @@ interruzione indipendenti dall'avvio pendente, con ricevuta originale
 consultabile e senza replay. Seam già autorizzati dall'handoff: commander
 pubblico e pannello Next reale con domanda nativa `session_start`.
 Nessun trial modello, apply o rilascio eseguito nella ripresa.
+
+## Ripresa sul WSL originale — coordinatore entrante
+
+La nuova richiesta diretta del PO di riprendere l'handoff assegna il
+coordinamento esclusivo a `01a13b77-fd88-778e-97cc-aadb754902d5`,
+successore di `01a139d2-93a6-704a-a1cc-570907f479a9`.
+Il provider resta `01a131c7-ecba-7000-a4fb-ff906f642f4f`,
+`observer/observe`; successione documentale, non promozione executor.
+Host e utente osservati direttamente: NOVBSCWOLaulMaU/iingenito.
+L'handoff richiesto sotto `/workspaces` non è montato in questo contesto:
+la copia originale e i sei allegati in
+`/tmp/mission35-developer-workspace-handoff-745kkjbp` superano SHA256SUMS.
+Recuperati checkout nuovi sotto `/home/iingenito/tmp/mission35-resume-`:
+`omp-web`, `agent-os` e `homelab`. Checkout e processi preesistenti
+restano preservati, senza reset, clean, force-push o arresti.
+
+Le fonti successive all'handoff prevalgono sui suoi pending: P1
+`16faf8d` e integrazione `8fc6e67` sono qualificati nei perimetri sotto;
+manifest delle prove recuperate verificati rispettivamente38/38 e30/30.
+Il successivo report originale `7b939c3` registra il trial già eseguito:
+non si rilancia un modello né si interpreta remaining16 come allowance.
+La review indipendente della risposta finale e dei report correlati
+qualifica soltanto la lettura pertinente Pocock sotto authority `e87c349`,
+con il limite della fonte coordinatore arretrata esplicitamente rilevato.
+Non qualifica lo stato runtime successore, i pending, il rilascio o l'MVP.
+Il Plan successore deve essere consumabile dal parser nativo nel CWD
+originale mediante fast-forward esplicito; nessun cambio ID/CWD/auth.
+
 
 
 ## Outcome and scope
@@ -640,12 +668,12 @@ verifica dei risultati e continuità: coordinatore OMP corrente.
 | #52/OUTCOMES — P0 | Coordinatore OMP; implementazione `IntegrateNativeOutcomes` conclusa / qualificato localmente | Base16faf8d e hunk pertinenti PR1 | Esiti answer/abort correlati e flush fallito non presentato come durable completion; nessun replay o regressione prompt/steer/P1 | Browser production: confirm/editor/Plan e abort nativi con ricevute completed; route MCP restituisce gli stessi esiti. Reload e doppio click senza replay; failure di flush coperta dalla regressione / prova originale dopo ACCESSO |
 | #52/SPECIALISTI — P0 | Coordinatore OMP; implementazione `ExposeNativeSpecialists` conclusa / qualificato localmente | Snapshot e API native esistenti | Stato e risultati di specialisti attivi/conclusi nella proiezione comune, senza journal o campi privati | Due P2 riprodotti con4 test RED e corretti; browser/MCP concordi, risultato completo distinto dall'anteprima, follow-up stesso ID/file senza risultato vecchio. Bus e writer SDK reali con dati sintetici, non esecuzione specialisti / verificare sul percorso originale |
 | #52/SCROLL — P0 | Coordinatore OMP / qualificato localmente | Layout missione esistente | Contenuto raggiungibile con scroll reale del pannello a390/820, non solo assenza overflow orizzontale | RED16fa conservato; GREEN8fc: main844px, scrollHeight2669px, scrollTop1825px e fondo visibile, windowY0; screenshot390/820 / acceptance sul tablet reale dopo rilascio |
-| #35/ACCESSO — P0 | Coordinatore OMP; operatore nel terminale originale / preflight metadata verificato | Terminale originale disponibile al PO; nessun accesso remoto diretto | Operare sul WSL originale senza cambiare ID/CWD/auth | `metadata-ready` in3875ms su fonte `e87c349`: identità/authority/config/27skill verificati, zero dispatch e nessun prompt; OS senza writer applicativo rilevato / conservare identità e auth originali per i gate successivi; nessuna garanzia universale ricavata dallo snapshot OS |
-| #35/TRIAL — P1 | Coordinatore OMP; operatore per lancio originale / eseguito, review pendente | Risposta finale privata da sottoporre a review | Unico trial bound nei limiti già approvati, cap/deadline osservati e review del metodo; nessuna identità sostitutiva | Exit0,107097ms,14HTTPmodello/30,0blocked/failed, terminal stop; identità/binding/prefisso storico invariati, un prompt aggiunto / acquisire solo risposta finale privata per review indipendente, poi cleanup; allowance del lancio consumata, nessun retry |
-| #1514/RILASCIO — P1 | Coordinatore OMP / bloccato | #35/TRIAL(review), candidato unico qualificato, custodia e full plan corrente | Rilascio nello stesso WSL con gate Cloudflare e smoke HTTPS/Access/SSE/POST soddisfatti | IaC1515 già merged, nessun apply; trial eseguito ma review pendente / dopo review recuperare custodia e piano operativo sul contesto autorizzato, senza usare il vecchio piano |
+| #35/ACCESSO — P0 | Coordinatore OMP sul WSL originale / disponibile | Identità originale e checkout preservati | Operare sul WSL senza cambiare ID/CWD/auth | Host/utente verificati direttamente; trial originale recuperato, nessun nuovo lancio / riallineare soltanto il Plan bound con FF e verificare il parser senza aprire una sessione |
+| #35/TRIAL — P1 | Coordinatore OMP / concluso nel perimetro read-only | Nessuna nuova allowance | Unico trial bound con cap/deadline ed esito/metodo revisionati | Report operatore exit0,107097ms,14HTTPmodello/30,0blocked/failed; review indipendente positiva per la lettura pertinente, limite delle fonti arretrate preservato; risposta e preload temporanei archiviati e rimossi / nessun retry o secondo trial, non promuovere observer |
+| #1514/RILASCIO — P1 | Coordinatore OMP / preparazione, non GO live | Custodia token, lifecycle e check applicabili del candidato | Rilascio nello stesso WSL con gate Cloudflare e smoke HTTPS/Access/SSE/POST soddisfatti | Full plan fresco su root11dea14f:4createOMP/0update/0delete, state invariato; contesto sensibile rimosso / qualificare custodia e servizi; prima dell'apply usare un nuovo piano corrente, non il binario eliminato |
 | #35/MOBILE — P1 | Coordinatore OMP; operatore per dispositivo/login / bloccato | #1514/RILASCIO | Criteri mobile-control provati sul tablet reale fuori LAN | Solo viewport390/820 provati / guidare l'operatore sul percorso reale dopo il rilascio |
 | #35/CHATGPT — P1 | Coordinatore OMP; operatore per account/login / bloccato | #1514/RILASCIO | OAuth e tool MCP reali dal ChatGPT personale, stessa sessione e receipt/outcome | Nessuna acceptance personale / esercitare il client reale dopo il rilascio |
-| #35/COORDINAMENTO — P0 | Coordinatore OMP / trial originale concluso, raccolta risposta per review | Esiti delle slice e riscontro operatore | Nessun task eseguibile senza owner; risultati verificati e successori avviati; fonti recuperabili | Report originale ed exit0 forniti dal PO, JSON conservato e catena metadata→trial verificata / leggere la sola risposta finale nuova, non il journal; valutare applicazione del metodo e drift prima del GO; nessuna qualifica automatica per rilascio o ownership |
+| #35/COORDINAMENTO — P0 | Coordinatore entrante OMP/Pocock / fonti riconciliate, preparazione operativa | Esiti verificati e limiti del PO | Unico writer, provider observer e fonti recuperabili | Successore01a13b77, checkout nuovi e prove recuperate; trial originario non attribuito al successore / pubblicare il Plan senza overwrite dei branch concorrenti; completare solo gate raggiungibili, nessuna acceptance anticipata |
 
 **Supervisione:** i job della sessione notificano esiti e messaggi al
 coordinatore. Il lavoro indipendente procede mentre sono attivi; nessun
@@ -805,13 +833,10 @@ eccezioni di accesso erano systemd e sd-pam. Non è un lock globale né una
 garanzia contro avvii successivi: durante il trial non si avviano altri
 writer e non si aggiorna il checkout originale.
 
-Segue l'unico trial reale già autorizzato, non ancora eseguito:15min dal
-lancio,30richieste HTTP modello, stesso ID/CWD/auth, solo read, nessun
-retry/fallback manuale. Rete necessaria al trial, non al preflight isolato.
-Esito e metodo richiedono review prima di qualunque GO; nessun apply/deploy,
-acceptance tablet/ChatGPT o closeout acquisito dal metadata.
+Questo checkpoint metadata è storico: il successivo trial unico è concluso
+e revisionato sotto. Nessuna nuova allowance deriva dalla ripresa.
 
-### Trial originale concluso — review del metodo ancora pendente
+### Trial originale concluso — esito e metodo revisionati
 
 Riscontro del PO: unico lancio `--trial` nel WSL originale, exit0,
 `trial-read-only-complete-review-required`, stage dispose,107097ms dal
@@ -822,7 +847,8 @@ SHA dopo il metadata: catena delle due osservazioni verificata.
 Counter HTTP:14 richieste modello ammesse su30,0bloccate,0fallite,
 reason null. `modelDispatches:1` è il marker del primo dispatch principale,
 non il totale HTTP. Il lancio unico è consumato: remaining16 non concede
-un retry o un secondo trial. Deadline SDK890s e watchdog OS900s non raggiunti.
+un retry o un secondo trial. Fine osservata entro890s SDK e900s operativi;
+il report descrive l'obbligo del watchdog OS, non ne attesta da solo l'installazione.
 
 Stesso ID/CWD, modello/thinking, authority observer/observe e binding;
 prefisso dei96messaggi precedenti invariato. Aggiunti un messaggio utente,
@@ -831,8 +857,69 @@ stopReason stop; nessun trasferimento ownership o continuità dei pending
 dimostrata. Letture riuscite: ask-matt1, currentPlan4, boundPlan2, altre6.
 Questi conteggi non sostituiscono la review dell'applicazione del metodo.
 
-Risposta finale nuova in
-`/tmp/mission35-native-pocock-review-1dBwvK/final-response.txt`, directory
-privata da rimuovere dopo la review. Non acquisire il journal o le auth.
-Restano acquisizione della sola risposta finale, review indipendente,
-cleanup dei file temporanei e gate operativi del rilascio già delimitati.
+La risposta finale originale è stata letta direttamente nel WSL e
+revisionata da `TrialSafetyReview` con contesto separato, insieme ai report
+metadata/trial e agli originali Pocock `ask-matt`/`PHASE-BOUNDARIES`.
+SÌ alla sola qualificazione della lettura pertinente: riuso di SPEC/ticket,
+percorso read-only, nessuna invocazione inventata, TDD/delega/scritture
+correttamente non applicabili. La fonte `agent-os-pocock-reconcile` richiesta
+dal vecchio prompt è arretrata; il trial rileva il drift, non qualifica la
+successione attuale né l'integrazione8fc6e67. Non si ripete per correggere
+quel drift. Nessun GO di ownership, pending, rilascio o dispositivo.
+
+Prove: [archivio della review](evidence/native-trial-method-review-e87c349.tar.gz),
+SHA256 `53c3e440bed2224f2fd483b26c591f91eb53748202839c6534f652e3bc91feeb`,
+cinque membri verificati: sola risposta finale, review originale,
+provenienza e due sorgenti temporanei del trial. Nessun journal/auth.
+Dopo recupero e verifica, eliminate la directory della risposta privata
+`/tmp/mission35-native-pocock-review-1dBwvK` e la copia temporanea
+`preflight-current.arXmlK`; le fonti storiche e i checkout originali restano.
+
+### Full plan corrente nel WSL — nessun apply
+
+Root corrente Homelab `11dea14f`, discendente del merge1515 `c766e746`;
+nessun delta del modulo Cloudflare rispetto all'head revisionato `a57e2ed`.
+Procedura del runbook: input Vault del candidato, state/environment operativi,
+contesto privato, init lock readonly, validate e full plan con refresh.
+Exit2: soltanto le quattro creazioni OMP, zero update/delete. Nessun
+`-target`, `-refresh=false`, intervento sullo state o provisioning parallelo.
+State operativo SHA256 prima/dopo
+`5ef022423e40234cecd94606a7b0bfbbf9d361cd2c4ee0db7093ed8586fc1229`.
+Piano SHA256 `fc161d3299a02188c5ecd95f9c2ee02418a7e9113bf88a3ec38a9b974142eaa8`.
+[Proiezione redatta](evidence/cloudflare-fullplan-original-wsl-20261014.json).
+Eliminato il contesto con input/state/piano sensibili; prima dell'eventuale
+apply servirà il piano allora corrente. Nessuna risorsa Cloudflare o
+servizio operativo persistente attivato.
+
+Tool presenti: Bun1.3.14, OpenTofu1.13.1, cloudflared2026.10.0,
+manager systemd utente running con linger già attivo. Nessuna unità
+OMP/cloudflared permanente registrata; Bitwarden è locked.
+
+Il sorgente recuperato8fc6e67 ha installazione frozen/ignore-scripts/offline
+exit0 e nuova build WSL isolata dalla rete exit0 in351,1s, con typecheck
+nativo e warning export preesistente. Non è una nuova fullsuite:
+le prove627PASS/1skip dell'head invariato restano attribuite al coordinatore
+precedente. GitHub: Actions disabilitato, check-run0/status0, aggregato
+pending; nessuna CI verde o rilancio.
+
+Canary temporanea del manager utente sul build production: origin
+127.0.0.1:30141, stessa netnamespace WSL; configurazione Access senza AUD
+reale dà503, Host estraneo403. Restart nativo cambia PID e conserva503;
+stop exit0, unità collected/not-found, MainPID0 e nessun listener30141.
+Non è autenticazione positiva, SSE o Cloudflare: non esiste un connector
+OMP in esecuzione. Le richieste sono state respinte dal proxy, senza
+aprire una sessione nativa; SHA del journal bound invariato prima/dopo.
+[Prova build/lifecycle](evidence/wsl-source-build-lifecycle-8fc6e67.json).
+
+Il parser applicativo originale legge il Plan successore e mantiene
+provider observer/observe, rifiutando tutte le cinque mutazioni.
+Questo smoke non apre il provider e non consuma modelli.
+
+**Prossimo confine:** custodire il nuovo token del solo connector nella
+custodia operativa autorizzata e qualificare il servizio permanente.
+Bitwarden locked non viene aggirato leggendo cache/token di altri servizi
+o memorizzando una sessione unlock. Nessuna richiesta di segreti in chat.
+Il full plan positivo non autorizza apply prima di quel gate; il provider
+observer e l'allowance consumata non autorizzano lavoro lungo/interruzione
+reali. Tablet fuori LAN e ChatGPT personale restano acceptance del PO.
+Nessun cambio credenziali, profilo globale, unità altrui, cluster, costi o CI.

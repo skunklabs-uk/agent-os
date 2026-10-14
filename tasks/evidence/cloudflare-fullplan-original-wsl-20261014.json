@@ -1,0 +1,35 @@
+{
+  "sourceHead": "11dea14fa5d8acf36332b52b726bd4a07ee20d96",
+  "commandExit": 2,
+  "decryptLogPresent": true,
+  "initLogPresent": true,
+  "validateLogPresent": true,
+  "planReached": true,
+  "counts": {
+    "create": 4,
+    "update": 0,
+    "delete": 0
+  },
+  "actions": [
+    [
+      "cloudflare_dns_record.agent_os_omp_panel",
+      "will be created"
+    ],
+    [
+      "cloudflare_zero_trust_access_application.agent_os_omp_panel",
+      "will be created"
+    ],
+    [
+      "cloudflare_zero_trust_tunnel_cloudflared.agent_os_omp_panel",
+      "will be created"
+    ],
+    [
+      "cloudflare_zero_trust_tunnel_cloudflared_config.agent_os_omp_panel",
+      "will be created"
+    ]
+  ],
+  "stateBeforeSha256": "5ef022423e40234cecd94606a7b0bfbbf9d361cd2c4ee0db7093ed8586fc1229",
+  "stateAfterSha256": "5ef022423e40234cecd94606a7b0bfbbf9d361cd2c4ee0db7093ed8586fc1229",
+  "planSha256": "fc161d3299a02188c5ecd95f9c2ee02418a7e9113bf88a3ec38a9b974142eaa8",
+  "applyPerformed": false
+}

@@ -1,0 +1,36 @@
+{
+  "build": {
+    "source": "8fc6e67c021be66547e76f9d216c9a7b0340f924",
+    "exitCode": 0,
+    "seconds": 351.1,
+    "network": "unshare -Urn; no external network",
+    "logSha256": "d4ceb1530ef00c3453d7bb40e8e7540d106d8c436338c22579fbd5abc12a6fef",
+    "rawLog": "$ bun --bun next build --webpack\n\u25b2 Next.js 16.2.12 (webpack)\n- Experiments (use with caution):\n  \u00b7 cpus: 2\n\n  Creating an optimized production build ...\n\u26a0 Compiled with warnings in 105s\n\n./app/api/sessions/[id]/export/route.ts\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./app/api/sessions/[id]/export/route.ts\n\n  Running TypeScript ...\n  Finished TypeScript in 42s ...\n  Collecting page data using 2 workers ...\n  Generating static pages using 2 workers (0/14) ...\n  Generating static pages using 2 workers (3/14) \n  Generating static pages using 2 workers (6/14) \n  Generating static pages using 2 workers (10/14) \n\u2713 Generating static pages using 2 workers (14/14) in 25.4s\n  Finalizing page optimization ...\n  Collecting build traces ...\n\nRoute (app)\n\u250c \u0192 /\n\u251c \u25cb /_not-found\n\u251c \u0192 /api/agent/[id]\n\u251c \u0192 /api/agent/[id]/bash-output\n\u251c \u0192 /api/agent/[id]/events\n\u251c \u0192 /api/agent/new\n\u251c \u0192 /api/agent/running\n\u251c \u0192 /api/agent/running/events\n\u251c \u0192 /api/auth/all-providers\n\u251c \u0192 /api/auth/api-key/[provider]\n\u251c \u0192 /api/auth/login/[provider]\n\u251c \u0192 /api/auth/logout/[provider]\n\u251c \u0192 /api/auth/providers\n\u251c \u0192 /api/cwd/browse\n\u251c \u0192 /api/cwd/validate\n\u251c \u0192 /api/default-cwd\n\u251c \u0192 /api/display-settings\n\u251c \u0192 /api/file-index\n\u251c \u0192 /api/files/[...path]\n\u251c \u0192 /api/git/diff\n\u251c \u0192 /api/git/status\n\u251c \u0192 /api/home\n\u251c \u0192 /api/mcp\n\u251c \u0192 /api/mission-mcp\n\u251c \u0192 /api/model-roles\n\u251c \u0192 /api/models\n\u251c \u0192 /api/models-config\n\u251c \u0192 /api/models-config/catalog\n\u251c \u0192 /api/models-config/discover\n\u251c \u0192 /api/models-config/test\n\u251c \u0192 /api/plugins\n\u251c \u0192 /api/project-trust\n\u251c \u0192 /api/sessions\n\u251c \u0192 /api/sessions/[id]\n\u251c \u0192 /api/sessions/[id]/auto-name\n\u251c \u0192 /api/sessions/[id]/context\n\u251c \u0192 /api/sessions/[id]/entries/[entryId]/thinking\n\u251c \u0192 /api/sessions/[id]/export\n\u251c \u0192 /api/sessions/[id]/state\n\u251c \u0192 /api/settings\n\u251c \u0192 /api/skills\n\u251c \u0192 /api/skills/check\n\u251c \u0192 /api/skills/install\n\u251c \u0192 /api/skills/search\n\u251c \u0192 /api/skills/update\n\u251c \u0192 /api/theme\n\u251c \u0192 /api/updates\n\u251c \u0192 /api/web-access\n\u251c \u0192 /api/web-access/recovery\n\u251c \u0192 /api/worktrees\n\u251c \u25cb /manifest.webmanifest\n\u2514 \u25cb /recover\n\n\n\u0192 Proxy (Middleware)\n\n\u25cb  (Static)   prerendered as static content\n\u0192  (Dynamic)  server-rendered on demand\n\n",
+    "distDir": ".next-mission35",
+    "bun": "1.3.14",
+    "warning": "preexisting dynamic export-route dependency"
+  },
+  "canary": {
+    "source": "8fc6e67c021be66547e76f9d216c9a7b0340f924",
+    "launchExit": 0,
+    "firstHttpStatus": 503,
+    "wrongHostHttpStatus": 403,
+    "restartExit": 0,
+    "restartPidChanged": true,
+    "restartedHttpStatus": 503,
+    "hostNetNamespace": "net:[4026531833]",
+    "appNetNamespace": "net:[4026531833]",
+    "accessAudienceConfigured": false,
+    "scope": "native user-manager staging lifecycle and incomplete-Access fail-closed; not public deployment or authenticated mission proof",
+    "stopExit": 0,
+    "journalSha256Before": "9c098451ed93e1e825a8e6cf8c3dfffe04a598abbc10e2d2e9e46564f5aae0e5",
+    "journalSha256After": "9c098451ed93e1e825a8e6cf8c3dfffe04a598abbc10e2d2e9e46564f5aae0e5",
+    "boundJournalUnchanged": true,
+    "providerStartObservation": "not requested; HTTP requests rejected by proxy; no native session opened by this probe"
+  },
+  "cleanup": {
+    "unitLoadState": "not-found",
+    "mainPid": 0,
+    "port30141Listening": false
+  }
+}
