@@ -483,9 +483,8 @@ permessi e chiamate effettive restano non qualificati. Il riuso minimo
 da verificare è Access Managed OAuth su URL HTTPS, con token opaco risolto
 all'edge e JWT Access user-only verificato all'origin; il Secure MCP Tunnel
 non è autorizzazione. Nessun issuer custom, Worker o Auth0 selezionato.
-Il candidato Homelab locale `a57e2ed` dichiara provider5.28.0 e full plan
-108 con 4 create/77 no-op/0 update/0 delete; quella dichiarazione non
-trasferisce a Codex una verifica non eseguita. Alla prima lettura la PR1515
+Il primo checkpoint riportava i conteggi Homelab come dichiarazione del
+candidato, senza trasferire verifiche non eseguite. Alla prima lettura la PR1515
 era `cf618eec`; la nuova review specialistica verifica head remoto
 `a57e2ed6464a26275a1f423fde487db0d801345c`, base `95c194e`, OPEN/non-Draft.
 Il disallineamento degli SHA è risolto; descrizione obsoleta riconciliata
@@ -494,8 +493,21 @@ Review read-only: nessun Required/Critical provato nel diff; log protetti
 conservati attestano init5.28, validate valido e 4 create/0 change/0 destroy,
 con HCL/lock corrispondenti. Il coordinatore ha inoltre calcolato SHA256
 del piano binario senza decodificarlo: `37f5eaa37fb913d8dceb3d7f69fb8d09fa329071f1d144937eed8dd51154cc3f`.
-77 no-op, serial108, input e associazione incontrovertibile piano↔SHA
-non derivano dal solo log/hash: la provenienza redatta resta da raccordare.
+La successiva ricerca specialistica nel verbale contemporaneo ha recuperato
+la proiezione redatta `cloudflare-1515-plan-summary.json`: provider5.28,
+serial108, 4 create/77 no-op/0 update/0 delete e hash del piano corrispondente.
+I tool output del 13 ottobre20:37–20:47UTC registrano `init -upgrade` exit0,
+validate exit0, `plan -input=false -detailed-exitcode -out` nel contesto
+temporaneo tramite `-chdir`, exit2 e state operativo invariato. Nessun
+`-target` o `-refresh=false` negli argomenti attestati; nessun comando ripetuto.
+Il parent ha letto solo la proiezione redatta; lo specialista solo metadata,
+codice delle invocazioni e output tecnici pertinenti, non input/state/segreti.
+La proiezione registra `2e09fbb + native lock/OAuth edits`: preparazione
+pre-commit, non HEAD già ad `a57e2ed`. I sei HCL/lock conservati corrispondono
+byte per byte al candidato finale secondo la review; il legame è dei
+materiali, non di un HEAD finale contemporaneo. La lacuna di provenienza
+è quindi risolta nel perimetro storico: prima di un eventuale apply serve
+comunque piano fresco sullo state allora corrente e distinto OK operativo.
 Origin/team/AUD e binding host devono essere configurati prima del GO
 operativo; il consumer rende 503 se mancano. Forme callback Managed OAuth
 supportate non provano callback/account o coesistenza Basic/OAuth reali.
@@ -551,8 +563,9 @@ contiene quella sessione. `xd://` non espone messaggistica intersessione e
 `proc://` non offre uno stdin del writer; i socket broker Unix dei progetti
 esistono, ma non espongono qui un'API documentata di messaggio alla sessione.
 Non è disponibile un canale supportato per inviare stop-writer/rilascio:
-nessun messaggio è dichiarato consegnato, nessun token o JSONL privato letto
-e nessun processo avviato/interrotto per ottenerlo.
+nessun messaggio è dichiarato consegnato e nessun token letto per ottenerlo.
+La ricerca successiva della provenienza usa metadata/output tecnici
+dell'archivio contemporaneo, non il transcript operativo della vera #35.
 
 L'integrazione documentale compete a Codex secondo la richiesta corrente.
 Pubblicare il delta `1403d832..docs/codex35-checkpoint` dal solo checkout
@@ -565,3 +578,33 @@ la storia remota, mentre il checkout altrui rimane intatto.
 PID, mtime, archive e marker non concedono autorità o allowance.
 Le prove effimere descritte sopra sono concluse: nessuna istruzione storica
 di avvio concede una nuova esecuzione.
+
+### Incremento correttivo di admission — 2026-10-14
+
+La review statica indipendente sul codice `c5f3111` e SDK18.8.7 ha
+dimostrato tre percorsi condizionati oltre l'autorità del comando:
+compressione skill durante `createAgentSession` a cache miss; binding
+extension con send/side-turn diretti; goal nudge dopo scheduling senza
+riverifica di owner/scope/revisioni. Non dimostra inferenze remote già
+avvenute. Zero messaggi nel journal non copre side-turn/compressioni;
+lo smoke precedente resta delimitato alla fixture/rete isolata.
+
+Necessità: `ensure_session`, project trust, goal attivo e callback di
+admission del prompt non autorizzano lavoro modello implicito. Riutilizzare
+il guard mission-authority e i seam nativi prima di ogni sink, catturando
+il contesto originale dei lavori differiti; non disabilitare tutte le
+skill/tool, non introdurre altro ledger o coordinator. Se manca un hook
+nativo per la compressione, estendere solo il seam del catalogo nel
+meccanismo patch Bun già necessario, con default non-mission invariato.
+
+Due writer isolati, base `7373c4e`: A possiede patch riproducibile SDK,
+compression admission/cache-preview e regressioni; B possiede guard host,
+rpc-manager/mission-control/goal-mode e regressioni di send/side-turn/nudge.
+Non modificano node_modules condivisi, pin/lock, checkout source o fonti
+condivise. Codex integra A→B serialmente e reviewer indipendente riesamina
+il nuovo SHA. Test comportamentali con sink-spy/SDK isolato senza modelli:
+ensure-only, observer, stale/revoked e contesto invariato autorizzato;
+skill/UI ancora disponibili e nessun prestito di autorità successiva.
+Verifiche parent entro i limiti locali già approvati, senza CI o nuovo
+live: nessuna nuova allowance OMP, servizi, inferenza remota o deploy.
+
