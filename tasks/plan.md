@@ -636,13 +636,16 @@ verifica dei risultati e continuità: coordinatore OMP corrente.
 | ID / priorità | Responsabile / stato | Dipendenze | Risultato atteso e done verificabile | Ultima attività / prossima azione |
 |---|---|---|---|---|
 | #52/P1 — P0 | Coordinatore OMP / completato | Nessuna | Risposta e abort indipendenti dal bootstrap; ricevuta originale e scoping preservati | `16faf8d`, browser production, check e due review sopra / riusare le prove; ripeterle solo sul codice materialmente cambiato |
-| #52/INTEGRAZIONE — P0 | `ReconcileDeliveryHead`, integrazione al coordinatore / in corso | Confronto delle superfici `16faf8d` e PR1 `f861bb8` | Identificare e integrare solo differenze necessarie ai criteri approvati, oppure motivare equivalenza; nessun GO trasferito tra head | Scout avviato su diff e SPEC / esaminare prove e assegnare subito l'eventuale integrazione |
-| #35/ACCESSO — P0 | `RecoverWslAccessPath`, esito al coordinatore / in corso | Fonti e strumenti disponibili | Recuperare un accesso WSL già supportato, oppure consegnare istruzioni manuali minime e sicure | Scout avviato; rifiuto SSH22 già documentato, non ripetuto / verificare percorso proposto senza installare servizi o copiare auth |
+| #52/INTEGRAZIONE — P0 | Coordinatore OMP / in corso | OUTCOMES, SPECIALISTI, SCROLL | Candidato unico con P1 preservato, check/smoke e review pertinenti sul nuovo SHA | Ricognizione verificata; due implementer assegnati / integrare i risultati e qualificare una sola volta il candidato risultante |
+| #52/OUTCOMES — P0 | `IntegrateNativeOutcomes` / in corso | Base16faf8d e hunk pertinenti PR1 | Esiti answer/abort correlati e flush fallito non presentato come durable completion; nessun replay o regressione prompt/steer/P1 | Agent assegnato a mission-control/rpc-manager e test pertinenti / consegna senza check intermedi; verifica al coordinatore |
+| #52/SPECIALISTI — P0 | `ExposeNativeSpecialists` / in corso | Snapshot e API native esistenti | Stato e risultati di specialisti attivi/conclusi nella proiezione comune, senza journal o campi privati | Agent assegnato a mission-observation e test / comunicare contratto dati al coordinatore per UI |
+| #52/SCROLL — P0 | Coordinatore OMP / in corso | Layout missione esistente | Contenuto raggiungibile con scroll reale del pannello a390/820, non solo assenza overflow orizzontale | RED browser16fa: main1359px dentro antenato844px overflow:hidden e viewport non scorribile / riusare layout scroll della PR1 e verificare sul build finale |
+| #35/ACCESSO — P0 | Coordinatore OMP; operatore per il terminale originale / bloccato | Canale WSL o operatore locale disponibile | Operare sul WSL originale senza cambiare ID/CWD/auth | Ricognizione conclusa: nessun alias/canale WSL identificato, catalogo SSH vuoto; nessun retry SSH / consegnare passi manuali e raccogliere solo l'informazione indispensabile sul canale disponibile |
 | #35/TRIAL — P1 | Coordinatore OMP / bloccato | #35/ACCESSO, fonti e unico writer verificati | Unico trial bound nei limiti già approvati, cap/deadline osservati e review del metodo; nessuna identità sostitutiva | Nove scenari locali già qualificati / eseguire solo quando i prerequisiti originali diventano raggiungibili |
 | #1514/RILASCIO — P1 | Coordinatore OMP / bloccato | #35/ACCESSO, candidato unico qualificato, custodia e full plan corrente | Rilascio nello stesso WSL con gate Cloudflare e smoke HTTPS/Access/SSE/POST soddisfatti | IaC1515 già merged, nessun apply / recuperare custodia e piano operativo soltanto sul contesto autorizzato |
 | #35/MOBILE — P1 | Coordinatore OMP; operatore per dispositivo/login / bloccato | #1514/RILASCIO | Criteri mobile-control provati sul tablet reale fuori LAN | Solo viewport390/820 provati / guidare l'operatore sul percorso reale dopo il rilascio |
 | #35/CHATGPT — P1 | Coordinatore OMP; operatore per account/login / bloccato | #1514/RILASCIO | OAuth e tool MCP reali dal ChatGPT personale, stessa sessione e receipt/outcome | Nessuna acceptance personale / esercitare il client reale dopo il rilascio |
-| #35/COORDINAMENTO — P0 | Coordinatore OMP / in corso | Esiti delle slice | Nessun task eseguibile senza owner; risultati verificati e successori avviati; fonti recuperabili | RFC0.1.13 riletta e due scout indipendenti avviati / integrare gli esiti, aggiornare questa coda e le issue esistenti |
+| #35/COORDINAMENTO — P0 | Coordinatore OMP / in corso | Esiti delle slice | Nessun task eseguibile senza owner; risultati verificati e successori avviati; fonti recuperabili | Due scout conclusi e verificati, due implementer indipendenti assegnati; parent su UI/layout e integrazione / qualificare e aggiornare fonti e tracker |
 
 **Supervisione:** i job della sessione notificano esiti e messaggi al
 coordinatore. Il lavoro indipendente procede mentre sono attivi; nessun
@@ -659,3 +662,25 @@ presumere processi attivi. Non si avviano daemon, scheduler o nuovi tracker.
 `interview-me` non è disponibile tra le skill montate: eventuali decisioni
 indispensabili saranno raccolte con lo strumento di domande disponibile;
 le operazioni manuali avranno passi e risultato atteso, senza segreti.
+
+### Integrazione locale necessaria dopo la ricognizione
+
+`ReconcileDeliveryHead` ha identificato due gap ancora eseguibili senza WSL:
+il watcher ignora eventi nativi specifici di risposta/abort e sopprime
+errori di flush terminale; la proiezione specialisti scarta i conclusi e
+mostra soltanto ID/agent/status. Sono gap dei requisiti di esito osservabile,
+durabilità e team visibility delle SPEC, non nuovi obiettivi.
+
+Si mantiene la base `16faf8d`: lock rilasciato dopo admission, bypass della
+readiness per risposta/abort, tre canali e correlazione nativa prompt/steer.
+Si riusano soltanto gli hunk pertinenti della PR1 per esiti/persistenza.
+Specialisti e risultati devono provenire da snapshot/transcript nativi,
+con proiezione allowlist condivisa browser/MCP, senza un altro registry.
+L'integrazione UI rimane al coordinatore per evitare scritture concorrenti.
+Ogni modifica sarà provata su comportamento osservabile e sul nuovo head.
+
+**Alternative scartate:** merge integrale della PR1 ripristinerebbe P1;
+rendere obbligatorio il browser storage duplicherebbe il journal nativo
+senza necessità ancora provata. ALS, continuazioni implicite e compressione
+skill restano esclusi finché i confini della base già eliminano quel bisogno.
+Non si riabilitano funzionalità negate per poi aggiungere nuovi controlli.
