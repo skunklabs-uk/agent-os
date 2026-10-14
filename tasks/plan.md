@@ -1,9 +1,16 @@
 # Plan: mobile-control and mcp-access
 
-**Status:** Active — after reviewing the presented Plan at `aed6fdaf43bb91591ca372ed9a7231fcb4959ea6`, the Product Owner instructed the coordinator to continue through completion under Osmani/RFC-0001. Technical coordination proceeds within that delegation; no new resources or deployment are implicitly approved.
-**Mission:** [Agent OS35](https://github.com/skunklabs-uk/agent-os/issues/35), sole coordinator on NOVBSCWOLaulMaU.
+**Status:** Active — dopo il conflitto di coordinamento, l'ultima decisione del Product Owner conferma questa sessione OMP come unico coordinatore Matt Pocock/RFC-0001. Gli esiti Osmani precedenti restano storia accettata. Il rilascio operativo è approvato soltanto dopo review sullo SHA esatto e check applicabili verdi.
+**Mission:** [Agent OS35](https://github.com/skunklabs-uk/agent-os/issues/35), coordinatore unico su NOVBSCWOLaulMaU.
+**Coordinator:** omp-current-session
+**Coordinator session:** 01a136e1-3183-72bb-aeca-d82f1bc60b6c
+**Provider role:** observer
+**Provider session:** 01a131c7-ecba-7000-a4fb-ff906f642f4f
+**Permitted scope:** mobile-control/mcp-access-readiness-and-port
+**Permitted commands:** observe
 **Authority:** [mobile-control](../SPEC-mobile-control.md), [mcp-access](../SPEC-mcp-access.md) and the [shared provider contract](../SPEC-team-execution.md#shared-remote-consumer-contract), explicitly approved on 2026-10-12 at `f55c2b7838104770766825e57b68129b019e951e`. Team-execution is accepted and delivered by [PR51](https://github.com/skunklabs-uk/agent-os/pull/51), merge `95528e6c0013f067702496902c40051fba973e48`.
-**Method:** original Osmani spec-driven-development and planning-and-task-breakdown at `1401c8b8030e023baeebb31781a6653fe8e93026`. The current phase is Tasks/readiness, including bounded local qualification without inference after the PO’s instruction to continue. Subsequent executable slices retain the selected-method gates and require concrete scope; delegation is recorded as such, not fabricated literal approval of unseen task details.
+**Method:** skill originali Matt Pocock a `24fe0ef7737efae15c87225755e9f6f5965e4888`, scelte esplicitamente per il lavoro residuo. Riusare specifiche, ticket e seam accettati; non ripetere acceptance dei pilot. Le decisioni tecniche seguono la delega del Product Owner, senza inventare invocazioni letterali di skill.
+**Phase:** implementazione e qualificazione — nessun rilascio operativo eseguito
 **Tracking:** GitHub issue35 and its native sub-issues; no tasks/todo.md or second ledger. [Task52](https://github.com/skunklabs-uk/agent-os/issues/52) owns readiness and the complete local port checkpoint after the reviewed component increments53–58. Current scope and outcomes appear below; recheck duplicates before any necessary new task. The former team-execution plan is Archived history and is not overwritten.
 
 ## Outcome and scope
@@ -59,7 +66,7 @@ M1 and C1 may run independently after P0; M2 never precedes M1, C2 never precede
 - **Coordinator:** exclusively owns shared contract, `tasks/plan.md`, capability map, mission35 and serial integration. Provider contract changes are reviewed before consumers rely on them.
 - **Mobile specialist:** owns the mobile candidate and its evidence in a separate worktree/check-out if writing. Returns exact base/head, changed files, observed device results and limits; never updates the shared plan.
 - **MCP specialist:** owns the separate MCP candidate/evidence under the same rules. No access to other projects solely because a transport supports them.
-- **Reviewer:** clean session, original Osmani code-review-and-quality, original requirements, exact base/head/diff and relevant raw; no implementer chat or suggested verdict. Re-review only material corrections. Application QA and access/security review are responsibilities activated by actual work, not permanent extra agents.
+- **Reviewers:** clean sessions using original Pocock code-review, with separate Standards and Spec axes on the exact integration revision and original requirements. Re-review material corrections only. Application QA and access/security review are responsibilities activated by actual work, not permanent extra agents.
 
 The present Agent OS writer reuses the isolated coordinator worktree. No owner checkout or other worktree is reset, cleaned or cherry-picked. Future executable writers receive explicit owned files and permitted repositories in approved tasks before any launch. One integrator per repository.
 
@@ -375,3 +382,114 @@ L'audit indipendente sul candidato OMP `f7338b746602e40f888996350502ce8dc8ed4cf6
 Il PO ha autorizzato un solo altro turno sulla **stessa** sessione #35 `01a131c7-ecba-7000-a4fb-ff906f642f4f`: `openai-codex/gpt-6.1-sol` low, massimo 15 minuti/30 richieste, sola lettura, senza subagenti, scritture di progetto, servizi, tunnel, deploy, retry o fallback. L'autorizzazione è **consumata**. Il preflight ha trovato il worktree OMP pulito a `b0b4db9f83d5277bea2700ff6d5335a84f7b27f5`, OMP18.8.7 e le due skill Osmani lette al pin `1401c8b8030e023baeebb31781a6653fe8e93026`; il runner ha controllato il livello low. L'esecuzione è durata 2m48s: 16 turni modello, 15 chiamate `read`, zero retry osservati, nessun altro tool nel delta JSONL. Le 104 righe iniziali corrispondono byte per byte al transcript precedente; le 49 nuove contengono un prompt, letture, risposta e `session_exit` normale. Il log privato `handoff/run-handoff-prep-turn3.log` ha SHA256 `3a94ce257c503f3217866e6dc7cbcd8fa34e946f335ad1b8b18f37136b4260ab`; JSONL finale SHA256 `d1329031fb1abed4a51106c41bf53fb265b25c843597595b4cf85c7823a0bb6b`. Il worktree è rimasto pulito. Le letture iniziali delle issue erano troncate; i commenti recenti sono stati recuperati, ma i body non sono stati interamente riverificati. Non si attribuisce al turno una slash invocation delle skill o assenza assoluta di effetti di inizializzazione runtime.
 
 La review indipendente privata in `~/.local/state/agent-os/remote-control/mission35/handoff/turn3-runtime-review.md`, SHA256 `dbbe49387b8383b6f2d22c4e16a82698217b83a2104e17e1745c7aac03f10a25`, dà **GO alla sola ricognizione read-only, NO GO al passaggio di ownership**. L'output del launcher mostrava `turn_exit=0`, ma il wrapper del tool riportava `exit_code:1`: la discordanza resta irrisolta, mentre log e `session_exit` attestano la fine del turno OMP. Non sono stati osservati nello stato live fase, attività e pending con ID/scope/revisione; né la continuità delle decisioni dopo restart, né una registrazione di esclusività e limiti per turni operativi successivi. Il marker/JSONL non colmano queste lacune. **Codex rimane l'unico coordinatore**. Prossima azione indipendente: ricostruire nelle fonti esistenti il legame fra decisione, scope e revisione e delimitare una prova live che possa confutarlo, senza aprire un secondo ledger o avviare un modello sotto l'allowance consumata. Comandi, approvazioni, tablet fuori LAN, ChatGPT/MCP, merge e deploy restano fuori da questo GO.
+
+### Ripresa Codex e correlazione decisionale — 2026-10-13
+
+La richiesta corrente del PO autorizza la correzione locale del gap in Task52 e gli incrementi necessari del pannello entro lo scope approvato. Il remoto `docs/mobile-mcp-plan` coincide con `1403d832124605a7d1aed55fd512d81dde3d4c9b`; OMP PR1 Draft coincide con `f7338b746602e40f888996350502ce8dc8ed4cf6`. Homelab PR1515 Draft resta a `cf618eec85f03a1e5515e4ee22f3089f96689f66`, mentre main è avanzato a `61f292721ae63c642fe2eb6d0efa5eb102a6341d`: il vecchio full plan non autorizza operazioni sullo stato corrente. IWANT PR640 è OPEN/Ready a `f8b342b82716b6e319bfef67814eee9d9ff0b9c6`, senza autorità di merge. Actions OMP disabilitate, verificate via API.
+
+Questo Plan è la fonte documentale di missione, coordinatore, ruolo della sessione OMP e scope. I quattro campi espliciti sopra rendono verificabili decisioni già acquisite; non attribuiscono ownership a OMP né autorizzano esecuzione. La richiesta del PO e le decisioni #35/#52 prevalgono sulla mera presenza di marker, JSONL o configurazione. Il terzo turno OMP è consumato; nessun altro turno, servizio, tunnel, deploy o apply è incluso.
+
+**Necessità e perimetro minimo del fix:** il contratto provider già richiede richiesta esatta, scope e revisione. La fixture documentata in #52 ha mostrato 14 PASS/1 FAIL: stesso ID e piano, HEAD avanzato, approvazione erroneamente applicata. Il controllo esistente confronta contenuto e PlanModeState ma non la revisione Git. Eliminare le approvazioni non soddisfa il requisito; il riuso di pending ID, Plan e Git è sufficiente senza nuovo ledger, database o policy engine. KEEP pending vivo e guard del piano; REPLACE l'identità incompleta con il confronto della revisione applicabile e della fonte corrente. Costo: helper minimo nel port, wrapper, test comportamentali e README; nessuna dipendenza o stato durevole nuovo nell'incremento A. Owner del codice: writer isolato; delle fonti condivise: coordinatore OMP corrente. Il controllo resta finché esistono approvazioni scoped; si rimuove solo con un equivalente provider nativo verificato.
+
+**Incremento A, Task52:** catturare HEAD e contesto della proposta prima dell'attesa; prima di applicare la risposta confrontare richiesta/sessione, piano, contesto e revisione corrente. Qualunque configurazione missione attiva o incompleta mantiene il divieto di approvazioni in questo incremento. La review ha eliminato il parser del Plan privo di effetto osservabile: non serve classificare observer/unknown per respingerli entrambi. Dopo restart un vecchio ID resta non applicabile; pending vuoti non attestano continuità. Nessuna API di missione viene aperta da A.
+
+**Verifica:** conservare il RED riportato dal PO senza rilanciarlo per conferma; aggiungere regressioni focali per revisione e authority mismatch, poi GREEN, typecheck/lint pertinenti e smoke diretto del wrapper con repository usa-e-getta. Test e smoke sintetici non sono stato OMP vivo. Un reviewer indipendente esamina ogni SHA materiale prima dell'integrazione seriale. Limiti locali già approvati: zero inferenze, rete isolata, massimo10min per comando e40min per checkpoint; nessuna nuova installazione o CI. Prova live e browser applicativo richiedono una nuova autorizzazione delimitata, distinta dai precedenti avvii una tantum.
+
+**Dipendenze:** A → comandi/pannello scoped → prova live autorizzata. In parallelo resta autorizzata la preparazione read-only di OAuth/account MCP e drift DNS con l'owner Homelab. Nuovi accessi, autenticazione operativa, risorse, merge, deploy/apply e smoke dal tablet restano gate distinti; #35/#52 restano aperte.
+
+### Decisione concorrente precedente — superseded
+
+Un'altra sessione ha registrato **«Codex unico, Osmani»** dopo aver rilevato le modifiche OMP/Pocock. Questa nota ricostruisce il conflitto; è stata superata dalla successiva decisione esplicita del Product Owner a favore di OMP/Pocock in questa chat, riportata sotto. Non governa il coordinatore o il metodo correnti. Nessun processo estraneo è stato terminato o modificato.
+
+Il PO ha anche approvato il raccordo di codice **OMP esecutore sotto Codex**: nessun trasferimento della missione né secondo coordinatore. La sessione già qualificata resta observer finché un incarico e la relativa autorità operativa non sono attivati esplicitamente. L'approvazione del raccordo non concede nuovi turni modello o avvii della vera #35.
+
+Nuova prova autorizzata: **un solo avvio app/browser locale, massimo240s**, namespace rete/PID isolato, loopback, repository/profilo usa-e-getta, decisioni native sintetiche e Chromium già installato, senza inferenza, tunnel, CI o deploy. Questa autorità è distinta dal terzo turno OMP consumato; l'esito verrà registrato solo dopo l'esecuzione.
+
+Il PO richiede di riusare i sistemi Homelab prima di proporre un issuer esterno. Inventario sulla revisione corrente `61f2927` e documentazione primaria hanno identificato **Cloudflare Access Managed OAuth**, n8n MCP/OAuth nativo e Dex incluso in ArgoCD, non tre issuer esterni già qualificati per Agent OS. L'opzione Managed OAuth è il primo riuso da qualificare; Auth0 non è selezionato. API delle app esistenti non espongono `oauth_configuration`: assenza del campo non prova enablement né diniego. Permessi/associazione Platform e ChatGPT restano esterni al repository.
+
+### Comandi dell'esecutore subordinato — perimetro di codice approvato
+
+Il raccordo non crea un secondo coordinatore. Il coordinatore OMP corrente assegna nel Plan l'incarico dell'esecutore e le operazioni consentite; i campi mantengono observer/observe finché il trial reale non qualifica una nuova autorità. La UI distingue questa authority documentale dallo stato osservato, senza dichiarare ripresa della missione dopo un semplice `ensure_session`.
+
+**Incremento B, Task52:** riusare binding, registry e native SessionManager per i soli comandi start/resume, stato/risultati, risposta esatta a domanda/decisione, direzione e interruzione dell'incarico OMP autorizzato. L'owner è il coordinatore OMP corrente. Ogni mutazione richiede missione, ID bound, scope, revisione e fonte Plan correnti; ruolo observer, fonte ambigua o revisione cambiata sono respinti prima dell'invio. Una decisione resta associata al pending vivo e al contesto mostrato; dopo restart non ricostruirne l'autorità dai marker.
+
+**Ricezione ed esito:** una risposta HTTP positiva attesta ricezione, non completamento. Riutilizzare eventi nativi e sessione durevole per la prova dell'esito; un riferimento stabile di comando deve sopravvivere a riconnessione senza ripetere un prompt. Un eventuale record nativo di ricezione è tracciabilità del comando, non ownership o crash recovery. Se manca l'esito dopo restart, riportare unknown e non ripetere automaticamente. Nessun database, scheduler o secondo ledger.
+
+**Incremento C:** UI nello stesso pannello, con identità/authority, attività degli specialisti e risultati, domande e decisioni raggiungibili, operazioni consentite e conseguenze visibili. Nessun bootstrap o prompt su render/poll; doppi tap, richieste stale e risposta di rete ambigua non devono avviare lavoro duplicato. Touch, tastiera, focus, reflow e screenshot autentici si verificano nel nuovo smoke autorizzato. Quella prova resta sintetica e senza inferenza; avvio/ripresa vera di #35, risultati lunghi, interruzione attiva e tablet richiedono i rispettivi limiti operativi.
+
+**Necessità e costo cumulativo:** le API generiche attuali non identificano l'incarico e `prompt` risponde prima dell'esito nativo; riaprirle integralmente viola il confine già approvato. KEEP wrapper/registry/pending/SessionManager; REPLACE solo il dispatch generico per la missione con allowlist e correlazione native. I consumer web/MCP useranno lo stesso provider, non implementazioni autonome. File applicativi strettamente pertinenti saranno delimitati dal coordinatore sul nuovo SHA A revisionato, poi writer isolato, verifiche focali/smoke e review indipendente. Nessuna nuova dipendenza, installazione o esecuzione di modelli deriva da B/C.
+
+### Decisione corrente dopo il conflitto — OMP/Pocock
+
+Dopo la segnalazione della modifica concorrente, il Product Owner ha scelto
+**«OMP/Pocock in questa chat»** come coordinatore unico. La sessione corrente
+è `01a136e1-3183-72bb-aeca-d82f1bc60b6c`; la sessione Codex concorrente deve
+cessare le scritture sulla missione. Il Plan conserva la storia senza
+attribuirle autorità futura. Il provider file-backed rimane observer e non
+si identifica con questa sessione di coordinamento.
+
+Il Product Owner ha scelto **Cloudflare Access Managed OAuth + URL** per MCP:
+riuso di Admin Only e dell'app OMP, nessun issuer custom o chiave OpenAI di
+trasporto. La prima slice C1 implementa solo `mission_status` nello stesso
+processo Next/Bun, senza bootstrap o trasferimento di ownership. I comandi
+residui B/C e la prova nel client reale restano necessari al completamento.
+
+È acquisito il **rilascio operativo condizionato** delle sole quattro risorse
+OMP e dei servizi pannello/connector nello stesso WSL, dopo review sullo SHA
+esatto e check applicabili verdi. Nessun cambiamento a cluster o altri servizi.
+Il full plan provider 5.28.0 sullo state108 contiene 4 create/77 no-op,
+nessun update/delete; hash e custodia restano nel runbook Homelab autorevole.
+Il vecchio piano1515/107 non è recuperato e non viene equiparato a quello nuovo.
+
+Nuova allowance del provider: **massimo15 minuti / 30 richieste modello**,
+`openai-codex/gpt-6.1-sol` low, credenziali esistenti, zero retry/fallback.
+È un limite operativo, non monetario. Prima del trial configurare solo il
+catalogo Pocock qualificato, leggere le fonti correnti e verificare identità,
+fase, scope e decisioni; niente ownership concessa da un marker. Conservare
+l'esito effettivo e riesaminarlo indipendentemente prima di passaggi live.
+Lo smoke autentico tablet/ChatGPT rimane distinto dalle prove del coordinatore.
+
+Il PO ha autorizzato una deroga circoscritta al gate GitNexus del port: in questo
+runtime non sono disponibili server MCP, binario o indice; anche LSP TypeScript
+è assente. La qualificazione usa riferimenti e callsite verificati, typecheck,
+smoke comportamentali e review indipendenti sullo SHA esatto. Non si installano
+tool o indici e non si attestano controlli GitNexus non eseguiti.
+
+Il PO ha scelto **JWT Access anche per il browser della sola missione**:
+nessuna password aggiuntiva o fallback Basic. L'app verifica firma, issuer,
+AUD, scadenza e identità utente; mantiene Host/Origin e allowlist bounded.
+La modalità ordinaria di omp-web conserva Basic e recovery. Prima di questa
+scelta i tre store previsti non contenevano una password nativa. Il nuovo
+comportamento richiede check e review dello SHA aggiornato, non trasferisce
+le review dell'incremento precedente.
+
+Il profilo privato mantiene i 27 skill originali e i sei role model
+`openai-codex/gpt-6.1-sol:low`. WebSocket prewarm e listing automatico delle
+skill sono disattivati con impostazioni native: quest'ultimo schedulava
+inferenze one-shot per comprimere descrizioni prima della costruzione
+dell'agent. Discovery e `skill://` restano reali; nessuna cache fittizia,
+copia di skill o modifica al profilo globale. La scelta serve al bootstrap
+senza inferenza, non attesta l'applicazione del metodo al trial.
+`onFirstChatDispatch` registra soltanto il primo dispatch e le sue eccezioni
+sono catturate dal SDK: non è un contatore o un limite delle 30 richieste.
+Il conteggio del trial deve comprendere anche richieste secondarie e retry
+HTTP; resta una frontiera da qualificare prima dell'inferenza.
+
+Cloudflare `a57e2ed6464a26275a1f423fde487db0d801345c`: review Pocock Standards
+e Spec entrambe GO; i due check Trivy del run `38478963891` sono SUCCESS sullo
+stesso head. Nessun apply. Checkpoint port `eaf2582`: 635 PASS, 1 skip, 0 FAIL,
+typecheck e lint pertinente verdi, build verde con warning nella route export
+non modificata. Il successivo `d014caf` integra JWT browser e due fix lifecycle
+con RED/GREEN: non completare al primo `agent_end`; rispondere alla domanda
+nativa di startup senza restare dietro la readiness che essa sblocca.
+Focali e typecheck di quest'ultimo candidato sono verdi; nuova build, superficie
+browser e review finali restano da eseguire. Lo smoke autentico del dispositivo
+e di ChatGPT non è sostituito da queste prove.
+
+Dopo l'indagine dei retry indipendenti del SDK, il PO ha scelto **«Tentativi
+nativi inclusi nel cap»** per il trial. Questa decisione supera il precedente
+zero-retry end-to-end: ogni dispatch HTTP modello, compresi retry interni e
+chiamate secondarie, consuma il massimo30 entro15 minuti. Restano vietati
+retry manuali e fallback. Prima del provider reale occorre provare counter
+globale/deadline e copertura dei binding di fetch su endpoint locale, senza
+crediti. I turni e i soli span non attestano questo conteggio.
