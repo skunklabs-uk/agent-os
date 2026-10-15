@@ -1,0 +1,357 @@
+{
+  "pr": "https://github.com/skunklabs-uk/homelab/pull/1543",
+  "mergeCommit": "7dd7d1e4a2616a8104302a59f0148551036bf649",
+  "argo": {
+    "sync": "Synced",
+    "health": "Healthy",
+    "operation": "Succeeded",
+    "revision": "7dd7d1e4a2616a8104302a59f0148551036bf649"
+  },
+  "pod": {
+    "name": "omp-web-687c4bf989-tkr57",
+    "ready": true,
+    "restarts": 0,
+    "imageId": "harbor.lab.skunklabs.uk/private-ghcr/skunklabs-uk/omp-web@sha256:d261784afcb1edea799730335fb07f56174db5ff08eacb829db295db7ca14bbc"
+  },
+  "smoke": {
+    "uid": 10000,
+    "gid": 10000,
+    "bun": "1.3.14",
+    "buildId": "KLsckYvunRhGf2ZcU0bCo",
+    "buildFilesSha256": "ee5aa7da0eb79b82b324dc9889d6447b764324f513111238cf57bc65b52ca7e0",
+    "ordinaryRoot": 200,
+    "unauthorizedSessions": 401,
+    "authorizedSessions": 200,
+    "invalidOrigin": 403,
+    "mcpWithoutBinding": 503,
+    "missionVariablesAbsent": true,
+    "binding": {
+      "id": "01a13e10-fc0a-7000-ad56-44fe7c29bbd1",
+      "cwd": "/home/omp/.omp/workspaces/agent-os",
+      "running": false
+    },
+    "workspaceHead": "1eed0de6400e9c1aa6de4f3639ed4763046f6ab7",
+    "providers": [
+      {
+        "id": "abliteration",
+        "loggedIn": false
+      },
+      {
+        "id": "aiand",
+        "loggedIn": false
+      },
+      {
+        "id": "alibaba-coding-plan",
+        "loggedIn": false
+      },
+      {
+        "id": "alibaba-token-plan",
+        "loggedIn": false
+      },
+      {
+        "id": "anthropic",
+        "loggedIn": false
+      },
+      {
+        "id": "baseten",
+        "loggedIn": false
+      },
+      {
+        "id": "cerebras",
+        "loggedIn": false
+      },
+      {
+        "id": "charm-hyper",
+        "loggedIn": false
+      },
+      {
+        "id": "cline-pass",
+        "loggedIn": false
+      },
+      {
+        "id": "cloudflare-ai-gateway",
+        "loggedIn": false
+      },
+      {
+        "id": "commandcode",
+        "loggedIn": false
+      },
+      {
+        "id": "coralbricks",
+        "loggedIn": false
+      },
+      {
+        "id": "coreweave",
+        "loggedIn": false
+      },
+      {
+        "id": "cursor",
+        "loggedIn": false
+      },
+      {
+        "id": "deepinfra",
+        "loggedIn": false
+      },
+      {
+        "id": "deepseek",
+        "loggedIn": false
+      },
+      {
+        "id": "devin",
+        "loggedIn": false
+      },
+      {
+        "id": "exa",
+        "loggedIn": false
+      },
+      {
+        "id": "factory-droid",
+        "loggedIn": false
+      },
+      {
+        "id": "firepass",
+        "loggedIn": false
+      },
+      {
+        "id": "fireworks",
+        "loggedIn": false
+      },
+      {
+        "id": "github-copilot",
+        "loggedIn": false
+      },
+      {
+        "id": "gitlab-duo",
+        "loggedIn": false
+      },
+      {
+        "id": "gitlab-duo-agent",
+        "loggedIn": false
+      },
+      {
+        "id": "gmi-cloud",
+        "loggedIn": false
+      },
+      {
+        "id": "google-antigravity",
+        "loggedIn": false
+      },
+      {
+        "id": "google-gemini-cli",
+        "loggedIn": false
+      },
+      {
+        "id": "helmcode",
+        "loggedIn": false
+      },
+      {
+        "id": "huggingface",
+        "loggedIn": false
+      },
+      {
+        "id": "kagi",
+        "loggedIn": false
+      },
+      {
+        "id": "kilo",
+        "loggedIn": false
+      },
+      {
+        "id": "kimi-code",
+        "loggedIn": false
+      },
+      {
+        "id": "litellm",
+        "loggedIn": false
+      },
+      {
+        "id": "llama.cpp",
+        "loggedIn": false
+      },
+      {
+        "id": "lm-studio",
+        "loggedIn": false
+      },
+      {
+        "id": "meta",
+        "loggedIn": false
+      },
+      {
+        "id": "minimax-code",
+        "loggedIn": false
+      },
+      {
+        "id": "minimax-code-cn",
+        "loggedIn": false
+      },
+      {
+        "id": "moonshot",
+        "loggedIn": false
+      },
+      {
+        "id": "muse-code",
+        "loggedIn": false
+      },
+      {
+        "id": "nanogpt",
+        "loggedIn": false
+      },
+      {
+        "id": "novita",
+        "loggedIn": false
+      },
+      {
+        "id": "nvidia",
+        "loggedIn": false
+      },
+      {
+        "id": "ollama",
+        "loggedIn": false
+      },
+      {
+        "id": "ollama-cloud",
+        "loggedIn": false
+      },
+      {
+        "id": "openai-codex",
+        "loggedIn": false
+      },
+      {
+        "id": "opencode-go",
+        "loggedIn": false
+      },
+      {
+        "id": "opencode-zen",
+        "loggedIn": false
+      },
+      {
+        "id": "openrouter",
+        "loggedIn": false
+      },
+      {
+        "id": "parallel",
+        "loggedIn": false
+      },
+      {
+        "id": "perplexity",
+        "loggedIn": false
+      },
+      {
+        "id": "qianfan",
+        "loggedIn": false
+      },
+      {
+        "id": "qwen-portal",
+        "loggedIn": false
+      },
+      {
+        "id": "sakana",
+        "loggedIn": false
+      },
+      {
+        "id": "siliconflow",
+        "loggedIn": false
+      },
+      {
+        "id": "siliconflow-cn",
+        "loggedIn": false
+      },
+      {
+        "id": "singularityapi-dev",
+        "loggedIn": false
+      },
+      {
+        "id": "singularityapi-tech",
+        "loggedIn": false
+      },
+      {
+        "id": "snowflake",
+        "loggedIn": false
+      },
+      {
+        "id": "stencil",
+        "loggedIn": false
+      },
+      {
+        "id": "stepfun",
+        "loggedIn": false
+      },
+      {
+        "id": "synthetic",
+        "loggedIn": false
+      },
+      {
+        "id": "tavily",
+        "loggedIn": false
+      },
+      {
+        "id": "together",
+        "loggedIn": false
+      },
+      {
+        "id": "typesafe",
+        "loggedIn": false
+      },
+      {
+        "id": "umans",
+        "loggedIn": false
+      },
+      {
+        "id": "venice",
+        "loggedIn": false
+      },
+      {
+        "id": "vercel-ai-gateway",
+        "loggedIn": false
+      },
+      {
+        "id": "vllm",
+        "loggedIn": false
+      },
+      {
+        "id": "wafer-serverless",
+        "loggedIn": false
+      },
+      {
+        "id": "xai",
+        "loggedIn": false
+      },
+      {
+        "id": "xai-oauth",
+        "loggedIn": false
+      },
+      {
+        "id": "xiaomi",
+        "loggedIn": false
+      },
+      {
+        "id": "xiaomi-token-plan-ams",
+        "loggedIn": false
+      },
+      {
+        "id": "xiaomi-token-plan-cn",
+        "loggedIn": false
+      },
+      {
+        "id": "xiaomi-token-plan-sgp",
+        "loggedIn": false
+      },
+      {
+        "id": "yolo-auto",
+        "loggedIn": false
+      },
+      {
+        "id": "zai",
+        "loggedIn": false
+      },
+      {
+        "id": "zenmux",
+        "loggedIn": false
+      },
+      {
+        "id": "zhipu-coding-plan",
+        "loggedIn": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "origin": "https://omp.skunklabs.uk",
+  "httpsVerified": true,
+  "anonymousApiStyleRoot": 401,
+  "anonymousHtmlBrowserRoot": 302,
+  "loginOrigin": "https://skunklabs.cloudflareaccess.com",
+  "anonymousMcp": 401,
+  "challenge": "Bearer realm=\"OAuth\", error=\"invalid_token\", error_description=\"Missing or invalid access token\", resource_metadata=\"https://omp.skunklabs.uk/.well-known/cloudflare-access-protected-resource/api/mission-mcp\"",
+  "metadataStatus": 200,
+  "resource": "https://omp.skunklabs.uk/api/mission-mcp",
+  "authorizationServers": [
+    "https://skunklabs.cloudflareaccess.com"
+  ],
+  "personalAuthenticationAccepted": false,
+  "harnessCorrection": "Initial assertion incorrectly expected a browser redirect for an API-style request without Accept:text/html. Actual API401 and distinct HTML302 were retained, not rerun or hidden."
+}

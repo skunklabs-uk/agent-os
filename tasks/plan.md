@@ -10,7 +10,7 @@
 **Permitted commands:** observe
 **Authority:** [mobile-control](../SPEC-mobile-control.md), [mcp-access](../SPEC-mcp-access.md) and the [shared provider contract](../SPEC-team-execution.md#shared-remote-consumer-contract), explicitly approved on 2026-10-12 at `f55c2b7838104770766825e57b68129b019e951e`. Team-execution is accepted and delivered by [PR51](https://github.com/skunklabs-uk/agent-os/pull/51), merge `95528e6c0013f067702496902c40051fba973e48`.
 **Method:** skill originali Matt Pocock a `24fe0ef7737efae15c87225755e9f6f5965e4888`, scelte esplicitamente per il lavoro residuo. Riusare specifiche, ticket e seam accettati; non ripetere acceptance dei pilot. Le decisioni tecniche seguono la delega del Product Owner, senza inventare invocazioni letterali di skill.
-**Phase:** nuovo mandato operativo acquisito; integrazione fix OAuth nella linea Kubernetes e risoluzione del binding canonico, poi acceptance personali e closeout
+**Phase:** stage1 Kubernetes rilasciato e verificato; login personale prima del binding missione, poi setup/allowance e acceptance personali mobile/ChatGPT
 **Tracking:** GitHub issue35 and its native sub-issues; no tasks/todo.md or second ledger. [Task52](https://github.com/skunklabs-uk/agent-os/issues/52) owns readiness and the complete local port checkpoint after the reviewed component increments53–58. Current scope and outcomes appear below; recheck duplicates before any necessary new task. The former team-execution plan is Archived history and is not overwritten.
 
 ## Mandato operativo corrente — 2026-10-15
@@ -29,17 +29,19 @@ Il vecchio blocco della custodia di un connector WSL non appartiene al
 rilascio Kubernetes corrente. Non creare quel connector né ripetere lo
 sblocco Vaultwarden.
 
-Il fix OAuth remoto `a49e4cb`, prove nel successor79bc585, è già qualificato
-sulla propria linea ma non distribuito nell'immagine3fa2c78. Si integra
-soltanto il minimo delta nella sorgente effettivamente distribuita, con
-check/review del nuovo SHA e rilascio qualificato. Non trasferire il GO
-tra immagini o pretendere che un push aggiorni il pannello.
+Il fix OAuth remoto `a49e4cb`, qualificato sulla propria linea79bc585,
+è integrato con P1 e gate JWT nell'app `8da86dd416cde34b85d6de20b4095585a7ab24e1`.
+Rilascio reale tramite PR Homelab1543, merge `7dd7d1e4a2616a8104302a59f0148551036bf649`:
+Argo Synced/Healthy/Succeeded, nuovo pod Ready con0restart, digest e BUILD_ID
+uguali all'artefatto verificato. Le prove puntuali sono registrate in fondo.
 
-Il cambio di coordinatore non risolve il contratto del provider: quello
-WSL rimane observer/observe e il trial è consumato. Mancano identità/CWD
-canonici per il nuovo runtime, allowance per lavoro reale e acceptance
-personali tablet/ChatGPT; nessuno di questi fatti viene inventato dalla
-richiesta di completamento. Il lavoro tecnico indipendente prosegue.
+Il nuovo provider Kubernetes e CWD persistente esistono e sopravvivono al
+rollout; resta observer/observe. L'API live restituisce openai-codex
+loggedIn:false. Il browser relay personale non ha un'estensione connessa:
+non è disponibile agli strumenti per completare il consenso personale.
+Non copiare credenziali WSL, installare surrogati o attivare mission mode
+prima del login, che renderebbe inaccessibili le route auth ordinarie.
+Nuova allowance, setup user-only e acceptance personali restano distinti.
 
 **Decisione di prodotto successiva acquisita:** il PO sceglie
 **«Nuova missione in Kubernetes»** come identità comune a pannello e MCP.
@@ -1305,3 +1307,40 @@ Nessun kubectl apply, riesecuzione dello state o nuovo costo/permesso.
 Questo non completa login personale, setup user-only, nuova allowance,
 attivazione del binding o accettazione personale mobile/ChatGPT.
 Il nuovo provider resta observer/observe; la trial WSL consumata non si riusa.
+
+### Stage1 in produzione — PR1543, gate personali espliciti
+
+CI sullo SHA GitOps esatto8aee7d75: Trivy Config e Trivy FS entrambi
+COMPLETED/SUCCESS; nessun bypass. Merge7dd7d1e4a2616a8104302a59f0148551036bf649
+alle06:36:45Z; reconcile Argo osservato Synced/Healthy/Succeeded sulla stessa
+revision. Pod `omp-web-687c4bf989-tkr57`, Ready,0restart, imageID con il
+manifest d261784a già qualificato. BUILD_ID e hash del renderer coincidono.
+Source workspace sul PVC aggiornato esplicitamente via fast-forward a1eed0de,
+prima del rollout; stesso provider/CWD dopo il cambio pod, non in esecuzione.
+
+Smoke live: root200, API senza Basic401/con Basic200, Origin estraneo403,
+MCP503 senza binding attivo. Metadata provider tutti loggedIn:false.
+Inizializzazione OAuth nativa reale nel pod: authorizationOrigin
+`https://auth.openai.com`, token input manuale offerto; redirect nativo
+`http://localhost:1455/auth/callback` mantenuto. Flusso cancellato senza
+consenso, credenziali o chiamate modello; URL completa e token non registrati.
+Non si dichiara login personale completato.
+
+HTTPS esterno: navigazione HTML anonima302 verso Access; richiesta API
+anonima401; MCP401 con challenge metadata, discovery200/resource corretta.
+Il primo assert harness confondeva API senza Accept HTML con navigazione:
+registrati entrambi i comportamenti distinti, nessuna richiesta ripetuta.
+Evidenze live/CI/discovery/OAuth nei file `evidence/kubernetes-*-8da86dd.json`
+e `evidence/kubernetes-gitops-ci-8aee7d75.json`.
+
+Il relay browser personale risponde ma l'estensione non è connessa.
+Nessun cookie/token/URL callback personale letto, installazione o login
+surrogato effettuato. Il consenso personale resta irraggiungibile agli
+strumenti correnti; le prove sintetiche non lo sostituiscono.
+Il solo passo identitario è il login OpenAI/Codex nel pannello ordinario:
+la callback completa si incolla nel pannello, non in chat né tramite CLI.
+Dopo quel gate, il coordinatore attiva insieme le due variabili missione
+via normale GitOps e verifica browser/MCP sul medesimo ID; nessun nuovo modello
+prima di una nuova allowance esplicita e di guardie qualificate.
+Setup user-only e reale acceptance su tablet fuori LAN/ChatGPT non eseguiti.
+Missione Active, issue35/52 aperte: nessuna dichiarazione di completamento.

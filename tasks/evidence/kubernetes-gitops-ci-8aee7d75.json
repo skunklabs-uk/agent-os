@@ -1,0 +1,27 @@
+{
+  "headRefOid": "8aee7d75fc0dfa07a7b6021c76ccc2ebbb5c6e5b",
+  "mergeStateStatus": "CLEAN",
+  "url": "https://github.com/skunklabs-uk/homelab/pull/1543",
+  "checks": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-15T06:34:26Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/skunklabs-uk/homelab/actions/runs/38693167993/job/116283546333",
+      "name": "Trivy Config (K8s/IaC)",
+      "startedAt": "2026-10-15T06:34:01Z",
+      "status": "COMPLETED",
+      "workflowName": "Trivy Security"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-15T06:34:47Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/skunklabs-uk/homelab/actions/runs/38693167993/job/116283546024",
+      "name": "Trivy FS (Repository)",
+      "startedAt": "2026-10-15T06:34:01Z",
+      "status": "COMPLETED",
+      "workflowName": "Trivy Security"
+    }
+  ]
+}

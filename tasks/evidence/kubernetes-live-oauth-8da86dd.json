@@ -1,0 +1,13 @@
+{
+  "sourceSha": "8da86dd416cde34b85d6de20b4095585a7ab24e1",
+  "httpStatus": 200,
+  "nativeSdkOAuth": true,
+  "authorizationOrigin": "https://auth.openai.com",
+  "authorizationIsLoopback": false,
+  "manualInputTokenOffered": true,
+  "nativeRedirectOrigin": "http://localhost:1455",
+  "nativeRedirectPath": "/auth/callback",
+  "fullAuthorizationUrlOrTokenRecorded": false,
+  "personalConsentOrCredentialsSubmitted": false,
+  "modelRequests": 0
+}
