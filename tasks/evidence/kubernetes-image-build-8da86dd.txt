@@ -1,0 +1,162 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 3.48kB 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/oven/bun:1.3.14-debian
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 552B done
+#3 DONE 0.0s
+
+#4 [build 1/7] FROM docker.io/oven/bun:1.3.14-debian
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 207.10kB 0.1s done
+#5 DONE 0.1s
+
+#6 [build 2/7] WORKDIR /app
+#6 CACHED
+
+#7 [build 3/7] COPY package.json bun.lock ./
+#7 CACHED
+
+#8 [build 4/7] COPY patches ./patches
+#8 CACHED
+
+#9 [build 5/7] RUN bun install --frozen-lockfile
+#9 CACHED
+
+#10 [build 6/7] COPY . .
+#10 DONE 0.4s
+
+#11 [build 7/7] RUN bun run build
+#11 0.746 $ bun --bun next build --webpack
+#11 2.028 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+#11 2.028 This information is used to shape Next.js' roadmap and prioritize features.
+#11 2.028 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+#11 2.028 https://nextjs.org/telemetry
+#11 2.029 
+#11 2.068 ▲ Next.js 16.2.12 (webpack)
+#11 2.068 - Experiments (use with caution):
+#11 2.068   · cpus: 2
+#11 2.068   ✓ useTypeScriptCli
+#11 2.068 
+#11 2.147   Creating an optimized production build ...
+#11 102.0 
+#11 102.0 ⚠ Compiled with warnings in 110s
+#11 102.0 
+#11 102.0 ./app/api/sessions/[id]/export/route.ts
+#11 102.0 Critical dependency: the request of a dependency is an expression
+#11 102.0 
+#11 102.0 Import trace for requested module:
+#11 102.0 ./app/api/sessions/[id]/export/route.ts
+#11 102.4   Running TypeScript ...
+#11 136.3   Finished TypeScript in 36.8s ...
+#11 136.4   Collecting page data using 2 workers ...
+#11 143.1   Generating static pages using 2 workers (0/14) ...
+#11 159.4   Generating static pages using 2 workers (3/14) 
+#11 159.4   Generating static pages using 2 workers (6/14) 
+#11 159.4   Generating static pages using 2 workers (10/14) 
+#11 159.4 ✓ Generating static pages using 2 workers (14/14) in 19.2s
+#11 159.4   Finalizing page optimization ...
+#11 159.4   Collecting build traces ...
+#11 159.8 
+#11 159.8 Route (app)
+#11 159.8 ┌ ƒ /
+#11 159.8 ├ ○ /_not-found
+#11 159.8 ├ ƒ /api/agent/[id]
+#11 159.8 ├ ƒ /api/agent/[id]/bash-output
+#11 159.8 ├ ƒ /api/agent/[id]/events
+#11 159.8 ├ ƒ /api/agent/new
+#11 159.8 ├ ƒ /api/agent/running
+#11 159.8 ├ ƒ /api/agent/running/events
+#11 159.8 ├ ƒ /api/auth/all-providers
+#11 159.8 ├ ƒ /api/auth/api-key/[provider]
+#11 159.8 ├ ƒ /api/auth/login/[provider]
+#11 159.8 ├ ƒ /api/auth/logout/[provider]
+#11 159.8 ├ ƒ /api/auth/providers
+#11 159.8 ├ ƒ /api/cwd/browse
+#11 159.8 ├ ƒ /api/cwd/validate
+#11 159.8 ├ ƒ /api/default-cwd
+#11 159.8 ├ ƒ /api/display-settings
+#11 159.8 ├ ƒ /api/file-index
+#11 159.8 ├ ƒ /api/files/[...path]
+#11 159.8 ├ ƒ /api/git/diff
+#11 159.8 ├ ƒ /api/git/status
+#11 159.8 ├ ƒ /api/home
+#11 159.8 ├ ƒ /api/mcp
+#11 159.8 ├ ƒ /api/mission-mcp
+#11 159.8 ├ ƒ /api/model-roles
+#11 159.8 ├ ƒ /api/models
+#11 159.8 ├ ƒ /api/models-config
+#11 159.8 ├ ƒ /api/models-config/catalog
+#11 159.8 ├ ƒ /api/models-config/discover
+#11 159.8 ├ ƒ /api/models-config/test
+#11 159.8 ├ ƒ /api/plugins
+#11 159.8 ├ ƒ /api/project-trust
+#11 159.8 ├ ƒ /api/sessions
+#11 159.8 ├ ƒ /api/sessions/[id]
+#11 159.8 ├ ƒ /api/sessions/[id]/auto-name
+#11 159.8 ├ ƒ /api/sessions/[id]/context
+#11 159.8 ├ ƒ /api/sessions/[id]/entries/[entryId]/thinking
+#11 159.8 ├ ƒ /api/sessions/[id]/export
+#11 159.8 ├ ƒ /api/sessions/[id]/state
+#11 159.8 ├ ƒ /api/settings
+#11 159.8 ├ ƒ /api/skills
+#11 159.8 ├ ƒ /api/skills/check
+#11 159.8 ├ ƒ /api/skills/install
+#11 159.8 ├ ƒ /api/skills/search
+#11 159.8 ├ ƒ /api/skills/update
+#11 159.8 ├ ƒ /api/theme
+#11 159.8 ├ ƒ /api/updates
+#11 159.8 ├ ƒ /api/web-access
+#11 159.8 ├ ƒ /api/web-access/recovery
+#11 159.8 ├ ƒ /api/worktrees
+#11 159.8 ├ ○ /manifest.webmanifest
+#11 159.8 └ ○ /recover
+#11 159.8 
+#11 159.8 
+#11 159.8 ƒ Proxy (Middleware)
+#11 159.8 
+#11 159.8 ○  (Static)   prerendered as static content
+#11 159.8 ƒ  (Dynamic)  server-rendered on demand
+#11 159.8 
+#11 DONE 160.3s
+
+#12 [runtime  3/10] RUN groupadd --gid "10000" omp  && useradd --uid "10000" --gid "10000" --create-home --home-dir /home/omp omp  && mkdir -p /home/omp/.omp/agent /workspace  && chown -R omp:omp /home/omp /workspace
+#12 CACHED
+
+#13 [runtime  2/10] RUN apt-get update  && apt-get install -y --no-install-recommends ca-certificates git  && rm -rf /var/lib/apt/lists/*
+#13 CACHED
+
+#14 [runtime  4/10] WORKDIR /app
+#14 CACHED
+
+#15 [runtime  5/10] COPY --from=build --chown=omp:omp /app/node_modules ./node_modules
+#15 DONE 108.5s
+
+#16 [runtime  6/10] COPY --from=build --chown=omp:omp /app/.next ./.next
+#16 DONE 6.0s
+
+#17 [runtime  7/10] COPY --from=build --chown=omp:omp /app/public ./public
+#17 DONE 0.2s
+
+#18 [runtime  8/10] COPY --from=build --chown=omp:omp /app/bin ./bin
+#18 DONE 0.2s
+
+#19 [runtime  9/10] COPY --from=build --chown=omp:omp /app/next.config.ts /app/package.json ./
+#19 DONE 0.3s
+
+#20 [runtime 10/10] WORKDIR /workspace
+#20 DONE 0.2s
+
+#21 exporting to image
+#21 exporting layers
+#21 exporting layers 86.8s done
+#21 writing image sha256:fb122aa236b0da060bff5fc07e9a84092d0902f9edb12d3ce00521b550a0848d 0.0s done
+#21 naming to ghcr.io/skunklabs-uk/omp-web:sha-8da86dd416cde34b85d6de20b4095585a7ab24e1 0.0s done
+#21 DONE 84.1s

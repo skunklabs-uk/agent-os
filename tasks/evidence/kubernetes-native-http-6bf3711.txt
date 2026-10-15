@@ -1,0 +1,133 @@
+bun test v1.3.14 (0d9b296a)
+bun test v1.3.14 (0d9b296a)
+
+ 1 pass
+ 0 fail
+Ran 1 test across 1 file. [2.75s]
+bun test v1.3.14 (0d9b296a)
+
+ 1 pass
+ 0 fail
+Ran 1 test across 1 file. [1.73s]
+bun test v1.3.14 (0d9b296a)
+
+ 4 pass
+ 0 fail
+Ran 4 tests across 1 file. [80.00ms]
+bun test v1.3.14 (0d9b296a)
+[omp-web] session_start dispatched to extensions for session 01a13e24-b025-7000-8d5c-072201099aac
+[omp-web] session_start dispatched to extensions for session 01a13e24-b58a-7000-a53d-1138cd578456
+[omp-web] session_start dispatched to extensions for session 01a13e24-b7b4-7000-bd74-9e3bd8ee1424
+[omp-web] session_start dispatched to extensions for session 01a13e24-b972-7000-bb1d-dc01f0fd7f69
+[omp-web] session_start dispatched to extensions for session 01a13e24-bb16-7000-afa4-856e94576165
+[omp-web] session_start dispatched to extensions for session 01a13e24-bcbf-7000-b902-7c25d4b8afc7
+[omp-web] session_start dispatched to extensions for session 01a13e24-be0d-7000-b4b3-b24101e78fa8
+[omp-web] session_start dispatched to extensions for session 01a13e24-bf91-7000-8d4b-513b56682671
+[omp-web] session_start dispatched to extensions for session 01a13e24-c105-7000-84e5-11d1154c3127
+
+lib/mission-runtime-boundary.test.mjs:
+
+ 9 pass
+ 0 fail
+Ran 9 tests across 1 file. [3.43s]
+bun test v1.3.14 (0d9b296a)
+
+ 4 pass
+ 0 fail
+Ran 4 tests across 1 file. [6.00s]
+bun test v1.3.14 (0d9b296a)
+[omp-web] session_start dispatched to extensions for session 01a13e24-e308-7000-af5f-2d34e9f8e010
+[omp-web] session_start dispatched to extensions for session 01a13e24-e38c-7000-b344-98a53ee9facf
+[omp-web] session_start dispatched to extensions for session 01a13e24-e3bf-7000-8ba2-eced4b135a0d
+[omp-web] session_start dispatched to extensions for session 01a13e24-e3f6-7000-a1e8-6e64781250fb
+[omp-web] session_start dispatched to extensions for session 01a13e24-e42c-7000-984f-40920bb873c3
+[omp-web] session_start dispatched to extensions for session 01a13e24-e460-7000-b1ca-e994e7abc3d0
+[omp-web] session_start dispatched to extensions for session 01a13e24-ebf4-7000-832b-9a4be23a9f99
+[omp-web] session_start dispatched to extensions for session 01a13e24-eded-7000-9d34-7343b8374273
+[omp-web] session_start dispatched to extensions for session 01a13e24-efa9-7000-ba5a-db851beaf7ad
+[omp-web] session_start dispatched to extensions for session 01a13e24-efde-7000-bb54-52dfadbec90e
+[omp-web] session_start dispatched to extensions for session 01a13e24-f020-7000-a77d-73ad84f79444
+[omp-web] session_start dispatched to extensions for session 01a13e24-f062-7000-a9ba-a8e9bf032784
+[omp-web] session_start dispatched to extensions for session 01a13e24-f0a3-7000-ade0-8b8fcf70ec8e
+[omp-web] session_start dispatched to extensions for session 01a13e24-f0d4-7000-af76-ec668a4f3f79
+[omp-web] session_start dispatched to extensions for session 01a13e24-f103-7000-8e58-2400435a158f
+[omp-web] session_start dispatched to extensions for session 01a13e24-f134-7000-8caa-7eae71c1c9a7
+[omp-web] session_start dispatched to extensions for session 01a13e24-f164-7000-a2ec-18ae7e01aa25
+[omp-web] session_start dispatched to extensions for session 01a13e24-f196-7000-ad0d-e0a97c53fdf5
+[omp-web] session_start dispatched to extensions for session 01a13e24-f93d-7000-a964-00c9f2d9539f
+[omp-web] session_start dispatched to extensions for session 01a13e24-f983-7000-82cc-794428ea2251
+[omp-web] session_start dispatched to extensions for session 01a13e24-f983-7000-82cc-794428ea2251
+[omp-web] session_start dispatched to extensions for session 01a13e24-f9c6-7000-869f-6c54d3141629
+[omp-web] session_start dispatched to extensions for session 01a13e24-f9f9-7000-82ae-02884e512502
+[omp-web] session_start dispatched to extensions for session 01a13e24-fa52-7000-af2d-604a5ec88d4b
+[omp-web] session_start dispatched to extensions for session 01a13e24-fa9a-7000-bf64-4a8f04bd2731
+[omp-web] session_start dispatched to extensions for session 01a13e24-fae2-7000-bf57-aa5d576e9a43
+[omp-web] session_start dispatched to extensions for session 01a13e24-fb35-7000-9bd3-155c767909ce
+[omp-web] session_start dispatched to extensions for session 01a13e24-fb7e-7000-a43f-9c495e1fc612
+[omp-web] session_start dispatched to extensions for session 01a13e24-fbb2-7000-a279-e24e7a0e75d0
+[omp-web] session_start dispatched to extensions for session 01a13e24-fbea-7000-b9e8-165b62618407
+[omp-web] session_start dispatched to extensions for session 01a13e24-fc19-7000-bf72-8ed3c23e3263
+[omp-web] session_start dispatched to extensions for session 01a13e24-fc3f-7000-876d-e1ff88379272
+[omp-web] session_start dispatched to extensions for session 01a13e24-fca8-7000-9900-2ca8f7b98d0f
+[omp-web] session_start dispatched to extensions for session 01a13e24-fccf-7000-851e-5c3b242ae6ea
+[omp-web] session_start dispatched to extensions for session 01a13e24-fd02-7000-8fca-fc4b16345049
+[omp-web] session_start dispatched to extensions for session 01a13e25-007a-7000-830c-2ae57a4a9c47
+[omp-web] session_start dispatched to extensions for session 01a13e25-03f6-7000-9abd-c7592eb7fd97
+[omp-web] session_start dispatched to extensions for session 01a13e25-076b-7000-836f-5dc9767f5191
+[omp-web] session_start dispatched to extensions for session 01a13e25-0adf-7000-a73d-ef817c86d7c2
+[omp-web] session_start dispatched to extensions for session 01a13e25-0e60-7000-a9c3-178e0b93f363
+[omp-web] session_start dispatched to extensions for session distinct-provider-id
+[omp-web] session_start dispatched to extensions for session 01a13e25-0ed0-7000-b932-2415719593a2
+
+lib/mission-control.test.mjs:
+
+ 33 pass
+ 0 fail
+Ran 33 tests across 1 file. [14.15s]
+bun test v1.3.14 (0d9b296a)
+
+ 6 pass
+ 0 fail
+Ran 6 tests across 1 file. [966.00ms]
+
+lib/i18n/format.test.mjs:
+[i18n] Missing translation: missing.key
+bun test v1.3.14 (0d9b296a)
+
+ 2 pass
+ 0 fail
+Ran 2 tests across 1 file. [-1.43s]
+bun test v1.3.14 (0d9b296a)
+
+ 5 pass
+ 0 fail
+Ran 5 tests across 1 file. [1.67s]
+bun test v1.3.14 (0d9b296a)
+
+ 6 pass
+ 0 fail
+Ran 6 tests across 1 file. [1.63s]
+bun test v1.3.14 (0d9b296a)
+
+ 4 pass
+ 0 fail
+Ran 4 tests across 1 file. [1.64s]
+
+ 648 pass
+ 1 skip
+ 0 fail
+Ran 649 tests across 120 files. [42.13s]
+bun test v1.3.14 (0d9b296a)
+bun test v1.3.14 (0d9b296a)
+[omp-web] session_start dispatched to extensions for session 01a13e25-3b3e-7000-9a57-cadb6b891ba3
+[omp-web] session_start dispatched to extensions for session 01a13e25-3b3e-7000-9a57-cadb6b891ba3
+
+app/api/agent/mission-route.test.mjs:
+
+ 1 pass
+ 0 fail
+Ran 1 test across 1 file. [5.46s]
+
+ 1 pass
+ 0 fail
+Ran 1 test across 1 file. [5.62s]

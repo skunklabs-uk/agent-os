@@ -1,0 +1,68 @@
+{
+  "stage": "ordinary OAuth-capable release before personal provider login",
+  "sourceSha": "8da86dd416cde34b85d6de20b4095585a7ab24e1",
+  "publishedManifestDigest": "sha256:d261784afcb1edea799730335fb07f56174db5ff08eacb829db295db7ca14bbc",
+  "verifiedImageConfigDigest": "sha256:fb122aa236b0da060bff5fc07e9a84092d0902f9edb12d3ce00521b550a0848d",
+  "image": "harbor.lab.skunklabs.uk/private-ghcr/skunklabs-uk/omp-web:sha-8da86dd416cde34b85d6de20b4095585a7ab24e1@sha256:d261784afcb1edea799730335fb07f56174db5ff08eacb829db295db7ca14bbc",
+  "missionVariablesAbsent": true,
+  "env": [
+    {
+      "name": "NODE_ENV",
+      "value": "production"
+    },
+    {
+      "name": "PORT",
+      "value": "30141"
+    },
+    {
+      "name": "OMP_WEB_HOSTNAME",
+      "value": "0.0.0.0"
+    },
+    {
+      "name": "OMP_WEB_NO_OPEN",
+      "value": "1"
+    },
+    {
+      "name": "OMP_WEB_AUTHENTICATED",
+      "value": "1"
+    },
+    {
+      "name": "OMP_WEB_PUBLIC_ORIGIN",
+      "value": "https://omp.skunklabs.uk"
+    },
+    {
+      "name": "OMP_WEB_ACCESS_TEAM_DOMAIN",
+      "value": "https://skunklabs.cloudflareaccess.com"
+    },
+    {
+      "name": "OMP_WEB_ACCESS_AUD",
+      "value": "1e877d8bcc206477606395d8bf6dd9f0e2965544bec31e7ffe9fd33055f015f5"
+    },
+    {
+      "name": "PI_AUTO_QA",
+      "value": "0"
+    },
+    {
+      "name": "PI_CODEX_WEBSOCKET",
+      "value": "0"
+    }
+  ],
+  "passwordSecretRef": {
+    "key": "password",
+    "name": "omp-web-secrets"
+  },
+  "namespace": "apps",
+  "replicas": 1,
+  "securityContext": {
+    "fsGroup": 10000,
+    "fsGroupChangePolicy": "OnRootMismatch",
+    "runAsGroup": 10000,
+    "runAsNonRoot": true,
+    "runAsUser": 10000,
+    "seccompProfile": {
+      "type": "RuntimeDefault"
+    }
+  },
+  "readOnlyRootFilesystem": true,
+  "existingPVC": "omp-web-state"
+}

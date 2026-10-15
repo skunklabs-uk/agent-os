@@ -1183,3 +1183,125 @@ qualificati autenticazione, incarico e limiti operativi. Non attivare la
 modalità missione prima del login personale in modalità ordinaria, né
 aprire le route auth generiche come eccezione per aggirarne il gate.
 I due consumer devono successivamente leggere questa stessa identità reale.
+
+### Integrazione necessaria sulla linea realmente distribuita
+
+Il confronto3fa2c78→79bc585 mostra delta nelle superfici missione: il port
+non è un merge indiscriminato. Si riusano P1, ricevute/esiti e specialisti
+qualificati, conservando admission, startup, goal, byte/BOM, identità e
+revisioni della linea distribuita. Eliminare quelle guardie solo perché
+assenti nella vecchia reference non è autorizzato.
+
+Prima dell'attivazione è emerso anche un gap del contratto auth: nella
+linea3fa il browser missione usa ancora Basic, mentre il mandato già
+approvato richiede JWTAccess all'origin per browser/API/MCP. Si porta
+il gate condiviso già qualificato, senza issuer, credenziali o ledger nuovi,
+mantenendo Basic/recovery ordinari e diniego delle route generiche in missione.
+
+Primo check integrato non verde: errore sintattico e frammento helper fuori
+scope nel port dei test, più timeout predefiniti5s nelle fixture native.
+Diagnosi isolata: createAgentSession3,706s, caso startup completo3,994s e
+invarianti conservate; il timeout non segnalava inferenza implicita.
+Corrette le due sviste e dato20s alle sole fixture native, mantenendo
+deadline comportamentali2/3s e kill del processo115s/limite120s.
+Non si dichiarano GREEN finché i check dopo la riconciliazione non terminano.
+
+Delivery: Docker nativo e GHCR già disponibili, scope write:packages e
+config registry esistente rilevati senza stampare valori. La disponibilità
+di un token Actions non viene usata come prova di auth locale. Le workflow
+app usano ancora hosted standard: nessun PR/main/tag/dispatch che le attivi
+senza un percorso conforme, nessuna modifica dei runner group o nuovo accesso.
+Il build/publish locale del medesimo artifact verificato evita quei trigger;
+la selezione runtime resta nel manifest Homelab e nel reconcile Argo ordinario.
+
+### Candidato Kubernetes6bf3711 — review separata e correzione richiesta
+
+Sul candidato `6bf3711457660221f9c05986f0a4f0eb0e344e19`:
+suite648pass/1skip/0fail, probe HTTP con runtime nativo1pass,
+TypeScript e lint dei file modificati exit0 (`artifact://212`).
+Eliminati tre probe legacy che sostituivano moduli propri security/RPC
+e ripetevano ricevute/eventi sintetici; non aggiornarne i mock per aggirare
+il nuovo gate. Le prove native mantengono pending multipli, replay e
+risposte non più applicabili. Nessuna chiamata modello reale.
+
+**Spec:** GO sul solo sorgente,0finding; verifica lettura/diff indipendente,
+non accettazione runtime né deploy.
+
+**Standards:** NO-GO sul sorgente,1findingP2:
+nuove istruzioni OAuth, etichette canali e contenuti specialisti fuori dal
+sistema i18n obbligatorio (`docs/i18n.md`). Nessun altro rilievo materiale.
+Build Docker non pubblicata annullata; correzione con chiavi nei due cataloghi
+esistenti e lingua esplicita dei nuovi blocchi, senza tradurre output nativo.
+Il prossimo SHA richiede nuovi check e review; nessun GO trasferito per inerzia.
+
+Entrambi i reviewer dichiarano assenti i mapping `docs/agents/` nella linea
+app distribuita. Sono review source-driven sui due assi originali Pocock con
+spec e standard forniti, non una setup/invocazione nativa inventata.
+Il login personale e la setup user-only restano distinti dalla preparazione
+dei27sorgenti skill. Il rilascio iniziale mantiene entrambe le variabili
+missione assenti per non bloccare l'autenticazione del provider.
+
+### Candidato finale8da86dd — sorgente, artifact e P1 provati
+
+Applicazione: `8da86dd416cde34b85d6de20b4095585a7ab24e1`, pubblicata su
+`mission35/kubernetes-mission-control-20261015` nel repository privato.
+**Standards: SOURCE GO,0finding. Spec: SOURCE GO,0finding.**
+Report separati in `evidence/kubernetes-source-review-8da86dd.json`.
+Suite finale648pass/1skip/0fail, TypeScript e lint exit0; log conservati.
+Nessun workflow app attivato dal push del branch (query Actions: `[]`).
+
+Docker build nativo completato in469,86s, senza rebuild dopo la verifica.
+Resta il warning webpack della route export preesistente, non nascosto.
+Image config: `sha256:fb122aa236b0da060bff5fc07e9a84092d0902f9edb12d3ce00521b550a0848d`.
+Manifest pubblicato e verificato:
+`sha256:d261784afcb1edea799730335fb07f56174db5ff08eacb829db295db7ca14bbc`.
+Il config digest remoto coincide con quello dell'immagine verificata.
+BUILD_ID `KLsckYvunRhGf2ZcU0bCo`;
+required-server-files SHA256 `ee5aa7da0eb79b82b324dc9889d6447b764324f513111238cf57bc65b52ca7e0`.
+
+Smoke dell'immagine reale: UID/GID10000, filesystem root read-only,
+network none, profilo usa-e-getta. Root200, sessioni senza Basic401 e
+con Basic200, nessuna sessione/istanza in esecuzione, nessun provider
+autenticato; MCP503 atteso senza binding. Arresto Docker al limite10s
+terminato137: nessuna dichiarazione di shutdown graceful.
+
+Browser sul renderer esatto estratto dall'immagine, Bun1.3.14 e SDK18.8.7
+reali, profili isolati e JWT RS256 verificati con solo trasporto JWKS sintetico:
+confirm/editor/Plan con futuri nativi, replay idempotente e rifiuto risposte
+scadute; stale→reconnect senza POST, observer negato; specialisti da bus nativo
+sintetico e journal reale, risultato del follow-up stesso ID/file visibile
+anche via MCP. Nessuna esecuzione reale degli specialisti dichiarata.
+Viewport390/820 senza overflow orizzontale; scroll interno effettivo osservato.
+
+P1: risposta anticipata con answer/abort disponibili durante session_start;
+dopo il timeout iniziale, answer/abort/query disponibili, query della ricevuta
+originale senza reinvio, abort SDK eseguito una sola volta e risposta che
+risolve il futuro nativo, la readiness e la ricevuta iniziale. Stesse ricevute
+via MCP HTTP reale. I tre processi qualificati terminano0 e attestano
+zeroInference, nessun messaggio user/assistant e nessun POST esterno.
+Un tentativo harness iniziale imponeva erroneamente query prima del timeout
+della POST ancora in-flight; diagnosi prolungata oltre la vita della confirm:
+run scartato e conservato, non convertito in GO o difetto applicativo.
+
+Capsula `evidence/kubernetes-production-8da86dd.tar.gz`,
+SHA256 `2c86fc821bcf751cb66ac674e7663104391cca0767cda25b9a8d12491991fbc1`.
+OAuth: route reale in namespace vuoto `unshare -Urn`, URL upstream non-loopback,
+callback completa preservata dal parser nativo, replay404/pending0. Componente
+reale provato in browser in en/zh-CN: input conservato dopo progress e inviato
+inalterato. Fixture componente isolata, non CSS completo o login personale.
+Capsula `evidence/kubernetes-oauth-8da86dd.tar.gz`,
+SHA256 `dd698750e35b531bb1d5f8c5d57f89767557f32bd2c20be7d602acc0daf5bb29`.
+
+GitOps stage1: candidato `8aee7d75fc0dfa07a7b6021c76ccc2ebbb5c6e5b`,
+base `53d79c4249475118198520cd316d7016d66325a2`; stesso artifact pin tag+digest,
+team/AUD Access e guardie PI, entrambe le variabili missione assenti.
+Render Kustomize nativo verificato, Secret/PVC/securityContext preservati;
+evidenza `evidence/kubernetes-gitops-render-8da86dd.json`.
+Review stage1: Standards SOURCE GO,0finding; Spec SOURCE GO,0finding.
+Report separati in `evidence/kubernetes-gitops-review-8aee7d75.json`.
+CI sullo SHA esatto, merge e reconcile da chiudere.
+Nessun kubectl apply, riesecuzione dello state o nuovo costo/permesso.
+
+Questo non completa login personale, setup user-only, nuova allowance,
+attivazione del binding o accettazione personale mobile/ChatGPT.
+Il nuovo provider resta observer/observe; la trial WSL consumata non si riusa.

@@ -1,0 +1,21 @@
+{
+  "candidate": "8aee7d75fc0dfa07a7b6021c76ccc2ebbb5c6e5b",
+  "baseline": "53d79c4249475118198520cd316d7016d66325a2",
+  "stage": "ordinary OAuth-capable release before personal provider login and mission activation",
+  "standards": {
+    "reviewer": "ReviewGitOpsStandards",
+    "verdict": "SOURCE GO",
+    "actionableFindings": 0,
+    "confidence": 0.97,
+    "report": "No material standard violation or actionable code smell. Canonical Harbor custody preserved, full source SHA plus immutable digest matches recorded native render evidence: doc/software-supply-chain.md exact-bits contract and doc/27-Harbor registry mirror.md. Local Docker/existing GHCR path documented in Plan, no prohibited hosted application workflow under RFC-0001 section8. Public Access metadata and AutoQA/Codex-WebSocket guards have actual consumers. Password Secret, UID/GID10000, read-only root filesystem, dropped capabilities, existing1GiPVC, namespace, route and pull identity unchanged. Both mission variables absent preserves ordinary Basic/auth dispatch without mission-mode exceptions. Existing runbook separates preparation, personal login, later activation and conservative rollback, consistent with RFC-0001 sections1-2,5-7, AGENTS and daily GitOps workflow. Only this staged source release reviewed; no deploy/check rerun, personal acceptance, user-only setup/native invocation or fresh model allowance claimed. Exact-head normal CI remains a merge gate."
+  },
+  "spec": {
+    "reviewer": "ReviewGitOpsSpec",
+    "verdict": "SOURCE GO",
+    "actionableFindings": 0,
+    "confidence": 0.94,
+    "report": "No unjustified missing/partial requirement or wrong implementation for stage1. kustomization pins exact application source8da86dd416cde34b85d6de20b4095585a7ab24e1 and verified manifestsha256:d261784afcb1edea799730335fb07f56174db5ff08eacb829db295db7ca14bbc, satisfying Plan no-GO-transfer-between-images constraint. Both mission variables remain absent, preserving approved personal provider login before mission activation; actual application dispatch keeps ordinary Basic/OAuth, no auth-route exception. Persistent CWD and real new native provider01a13e10-fc0a-7000-ad56-44fe7c29bbd1 agree with Plan/provider evidence, preserving WSL identity without copied credentials or false continuity. Only Access metadata, native guards, image and existing runbook change; PVC, namespace, UID/GID, Secret, route and tunnel unchanged, no new cost/permission/service. Runbook distinguishes skill catalog from user-only setup, retains observer/observe and claims neither deploy nor acceptance. Personal login, activation and tablet/ChatGPT acceptance are future gates, not defects of this preparatory source release; no runtime acceptance inferred."
+  },
+  "noChecksRerunByReviewers": true,
+  "deploymentOrPersonalAcceptanceAttested": false
+}

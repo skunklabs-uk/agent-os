@@ -1,0 +1,25 @@
+{
+  "candidate": "8da86dd416cde34b85d6de20b4095585a7ab24e1",
+  "baseline": "3fa2c782bbf31e5b35af7e2d1460bf7e30026d49",
+  "sourceBranch": "https://github.com/skunklabs-uk/omp-web/tree/mission35/kubernetes-mission-control-20261015",
+  "method": "Source-driven independent Standards and Spec axes from original Pocock code-review source; not a fabricated native invocation",
+  "standards": {
+    "reviewer": "ReviewFinalStandards",
+    "verdict": "SOURCE GO",
+    "actionableFindings": 0,
+    "report": "Prior P2 resolved. Introduced receipt/channel and specialist UI uses useI18n().t with matching keys in both existing catalogs; translated mission blocks explicitly set lang={locale}. Remote OAuth guidance uses auth.remoteCallbackGuide in English and Simplified Chinese. This follows docs/i18n.md; native output remains unchanged. Untouched legacy Italian copy was not treated as new scope. Reviewed the full candidate against AGENTS.md, localization conventions and the original review skill. Traced new command/result events through consuming dispatch, and specialist results through the shared browser/MCP observation projection. No material documented-standard breach or actionable patch-introduced Fowler smell found. Tool-enforced style checks excluded. Missing docs/agents mappings disclosed; supplied canonical sources and existing GitNexus waiver used. No GitNexus/LSP analysis or native skill invocation claimed. Read-only source review only; no builds, tests, lint, provider calls, deployment or trial reuse. Not release approval or personal tablet/ChatGPT acceptance.",
+    "confidence": 0.93
+  },
+  "spec": {
+    "reviewer": "ReviewFinalSpec",
+    "verdict": "SOURCE GO",
+    "actionableFindings": 0,
+    "report": "Independently assessed cumulative diff against canonical mobile/MCP specifications, shared provider contract and current Plan. Bootstrap P1: admission releases before readiness; answer/abort bypass readiness, browser channels retain separate receipts through uncertainty and reconnect. Native answer/plan/abort outcomes carry command correlation; prompt/steer use owning native events rather than unrelated latest output. Persistence failures remain unknown, receipt queries do not replay work. Shared specialist projection includes terminal results and explicit unavailable states; native journal boundaries separate same-ID follow-ups. Browser, bounded APIs and MCP share signed Access-user verification; mission mode rejects Basic/service-token substitutes and generic administrative routes, ordinary Basic/recovery remains separate. OAuth uses upstream info.url, progress preserves input, manual callback remains native with no redirect rewriting or exposed port1455. Admission/startup/goal/compression/byte/BOM/identity checks preserved; i18n correction changes presentation, not command dispatch, outcome classification or native output. New K8s provider remains observer/observe, not WSL continuity, executor promotion or renewed model allowance. Missing setup mappings and user-only setup remain disclosed; no completed setup/native invocation claimed. Read-only source review, no checks/providers/deployments/spending. Not release or personal/mobile/ChatGPT acceptance; provider login precedes mission activation.",
+    "confidence": 0.89
+  },
+  "checks": {
+    "finalCandidateWorkingBytes": {"fullSuite": {"pass": 648, "skip": 1, "fail": 0}, "typescriptExit": 0, "changedFileEslintExit": 0, "rawArtifact": "artifact://237"},
+    "nativeHttpProbe": {"sourceCandidate": "6bf3711457660221f9c05986f0a4f0eb0e344e19", "pass": 1, "fail": 0, "rawArtifact": "artifact://212", "limitation": "API/runtime source unchanged by the final UI-only commit; not represented as a new final-image run"}
+  },
+  "operationalAcceptance": {"productionImage": "not yet qualified", "deployment": "not yet released", "personalProviderLogin": "not completed", "nativeUserOnlySetup": "not completed", "personalMobileOutsideLAN": "not completed", "actualChatGPTClient": "not completed", "newModelAllowance": "not granted", "realModelRequests": 0}
+}
