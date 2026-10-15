@@ -1,11 +1,11 @@
 # Plan: mobile-control and mcp-access
 
 **Status:** Active — l'ultima richiesta diretta del Product Owner assegna a questa chat il coordinamento operativo e la responsabilità del completamento verificato. Gli esiti precedenti restano storia accettata. Il rilascio operativo è approvato soltanto dopo review sullo SHA esatto e check applicabili verdi.
-**Mission:** [Agent OS35](https://github.com/skunklabs-uk/agent-os/issues/35), coordinatore sul WSL originale e nuovo pannello Kubernetes su omp.skunklabs.uk; provider WSL preservato.
+**Mission:** [Agent OS35](https://github.com/skunklabs-uk/agent-os/issues/35), coordinatore sul WSL originale e nuovo provider canonico nel pannello Kubernetes su omp.skunklabs.uk; vecchio provider WSL preservato.
 **Coordinator:** omp-current-session
 **Coordinator session:** 01a13b77-fd88-778e-97cc-aadb754902d5
 **Provider role:** observer
-**Provider session:** 01a131c7-ecba-7000-a4fb-ff906f642f4f
+**Provider session:** 01a13e10-fc0a-7000-ad56-44fe7c29bbd1
 **Permitted scope:** mobile-control/mcp-access-readiness-and-port
 **Permitted commands:** observe
 **Authority:** [mobile-control](../SPEC-mobile-control.md), [mcp-access](../SPEC-mcp-access.md) and the [shared provider contract](../SPEC-team-execution.md#shared-remote-consumer-contract), explicitly approved on 2026-10-12 at `f55c2b7838104770766825e57b68129b019e951e`. Team-execution is accepted and delivered by [PR51](https://github.com/skunklabs-uk/agent-os/pull/51), merge `95528e6c0013f067702496902c40051fba973e48`.
@@ -1155,3 +1155,31 @@ ripresa; verifica nativa locale exit0 e prerequisiti mancanti distinti dal
 rilascio effettivo. Dettagli host restano nella custodia locale prescritta da
 Homelab, non nel repository. Nessun apply, attivazione permanente o nuova
 prova di autenticazione/acceptance; il gate dipendente resta invariato.
+
+## Nuovo provider Kubernetes — metadati reali senza inferenza
+
+Decisione PO «Nuova missione in Kubernetes» applicata alla sola creazione
+dell'identità, non all'esecuzione di lavoro a pagamento. SessionManager18.8.7
+ha creato e persistito il nuovo ID
+`01a13e10-fc0a-7000-ad56-44fe7c29bbd1`, marker nativo35 e CWD reale
+`/home/omp/.omp/workspaces/agent-os` sul PVC esistente, UID/GID10000.
+Il repository deriva dal bundle source-only del checkpointbae27f5,
+remote GitHub originale senza credenziali. Nessun transcript/auth WSL copiato.
+Non è stata aperta un'AgentSession e non sono state inviate richieste modello.
+
+Il primo bundle del metodo includeva riferimenti di storia incompleta e il
+clone è fallito: non qualificato. Riusato `git archive` dell'esatto pin24fe0ef,
+SHA256 `73d2c81f2a795c5c256b37099d2a189528d97ece53d9594e4cb04f75ef23ab64`,
+senza fabbricare una storia Git. Loader nativo:27skill attese,0warning,
+solo directory originali engineering/productivity; sorgenti ambientali,
+skillful, AutoQA, retry/fallback disabilitati con Settings native.
+Questo qualifica disponibilità/configurazione, non invocazioni o metodo eseguito.
+Il setup user-only va distinto dal catalogo; i suoi output per il nuovo
+repository non risultano presenti e non si attestano come completati.
+
+Metadati read-only dell'app: provider OAuth, incluso OpenAI/Codex, non
+autenticati. La nuova identità resta observer/observe finché non sono
+qualificati autenticazione, incarico e limiti operativi. Non attivare la
+modalità missione prima del login personale in modalità ordinaria, né
+aprire le route auth generiche come eccezione per aggirarne il gate.
+I due consumer devono successivamente leggere questa stessa identità reale.

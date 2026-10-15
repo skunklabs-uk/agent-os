@@ -8,7 +8,7 @@
 
 ## Objective and assumptions
 
-Use the Product Owner's actual ChatGPT client/account to delegate authorized work to the coordinator on NOVBSCWOLaulMaU, inspect progress/results and request interruption through supported MCP capabilities. Determine v1 inclusion from observed feasibility; do not defer MCP simply because mobile work exists.
+Use the Product Owner's actual ChatGPT client/account to delegate authorized work to the sole coordinator's canonical provider, inspect progress/results and request interruption through supported MCP capabilities. The original provider ran on NOVBSCWOLaulMaU. The later explicit Product Owner choices of the Kubernetes panel and a new Kubernetes mission select a distinct canonical provider there, shared with the mobile panel; preserve the WSL identity without credential migration or invented continuity. Determine v1 inclusion from observed feasibility; do not defer MCP simply because mobile work exists.
 
 Availability in this account/client, supported authentication, network reachability and long-operation behavior are currently **unverified**. A working server, SDK/RPC endpoint or another MCP client is not proof that this user can use the flow. No unsupported ChatGPT UI automation or silent switch to another client is permitted.
 

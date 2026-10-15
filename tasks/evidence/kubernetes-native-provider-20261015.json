@@ -1,0 +1,37 @@
+{
+  "authority": "Explicit PO selection: Nuova missione in Kubernetes",
+  "coordinatorSession": "01a13b77-fd88-778e-97cc-aadb754902d5",
+  "providerSession": "01a13e10-fc0a-7000-ad56-44fe7c29bbd1",
+  "missionId": "skunklabs-uk/agent-os#35",
+  "cwd": "/home/omp/.omp/workspaces/agent-os",
+  "nativeSessionFile": "/home/omp/.omp/agent/sessions/-.omp-workspaces-agent-os/2026-10-15T05-37-42-922Z_01a13e10-fc0a-7000-ad56-44fe7c29bbd1.jsonl",
+  "repository": {"materializedCommit": "bae27f599d774fc140523f41ca210e66a45e03c1", "transfer": "source-only Git bundle", "origin": "https://github.com/skunklabs-uk/agent-os.git", "originalCredentialsOrJournalCopied": false},
+  "storage": {"existingPvc": true, "uid": 10000, "gid": 10000, "availableKiBBefore": 969388},
+  "sdk": "18.8.7",
+  "nativeIdentityCreation": {"exit": 0, "marker": "agent-os-mission-binding", "agentSessionOpened": false, "modelRequests": 0},
+  "ordinaryApiReadback": {"status": 200, "sessionIdMatches": true, "cwdMatches": true, "runningSessionIds": []},
+  "method": {
+    "pin": "24fe0ef7737efae15c87225755e9f6f5965e4888",
+    "sourceArchiveSha256": "73d2c81f2a795c5c256b37099d2a189528d97ece53d9594e4cb04f75ef23ab64",
+    "sourceTransfer": "git archive at exact commit after incomplete-history Git bundle clone failed",
+    "nativeResolvedSkills": 27,
+    "warnings": 0,
+    "ambientSkills": false,
+    "autoqa": false,
+    "skillful": false,
+    "retry": false,
+    "fallbackChains": {},
+    "userOnlyInvocationClaim": false,
+    "repositorySetup": "docs/agents outputs absent; not claimed complete"
+  },
+  "authorityParser": {
+    "source": "Original application readMissionAuthority/missionCommandAllowed, isolated unshare network and temporary profile",
+    "exit": 0,
+    "role": "observer",
+    "commands": ["observe"],
+    "allFiveMutationsDenied": true,
+    "oldWslIdentityRejected": true,
+    "sourceRevision": "ed41706ac5600c017313cc1d8c4ffa03d09897ff67de0b544b609440e84f36ea"
+  },
+  "remaining": ["Provider authentication absent in ordinary app API", "Mission-mode deployment not activated", "No AgentSession or live work started", "No new model allowance", "No personal tablet or ChatGPT acceptance"]
+}

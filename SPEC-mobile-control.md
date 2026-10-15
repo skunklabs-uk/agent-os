@@ -8,7 +8,7 @@
 
 ## Objective and assumptions
 
-The Product Owner supervises the real mission running on NOVBSCWOLaulMaU from their phone or tablet browser: start/resume work, see coordinator and specialist progress, answer questions, steer/interrupt and make scoped decisions. Success requires the actual device and reachable host; a desktop viewport or localhost demonstration is insufficient.
+The Product Owner supervises the real canonical mission from their phone or tablet browser: start/resume work, see coordinator and specialist progress, answer questions, steer/interrupt and make scoped decisions. The original target was NOVBSCWOLaulMaU. The later explicit Product Owner choices of the Kubernetes panel and a new Kubernetes mission select a distinct canonical provider there, shared with MCP; preserve the original WSL provider without copying credentials or claiming continuity. Success requires the actual device and reachable runtime; a desktop viewport or localhost demonstration is insufficient.
 
 The approved map selects a browser, not a new native application. No browser/device identity, remote network access or existing authentication is assumed proven. Retain OMP18.8.7 and approved skill pins as the qualified baseline until a necessary change is separately assessed. This specification proposes behavior, not a new service or selected hosting architecture.
 
