@@ -1,17 +1,54 @@
 # Plan: mobile-control and mcp-access
 
 **Status:** Active — l'ultima richiesta diretta del Product Owner assegna a questa chat il coordinamento operativo e la responsabilità del completamento verificato. Gli esiti precedenti restano storia accettata. Il rilascio operativo è approvato soltanto dopo review sullo SHA esatto e check applicabili verdi.
-**Mission:** [Agent OS35](https://github.com/skunklabs-uk/agent-os/issues/35), coordinatore nel Developer Workspace e provider bound sul WSL originale NOVBSCWOLaulMaU.
+**Mission:** [Agent OS35](https://github.com/skunklabs-uk/agent-os/issues/35), coordinatore sul WSL originale e nuovo pannello Kubernetes su omp.skunklabs.uk; provider WSL preservato.
 **Coordinator:** omp-current-session
-**Coordinator session:** 01a139d2-93a6-704a-a1cc-570907f479a9
+**Coordinator session:** 01a13b77-fd88-778e-97cc-aadb754902d5
 **Provider role:** observer
 **Provider session:** 01a131c7-ecba-7000-a4fb-ff906f642f4f
 **Permitted scope:** mobile-control/mcp-access-readiness-and-port
 **Permitted commands:** observe
 **Authority:** [mobile-control](../SPEC-mobile-control.md), [mcp-access](../SPEC-mcp-access.md) and the [shared provider contract](../SPEC-team-execution.md#shared-remote-consumer-contract), explicitly approved on 2026-10-12 at `f55c2b7838104770766825e57b68129b019e951e`. Team-execution is accepted and delivered by [PR51](https://github.com/skunklabs-uk/agent-os/pull/51), merge `95528e6c0013f067702496902c40051fba973e48`.
 **Method:** skill originali Matt Pocock a `24fe0ef7737efae15c87225755e9f6f5965e4888`, scelte esplicitamente per il lavoro residuo. Riusare specifiche, ticket e seam accettati; non ripetere acceptance dei pilot. Le decisioni tecniche seguono la delega del Product Owner, senza inventare invocazioni letterali di skill.
-**Phase:** accesso al nuovo pannello Kubernetes rilasciato e verificato; binding di missione sul nuovo runtime e acceptance personali restano aperti
+**Phase:** nuovo mandato operativo acquisito; integrazione fix OAuth nella linea Kubernetes e risoluzione del binding canonico, poi acceptance personali e closeout
 **Tracking:** GitHub issue35 and its native sub-issues; no tasks/todo.md or second ledger. [Task52](https://github.com/skunklabs-uk/agent-os/issues/52) owns readiness and the complete local port checkpoint after the reviewed component increments53–58. Current scope and outcomes appear below; recheck duplicates before any necessary new task. The former team-execution plan is Archived history and is not overwritten.
+
+## Mandato operativo corrente — 2026-10-15
+
+Il PO assegna direttamente a questa chat il coordinamento operativo e la
+responsabilità fino al completamento verificato. Unico coordinatore:
+`01a13b77-fd88-778e-97cc-aadb754902d5`, successore operativo di
+`01a139d2-93a6-704a-a1cc-570907f479a9`. Gli altri incarichi restano
+contributi circoscritti, non coordinamenti o rilasci concorrenti.
+Nessun checkout, processo o risultato precedente viene sovrascritto.
+
+Baseline recuperata `cb7f5b4`: pannello Kubernetes pubblicato attraverso
+tunnel/Gateway esistenti; recovery Cloudflare109 e PR1539/1540 acquisiti
+come prove del precedente coordinatore, non nuove esecuzioni di questa chat.
+Il vecchio blocco della custodia di un connector WSL non appartiene al
+rilascio Kubernetes corrente. Non creare quel connector né ripetere lo
+sblocco Vaultwarden.
+
+Il fix OAuth remoto `a49e4cb`, prove nel successor79bc585, è già qualificato
+sulla propria linea ma non distribuito nell'immagine3fa2c78. Si integra
+soltanto il minimo delta nella sorgente effettivamente distribuita, con
+check/review del nuovo SHA e rilascio qualificato. Non trasferire il GO
+tra immagini o pretendere che un push aggiorni il pannello.
+
+Il cambio di coordinatore non risolve il contratto del provider: quello
+WSL rimane observer/observe e il trial è consumato. Mancano identità/CWD
+canonici per il nuovo runtime, allowance per lavoro reale e acceptance
+personali tablet/ChatGPT; nessuno di questi fatti viene inventato dalla
+richiesta di completamento. Il lavoro tecnico indipendente prosegue.
+
+**Decisione di prodotto successiva acquisita:** il PO sceglie
+**«Nuova missione in Kubernetes»** come identità comune a pannello e MCP.
+Creare un provider reale distinto, con repository/CWD e metodo qualificati;
+preservare il provider WSL senza copiarne credenziali o dichiarare continuità.
+Non è una nuova allowance modello: l'avvio di lavoro reale richiede ancora
+limiti operativi espliciti. Il binding non è più bloccato sulla scelta
+d'identità; prosegue la qualificazione tecnica autonoma.
+
 
 ## Prima successione OMP/Pocock — 2026-10-14, storia
 
@@ -58,7 +95,7 @@ originale mediante fast-forward esplicito; nessun cambio ID/CWD/auth.
 
 
 
-## Nuovo mandato operativo nel Developer Workspace — 2026-10-14
+## Nuovo mandato operativo nel Developer Workspace — 2026-10-14, storia
 
 Il PO richiede esplicitamente a questa chat di assumere il ruolo di
 «Coordinatore operativo e responsabile del completamento della missione»,
@@ -828,13 +865,13 @@ verifica dei risultati e continuità: coordinatore OMP corrente.
 | #52/OUTCOMES — P0 | Coordinatore OMP; implementazione `IntegrateNativeOutcomes` conclusa / qualificato localmente | Base16faf8d e hunk pertinenti PR1 | Esiti answer/abort correlati e flush fallito non presentato come durable completion; nessun replay o regressione prompt/steer/P1 | Browser production: confirm/editor/Plan e abort nativi con ricevute completed; route MCP restituisce gli stessi esiti. Reload e doppio click senza replay; failure di flush coperta dalla regressione / prova originale dopo ACCESSO |
 | #52/SPECIALISTI — P0 | Coordinatore OMP; implementazione `ExposeNativeSpecialists` conclusa / qualificato localmente | Snapshot e API native esistenti | Stato e risultati di specialisti attivi/conclusi nella proiezione comune, senza journal o campi privati | Due P2 riprodotti con4 test RED e corretti; browser/MCP concordi, risultato completo distinto dall'anteprima, follow-up stesso ID/file senza risultato vecchio. Bus e writer SDK reali con dati sintetici, non esecuzione specialisti / verificare sul percorso originale |
 | #52/SCROLL — P0 | Coordinatore OMP / qualificato localmente | Layout missione esistente | Contenuto raggiungibile con scroll reale del pannello a390/820, non solo assenza overflow orizzontale | RED16fa conservato; GREEN8fc: main844px, scrollHeight2669px, scrollTop1825px e fondo visibile, windowY0; screenshot390/820 / acceptance sul tablet reale dopo rilascio |
-| #35/ACCESSO — P0 | Coordinatore nel Developer Workspace / pubblicazione tecnica verificata | Sessione WSL originale preservata | Nuovo pannello sano e autenticato senza attribuirgli il vecchio binding | PR1539 integrata a98b984a, Argo Synced/Healthy e zero restart; origin401/200, login Access reale / acceptance personali distinte e binding da risolvere |
+| #35/ACCESSO — P0 | Coordinatore sul WSL originale / API Kubernetes e Docker disponibili | Sessione WSL originale preservata | Nuovo pannello sano e autenticato senza attribuirgli il vecchio binding | Pubblicazione precedente acquisita; lettura corrente deployment1ready e pod0restart, immagine3fa2c78 / completare l'integrazione sulla linea distribuita |
 | #35/TRIAL — P1 | Coordinatore OMP / concluso nel perimetro read-only | Nessuna nuova allowance | Unico trial bound con cap/deadline ed esito/metodo revisionati | Report operatore exit0,107097ms,14HTTPmodello/30,0blocked/failed; review indipendente positiva per la lettura pertinente, limite delle fonti arretrate preservato; risposta e preload temporanei archiviati e rimossi / nessun retry o secondo trial, non promuovere observer |
 | #1514/RILASCIO — P1 | Coordinatore OMP / pubblicazione tecnica applicata e verificata | Recovery109 pubblicata su main via PR1540 | omp.skunklabs.uk sul tunnel/Gateway esistente, app sana e autenticata | PR1539merge98b984a; state109 protetto/SOPS round-trip; full plan79no-op; PR1540mergebb1f243 con dueTrivySUCCESS e due review / restano binding e acceptance personali; non chiudere la missione o dichiarare MCP pronto |
-| #52/BINDING-K3S — P0 | Coordinatore OMP / bloccato sul contratto del provider | Decisione PO sull'identità canonica dopo il cambio target | Due client sulla stessa identità reale, con ID/CWD/prefix verificati, senza continuità inventata | Native MCP503; parametri JWT recuperati, API sessioni200 ma nessun ID/CWD disponibile; provider WSL originale invariato / chiarire il nuovo binding prima di creare/adottare un provider e qualificare i tool; nessun trial autorizzato |
+| #52/BINDING-K3S — P0 | Coordinatore OMP / nuova missione Kubernetes scelta dal PO | Identità/CWD reali e persistenti da qualificare | Pannello e MCP sullo stesso nuovo provider reale, senza continuità inventata | Decisione PO «Nuova missione in Kubernetes» acquisita; WSL preservato senza copia auth / predisporre repository/metodo e creare il binding nativo senza inferenza prima di configurare entrambi i consumer |
 | #35/MOBILE — P1 | Coordinatore OMP; operatore per dispositivo/login / bloccato | Binding coerente e login personale | Criteri mobile-control provati sul tablet reale fuori LAN | Login pubblico osservato a820×1180, origin autenticato via HTTP; nessuna acceptance tablet / guidare l'operatore dopo la risoluzione del binding |
 | #35/CHATGPT — P1 | Coordinatore OMP; operatore per account/login / bloccato | #52/BINDING-K3S e accesso personale | OAuth e tool MCP reali dal ChatGPT personale, stessa sessione e receipt/outcome | Managed OAuth al bordo verificato; origin MCP503, non operativo / non avviare una falsa acceptance dei tool senza binding |
-| #35/COORDINAMENTO — P0 | Coordinatore operativo01a139d2 nel Developer Workspace / mandato attivo | Esiti verificati e limiti del PO | Unico writer e responsabilità fino al risultato verificato | Nuovo target, recovery ed evidenze consegnati; missione non conclusa / risolvere il contratto del provider con il PO, poi configurare il binding autorizzato e completare le acceptance personali |
+| #35/COORDINAMENTO — P0 | Coordinatore operativo01a13b77 sul WSL originale / nuovo mandato attivo | Esiti verificati e limiti del PO | Unico writer e responsabilità fino al risultato verificato | Successore di01a139d2, target Kubernetes mantenuto e nuova identità approvata / integrare fix OAuth, configurare il provider reale e completare acceptance personali |
 
 **Supervisione:** i job della sessione notificano esiti e messaggi al
 coordinatore. Il lavoro indipendente procede mentre sono attivi; nessun
