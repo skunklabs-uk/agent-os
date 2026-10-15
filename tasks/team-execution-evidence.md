@@ -6,6 +6,34 @@
 **Current result:** The Product Owner accepted team-execution at `95591316a83e1d0ce761cfca1c317385d454f2e8` and authorized Agent OS documentation PR/merge after independent review. This includes the accepted Waypoint delivery and the separate positive Pocock Ready delivery, with their declared limits. IWANT main merge and all deployment remain excluded.
 **Language:** English is authoritative; Product Owner updates are in Italian.
 
+## Subsequent omp-web Kubernetes deployment — 2026-10-15
+
+This section records a later, separately authorized delivery requested for
+Mission35. It does not retroactively enlarge the accepted Task43–50 sandbox
+or the earlier module boundary.
+
+The Product Owner explicitly authorized publication, homelab GitOps deployment,
+Cloudflare Access/DNS/tunnel changes, and closeout. The implementation was
+merged in `skunklabs-uk/homelab` through PR1535 (`bcec0e78d3249a5e26baab11d37c86a1bb5933e0`); the immutable image tag was corrected through PR1536 (`69f465cec07f184615af8ce7b85f01b5cb27f858`); authenticated TCP probe behavior was corrected through PR1538 (`83004404b9da2d10368fe55109242012410a92e1`); and the user guide was merged through PR1542 (`53d79c4249475118198520cd316d7016d66325a2`).
+
+The producer image is published as `ghcr.io/skunklabs-uk/omp-web:sha-3fa2c78`
+and the homelab manifest consumes the Harbor mirror coordinate
+`harbor.lab.skunklabs.uk/private-ghcr/skunklabs-uk/omp-web:sha-3fa2c78`.
+ArgoCD reports `apps` and `omp-web` `Synced/Healthy` at revision
+`cacfac6c240c8c830237d45dade4621cbba49b93`. The Deployment is `1/1`, the
+pod is `Running/Ready` with zero restarts, the Ceph RBD PVC is `Bound`, and
+the HTTPRoute reports `Accepted` and `ResolvedRefs`.
+
+The public endpoint `https://omp.skunklabs.uk/` returns Cloudflare Access
+`HTTP/2 401` with the expected missing-token response when unauthenticated.
+This proves DNS, HTTPS and the Access edge; it does not claim an authenticated
+browser session in this coordinator environment. The deployed application
+logs confirm Next.js readiness and application password enforcement.
+
+User guidance is maintained at
+`homelab/gitops/apps/omp-web/README.md`. Remaining boundary: no project
+workspace is mounted; only omp-web configuration and session state persist.
+
 ## Direct Product Owner acceptance and current authority
 
 The earlier user decision accepted Tasks43–50 within their documented limits and explicitly excludes full team-execution approval, merge and deployment. The original reviewed snapshot and raw remain immutable historical evidence; this acceptance does not extend that review to later edits.
