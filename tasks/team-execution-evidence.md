@@ -16,6 +16,24 @@ A new Kubernetes-native mission identity was persisted on the existing PVC, dist
 
 **Current status: Active, not terminal.** Login through the ordinary authenticated UI is a personal prerequisite; then enable both `AGENT_OS_MISSION_ID` and `AGENT_OS_MISSION_CWD` together using normal GitOps and verify that the browser and MCP refer to the same identity. Personal browser, tablet off-LAN, and ChatGPT/MCP acceptance remain unperformed. No model allowance or release authorization is inferred from the infrastructure GO. [Current mission issue #52](https://github.com/skunklabs-uk/agent-os/issues/52) and [Homelab operational runbook](https://github.com/skunklabs-uk/homelab/blob/main/gitops/apps/omp-web/README.md) contain the bounded next action.
 
+### Rettifica: closeout terminale ancora aperto
+
+La consegna infrastrutturale sopra non conclude la missione #35. La PR63
+registra evidenze limitate di deploy, non l'accettazione end-to-end.
+La successiva autorizzazione del PO comprende le verifiche post-deploy.
+Chromium reale raggiunge la pagina Cloudflare Access (Google o codice email),
+ma non dispone di una sessione personale autenticata. Il tentativo di
+collegamento al browser operatore tramite relay termina con timeout.
+Il service account non consente lettura Secret, exec o port-forward.
+Non sono state aggirate autenticazione o policy.
+
+La nuova osservazione conferma pod Ready, zero restart e imageID
+`sha256:28beaf5dbfedca1193b61aaf792a9dfe06d4bf4508c8e0f0995979ff3ad0f199`.
+Restano da verificare UI autenticata post-deploy, dispositivo reale e client
+ChatGPT/MCP secondo i criteri della missione. #35 e #52 devono restare aperte.
+La prova originale fuori rete non è sostituibile con la sola emulazione mobile.
+
+
 ## Direct Product Owner acceptance and current authority
 
 The earlier user decision accepted Tasks43–50 within their documented limits and explicitly excludes full team-execution approval, merge and deployment. The original reviewed snapshot and raw remain immutable historical evidence; this acceptance does not extend that review to later edits.
