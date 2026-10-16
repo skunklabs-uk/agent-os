@@ -18,7 +18,12 @@ The goal is to reduce repetitive manual work, keep decisions in the repository, 
 
 ## Current mission
 
-[Mission35](https://github.com/skunklabs-uk/agent-os/issues/35) remains open. The bounded workflow-profiles and team-execution modules are accepted; the [capability map](CAPABILITY-MAP-agent-team.md) links their specifications and outcomes. Next are mobile-control and mcp-access specifications, with separate approval gates. This is not acceptance of the complete MVP or authorization to deploy.
+Il 16 ottobre 2026 il Product Owner ha deciso che omp-web non è più necessario
+per il controllo remoto e ne ha autorizzato la dismissione e la rimozione della
+documentazione dedicata. La [capability map](CAPABILITY-MAP-agent-team.md)
+registra il perimetro sostituito e le verifiche ancora mancanti. I moduli
+workflow-profiles e team-execution mantengono la loro accettazione limitata;
+la dismissione non certifica la copertura end-to-end delle app native.
 
 ## Documents under validation
 

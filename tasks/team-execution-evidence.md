@@ -6,33 +6,13 @@
 **Current result:** The Product Owner accepted team-execution at `95591316a83e1d0ce761cfca1c317385d454f2e8` and authorized Agent OS documentation PR/merge after independent review. This includes the accepted Waypoint delivery and the separate positive Pocock Ready delivery, with their declared limits. IWANT main merge and all deployment remain excluded.
 **Language:** English is authoritative; Product Owner updates are in Italian.
 
-## Subsequent omp-web Kubernetes deployment — 2026-10-15
+## Percorso omp-web ritirato — 16 ottobre 2026
 
-This later, separately authorized delivery is part of Mission35, not a retroactive extension of the accepted Task43–50 sandbox. The infrastructure history remains in [Homelab #1514](https://github.com/skunklabs-uk/homelab/issues/1514) and the [mission Plan](https://github.com/skunklabs-uk/agent-os/blob/mission35/pocock-bootstrap-evidence/tasks/plan.md).
-
-The initial image `sha-3fa2c78` and its deployment history are historical. The current qualified application source is `8da86dd416cde34b85d6de20b4095585a7ab24e1`. [Homelab PR1543](https://github.com/skunklabs-uk/homelab/pull/1543) merged the matching immutable image manifest `sha256:d261784afcb1edea799730335fb07f56174db5ff08eacb829db295db7ca14bbc`, following independent Standards/Spec reviews and applicable exact-head CI. ArgoCD was observed Synced/Healthy, the pod Ready with zero restarts, and the deployed image/renderer matching the qualified artifact. These are infrastructure and artifact checks, not end-to-end acceptance.
-
-A new Kubernetes-native mission identity was persisted on the existing PVC, distinct from the original WSL provider: `01a13e10-fc0a-7000-ad56-44fe7c29bbd1`; persistent CWD `/home/omp/.omp/workspaces/agent-os`. Personal provider authentication is still absent (`loggedIn:false`), the provider stays observer/observe, and both mission-binding variables remain intentionally unset. MCP origin503 is expected in this pre-binding stage. No WSL identity, credentials, trial allowance or active session were transferred.
-
-**Current status: Active, not terminal.** Login through the ordinary authenticated UI is a personal prerequisite; then enable both `AGENT_OS_MISSION_ID` and `AGENT_OS_MISSION_CWD` together using normal GitOps and verify that the browser and MCP refer to the same identity. Personal browser, tablet off-LAN, and ChatGPT/MCP acceptance remain unperformed. No model allowance or release authorization is inferred from the infrastructure GO. [Current mission issue #52](https://github.com/skunklabs-uk/agent-os/issues/52) and [Homelab operational runbook](https://github.com/skunklabs-uk/homelab/blob/main/gitops/apps/omp-web/README.md) contain the bounded next action.
-
-### Rettifica: closeout terminale ancora aperto
-
-La consegna infrastrutturale sopra non conclude la missione #35. La PR63
-registra evidenze limitate di deploy, non l'accettazione end-to-end.
-La successiva autorizzazione del PO comprende le verifiche post-deploy.
-Chromium reale raggiunge la pagina Cloudflare Access (Google o codice email),
-ma non dispone di una sessione personale autenticata. Il tentativo di
-collegamento al browser operatore tramite relay termina con timeout.
-Il service account non consente lettura Secret, exec o port-forward.
-Non sono state aggirate autenticazione o policy.
-
-La nuova osservazione conferma pod Ready, zero restart e imageID
-`sha256:28beaf5dbfedca1193b61aaf792a9dfe06d4bf4508c8e0f0995979ff3ad0f199`.
-Restano da verificare UI autenticata post-deploy, dispositivo reale e client
-ChatGPT/MCP secondo i criteri della missione. #35 e #52 devono restare aperte.
-La prova originale fuori rete non è sostituibile con la sola emulazione mobile.
-
+La successiva consegna Kubernetes e i relativi prerequisiti di login, binding
+e acceptance browser/MCP sono superati dalla [decisione di dismissione](../CAPABILITY-MAP-agent-team.md#dismissione-del-percorso-omp-web--16-ottobre-2026).
+Le istruzioni operative dedicate sono rimosse. Le prove dei moduli indipendenti
+riportate sotto restano nei loro perimetri originali; la dismissione non
+costituisce accettazione del percorso remoto nativo né migrazione di sessioni.
 
 ## Direct Product Owner acceptance and current authority
 
@@ -42,7 +22,7 @@ The [pilot Plan and delivery delegation](archive/team-execution-plan.md#pilot-de
 
 The historical Task50 ten-scenario table records the accepted sandbox boundary and is not retroactively regraded by the pilot. The pilot adds real-project Osmani delivery, actual successful initial PR/main CI and reported user smoke, with the stated retention limit. It does not prove positive Pocock, a real CI failure/correction, recover the lost original startup log or authorize Agent OS module delivery. The separate IWANT result and current reconciliation are recorded below. Tasks43–50 stay closed.
 
-On 2026-10-12 the independent final reviewer checked the original requirements and primary evidence at `1b4cc087779db4a964001dcb44d5604c321e775b`, then verified the two required status-pointer corrections at `95591316a83e1d0ce761cfca1c317385d454f2e8`, with no remaining findings ([review report](https://github.com/skunklabs-uk/agent-os/issues/35#issuecomment-6121272826)). The Product Owner subsequently answered “Approvo modulo e consegna documentale” to the explicit module-acceptance and Agent OS documentation-only PR/merge request. This is the applicable authority for closeout; it is separate from the pilot delegation. The completed execution plan is archived. The specification remains behavioral authority and mission35 stays open for mobile/MCP specification and subsequent gates. This acceptance does not certify the complete MVP, replace the Active Codex/Workspace consumer, authorize IWANT merge, or authorize any deployment.
+On 2026-10-12 the independent final reviewer checked the original requirements and primary evidence at `1b4cc087779db4a964001dcb44d5604c321e775b`, then verified the two required status-pointer corrections at `95591316a83e1d0ce761cfca1c317385d454f2e8`, with no remaining findings ([review report](https://github.com/skunklabs-uk/agent-os/issues/35#issuecomment-6121272826)). The Product Owner subsequently answered “Approvo modulo e consegna documentale” to the explicit module-acceptance and Agent OS documentation-only PR/merge request. This is the applicable authority for closeout; it is separate from the pilot delegation. The completed execution plan is archived. The specification remains behavioral authority for the accepted module; the subsequent custom mobile/MCP path is superseded by the decommissioning decision linked above. This acceptance does not certify the complete MVP, replace the Active Codex/Workspace consumer, authorize IWANT merge, or authorize any deployment.
 
 ## Positive Pocock delivery — IWANT#523
 

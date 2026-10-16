@@ -42,10 +42,33 @@ Prefer homelab only with proportionate implementation/operating effort. Choose a
 
 - [workflow-profiles](SPEC-workflow-profiles.md): Active behavioral authority; bounded module acceptance is recorded in the outcome source below.
 - [team-execution](SPEC-team-execution.md): Active specification; approved temporary task set has [bounded native execution evidence and complete selected-profile inventories](tasks/team-execution-evidence.md). The sandbox's exact-head final review is [Task50](https://github.com/skunklabs-uk/agent-os/issues/50). The subsequent real Osmani pilot is merged and closed with an explicitly accepted evidence-retention exception; [the owning closeout decision](https://github.com/skunklabs-uk/waypoint-db/issues/20#issuecomment-6116611891) records its outcome and limits. The separate [positive Pocock delivery](tasks/team-execution-evidence.md#positive-pocock-delivery--iwant523) is now observed on IWANT#523. The independent final review at9559131 has no remaining findings; the Product Owner accepted the bounded module and authorized Agent OS documentation PR/merge on 2026-10-12.
-- mobile-control, mcp-access: not yet specified; no corresponding specification files exist.
+- mobile-control, mcp-access: il percorso custom omp-web è ritirato per decisione
+  del Product Owner del 16 ottobre 2026. Il controllo remoto viene ricondotto
+  alle funzionalità native Codex/ChatGPT; la copertura sul dispositivo reale
+  non è ancora attestata. Nessuna nuova implementazione custom è autorizzata.
 
-The user explicitly approved workflow-profiles at Checkpoint B after independent review. [Accepted outcome, evidence and limitations](tasks/workflow-profiles-evidence.md#accepted-outcome-and-closeout) remain unchanged. team-execution Spec/Plan/Tasks43–50 approval covers temporary proof only; native isolated writers, integration, corrected recovery and exact-code-head independent review now have bounded evidence. The real Osmani pilot subsequently delivered waypoint-db PR22, with successful initial PR/main CI and Product Owner smoke; its accepted raw-retention exception does not turn the retention failure into a PASS. [Current evidence and authority](tasks/team-execution-evidence.md#direct-product-owner-acceptance-and-current-authority) record the positive IWANT#523 Pocock delivery, independent final review and explicit bounded module acceptance. The completed execution plan is archived. Next: Specify mobile-control and mcp-access, retaining their own approval gates. No Active Codex/Workspace replacement, complete MVP acceptance, IWANT merge, production or deployment is inferred; mission35 stays open.
+The user explicitly approved workflow-profiles at Checkpoint B after independent review. [Accepted outcome, evidence and limitations](tasks/workflow-profiles-evidence.md#accepted-outcome-and-closeout) remain unchanged. team-execution Spec/Plan/Tasks43–50 approval covers temporary proof only; native isolated writers, integration, corrected recovery and exact-code-head independent review now have bounded evidence. The real Osmani pilot subsequently delivered waypoint-db PR22, with successful initial PR/main CI and Product Owner smoke; its accepted raw-retention exception does not turn the retention failure into a PASS. [Current evidence and authority](tasks/team-execution-evidence.md#direct-product-owner-acceptance-and-current-authority) record the positive IWANT#523 Pocock delivery, independent final review and explicit bounded module acceptance. The completed execution plan is archived. Il precedente seguito mobile-control/mcp-access basato su omp-web è ritirato. No Active Codex/Workspace replacement, complete MVP acceptance, IWANT merge, production or deployment is inferred; mission35 stays open.
 
 ## Process trace
 
 The issue was created after interview-me/idea-refine before specification. This was an unjustified sequencing deviation, explicitly acknowledged. Recovery: approve this map, then follow Specify → Plan → Tasks → Implement per module according to Osmani's spec-driven-development. Map approval does not approve any module spec, plan, implementation, merge or deployment.
+
+## Dismissione del percorso omp-web — 16 ottobre 2026
+
+**Decisione:** DELETE del progetto omp-web e della sua infrastruttura dedicata,
+autorizzato dal Product Owner dopo il confronto con le capacità native.
+Non sono più richiesti manutenzione del fork, npm, bundle desktop, updater,
+integrazione MCP dedicata o onboarding di runner per questi canali.
+
+Le specifiche e i piani del percorso omp-web presenti soltanto nei branch
+`docs/mobile-mcp-plan` e `mission35/pocock-bootstrap-evidence` sono superati:
+non costituiscono più fonti operative né autorizzano login, deploy, binding
+o chiamate modello. La cronologia Git conserva la ricostruibilità; nessun
+branch viene cancellato per aggirare l'audit.
+
+Restano validi il bisogno di supervisione remota e gli esiti limitati dei moduli
+indipendenti. L'uso dell'app nativa è la direzione accettata; disponibilità sul
+dispositivo, visibilità degli specialisti, approvazioni, stop e riconnessione
+restano da osservare. Non equivalgono a una migrazione delle sessioni OMP.
+Lo stato infrastrutturale e la custodia dei dati residui appartengono a
+[Homelab current-state](https://github.com/skunklabs-uk/homelab/blob/main/doc/current-state.md).
