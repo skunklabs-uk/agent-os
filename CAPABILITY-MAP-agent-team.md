@@ -70,5 +70,11 @@ Restano validi il bisogno di supervisione remota e gli esiti limitati dei moduli
 indipendenti. L'uso dell'app nativa è la direzione accettata; disponibilità sul
 dispositivo, visibilità degli specialisti, approvazioni, stop e riconnessione
 restano da osservare. Non equivalgono a una migrazione delle sessioni OMP.
-Lo stato infrastrutturale e la custodia dei dati residui appartengono a
-[Homelab current-state](https://github.com/skunklabs-uk/homelab/blob/main/doc/current-state.md).
+La missione di dismissione omp-web è chiusa il 16 ottobre 2026 dopo review
+avversaria indipendente: ritiro operativo e pulizia degli asset dedicati
+approvati sono PASS. Il PVC con i dati e gli asset condivisi sono conservati
+esplicitamente; la chiusura non attesta migrazione delle sessioni, cancellazione
+fisica dei backup o accettazione end-to-end del controllo remoto nativo.
+Esito, evidenze e custodia dei residui hanno un solo punto autorevole in
+[Homelab current-state](https://github.com/skunklabs-uk/homelab/blob/main/doc/current-state.md#dismissione-omp-web--missione-chiusa-il-16-ottobre-2026).
+Questa chiusura riguarda omp-web e non chiude la missione generale #35.
