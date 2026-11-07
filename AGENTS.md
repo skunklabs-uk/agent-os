@@ -1,5 +1,9 @@
 # AGENTS.md
 
+## Functional and technical documentation
+
+For functional or technical documentation, consult the shared [Diátaxis guidance](https://github.com/skunklabs-uk/codex-skills/blob/docs/shared-documentation-guidance/AGENTS.global.md#functional-and-technical-documentation).
+
 ## Scopo
 
 Questo file contiene le regole operative minime per lavorare nel repository. Le sue istruzioni sono vincolanti; ogni deroga richiede autorizzazione esplicita.
