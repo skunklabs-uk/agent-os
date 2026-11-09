@@ -16,6 +16,8 @@ L'obiettivo è ridurre il lavoro manuale ripetitivo, mantenere le decisioni nel 
 - [`rfcs/RFC-0001-principles.md`](rfcs/RFC-0001-principles.md)  
   Principi fondanti che governano il progetto.
 
+- [`PROMPT-HANDOFF.md`](PROMPT-HANDOFF.md): policy di classificazione per prompt e handoff generati.
+
 ## Missione corrente
 
 Il 16 ottobre 2026 il Product Owner ha deciso che omp-web non è più necessario
@@ -38,6 +40,12 @@ la dismissione non certifica la copertura end-to-end delle app native.
 Le istruzioni per lavorare nel repository sono definite in [`AGENTS.md`](AGENTS.md).
 
 Il repository deve rimanere essenziale. Nuovi documenti, cartelle, workflow o automazioni devono essere introdotti solo quando rispondono a un'esigenza reale e non possono essere evitati o accorpati.
+
+### Istruzioni per prompt e handoff
+
+[`PROMPT-HANDOFF.md`](PROMPT-HANDOFF.md) è la policy autorevole ed è un file di istruzioni native autonomo: Codex può caricarlo come `$CODEX_HOME/AGENTS.md` e OMP come `RULES.md` nella directory agent attiva, inclusi i singoli profili. Usare un checkout persistente e preservare le istruzioni esistenti invece di sostituirle. I task subagent OMP non ereditano `AGENTS.md`: per coprirli serve il `RULES.md` nativo. Lo scheletro di progetto rimanda alla policy ma non sincronizza i progetti esistenti.
+
+Aggiornare il checkout persistente tramite il normale workflow revisionato del repository; non rimuoverlo né spostarlo mentre i percorsi delle istruzioni vi puntano. Verificare home e profilo effettivi di ciascun runtime e il caricamento in una nuova sessione dopo le modifiche. Le sessioni Codex precedenti vanno riaperte; OMP ricarica le regole in una nuova sessione o con `/new` o `/clear`. Per rimuovere l'installazione, ispezionare e rimuovere soltanto i link creati per essa, preservando le istruzioni preesistenti. Le istruzioni guidano il comportamento del modello; non lo impongono tecnicamente.
 
 ## Collegamento seriale del Developer Workspace
 
