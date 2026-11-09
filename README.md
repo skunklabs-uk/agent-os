@@ -53,6 +53,8 @@ For a new Developer Workspace home, first apply the operator's existing personal
 
 The targets are `$HOME/.codex/AGENTS.md`, `$HOME/.omp/agent/RULES.md` and `$HOME/.omp/profiles/personal/agent/RULES.md`.
 
+On the three workers, the observed interactive entry point selects `personal`. No current use of the unnamed OMP profile was observed, and a clean login shell could not select a default model; the unnamed profile is therefore outside the verified-use scope. Its link is provisioned, but loading in a clean session is not verified. If that profile becomes used, verify it separately without changing authentication or providers as part of this policy.
+
 Create missing parent directories with mode `0700`, one level at a time without changing existing directories. Treat a dangling symlink as an existing target. Run `chezmoi --source /workspaces/.agent-os-prompt-policy/config/workspace-policy diff --include=symlinks` with **only explicit target paths verified absent**, then use the same source, target list and `--include=symlinks` for `apply`. Never apply this source without target paths or with `--force`: a normal chezmoi apply can replace an existing unmanaged file. If a target exists, leave it out and integrate the policy with its existing instructions separately; verify loading before considering that target complete. The normal personal chezmoi apply does not invoke this separate source state; repeat the targeted procedure when rebuilding a home. A recreated home also requires the shared policy checkout to be available.
 
 ## Serial Developer Workspace connection

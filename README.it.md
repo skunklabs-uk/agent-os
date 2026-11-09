@@ -53,6 +53,8 @@ Per una nuova home Developer Workspace, applicare prima il source chezmoi person
 
 I target sono `$HOME/.codex/AGENTS.md`, `$HOME/.omp/agent/RULES.md` e `$HOME/.omp/profiles/personal/agent/RULES.md`.
 
+Sui tre worker, l'ingresso interattivo osservato seleziona `personal`. Non è stato osservato uso corrente del profilo OMP senza nome e una shell di login pulita non ha potuto selezionare un modello predefinito; il profilo senza nome è quindi escluso dal perimetro d'uso verificato. Il link è predisposto, ma il caricamento in una sessione pulita non è verificato. Se quel profilo viene usato, verificarlo separatamente senza modificare autenticazione o provider nell'ambito di questa policy.
+
 Creare le directory genitrici mancanti con permessi `0700`, un livello alla volta senza modificare quelle esistenti. Considerare esistente anche un symlink pendente. Eseguire `chezmoi --source /workspaces/.agent-os-prompt-policy/config/workspace-policy diff --include=symlinks` con **soltanto i percorsi target espliciti verificati assenti**, quindi usare lo stesso source, la stessa lista e `--include=symlinks` per `apply`. Non applicare mai questo source senza target o con `--force`: un normale apply chezmoi può sostituire un file esistente non gestito. Se un target esiste, escluderlo e integrare separatamente la policy nelle istruzioni già presenti; verificare il caricamento prima di considerarlo completo. Il normale apply chezmoi personale non invoca questo source state separato; ripetere la procedura mirata quando si ricostruisce una home. Una home ricreata richiede anche la disponibilità del checkout condiviso della policy.
 
 ## Collegamento seriale del Developer Workspace
