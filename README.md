@@ -47,6 +47,8 @@ Keep the repository lean. Introduce new documents, directories, workflows, or au
 
 Update the persistent checkout through the repository's normal reviewed workflow; do not remove or move it while instruction paths point to it. Check each runtime's effective home and profile and verify loading in a new session after changes. Existing Codex sessions must be reopened; OMP reloads rules on a new session or `/new` or `/clear`. To remove the installation, first inspect and remove only links created for it, preserving pre-existing instructions. These instructions guide model behavior; they do not enforce it.
 
+In the Developer Workspace, the three workers currently link to `/workspaces/.agent-os-prompt-policy/PROMPT-HANDOFF.md`. Merging a PR does not update this shared checkout. After the reviewed policy is integrated, inspect that checkout for local changes and other writers, fetch `origin/main`, switch its clean checkout to `main`, and fast-forward to the approved merge revision. Compare the policy bytes with that revision and verify the links and loading on the workers. Do not reset or overwrite local changes; resolve any divergence before switching. The shared checkout and private homes must both be available to reconstruct the links.
+
 ## Serial Developer Workspace connection
 
 An assignment requires permitted repositories and threads, the exact branch and head commit, and the current prompt. A single serial consumer executes the task in an isolated checkout.

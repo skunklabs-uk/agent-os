@@ -47,6 +47,8 @@ Il repository deve rimanere essenziale. Nuovi documenti, cartelle, workflow o au
 
 Aggiornare il checkout persistente tramite il normale workflow revisionato del repository; non rimuoverlo né spostarlo mentre i percorsi delle istruzioni vi puntano. Verificare home e profilo effettivi di ciascun runtime e il caricamento in una nuova sessione dopo le modifiche. Le sessioni Codex precedenti vanno riaperte; OMP ricarica le regole in una nuova sessione o con `/new` o `/clear`. Per rimuovere l'installazione, ispezionare e rimuovere soltanto i link creati per essa, preservando le istruzioni preesistenti. Le istruzioni guidano il comportamento del modello; non lo impongono tecnicamente.
 
+Nel Developer Workspace i tre worker puntano oggi a `/workspaces/.agent-os-prompt-policy/PROMPT-HANDOFF.md`. Il merge di una PR non aggiorna questo checkout condiviso. Dopo l'integrazione della policy revisionata, verificare modifiche locali e altri writer, eseguire il fetch di `origin/main`, passare a `main` soltanto con checkout pulito e avanzare in fast-forward alla revisione integrata approvata. Confrontare i byte della policy con quella revisione e verificare i link e il caricamento sui worker. Non usare reset né sovrascrivere modifiche locali: risolvere eventuali divergenze prima del cambio. Per ricostruire i link devono essere disponibili sia il checkout condiviso sia le home private.
+
 ## Collegamento seriale del Developer Workspace
 
 Per affidare un incarico al collegamento servono repository e thread ammessi, branch e head esatti e il prompt corrente. Un solo consumer seriale esegue il task in un checkout isolato.
