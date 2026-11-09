@@ -16,7 +16,7 @@ The goal is to reduce repetitive manual work, keep decisions in the repository, 
 - [`rfcs/RFC-0001-principles.md`](rfcs/RFC-0001-principles.md)  
   The founding principles that govern the project.
 
-- [`PROMPT-HANDOFF.md`](PROMPT-HANDOFF.md): classification policy for generated prompts and handoffs.
+- [`PROMPT-HANDOFF.md`](PROMPT-HANDOFF.md): prompt and handoff classification policy and model-selection guidance for main and delegated tasks.
 
 ## Current mission
 
@@ -41,9 +41,9 @@ Instructions for working in this repository are defined in [`AGENTS.md`](AGENTS.
 
 Keep the repository lean. Introduce new documents, directories, workflows, or automation only when they address a real need and cannot be avoided or consolidated.
 
-### Prompt and handoff instructions
+### Prompt, handoff, and model-selection guidance
 
-[`PROMPT-HANDOFF.md`](PROMPT-HANDOFF.md) is the authoritative policy and is a standalone native instruction file: Codex can load it as `$CODEX_HOME/AGENTS.md`, and OMP as `RULES.md` in the active agent directory, including each named profile. Use a persistent checkout and preserve any existing instructions instead of replacing them. OMP task subagents do not inherit `AGENTS.md`; the native `RULES.md` is required for their coverage. The project scaffold refers to the policy but does not synchronize existing projects.
+[`PROMPT-HANDOFF.md`](PROMPT-HANDOFF.md) is the authoritative policy: each generated prompt or handoff must begin with YAML front matter, except conversational replies; it also guides model selection when the client allows it. It is a standalone native instruction file: Codex can load it as `$CODEX_HOME/AGENTS.md`, and OMP as `RULES.md` in the active agent directory, including each named profile. Use a persistent checkout and preserve existing instructions instead of replacing them. OMP task subagents do not inherit `AGENTS.md`; the native `RULES.md` is required for their coverage. The project scaffold refers to the policy but does not synchronize existing projects.
 
 Update the persistent checkout through the repository's normal reviewed workflow; do not remove or move it while instruction paths point to it. Check each runtime's effective home and profile and verify loading in a new session after changes. Existing Codex sessions must be reopened; OMP reloads rules on a new session or `/new` or `/clear`. To remove the installation, first inspect and remove only links created for it, preserving pre-existing instructions. These instructions guide model behavior; they do not enforce it.
 

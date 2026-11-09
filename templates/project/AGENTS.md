@@ -14,9 +14,9 @@ Se la fonte non è accessibile, il lavoro DEVE fermarsi. Le regole locali posson
 
 Il contenuto completo della RFC non DEVE essere duplicato nel repository locale.
 
-## Prompt e handoff
+## Prompt, handoff e scelta del modello
 
-Applicare la [policy di classificazione di Agent OS](https://github.com/skunklabs-uk/agent-os/blob/main/PROMPT-HANDOFF.md) a ogni prompt o handoff generato, anche nelle deleghe OMP.
+Applicare la [policy di prompt/handoff e scelta del modello di Agent OS](https://github.com/skunklabs-uk/agent-os/blob/main/PROMPT-HANDOFF.md) a ogni prompt o handoff generato e agli incarichi principali e delegati, anche nei sottoagenti OMP.
 
 ## Regole operative e lifecycle degli artefatti
 
