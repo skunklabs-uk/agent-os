@@ -16,7 +16,7 @@ The goal is to reduce repetitive manual work, keep decisions in the repository, 
 - [`rfcs/RFC-0001-principles.md`](rfcs/RFC-0001-principles.md)  
   The founding principles that govern the project.
 
-- [`PROMPT-HANDOFF.md`](PROMPT-HANDOFF.md): classification policy for generated prompts and handoffs.
+- [`PROMPT-HANDOFF.md`](PROMPT-HANDOFF.md): model-selection guidance for main and delegated tasks.
 
 ## Current mission
 
@@ -41,7 +41,7 @@ Instructions for working in this repository are defined in [`AGENTS.md`](AGENTS.
 
 Keep the repository lean. Introduce new documents, directories, workflows, or automation only when they address a real need and cannot be avoided or consolidated.
 
-### Prompt and handoff instructions
+### Model-selection instructions
 
 [`PROMPT-HANDOFF.md`](PROMPT-HANDOFF.md) is the authoritative policy and is a standalone native instruction file: Codex can load it as `$CODEX_HOME/AGENTS.md`, and OMP as `RULES.md` in the active agent directory, including each named profile. Use a persistent checkout and preserve any existing instructions instead of replacing them. OMP task subagents do not inherit `AGENTS.md`; the native `RULES.md` is required for their coverage. The project scaffold refers to the policy but does not synchronize existing projects.
 

@@ -20,9 +20,9 @@ I documenti con stato `Draft` possono essere usati come materiale di lavoro, ma 
 
 I documenti con stato `Archived` non devono essere usati come istruzioni operative.
 
-## Prompt e handoff
+## Scelta del modello
 
-Applicare la [policy di classificazione](PROMPT-HANDOFF.md) a ogni prompt o handoff generato, anche nelle deleghe OMP.
+Applicare i [criteri di scelta del modello](PROMPT-HANDOFF.md) agli incarichi principali e delegati, anche in OMP.
 
 ## Regole obbligatorie
 
