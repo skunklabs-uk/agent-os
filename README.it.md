@@ -16,6 +16,8 @@ L'obiettivo è ridurre il lavoro manuale ripetitivo, mantenere le decisioni nel 
 - [`rfcs/RFC-0001-principles.md`](rfcs/RFC-0001-principles.md)  
   Principi fondanti che governano il progetto.
 
+- [`PROMPT-HANDOFF.md`](PROMPT-HANDOFF.md): policy di classificazione per prompt e handoff generati.
+
 ## Missione corrente
 
 Il 16 ottobre 2026 il Product Owner ha deciso che omp-web non è più necessario
@@ -38,6 +40,22 @@ la dismissione non certifica la copertura end-to-end delle app native.
 Le istruzioni per lavorare nel repository sono definite in [`AGENTS.md`](AGENTS.md).
 
 Il repository deve rimanere essenziale. Nuovi documenti, cartelle, workflow o automazioni devono essere introdotti solo quando rispondono a un'esigenza reale e non possono essere evitati o accorpati.
+
+### Istruzioni per prompt e handoff
+
+[`PROMPT-HANDOFF.md`](PROMPT-HANDOFF.md) è la policy autorevole ed è un file di istruzioni native autonomo: Codex può caricarlo come `$CODEX_HOME/AGENTS.md` e OMP come `RULES.md` nella directory agent attiva, inclusi i singoli profili. Usare un checkout persistente e preservare le istruzioni esistenti invece di sostituirle. I task subagent OMP non ereditano `AGENTS.md`: per coprirli serve il `RULES.md` nativo. Lo scheletro di progetto rimanda alla policy ma non sincronizza i progetti esistenti.
+
+Aggiornare il checkout persistente tramite il normale workflow revisionato del repository; non rimuoverlo né spostarlo mentre i percorsi delle istruzioni vi puntano. Verificare home e profilo effettivi di ciascun runtime e il caricamento in una nuova sessione dopo le modifiche. Le sessioni Codex precedenti vanno riaperte; OMP ricarica le regole in una nuova sessione o con `/new` o `/clear`. Per rimuovere l'installazione, ispezionare e rimuovere soltanto i link creati per essa, preservando le istruzioni preesistenti. Le istruzioni guidano il comportamento del modello; non lo impongono tecnicamente.
+
+Nel Developer Workspace i tre worker puntano oggi a `/workspaces/.agent-os-prompt-policy/PROMPT-HANDOFF.md`. Il merge di una PR non aggiorna questo checkout condiviso. Dopo l'integrazione, verificare la revisione integrata approvata, le modifiche locali e gli altri writer. Lasciando attiva la branch della policy, avanzare in fast-forward la `main` locale inattiva fino a `origin/main` approvato; verificare che contenga la policy approvata prima di passare a `main` con il checkout pulito. Così il target non scompare durante il cambio. Confrontare i byte della policy con la revisione approvata e verificare i link e il caricamento sui worker. Non forzare l'aggiornamento né sovrascrivere modifiche locali: risolvere eventuali divergenze prima del cambio. Per ricostruire i link devono essere disponibili sia il checkout condiviso sia le home private.
+
+Per una nuova home Developer Workspace, applicare prima il source chezmoi personale dell'operatore, dopo averne esaminato il diff. Riusare poi chezmoi con il source state nativo separato in `config/workspace-policy/`: contiene soltanto questi tre link e non modifica il source personale. Usare la procedura solo su `developer-workspace-0`, `developer-workspace-worker2-0` o `developer-workspace-worker3-0`, non su WSL. Verificare che il checkout condiviso esista nel percorso indicato e contenga la policy integrata approvata. Esaminare la home Codex e i profili OMP effettivi, tutte le directory genitrici e i tre target. Risolvere eventuali symlink genitori e verificare che puntino a directory scrivibili previste, preservando i link; fermarsi per un genitore pendente o inatteso. Verificare che il source personale non gestisca gli stessi file target né usi un genitore `exact_` che li rimuoverebbe. La procedura copre soltanto la home Codex predefinita e i profili OMP `default` e `personal` osservati.
+
+I target sono `$HOME/.codex/AGENTS.md`, `$HOME/.omp/agent/RULES.md` e `$HOME/.omp/profiles/personal/agent/RULES.md`.
+
+Sui tre worker, l'ingresso interattivo osservato seleziona `personal`. Non è stato osservato uso corrente del profilo OMP senza nome e una shell di login pulita non ha potuto selezionare un modello predefinito; il profilo senza nome è quindi escluso dal perimetro d'uso verificato. Il link è predisposto, ma il caricamento in una sessione pulita non è verificato. Se quel profilo viene usato, verificarlo separatamente senza modificare autenticazione o provider nell'ambito di questa policy.
+
+Creare le directory genitrici mancanti con permessi `0700`, un livello alla volta senza modificare quelle esistenti. Considerare esistente anche un symlink pendente. Eseguire `chezmoi --source /workspaces/.agent-os-prompt-policy/config/workspace-policy diff --include=symlinks` con **soltanto i percorsi target espliciti verificati assenti**, quindi usare lo stesso source, la stessa lista e `--include=symlinks` per `apply`. Non applicare mai questo source senza target o con `--force`: un normale apply chezmoi può sostituire un file esistente non gestito. Se un target esiste, escluderlo e integrare separatamente la policy nelle istruzioni già presenti; verificare il caricamento prima di considerarlo completo. Il normale apply chezmoi personale non invoca questo source state separato; ripetere la procedura mirata quando si ricostruisce una home. Una home ricreata richiede anche la disponibilità del checkout condiviso della policy.
 
 ## Collegamento seriale del Developer Workspace
 
