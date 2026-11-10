@@ -20,12 +20,11 @@ L'obiettivo è ridurre il lavoro manuale ripetitivo, mantenere le decisioni nel 
 
 ## Missione corrente
 
-Il 16 ottobre 2026 il Product Owner ha deciso che omp-web non è più necessario
-per il controllo remoto e ne ha autorizzato la dismissione e la rimozione della
-documentazione dedicata. La [capability map](CAPABILITY-MAP-agent-team.md)
-registra il perimetro sostituito e le verifiche ancora mancanti. I moduli
-workflow-profiles e team-execution mantengono la loro accettazione limitata;
-la dismissione non certifica la copertura end-to-end delle app native.
+La missione #35 resta aperta. Homelab #2095 realizza un percorso upstream di
+UI browser per OMP, alternativo ai tre accessi SSH e ancora in corso; non
+equivale alla DoD più ampia di controllo mobile del team Agent OS. La
+[capability map](CAPABILITY-MAP-agent-team.md) riporta stato e limiti. I moduli
+workflow-profiles e team-execution mantengono la loro accettazione limitata.
 
 ## Documenti in validazione
 
