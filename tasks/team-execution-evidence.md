@@ -6,13 +6,13 @@
 **Current result:** The Product Owner accepted team-execution at `95591316a83e1d0ce761cfca1c317385d454f2e8` and authorized Agent OS documentation PR/merge after independent review. This includes the accepted Waypoint delivery and the separate positive Pocock Ready delivery, with their declared limits. IWANT main merge and all deployment remain excluded.
 **Language:** English is authoritative; Product Owner updates are in Italian.
 
-## Percorso omp-web ritirato — 16 ottobre 2026
+## Ambito mobile-control e mcp-access
 
-La successiva consegna Kubernetes e i relativi prerequisiti di login, binding
-e acceptance browser/MCP sono superati dalla [decisione di dismissione](../CAPABILITY-MAP-agent-team.md#dismissione-del-percorso-omp-web--16-ottobre-2026).
-Le istruzioni operative dedicate sono rimosse. Le prove dei moduli indipendenti
-riportate sotto restano nei loro perimetri originali; la dismissione non
-costituisce accettazione del percorso remoto nativo né migrazione di sessioni.
+Il ritiro del 16 ottobre riguardava il vecchio fork omp-web e la sua
+infrastruttura. Homelab #2095 autorizza un'integrazione distinta di UI upstream
+OMP, tuttora in corso; non amplia l'accettazione team-execution né completa
+mobile-control/mcp-access. La [capability map](../CAPABILITY-MAP-agent-team.md)
+è la fonte attiva per il perimetro e i link allo stato operativo.
 
 ## Direct Product Owner acceptance and current authority
 
@@ -71,7 +71,7 @@ This table supplements the historical Task50 table; it does not reopen #43–#50
 | Restart corrected contract | PASS in observed boundary | Accepted same-session/fresh-artifact recovery plus resumed Pocock journals/durable bundles; no crash-proof live-child restoration or one process across planning/implementation claimed. |
 | Selected-profile closeout | PASS within accepted boundary | Current route, full catalog mapping, real retrospective and Ready delivery exist. Independent final review at9559131 has no remaining findings; the Product Owner accepted this bounded module and authorized Agent OS documentation PR/merge. IWANT remains Ready, not merged or user-smoked; production release is excluded. |
 
-Current decision: retain the team-execution specification and this outcome as Active authority; archive the completed execution plan. Keep #35 open. Complete the authorized documentary delivery, then Specify mobile-control and mcp-access with one shared state/commands/approvals contract and their own approval gates. Accepted sandbox proofs are not repeated. No implementation, provisioning or deployment is granted by this closeout.
+Current decision: retain the team-execution specification and this outcome as Active authority; archive the completed execution plan. Keep #35 open. Define remaining mobile-control and mcp-access acceptance against current native and Homelab capabilities, then use their approval gates. Homelab #2095 does not itself authorize Agent OS implementation. Accepted sandbox proofs are not repeated.
 
 ## Task43: native prerequisites
 

@@ -42,40 +42,32 @@ Prefer homelab only with proportionate implementation/operating effort. Choose a
 
 - [workflow-profiles](SPEC-workflow-profiles.md): Active behavioral authority; bounded module acceptance is recorded in the outcome source below.
 - [team-execution](SPEC-team-execution.md): Active specification; approved temporary task set has [bounded native execution evidence and complete selected-profile inventories](tasks/team-execution-evidence.md). The sandbox's exact-head final review is [Task50](https://github.com/skunklabs-uk/agent-os/issues/50). The subsequent real Osmani pilot is merged and closed with an explicitly accepted evidence-retention exception; [the owning closeout decision](https://github.com/skunklabs-uk/waypoint-db/issues/20#issuecomment-6116611891) records its outcome and limits. The separate [positive Pocock delivery](tasks/team-execution-evidence.md#positive-pocock-delivery--iwant523) is now observed on IWANT#523. The independent final review at9559131 has no remaining findings; the Product Owner accepted the bounded module and authorized Agent OS documentation PR/merge on 2026-10-12.
-- mobile-control, mcp-access: il percorso custom omp-web è ritirato per decisione
-  del Product Owner del 16 ottobre 2026. Il controllo remoto viene ricondotto
-  alle funzionalità native Codex/ChatGPT; la copertura sul dispositivo reale
-  non è ancora attestata. Nessuna nuova implementazione custom è autorizzata.
+- mobile-control, mcp-access: mission35 resta aperta. Homelab #2095 autorizza
+  una nuova UI browser upstream per OMP come accesso alternativo ai tre
+  Developer Workspace SSH; la missione è in corso e non prova il controllo
+  mobile dell'intero team Agent OS né l'accesso MCP. Deployment, sessione
+  effettiva e copertura su dispositivi reali non sono ancora attestati.
+  [Stato e DoD correnti](https://github.com/skunklabs-uk/homelab/issues/2095);
+  [PR d'integrazione](https://github.com/skunklabs-uk/homelab/pull/2100).
 
-The user explicitly approved workflow-profiles at Checkpoint B after independent review. [Accepted outcome, evidence and limitations](tasks/workflow-profiles-evidence.md#accepted-outcome-and-closeout) remain unchanged. team-execution Spec/Plan/Tasks43–50 approval covers temporary proof only; native isolated writers, integration, corrected recovery and exact-code-head independent review now have bounded evidence. The real Osmani pilot subsequently delivered waypoint-db PR22, with successful initial PR/main CI and Product Owner smoke; its accepted raw-retention exception does not turn the retention failure into a PASS. [Current evidence and authority](tasks/team-execution-evidence.md#direct-product-owner-acceptance-and-current-authority) record the positive IWANT#523 Pocock delivery, independent final review and explicit bounded module acceptance. The completed execution plan is archived. Il precedente seguito mobile-control/mcp-access basato su omp-web è ritirato. No Active Codex/Workspace replacement, complete MVP acceptance, IWANT merge, production or deployment is inferred; mission35 stays open.
+The accepted workflow-profiles and team-execution outcomes and their bounded evidence remain in their module outcome sources. The completed execution plan is archived. Homelab #2095 is a related OMP workspace UI integration, not acceptance or completion of Agent OS mobile-control/mcp-access. No complete MVP acceptance, IWANT main merge, production or deployment is inferred; mission35 stays open.
 
 ## Process trace
 
 The issue was created after interview-me/idea-refine before specification. This was an unjustified sequencing deviation, explicitly acknowledged. Recovery: approve this map, then follow Specify → Plan → Tasks → Implement per module according to Osmani's spec-driven-development. Map approval does not approve any module spec, plan, implementation, merge or deployment.
 
-## Dismissione del percorso omp-web — 16 ottobre 2026
+## Ambito del ritiro e stato corrente
 
-**Decisione:** DELETE del progetto omp-web e della sua infrastruttura dedicata,
-autorizzato dal Product Owner dopo il confronto con le capacità native.
+Il 16 ottobre 2026 il Product Owner ha autorizzato la dismissione del vecchio
+progetto omp-web e della sua infrastruttura dedicata, dopo il confronto con le
+capacità native.
 Non sono più richiesti manutenzione del fork, npm, bundle desktop, updater,
 integrazione MCP dedicata o onboarding di runner per questi canali.
 
-Le specifiche e i piani del percorso omp-web presenti soltanto nei branch
-`docs/mobile-mcp-plan` e `mission35/pocock-bootstrap-evidence` sono superati:
-non costituiscono più fonti operative né autorizzano login, deploy, binding
-o chiamate modello. La cronologia Git conserva la ricostruibilità; nessun
-branch viene cancellato per aggirare l'audit.
-
-Restano validi il bisogno di supervisione remota e gli esiti limitati dei moduli
-indipendenti. L'uso dell'app nativa è la direzione accettata; disponibilità sul
-dispositivo, visibilità degli specialisti, approvazioni, stop e riconnessione
-restano da osservare. Non equivalgono a una migrazione delle sessioni OMP.
-La missione di dismissione omp-web è chiusa il 16 ottobre 2026 dopo review
-avversaria indipendente: ritiro operativo e pulizia degli asset dedicati
-approvati sono PASS. Gli asset condivisi sono conservati; il PVC dedicato è stato successivamente
-eliminato su autorizzazione esplicita del Product Owner. La chiusura non attesta
-migrazione delle sessioni, cancellazione
-fisica dei backup o accettazione end-to-end del controllo remoto nativo.
-Esito, evidenze e custodia dei residui hanno un solo punto autorevole in
-[Homelab current-state](https://github.com/skunklabs-uk/homelab/blob/main/doc/current-state.md#dismissione-omp-web--missione-chiusa-il-16-ottobre-2026).
-Questa chiusura riguarda omp-web e non chiude la missione generale #35.
+Quella decisione riguarda esclusivamente il vecchio fork, i relativi asset e
+l'infrastruttura dedicata; non chiude la missione generale #35. L'8 novembre
+2026 il Product Owner ha autorizzato in Homelab #2095 un percorso nuovo e
+distinto: UI upstream mantenuta per OMP, alternativa ai tre accessi SSH.
+L'autorizzazione non riattiva il vecchio fork né le sue specifiche. #2095 è
+ancora aperta e non attesta deployment o uso; mission35 resta aperta per la
+propria DoD più ampia. Lo stato e gli artefatti aggiornati sono linkati sopra.
