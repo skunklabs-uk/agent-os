@@ -56,6 +56,28 @@ Sui tre worker, l'ingresso interattivo osservato seleziona `personal`. Non è st
 
 Creare le directory genitrici mancanti con permessi `0700`, un livello alla volta senza modificare quelle esistenti. Considerare esistente anche un symlink pendente. Eseguire `chezmoi --source /workspaces/.agent-os-prompt-policy/config/workspace-policy diff --include=symlinks` con **soltanto i percorsi target espliciti verificati assenti**, quindi usare lo stesso source, la stessa lista e `--include=symlinks` per `apply`. Non applicare mai questo source senza target o con `--force`: un normale apply chezmoi può sostituire un file esistente non gestito. Se un target esiste, escluderlo e integrare separatamente la policy nelle istruzioni già presenti; verificare il caricamento prima di considerarlo completo. Il normale apply chezmoi personale non invoca questo source state separato; ripetere la procedura mirata quando si ricostruisce una home. Una home ricreata richiede anche la disponibilità del checkout condiviso della policy.
 
+#### Distribuzione della classificazione: verifica WSL aperta
+
+Stato riconciliato il 12 novembre 2026. La sezione corrispondente del [README autorevole](README.md#classification-rollout-open-wsl-verification) governa lo stato della distribuzione; la [PR #70](https://github.com/skunklabs-uk/agent-os/pull/70) conserva la cronologia di implementazione e review. Questa sezione non modifica la policy o la distinta guida alla scelta del modello.
+
+| Destinazione | Distribuzione | Caricamento | Comportamento osservato |
+| --- | --- | --- | --- |
+| Developer Workspace | Verificata il 9 novembre 2026 ad Agent OS `ce3dbbdd6f42cb79cf55446c23c8a516d769fd0d`, codex-skills `1f10c1d5ed8159718b3915fb9dd886aaef8366cb`; provata la ricostruzione esplicita della home | Codex 0.167.0 e OMP 18.18.3 `personal`, con evidenze circoscritte nella #70 | Osservati front matter distinti, metadati condizionali, esenzione conversazionale e delega OMP reale; non è enforcement |
+| WSL Arch | Il resoconto dell'esecutore inoltrato dall'utente dichiara blocchi già presenti nelle due home Codex e in OMP default/tre profili nominati; mancano evidenze del lifecycle persistente e della corrispondenza esatta alla fonte | OMP 18.18.5 `personal` ha ripetuto la policy; questa sola risposta non dimostra il caricamento nativo. Codex 0.167.0 e gli altri profili pertinenti restano non verificati | Delega OMP dichiarata senza traccia verificabile del tool; restano aperti delega e altri casi comportamentali |
+| WSL Ubuntu | Nessuna evidenza pertinente alla policy ricevuta | Non verificato | Non verificato; il resoconto Gmail/GitHub ricevuto riguarda un'altra missione |
+
+Il resoconto Arch identifica utente `iingenito`, home `/home/iingenito`, home Codex `~/.codex` e `~/.codex-work`, OMP default e profili `personal`, `novigo-openai`, `novigo-litellm`. Il profilo `work` esisterebbe senza `agent/RULES.md`; l'assenza dal selettore non ne dimostra il disuso. Stabilire l'uso effettivo prima di includere o escludere ciascun profilo. File esistenti e home persistente, da soli, non dimostrano la ricostruzione dopo un aggiornamento o su una nuova home.
+
+Il checkout Workspace condiviso resta alla baseline integrata di classificazione sopra indicata. Alla riconciliazione, `main` remota era `e36c0921349f199a25f976ecb7b81fa2efd3bb83`; la successiva guida alla scelta del modello non prova l'aggiornamento dei consumer o il completamento WSL. Non ampliare implicitamente la verifica della classificazione a modifiche di provider o routing.
+
+| Priorità / lavoro | Responsabile | Stato e dipendenza | Accettazione / prossima azione |
+| --- | --- | --- | --- |
+| Alta: verifica Arch | Esecutore WSL locale; il coordinatore valida il risultato | Resoconto parziale ricevuto; nessun esecutore locale raggiungibile dal coordinatore | Restituire prove native di caricamento per client/profili pertinenti, persistenza e traccia OMP task/subagent reale; eseguire soltanto i casi comportamentali mancanti |
+| Alta: verifica Ubuntu | Esecutore WSL locale; il coordinatore valida il risultato | Bloccata in attesa dell'esecuzione dell'handoff della policy in Ubuntu | Restituire inventario pertinente e prove separate di distribuzione, caricamento e comportamento |
+| Alta: review e chiusura | Coordinatore e reviewer indipendente | Dipende dai risultati delle due WSL | Riesaminare artefatti e revisioni esatti, risolvere i rilievi sostanziali e aggiornare questo stato prima di dichiarare completamento |
+
+La dipendenza manuale è eseguire l'handoff della policy già consegnato in ciascuna sessione WSL locale e restituire le evidenze. Non risultano esecuzione WSL in background o supervisione automatica. Non creare tunnel o nuovi accessi per aggirare questo confine. Evidenza mancante significa non verificato, non assente; i log di sessione sono una possibile fonte nativa, non un nuovo sistema di logging obbligatorio.
+
 ## Collegamento seriale del Developer Workspace
 
 Per affidare un incarico al collegamento servono repository e thread ammessi, branch e head esatti e il prompt corrente. Un solo consumer seriale esegue il task in un checkout isolato.

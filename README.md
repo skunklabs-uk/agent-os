@@ -56,6 +56,28 @@ On the three workers, the observed interactive entry point selects `personal`. N
 
 Create missing parent directories with mode `0700`, one level at a time without changing existing directories. Treat a dangling symlink as an existing target. Run `chezmoi --source /workspaces/.agent-os-prompt-policy/config/workspace-policy diff --include=symlinks` with **only explicit target paths verified absent**, then use the same source, target list and `--include=symlinks` for `apply`. Never apply this source without target paths or with `--force`: a normal chezmoi apply can replace an existing unmanaged file. If a target exists, leave it out and integrate the policy with its existing instructions separately; verify loading before considering that target complete. The normal personal chezmoi apply does not invoke this separate source state; repeat the targeted procedure when rebuilding a home. A recreated home also requires the shared policy checkout to be available.
 
+#### Classification rollout: open WSL verification
+
+Status reconciled on 2026-11-12. This section owns the classification rollout status; [PR #70](https://github.com/skunklabs-uk/agent-os/pull/70) retains its implementation and review history. It does not change the policy or the separate model-selection guidance.
+
+| Destination | Distribution | Loading | Observed behavior |
+| --- | --- | --- | --- |
+| Developer Workspace | Verified on 2026-11-09 at Agent OS `ce3dbbdd6f42cb79cf55446c23c8a516d769fd0d`, codex-skills `1f10c1d5ed8159718b3915fb9dd886aaef8366cb`; explicit home reconstruction was exercised | Codex 0.167.0 and OMP 18.18.3 `personal`, with bounded evidence in #70 | Separate prompt front matter, conditional metadata, conversational exemption and an actual OMP delegation were observed; not enforcement |
+| WSL Arch | The user-forwarded executor report states that policy blocks already exist in both Codex homes and OMP default/three named profiles; lifecycle persistence and exact source correspondence still need evidence | OMP 18.18.5 `personal` repeated the policy; that response alone does not establish native loading. Codex 0.167.0 and other pertinent profiles remain unverified | An OMP delegation was claimed but not supported by a verifiable tool trace; delegation and the remaining behavioral cases stay open |
+| WSL Ubuntu | No policy-specific evidence returned | Unverified | Unverified; the returned Gmail/GitHub triage report concerns another mission |
+
+The Arch report identifies user `iingenito`, home `/home/iingenito`, Codex homes `~/.codex` and `~/.codex-work`, OMP default and profiles `personal`, `novigo-openai`, `novigo-litellm`. Profile `work` reportedly exists without `agent/RULES.md`; absence from the selector does not establish that it is unused. Actual use must be established before including or excluding each profile. Existing files and a persistent home alone do not demonstrate reconstruction after an update or a new home.
+
+The shared Workspace checkout remains at the integrated classification baseline above. Remote `main` was `e36c0921349f199a25f976ecb7b81fa2efd3bb83` at reconciliation; later model-selection guidance is not evidence of an updated consumer checkout or a completed WSL rollout. Do not silently broaden the classification verification into provider or routing changes.
+
+| Priority / work | Responsible party | State and dependency | Acceptance / next action |
+| --- | --- | --- | --- |
+| High: Arch verification | Local WSL executor; coordinator validates the return | Partial report received; no local executor reachable from the coordinator | Return native loading evidence for pertinent clients/profiles, persistence evidence and an actual OMP task/subagent trace; exercise only missing behavioral cases |
+| High: Ubuntu verification | Local WSL executor; coordinator validates the return | Blocked pending execution of the policy handoff in Ubuntu | Return a policy-specific inventory and separate distribution, loading and behavior evidence |
+| High: review and closeout | Coordinator and independent reviewer | Depends on both WSL returns | Review exact artifacts and revisions, resolve material findings, and update this status before claiming completion |
+
+The manual dependency is to run the supplied policy handoff in each local WSL session and return its evidence. No background WSL execution or automatic supervision is established. Do not create a tunnel or new access to bypass this boundary. Missing evidence means unverified, not absent; session logs are one possible native evidence source, not a new mandatory logging system.
+
 ## Serial Developer Workspace connection
 
 An assignment requires permitted repositories and threads, the exact branch and head commit, and the current prompt. A single serial consumer executes the task in an isolated checkout.
