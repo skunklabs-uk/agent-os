@@ -58,7 +58,7 @@ Creare le directory genitrici mancanti con permessi `0700`, un livello alla volt
 
 #### Distribuzione della classificazione: verifica WSL aperta
 
-Stato riconciliato il 12 novembre 2026. Questa sezione del README inglese è la fonte autorevole dello stato della distribuzione; la [PR #70](https://github.com/skunklabs-uk/agent-os/pull/70) conserva la cronologia d'implementazione e la [PR #74](https://github.com/skunklabs-uk/agent-os/pull/74) quella dell'aggiornamento. Questa sezione non modifica la policy né la distinta guida alla scelta del modello.
+Stato riconciliato il 12 novembre 2026. Questa sezione del README inglese è la fonte autorevole dello stato della distribuzione; la [PR #70](https://github.com/skunklabs-uk/agent-os/pull/70) conserva la cronologia d'implementazione, la [PR #74](https://github.com/skunklabs-uk/agent-os/pull/74) la precedente riconciliazione e la [PR #75](https://github.com/skunklabs-uk/agent-os/pull/75) l'aggiornamento delle evidenze Arch. Questa sezione non modifica la policy né la distinta guida alla scelta del modello.
 
 | Destinazione | Distribuzione | Caricamento | Comportamento osservato |
 | --- | --- | --- | --- |

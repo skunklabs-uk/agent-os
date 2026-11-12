@@ -58,7 +58,7 @@ Create missing parent directories with mode `0700`, one level at a time without 
 
 #### Classification rollout: open WSL verification
 
-Status reconciled on 2026-11-12. This section owns the classification rollout status; [PR #70](https://github.com/skunklabs-uk/agent-os/pull/70) retains implementation history. [PR #74](https://github.com/skunklabs-uk/agent-os/pull/74) records this status update. This section does not change the policy or separate model-selection guidance.
+Status reconciled on 2026-11-12. This section owns the classification rollout status; [PR #70](https://github.com/skunklabs-uk/agent-os/pull/70) retains implementation history, [PR #74](https://github.com/skunklabs-uk/agent-os/pull/74) records the earlier status reconciliation, and [PR #75](https://github.com/skunklabs-uk/agent-os/pull/75) records the Arch evidence update. This section does not change the policy or separate model-selection guidance.
 
 | Destination | Distribution | Loading | Observed behavior |
 | --- | --- | --- | --- |
