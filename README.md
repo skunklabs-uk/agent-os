@@ -56,9 +56,9 @@ On the three workers, the observed interactive entry point selects `personal`. N
 
 Create missing parent directories with mode `0700`, one level at a time without changing existing directories. Treat a dangling symlink as an existing target. Run `chezmoi --source /workspaces/.agent-os-prompt-policy/config/workspace-policy diff --include=symlinks` with **only explicit target paths verified absent**, then use the same source, target list and `--include=symlinks` for `apply`. Never apply this source without target paths or with `--force`: a normal chezmoi apply can replace an existing unmanaged file. If a target exists, leave it out and integrate the policy with its existing instructions separately; verify loading before considering that target complete. The normal personal chezmoi apply does not invoke this separate source state; repeat the targeted procedure when rebuilding a home. A recreated home also requires the shared policy checkout to be available.
 
-#### Classification rollout: bounded WSL behavior verification closeout
+#### Classification rollout: bounded behavior samples complete; WSL rollout remains open
 
-Status closed on 2026-11-13 for the bounded prompt-behavior verification requested by the user. This section owns rollout status; [PR #70](https://github.com/skunklabs-uk/agent-os/pull/70) retains implementation history, [PR #74](https://github.com/skunklabs-uk/agent-os/pull/74) the earlier reconciliation, and [PR #75](https://github.com/skunklabs-uk/agent-os/pull/75) the Arch evidence update. This closeout does not change the policy or separate model-selection guidance.
+The bounded new-session behavior samples were recorded as complete on 2026-11-13. This closes only those observations, not the original WSL rollout mission. The rollout remains open because Arch persistence and one Codex loading reference are unresolved, while Ubuntu distribution is not established and native loading is unverifiable. [PR #70](https://github.com/skunklabs-uk/agent-os/pull/70) retains implementation history; [PR #74](https://github.com/skunklabs-uk/agent-os/pull/74), [PR #75](https://github.com/skunklabs-uk/agent-os/pull/75), and [PR #77](https://github.com/skunklabs-uk/agent-os/pull/77) retain the status history. This section does not change the policy or separate model-selection guidance.
 
 | Destination | Distribution | Loading | Observed behavior |
 | --- | --- | --- | --- |
@@ -77,7 +77,7 @@ Historical Arch report received from the local executor through the user: Arch W
 
 The 2026-11-12 report recorded the shared consumer checkout at `ce3dbbdd6f42cb79cf55446c23c8a516d769fd0d`, Agent OS `main` at `f9de648029380a831cd79f016c7398657e55e47d`, and codex-skills at `1f10c1d5ed8159718b3915fb9dd886aaef8366cb`. Those are historical references, not current consumer readback. This closeout does not advance consumer checkouts or distribute separate model-selection guidance.
 
-The user selected a bounded closeout based on one prompt session per WSL destination. Historical failures and unresolved loading references above are retained for provenance only; they were not repeated and are not gates for this bounded result. Ubuntu policy distribution and native loading remain outside the evidence available here. The policy guides model behavior and is not technical enforcement. No further WSL tests are part of this closeout.
+The bounded behavior samples above remain recorded as observed results, including the historical Arch Codex and OMP-child failures. No equivalent behavior sample needs repeating absent new evidence. The original WSL distribution mission remains OPEN: resolve Arch persistence/loading from retained native evidence where possible, and establish Ubuntu distribution and loading through its local runtime. The policy guides model behavior and is not technical enforcement. Do not close the overall mission until both WSL destinations meet the required distribution, loading and behavior criteria.
 
 
 ## Serial Developer Workspace connection
