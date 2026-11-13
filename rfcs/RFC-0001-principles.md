@@ -1,8 +1,8 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.13
-**Ultima modifica:** 2026-10-07
+**Versione:** 0.1.14
+**Ultima modifica:** 2026-11-13
 
 ## Scopo
 
@@ -266,6 +266,20 @@ Un esito `NO` DEVE indicare l'azione correttiva necessaria.
 Un artefatto che non supera una verifica obbligatoria NON PUÒ diventare `Active` finché la non conformità non viene corretta oppure viene approvata una deroga esplicitamente motivata.
 
 Un principio che non può essere verificato DEVE essere chiarito o riscritto prima di diventare `Active`.
+
+### Selezione e arresto delle verifiche
+
+Prima di proporre un piano di verifiche o di ampliarlo durante l'esecuzione, l'esecutore DEVE identificare i criteri di accettazione applicabili, le verifiche obbligatorie e le evidenze già disponibili. Ogni verifica proposta DEVE rispondere a un requisito, contratto, invariante o failure mode concreto non ancora coperto da evidenze sufficienti.
+
+Si DEVE scegliere il metodo di verifica meno oneroso che fornisca evidenza adeguata, riutilizzando prioritariamente prove esistenti, risultati upstream pertinenti e strumenti già disponibili. La verifica dell'integrazione locale NON autorizza a ricollaudare indiscriminatamente il comportamento upstream.
+
+Una verifica tecnicamente valida non è automaticamente necessaria. La ripetizione di prove già sufficienti, l'esplorazione di rischi puramente ipotetici, l'aumento generico della confidenza e l'ampliamento della copertura senza un gap dimostrato NON DEVONO generare nuovi test, audit o remediation.
+
+Ogni ampliamento del piano di verifica in corso d'opera DEVE essere rivalutato prima dell'esecuzione rispetto ai criteri approvati e al gap concreto emerso. Quando le evidenze soddisfano i criteri di accettazione e le verifiche obbligatorie applicabili, le verifiche DEVONO arrestarsi.
+
+Questa valutazione DEVE essere svolta nel normale piano di lavoro e nella review già prevista, considerando non solo gli esiti ma anche necessità e sufficienza delle prove, senza introdurre registri, checklist, gate, workflow o documentazione aggiuntivi.
+
+---
 
 ### Burden of proof dei controlli, dei test e degli strumenti
 
