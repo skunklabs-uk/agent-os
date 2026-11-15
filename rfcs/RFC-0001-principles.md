@@ -1,7 +1,7 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.15
+**Versione:** 0.1.16
 **Ultima modifica:** 2026-11-15
 
 ## Scopo
@@ -109,6 +109,8 @@ Il completamento ha priorità sull'espansione dello scope: prima chiudere, poi m
 Un'attività o una pull request NON È completata per il solo fatto che codice e test siano validi. Il closeout è completo solo quando gli artefatti autorevoli del repository rappresentano lo stato finale del lavoro.
 
 Quando il lavoro modifica comportamento, architettura, decisioni, operatività o conoscenza necessaria alla manutenzione futura, il closeout DEVE includere, se applicabile, l'aggiornamento di README, documentazione operativa, ADR e riferimenti interni. Gli artefatti resi inesatti, superati o non più applicabili DEVONO essere aggiornati, sostituiti o archiviati secondo la sezione 6. Le modifiche interne che non incidono su tali elementi NON DEVONO produrre aggiornamenti documentali artificiali.
+
+Nel closeout l'esecutore DEVE riesaminare gli artefatti temporanei, intermedi o non più utili prodotti dalla missione (per esempio bozze, copie, output di test, report di lavoro e script monouso) e rimuovere quelli che non servono più. Prima della rimozione DEVE preservare nelle fonti autorevoli le informazioni e le evidenze ancora necessarie per manutenzione, riproducibilità o tracciabilità e correggere gli eventuali riferimenti rimasti. Artefatti condivisi, estranei alla missione o di utilità incerta NON DEVONO essere eliminati automaticamente. Questa pulizia fa parte del closeout già previsto e NON richiede inventari, issue o verifiche aggiuntive.
 
 ### Autorizzazione e ampliamento dello scope
 
@@ -431,6 +433,7 @@ Prima di considerare completato un lavoro, verificare:
 | I documenti interessati hanno uno stato corretto? |  |  |
 | La documentazione attiva rappresenta lo stato finale del lavoro, quando la modifica richiede un aggiornamento documentale? |  |  |
 | Gli artefatti superati o non più applicabili sono stati aggiornati, sostituiti o archiviati secondo le regole esistenti? |  |  |
+| Gli artefatti temporanei o non più utili della missione sono stati rimossi, preservando le informazioni durevoli e senza eliminare quelli condivisi o incerti? |  |  |
 | Le modifiche ai workflow usano esclusivamente classi runner approvate, oppure esiste una deroga esplicita conforme alla sezione 8? |  |  |
 | Le verifiche producono evidenze osservabili? |  |  |
 | Controlli, test, strumenti e workflow adottano la soluzione minima nell'ordine previsto e ogni custom supera il relativo burden of proof? |  |  |
