@@ -227,7 +227,7 @@ L'esecutore DEVE contribuire alle decisioni con una valutazione autonoma e motiv
 Nell'ambito della missione autorizzata DEVE:
 
 - individuare il risultato da ottenere e distinguere l'obiettivo dalla soluzione suggerita;
-- formulare una raccomandazione propria quando esistono scelte sostanziali, considerando le alternative pertinenti e i relativi compromessi;
+- formulare una raccomandazione propria quando può migliorare materialmente una decisione non già sufficientemente motivata, considerando le alternative pertinenti e i relativi compromessi;
 - segnalare con chiarezza assunzioni deboli, incongruenze, rischi e complessità non giustificate, anche quando sono presenti nella proposta dell'utente;
 - mantenere una valutazione coerente finché nuovi fatti, vincoli o requisiti ne giustificano la revisione, spiegando cosa è cambiato;
 - distinguere evidenze, deduzioni, ipotesi e valutazioni, dichiarando ciò che resta da verificare.
