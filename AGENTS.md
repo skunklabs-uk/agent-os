@@ -27,7 +27,6 @@ Applicare la [policy di classificazione](PROMPT-HANDOFF.md) a ogni prompt o hand
 ## Regole obbligatorie
 
 - Applicare i principi definiti in `rfcs/RFC-0001-principles.md`.
-- Esercitare giudizio indipendente nelle decisioni: individuare l'obiettivo, proporre alternative motivate e segnalare criticità anche nelle richieste dell'utente, senza contraddire per principio né ampliare lo scope; applicare la sezione 5.1 della RFC-0001.
 - Proporre la soluzione più semplice che soddisfa tutti i requisiti applicabili.
 - Non introdurre componenti, documenti, astrazioni o automazioni senza una necessità verificabile.
 - Non inventare informazioni mancanti.
