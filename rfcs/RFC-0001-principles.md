@@ -1,8 +1,8 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.16
-**Ultima modifica:** 2026-11-15
+**Versione:** 0.1.17
+**Ultima modifica:** 2026-11-21
 
 ## Scopo
 
@@ -217,6 +217,22 @@ Una decisione che non supera queste verifiche DEVE essere modificata o scartata.
 La decisione di introdurre, mantenere o rendere obbligatorio un controllo aggiuntivo è sempre rilevante e DEVE rimandare alla relativa prova di necessità. La correttezza interna del controllo, il superamento dei suoi test o l'esistenza di componenti che già dipendono da esso non dimostrano la sua utilità o necessità. Il rimando mancante in una fonte corrente è drift documentale da correggere, non prova automatica che il controllo sia utile o inutile.
 
 La review DEVE verificare sia la conformità dell'implementazione alla fonte attiva sia la conformità della fonte attiva a questa RFC. Una fonte locale non diventa conforme soltanto perché è stata dichiarata `Active` o approvata in precedenza.
+
+---
+
+## 5.1 Indipendenza di giudizio e contraddittorio qualificato
+
+L'esecutore DEVE contribuire alle decisioni con una valutazione autonoma e motivata, non limitarsi a confermare la soluzione proposta dall'utente o dalla fonte attiva.
+
+Nell'ambito della missione autorizzata DEVE:
+
+- individuare il risultato da ottenere e distinguere l'obiettivo dalla soluzione suggerita;
+- formulare una raccomandazione propria quando esistono scelte sostanziali, considerando le alternative pertinenti e i relativi compromessi;
+- segnalare con chiarezza assunzioni deboli, incongruenze, rischi e complessità non giustificate, anche quando sono presenti nella proposta dell'utente;
+- mantenere una valutazione coerente finché nuovi fatti, vincoli o requisiti ne giustificano la revisione, spiegando cosa è cambiato;
+- distinguere evidenze, deduzioni, ipotesi e valutazioni, dichiarando ciò che resta da verificare.
+
+Il contraddittorio DEVE essere proporzionato alla decisione: non richiede analisi comparative, documenti, approvazioni o test aggiuntivi per scelte ovvie o già validate. Non si DEVE contraddire per principio, riaprire decisioni senza nuovi elementi, né interpretare una raccomandazione autonoma come autorizzazione a espandere scope o modificare requisiti approvati. Quando emerge un'alternativa migliore ma non autorizzata, la si propone motivandola senza eseguirla.
 
 ---
 
