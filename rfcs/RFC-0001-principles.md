@@ -391,7 +391,7 @@ Una modifica documentale non richiede test quando il documento non è consumato 
 
 ## 8. Controllo dei costi e dei retry di GitHub Actions
 
-Ogni esecuzione o rerun di GitHub Actions DEVE essere trattato come uso di una risorsa esterna potenzialmente a pagamento.
+Ogni esecuzione o rerun di GitHub Actions DEVE essere valutato rispetto al possibile consumo di credito e alle risorse operative impiegate. I job sui nostri runner ARC non consumano credito GitHub Actions.
 
 ### Runner ammessi nell'Organization `skunklabs-uk`
 
@@ -405,16 +405,15 @@ Una deroga DEVE essere specifica per workflow e scopo, esplicitare il motivo e l
 
 Il guard organizzativo Homelab è una verifica di secondo livello e NON sostituisce la verifica pre-push. Quando il piano GitHub rende disponibile e viene attivato il blocco nativo dei runner hosted standard a livello Organization, i controlli procedurali o custom divenuti ridondanti DEVONO essere riesaminati secondo la sezione 7.
 
-- I rerun automatici sono ammessi soltanto per job eseguiti sui nostri runner ARC quando non consumano credito GitHub Actions, con un limite finito e ragionevole di tentativi; negli altri casi sono vietati. Restano applicabili le condizioni di stop e i divieti seguenti.
-- I rerun massivi e il rilancio indiscriminato di tutti i workflow sono vietati.
-- Un job fallito prima dell'avvio del primo step NON DEVE essere rilanciato.
-- Un job con lista degli step vuota DEVE essere classificato come problema di infrastruttura, billing, quota, permessi o runner, non come failure applicativa.
-- Se più workflow falliscono contemporaneamente prima del primo step, la remediation CI DEVE fermarsi.
-- L'esaurimento confermato o sospetto del credito GitHub Actions è una condizione di stop immediata.
+- I rerun automatici sono ammessi soltanto per job eseguiti sui nostri runner ARC quando non consumano credito GitHub Actions, con un limite finito e ragionevole di tentativi; negli altri casi sono vietati.
+- I rerun massivi e indiscriminati sono vietati; sono ammessi retry mirati di più job indipendenti nel rispetto delle altre regole.
+- Un job fallito prima dell'avvio del primo step può essere ritentato in modo mirato quando esistono elementi che giustificano il tentativo, per esempio il ripristino del runner o la verifica di una correzione. Un job con lista degli step vuota indica un problema di infrastruttura, billing, quota, permessi o runner, non una failure applicativa.
+- Se più workflow falliscono contemporaneamente prima del primo step, si DEVONO fermare i retry indiscriminati e diagnosticare l'eventuale causa condivisa. La diagnosi e la correzione dell'infrastruttura possono proseguire.
+- L'esaurimento confermato o sospetto del credito GitHub Actions ferma le esecuzioni e i retry che possono consumarlo, non quelli sui runner ARC che non ne consumano, salvo dipendenze effettive dal servizio interessato.
 - Ogni retry che possa consumare ulteriore credito richiede l'autorizzazione esplicita dell'utente o del Product Owner.
 - Per i retry che possono consumare credito, dopo l'autorizzazione è consentito al massimo un retry per workflow e per commit o head. Ogni ulteriore retry richiede una nuova autorizzazione esplicita.
-- Il retry NON DEVE essere usato come strumento diagnostico.
-- Prima di considerare un retry, la diagnosi DEVE usare log esistenti, stato del job, annotazioni, billing o quota, permessi, runner e verifiche locali.
+- Un retry mirato può verificare una causa o una correzione; i tentativi ripetuti alla cieca sono vietati. Fermare i retry quando non emergono nuovi elementi o persiste un problema condiviso.
+- Prima di un retry, usare le evidenze pertinenti disponibili, come log, stato del job, annotazioni, billing o quota, permessi, runner e verifiche locali, senza imporre una checklist universale.
 - Le verifiche locali e i controlli proporzionali DEVONO essere preferiti prima di attivare CI costosa.
 - L'autorizzazione di una wave autonoma NON autorizza implicitamente spesa CI illimitata.
 - Le istruzioni «continua fino al verde» o «non fermarti per failure tecniche» NON prevalgono su questa guardia economica.
