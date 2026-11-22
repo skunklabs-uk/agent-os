@@ -129,7 +129,6 @@ Se una delle condizioni precedenti manca, prima di procedere si DEVONO indicare 
 
 Prima di espandere il dominio, introdurre implementazioni aggiuntive o ampliare i test, l'esecutore DEVE validare la proposta rispetto a questa RFC e alla fonte attiva: necessità e proporzionalità (sezione 1), autorizzazione e perimetro (sezione 2), sufficienza delle verifiche (sezione 7). La conformità alla RFC non sostituisce l'autorizzazione richiesta per uno scope più ampio; attività non necessarie o non autorizzate DEVONO essere escluse o rinviate. La valutazione avviene nel normale lavoro e nella review già previsti, senza nuovi gate, documenti o test dedicati.
 
-
 ### Parallelismo senza conflitti o contesa
 
 Lavori e agenti possono procedere in parallelo solo quando le attività sono indipendenti o adeguatamente isolate e non emergono rischi concreti non mitigati di conflitto sulle modifiche, interferenza sui risultati o contesa delle risorse tale da compromettere l'esecuzione. La separazione di workspace e branch non basta se restano condivisi file, dati, servizi, pipeline o capacità di calcolo.
