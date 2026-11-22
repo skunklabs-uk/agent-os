@@ -1,7 +1,7 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.18
+**Versione:** 0.1.19
 **Ultima modifica:** 2026-11-22
 
 ## Scopo
@@ -405,14 +405,14 @@ Una deroga DEVE essere specifica per workflow e scopo, esplicitare il motivo e l
 
 Il guard organizzativo Homelab è una verifica di secondo livello e NON sostituisce la verifica pre-push. Quando il piano GitHub rende disponibile e viene attivato il blocco nativo dei runner hosted standard a livello Organization, i controlli procedurali o custom divenuti ridondanti DEVONO essere riesaminati secondo la sezione 7.
 
-- I rerun automatici di workflow o job sono vietati.
+- I rerun automatici sono ammessi soltanto per job eseguiti sui nostri runner ARC quando non consumano credito GitHub Actions, con un limite finito e ragionevole di tentativi; negli altri casi sono vietati. Restano applicabili le condizioni di stop e i divieti seguenti.
 - I rerun massivi e il rilancio indiscriminato di tutti i workflow sono vietati.
 - Un job fallito prima dell'avvio del primo step NON DEVE essere rilanciato.
 - Un job con lista degli step vuota DEVE essere classificato come problema di infrastruttura, billing, quota, permessi o runner, non come failure applicativa.
 - Se più workflow falliscono contemporaneamente prima del primo step, la remediation CI DEVE fermarsi.
 - L'esaurimento confermato o sospetto del credito GitHub Actions è una condizione di stop immediata.
 - Ogni retry che possa consumare ulteriore credito richiede l'autorizzazione esplicita dell'utente o del Product Owner.
-- Dopo l'autorizzazione è consentito al massimo un retry per workflow e per commit o head. Ogni ulteriore retry richiede una nuova autorizzazione esplicita.
+- Per i retry che possono consumare credito, dopo l'autorizzazione è consentito al massimo un retry per workflow e per commit o head. Ogni ulteriore retry richiede una nuova autorizzazione esplicita.
 - Il retry NON DEVE essere usato come strumento diagnostico.
 - Prima di considerare un retry, la diagnosi DEVE usare log esistenti, stato del job, annotazioni, billing o quota, permessi, runner e verifiche locali.
 - Le verifiche locali e i controlli proporzionali DEVONO essere preferiti prima di attivare CI costosa.
