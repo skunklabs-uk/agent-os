@@ -1,8 +1,8 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.17
-**Ultima modifica:** 2026-11-21
+**Versione:** 0.1.18
+**Ultima modifica:** 2026-11-22
 
 ## Scopo
 
@@ -84,6 +84,13 @@ Il lavoro DEVE essere organizzato per missioni, non per issue, pull request o at
 Ogni repository DEVE avere una sola missione primaria attiva. Una seconda missione è ammessa solo quando la prima è bloccata da una dipendenza esterna documentata e non può avanzare in altro modo utile.
 
 Ogni attività DEVE contribuire direttamente alla missione attiva. Issue, pull request, refactoring, documentazione, analisi, remediation e strumenti sono mezzi subordinati al risultato, non nuovi obiettivi.
+
+### Parallelismo senza conflitti o contesa
+
+L'esecuzione parallela di attività o agenti è ammessa solo quando i lavori sono indipendenti oppure adeguatamente isolati e non presentano rischi concreti identificabili di conflitto sulle modifiche, interferenza sui risultati o contesa per le risorse condivise (workspace, branch, file, dati, servizi, pipeline e capacità di calcolo). Workspace e branch distinti da soli non garantiscono l'assenza di contesa su risorse esterne.
+
+Quando tali condizioni non sono soddisfatte o le informazioni necessarie non consentono di valutarle, il lavoro DEVE essere serializzato oppure reso realmente indipendente prima dell'esecuzione parallela. La valutazione è proporzionata ai rischi prevedibili e usa la pianificazione ordinaria e le evidenze disponibili, senza richiedere nuovi gate, documenti o automazioni. Il parallelismo non autorizza missioni primarie concorrenti nello stesso repository né ampliamenti impliciti di scope, infrastruttura o costi.
+
 
 Un nuovo fronte di lavoro può essere aperto solo quando è necessario per:
 
