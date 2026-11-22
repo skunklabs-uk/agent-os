@@ -1,8 +1,8 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.17
-**Ultima modifica:** 2026-11-21
+**Versione:** 0.1.18
+**Ultima modifica:** 2026-11-22
 
 ## Scopo
 
@@ -128,6 +128,12 @@ Nuovi obiettivi, deliverable, repository, issue, pull request, wave, dipendenze,
 Se una delle condizioni precedenti manca, prima di procedere si DEVONO indicare fatto osservato, ampliamento proposto, necessità, alternative e decisione richiesta.
 
 Prima di espandere il dominio, introdurre implementazioni aggiuntive o ampliare i test, l'esecutore DEVE validare la proposta rispetto a questa RFC e alla fonte attiva: necessità e proporzionalità (sezione 1), autorizzazione e perimetro (sezione 2), sufficienza delle verifiche (sezione 7). La conformità alla RFC non sostituisce l'autorizzazione richiesta per uno scope più ampio; attività non necessarie o non autorizzate DEVONO essere escluse o rinviate. La valutazione avviene nel normale lavoro e nella review già previsti, senza nuovi gate, documenti o test dedicati.
+
+### Parallelismo senza conflitti o contesa
+
+Lavori e agenti possono procedere in parallelo solo quando le attività sono indipendenti o adeguatamente isolate e non emergono rischi concreti non mitigati di conflitto sulle modifiche, interferenza sui risultati o contesa delle risorse tale da compromettere l'esecuzione. La separazione di workspace e branch non basta se restano condivisi file, dati, servizi, pipeline o capacità di calcolo.
+
+Se queste condizioni non sono soddisfatte, oppure mancano informazioni essenziali per valutarle, le attività DEVONO procedere in sequenza o essere rese indipendenti prima del parallelismo. La valutazione usa il piano ordinario e le evidenze disponibili, in modo proporzionato: non introduce nuovi gate, documenti o automazioni. Il parallelismo non modifica i limiti sulle missioni attive, né autorizza ampliamenti impliciti di scope, infrastruttura o costi.
 
 ---
 
