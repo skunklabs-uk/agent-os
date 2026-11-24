@@ -20,9 +20,8 @@ L'obiettivo è ridurre il lavoro manuale ripetitivo, mantenere le decisioni nel 
 
 ## Missione corrente
 
-La missione #35 resta aperta. Homelab #2095 realizza un percorso upstream di
-UI browser per OMP, alternativo ai tre accessi SSH e ancora in corso; non
-equivale alla DoD più ampia di controllo mobile del team Agent OS. La
+La missione #35 resta aperta. La UI OMP del percorso Homelab #2095 è stata
+ritirata; il suo closeout non completa il controllo mobile del team. La
 [capability map](CAPABILITY-MAP-agent-team.md) riporta stato e limiti. I moduli
 workflow-profiles e team-execution mantengono la loro accettazione limitata.
 
