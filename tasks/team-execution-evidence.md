@@ -9,8 +9,8 @@
 ## Ambito mobile-control e mcp-access
 
 Il ritiro del 16 ottobre riguardava il vecchio fork omp-web e la sua
-infrastruttura. Homelab #2095 autorizza un'integrazione distinta di UI upstream
-OMP, tuttora in corso; non amplia l'accettazione team-execution né completa
+infrastruttura. Anche la distinta UI upstream OMP di Homelab #2095 è stata
+ritirata; il suo closeout non amplia l'accettazione team-execution né completa
 mobile-control/mcp-access. La [capability map](../CAPABILITY-MAP-agent-team.md)
 è la fonte attiva per il perimetro e i link allo stato operativo.
 

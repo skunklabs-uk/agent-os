@@ -42,15 +42,13 @@ Prefer homelab only with proportionate implementation/operating effort. Choose a
 
 - [workflow-profiles](SPEC-workflow-profiles.md): Active behavioral authority; bounded module acceptance is recorded in the outcome source below.
 - [team-execution](SPEC-team-execution.md): Active specification; approved temporary task set has [bounded native execution evidence and complete selected-profile inventories](tasks/team-execution-evidence.md). The sandbox's exact-head final review is [Task50](https://github.com/skunklabs-uk/agent-os/issues/50). The subsequent real Osmani pilot is merged and closed with an explicitly accepted evidence-retention exception; [the owning closeout decision](https://github.com/skunklabs-uk/waypoint-db/issues/20#issuecomment-6116611891) records its outcome and limits. The separate [positive Pocock delivery](tasks/team-execution-evidence.md#positive-pocock-delivery--iwant523) is now observed on IWANT#523. The independent final review at9559131 has no remaining findings; the Product Owner accepted the bounded module and authorized Agent OS documentation PR/merge on 2026-10-12.
-- mobile-control, mcp-access: mission35 resta aperta. Homelab #2095 autorizza
-  una nuova UI browser upstream per OMP come accesso alternativo ai tre
-  Developer Workspace SSH; la missione è in corso e non prova il controllo
-  mobile dell'intero team Agent OS né l'accesso MCP. Deployment, sessione
-  effettiva e copertura su dispositivi reali non sono ancora attestati.
-  [Stato e DoD correnti](https://github.com/skunklabs-uk/homelab/issues/2095);
-  [PR d'integrazione](https://github.com/skunklabs-uk/homelab/pull/2100).
+- mobile-control, mcp-access: mission35 resta aperta. La distinta UI upstream
+  OMP di [Homelab #2095](https://github.com/skunklabs-uk/homelab/issues/2095)
+  è stata ritirata e il closeout non dimostra il controllo mobile del team né
+  l'accesso MCP. Per l'orchestrazione la fonte operativa è
+  [Homelab #2098](https://github.com/skunklabs-uk/homelab/issues/2098).
 
-The accepted workflow-profiles and team-execution outcomes and their bounded evidence remain in their module outcome sources. The completed execution plan is archived. Homelab #2095 is a related OMP workspace UI integration, not acceptance or completion of Agent OS mobile-control/mcp-access. No complete MVP acceptance, IWANT main merge, production or deployment is inferred; mission35 stays open.
+The accepted workflow-profiles and team-execution outcomes and their bounded evidence remain in their module outcome sources. The completed execution plan is archived. The retired Homelab #2095 UI does not establish acceptance of Agent OS mobile-control/mcp-access. No complete MVP acceptance, IWANT main merge, production or deployment is inferred; mission35 stays open.
 
 ## Process trace
 
@@ -68,6 +66,6 @@ Quella decisione riguarda esclusivamente il vecchio fork, i relativi asset e
 l'infrastruttura dedicata; non chiude la missione generale #35. L'8 novembre
 2026 il Product Owner ha autorizzato in Homelab #2095 un percorso nuovo e
 distinto: UI upstream mantenuta per OMP, alternativa ai tre accessi SSH.
-L'autorizzazione non riattiva il vecchio fork né le sue specifiche. #2095 è
-ancora aperta e non attesta deployment o uso; mission35 resta aperta per la
-propria DoD più ampia. Lo stato e gli artefatti aggiornati sono linkati sopra.
+La distinta UI è stata successivamente ritirata: #2095 è chiusa con evidenza
+del ritiro. Nessuna delle due iniziative è riattivata; mission35 resta aperta
+per la propria DoD più ampia. Lo stato operativo è linkato sopra.
