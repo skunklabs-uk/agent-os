@@ -28,4 +28,6 @@ Per ogni incarico, principale o delegato, valutare difficoltà, ambiguità e con
 
 La difficoltà non dipende soltanto dal tipo di attività. Rispettare la scelta esplicita dell'utente e usare solo modelli e provider disponibili e autorizzati nel contesto. Non presumere di poter cambiare il modello della sessione in corso. Se il client non consente la selezione o il modello non è disponibile, segnalare il limite senza dichiarare che la selezione sia avvenuta.
 
+Per attività circoscritte e a basso rischio, valutare la delega a un modello economico adeguato: ricerca di file e riferimenti, recupero di documentazione e testi, lettura, filtraggio ed estrazione di informazioni dai log, raccolta di evidenze e risultati dei test, e attività elementari equivalenti. Il coordinatore conserva la responsabilità dell'interpretazione, delle decisioni e della verifica dei risultati. Delegare solo quando il beneficio atteso supera l'overhead; altrimenti svolgere direttamente l'operazione. Difficoltà, ambiguità o criticità possono richiedere un modello superiore anche per queste attività.
+
 Usare le capacità native del client per la selezione. La classificazione richiesta sopra non seleziona automaticamente il modello né attiva routing LiteLLM; la guida non garantisce una scelta sempre corretta o una riduzione della spesa.
