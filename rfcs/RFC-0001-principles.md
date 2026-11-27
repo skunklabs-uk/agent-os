@@ -1,7 +1,7 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.20
+**Versione:** 0.1.21
 **Ultima modifica:** 2026-11-27
 
 ## Scopo
@@ -112,7 +112,7 @@ Il piano DEVE privilegiare il percorso minimo verso il primo risultato utilizzab
 
 Le dipendenze DEVONO corrispondere a prerequisiti effettivi, non all'ordine documentale o alle fasi di una metodologia. Un blocco NON DEVE fermare il lavoro indipendente già autorizzato, nel rispetto delle regole sul parallelismo.
 
-Quando costo, durata o complessità crescono materialmente rispetto alle attese, si DEVE rivalutare il percorso considerando evidenze disponibili, valore residuo, alternative e attività rinviabili. L'approvazione iniziale non giustifica il completamento integrale di un piano divenuto sproporzionato. Le modifiche ai requisiti approvati restano soggette alle regole di autorizzazione.
+Durante la pianificazione, alla ripresa di una missione e quando costo, durata o complessità crescono materialmente rispetto alle attese, l'esecutore DEVE riesaminare criticamente anche requisiti, criteri di accettazione e dipendenze già approvati, considerando evidenze disponibili, valore residuo e alternative. L'approvazione precedente non dimostra da sola che un requisito sia indispensabile al risultato o alla decisione corrente. Se un requisito, una verifica o una dipendenza non contribuisce materialmente a tale risultato, l'esecutore DEVE raccomandarne l'eliminazione, la sostituzione o il differimento. Le modifiche ai requisiti approvati restano soggette alle regole di autorizzazione; le verifiche obbligatorie e i vincoli applicabili non possono essere elusi. La rivalutazione avviene nel normale coordinamento, senza nuovi gate, documenti o checklist.
 
 Il coordinamento DEVE preservare la riprendibilità dopo interruzioni o cambi di agente: stato, identità non sensibili, autorizzazioni e prossima azione devono essere recuperabili tramite fonti e meccanismi esistenti, senza registri o recovery custom non necessari.
 
