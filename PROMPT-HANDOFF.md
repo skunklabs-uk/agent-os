@@ -4,27 +4,52 @@
 
 ## Classificazione di prompt e handoff
 
-In ChatGPT, Codex, Work e OMP, inclusi i sottoagenti OMP, ogni prompt o handoff generato deve iniziare con un proprio front matter YAML valido, delimitato da righe `---`. L'unico campo obbligatorio è `task_class`, presente una sola volta con uno di questi valori:
+In ChatGPT, Codex, Work e OMP, inclusi i sottoagenti OMP, ogni prompt o handoff generato deve iniziare con un proprio front matter YAML valido, delimitato da righe `---`, e includere una sola volta i campi obbligatori `task_class`, `model_profile` e `model`. `task_class` deve avere uno di questi valori:
 
 - `light`: semplice;
 - `standard`: ordinario;
 - `complex`: articolato o ambiguo;
 - `escalation`: eccezionalmente difficile o critico.
+`model_profile` deve ripetere esattamente il valore di `task_class` (`light`, `standard`, `complex` o `escalation`). È il profilo del singolo incarico, non il profilo di configurazione OMP selezionato con `--profile` (`personal`, per esempio).
+
+`model` è il campo nativo OMP per selezionare un ruolo (`"@smol"`, `"@default"`, `"@slow"`, `"@escalation"`) o un selettore esatto `provider/model-id`. Se il valore inizia con `@`, racchiuderlo tra virgolette nel YAML, per esempio `model: "@smol"`. La tabella in «Scelta del modello» definisce la corrispondenza. Usare un ruolo solo se la sua assegnazione effettiva punta al modello di riferimento; altrimenti indicare il selettore esatto. `escalation` è un ruolo personalizzato da definire nel profilo OMP attivo.
 
 Aggiungere `project`, `repo` e `branch` solo quando noti e pertinenti; altrimenti ometterli, senza inventare valori né chiedere chiarimenti per completarli. Se si producono più prompt o handoff, ciascuno ha il proprio front matter. Le normali risposte conversazionali sono escluse.
 
-Prima della consegna verificare il front matter e la conformità di ciascun prompt o handoff. La classificazione descrive il lavoro: non attiva automaticamente routing, scelta del modello o metadati API. Questa istruzione guida il modello e non costituisce enforcement tecnico.
+Per esempio, per una escalation selezionata tramite il ruolo dedicato:
+
+```yaml
+---
+task_class: escalation
+model_profile: escalation
+model: "@escalation"
+---
+```
+
+Per usare un ruolo OMP, il valore deve essere un alias, non il nome nudo:
+
+```yaml
+---
+task_class: light
+model_profile: light
+model: "@smol"
+---
+```
+
+Prima della consegna verificare il front matter e la conformità di ciascun prompt o handoff. `task_class` e `model_profile` descrivono la classe dell'incarico; `model` dichiara il modello richiesto. OMP interpreta `model` nel front matter delle definizioni dei propri agenti; in un normale prompt o handoff testuale il campo non cambia da solo il modello della sessione. Il client o il dispatcher deve applicarlo con le proprie capacità native. Non attiva routing LiteLLM né costituisce enforcement tecnico.
 
 ## Scelta del modello
 
-Per ogni incarico, principale o delegato, valutare difficoltà, ambiguità e conseguenze dell'errore. Quando il client consente di scegliere il modello all'avvio o per una delega, selezionarne uno adeguato:
+Per ogni incarico, principale o delegato, valutare difficoltà, ambiguità e conseguenze dell'errore. Quando il client consente di scegliere il modello all'avvio o per una delega, selezionarne uno adeguato. `model_profile` deve corrispondere a `task_class`; `model` deve contenere l'alias OMP quotato indicato solo quando il profilo attivo lo assegna al modello di riferimento.
 
-| Tipo di incarico | Modello di riferimento |
-| --- | --- |
-| Semplice e circoscritto | `gpt-6-luna` |
-| Ordinario | `gpt-6.1-terra` |
-| Complesso o ambiguo | `gpt-6.1-sol` |
-| Eccezionalmente difficile o critico | `gpt-6-astra` |
+| `task_class` | `model_profile` | Alias OMP da usare in `model` (valore YAML) | Modello di riferimento |
+| --- | --- | --- | --- |
+| `light` | `light` | `"@smol"` | `gpt-6-luna` |
+| `standard` | `standard` | `"@default"` | `gpt-6.1-terra` |
+| `complex` | `complex` | `"@slow"` | `gpt-6.1-sol` |
+| `escalation` | `escalation` | `"@escalation"` | `gpt-6-astra` |
+
+Se il ruolo OMP non è assegnato al modello di riferimento, valorizzare `model` con il selettore esatto disponibile, per esempio `openai-codex/gpt-6.1-sol`. Non presumere che un ruolo abbia la stessa assegnazione in profili OMP diversi.
 
 La difficoltà non dipende soltanto dal tipo di attività. Rispettare la scelta esplicita dell'utente e usare solo modelli e provider disponibili e autorizzati nel contesto. Non presumere di poter cambiare il modello della sessione in corso. Se il client non consente la selezione o il modello non è disponibile, segnalare il limite senza dichiarare che la selezione sia avvenuta.
 
