@@ -236,6 +236,8 @@ La review DEVE verificare sia la conformità dell'implementazione alla fonte att
 
 La review di modifiche normative DEVE verificare la coerenza con le regole preesistenti e le istruzioni operative interessate, individuando duplicazioni, contraddizioni e prescrizioni che ostacolano il risultato della modifica. Si DEVONO consolidare o correggere le disposizioni sovrapposte o incompatibili prima dell'attivazione, senza deroghe implicite né nuovi gate o documenti dedicati.
 
+Quando una skill o una metodologia esterna prescrive subagenti, wiki, nuovi ticket, refactoring preliminari, review o miglioramenti ambientali come passaggi universali, tali indicazioni si applicano soltanto se necessarie e compatibili con le sezioni 1, 2 e 7 e con l'autorità della fonte attiva. Le prescrizioni più onerose non prevalgono automaticamente perché provenienti dalla skill o da una procedura specialistica; si preferiscono le capacità native e le fonti autorevoli esistenti, preservando il risultato funzionale. Non si modificano upstream di terzi per rappresentare questo vincolo locale.
+
 ---
 
 ## 5.1 Indipendenza di giudizio e contraddittorio qualificato
@@ -299,7 +301,7 @@ Ogni verifica DEVE produrre uno dei seguenti esiti:
 
 L'esito DEVE essere accompagnato da un'evidenza o da una motivazione verificabile.
 
-Un esito `NO` DEVE indicare l'azione correttiva necessaria, oppure motivare perché non è necessaria nella missione corrente. Una verifica obbligatoria non superata resta soggetta alla regola seguente.
+Un esito `NO` DEVE indicare l'azione correttiva necessaria. I finding non bloccanti della review sono raccomandazioni distinte dagli esiti di verifica obbligatoria e possono essere rinviati con motivazione.
 
 Un artefatto che non supera una verifica obbligatoria NON PUÒ diventare `Active` finché la non conformità non viene corretta oppure viene approvata una deroga esplicitamente motivata.
 
