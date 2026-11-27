@@ -1,8 +1,8 @@
 # RFC-0001 – Principi fondanti della Software Factory
 
 **Stato:** Active
-**Versione:** 0.1.19
-**Ultima modifica:** 2026-11-22
+**Versione:** 0.1.20
+**Ultima modifica:** 2026-11-27
 
 ## Scopo
 
@@ -29,6 +29,8 @@ Una **prova di necessità** è l'evidenza, prodotta prima dell'implementazione, 
 ## 1. Semplicità e proporzionalità
 
 La scelta predefinita DEVE essere la soluzione più semplice che soddisfa tutti i requisiti applicabili.
+
+Semplicità e proporzionalità si applicano anche a requisiti, criteri di accettazione, pianificazione, analisi, coordinamento, review e verifiche, incluso il processo di applicazione della presente RFC. Prima dell'approvazione della specifica si DEVE distinguere il risultato necessario da comportamenti accessori, preferenze implementative e ipotesi non validate. Un miglioramento possibile o una best practice generica non giustificano da soli un requisito.
 
 Qualsiasi complessità aggiuntiva DEVE:
 
@@ -105,6 +107,14 @@ Prima di aprire una nuova issue, branch, pull request, wave o attività, si DEVE
 In assenza di risposte verificabili, l'attività DEVE essere rinviata; l'eventuale tracciamento resta soggetto alla regola precedente.
 
 Il completamento ha priorità sull'espansione dello scope: prima chiudere, poi migliorare.
+
+Il piano DEVE privilegiare il percorso minimo verso il primo risultato utilizzabile o la prima decisione significativa. Nei PoC si DEVONO verificare prioritariamente le ipotesi determinanti per convenienza e fattibilità, rinviando gli approfondimenti che acquistano valore soltanto dopo tale decisione, senza omettere le protezioni necessarie alla prova.
+
+Le dipendenze DEVONO corrispondere a prerequisiti effettivi, non all'ordine documentale o alle fasi di una metodologia. Un blocco NON DEVE fermare il lavoro indipendente già autorizzato, nel rispetto delle regole sul parallelismo.
+
+Quando costo, durata o complessità crescono materialmente rispetto alle attese, si DEVE rivalutare il percorso considerando evidenze disponibili, valore residuo, alternative e attività rinviabili. L'approvazione iniziale non giustifica il completamento integrale di un piano divenuto sproporzionato. Le modifiche ai requisiti approvati restano soggette alle regole di autorizzazione.
+
+Il coordinamento DEVE preservare la riprendibilità dopo interruzioni o cambi di agente: stato, identità non sensibili, autorizzazioni e prossima azione devono essere recuperabili tramite fonti e meccanismi esistenti, senza registri o recovery custom non necessari.
 
 Un'attività o una pull request NON È completata per il solo fatto che codice e test siano validi. Il closeout è completo solo quando gli artefatti autorevoli del repository rappresentano lo stato finale del lavoro.
 
@@ -224,6 +234,10 @@ La decisione di introdurre, mantenere o rendere obbligatorio un controllo aggiun
 
 La review DEVE verificare sia la conformità dell'implementazione alla fonte attiva sia la conformità della fonte attiva a questa RFC. Una fonte locale non diventa conforme soltanto perché è stata dichiarata `Active` o approvata in precedenza.
 
+La review di modifiche normative DEVE verificare la coerenza con le regole preesistenti e le istruzioni operative interessate, individuando duplicazioni, contraddizioni e prescrizioni che ostacolano il risultato della modifica. Si DEVONO consolidare o correggere le disposizioni sovrapposte o incompatibili prima dell'attivazione, senza deroghe implicite né nuovi gate o documenti dedicati.
+
+Quando una skill o una metodologia esterna prescrive subagenti, wiki, nuovi ticket, refactoring preliminari, review o miglioramenti ambientali come passaggi universali, tali indicazioni si applicano soltanto se necessarie e compatibili con le sezioni 1, 2 e 7 e con l'autorità della fonte attiva. Le prescrizioni più onerose non prevalgono automaticamente perché provenienti dalla skill o da una procedura specialistica; si preferiscono le capacità native e le fonti autorevoli esistenti, preservando il risultato funzionale. Non si modificano upstream di terzi per rappresentare questo vincolo locale.
+
 ---
 
 ## 5.1 Indipendenza di giudizio e contraddittorio qualificato
@@ -287,11 +301,13 @@ Ogni verifica DEVE produrre uno dei seguenti esiti:
 
 L'esito DEVE essere accompagnato da un'evidenza o da una motivazione verificabile.
 
-Un esito `NO` DEVE indicare l'azione correttiva necessaria.
+Un esito `NO` DEVE indicare l'azione correttiva necessaria. I finding non bloccanti della review sono raccomandazioni distinte dagli esiti di verifica obbligatoria e possono essere rinviati con motivazione.
 
 Un artefatto che non supera una verifica obbligatoria NON PUÒ diventare `Active` finché la non conformità non viene corretta oppure viene approvata una deroga esplicitamente motivata.
 
 Un principio che non può essere verificato DEVE essere chiarito o riscritto prima di diventare `Active`.
+
+La review DEVE distinguere validità tecnica di un finding e necessità di correggerlo nella missione corrente. È bloccante un finding che dimostra una violazione di un requisito indispensabile, di un vincolo obbligatorio o un rischio concreto incompatibile con il risultato autorizzato. Raccomandazioni e best practice non costituiscono automaticamente condizioni di stop. Gli standard infrastrutturali approvati DEVONO essere riutilizzati salvo evidenza di inadeguatezza al caso corrente; i rischi residui rilevanti DEVONO essere dichiarati senza remediation automatica.
 
 ### Selezione e arresto delle verifiche
 
@@ -424,38 +440,14 @@ La stop condition si applica alle esecuzioni o ai retry GitHub Actions e alle op
 
 ## Checklist obbligatoria
 
-Prima di considerare completato un lavoro, verificare:
+Prima di considerare completato un lavoro, verificare sinteticamente le domande applicabili usando le evidenze già disponibili. Questa sintesi non sostituisce né attenua le prescrizioni delle sezioni precedenti e non richiede una nuova attestazione separata.
 
 | Verifica | Esito | Evidenza o azione correttiva |
 |---|---|---|
-| La soluzione soddisfa tutti i requisiti applicabili? |  |  |
-| Esiste un modo più semplice per ottenere lo stesso risultato? |  |  |
-| Quando la correttezza della modifica dipende dal comportamento corrente, sono stati verificati quel comportamento e il percorso interessato quanto basta, e per i difetti riproducibili la causa quando applicabile, senza ampliare lo scope? |  |  |
-| La soluzione minima è stata scelta per perimetro e costo complessivo, non per sola brevità del diff? |  |  |
-| Ogni complessità introdotta ha una giustificazione verificabile? |  |  |
-| Per ogni nuovo controllo aggiuntivo o custom esiste una prova di necessità accettata prima dell'implementazione? |  |  |
-| La prova identifica requisito, failure mode, copertura esistente, alternative, gap, beneficio, costo e lifecycle? |  |  |
-| Nessun controllo è giustificato da dipendenze create dallo stesso controllo? |  |  |
-| La proporzionalità è stata valutata sull'intera soluzione e non solo sulla singola slice? |  |  |
-| I controlli collegati sono stati classificati `KEEP`, `DELETE` o `REPLACE` quando richiesto? |  |  |
-| Il lavoro fa avanzare una missione attiva e identificata? |  |  |
-| L'apertura di nuovi fronti è necessaria al completamento o alla rimozione di un blocco documentato? |  |  |
-| Obiettivo, scope e passaggi non espliciti sono autorizzati dall'utente o da una fonte attiva approvata? |  |  |
-| Le attività laterali rinviabili sono state mantenute fuori dal flusso principale? |  |  |
-| La fattibilità della soluzione è stata verificata? |  |  |
-| I fatti utilizzati provengono da fonti verificabili? |  |  |
-| Ogni deduzione cita i fatti e il passaggio logico da cui deriva? |  |  |
-| Sono presenti ipotesi non dichiarate? |  |  |
-| Mancano informazioni necessarie per assumere decisioni rilevanti? |  |  |
-| Le decisioni rilevanti sono tracciabili e contestabili? |  |  |
-| Le fonti `Active` interessate sono state riesaminate rispetto a questa RFC, oltre alla verifica dell'implementazione rispetto alle fonti? |  |  |
-| Ogni informazione operativa ha una sola fonte autorevole? |  |  |
-| Sono state introdotte duplicazioni evitabili? |  |  |
-| I documenti interessati hanno uno stato corretto? |  |  |
-| La documentazione attiva rappresenta lo stato finale del lavoro, quando la modifica richiede un aggiornamento documentale? |  |  |
-| Gli artefatti superati o non più applicabili sono stati aggiornati, sostituiti o archiviati secondo le regole esistenti? |  |  |
-| Gli artefatti temporanei o non più utili della missione sono stati rimossi, preservando le informazioni durevoli e senza eliminare quelli condivisi o incerti? |  |  |
-| Le modifiche ai workflow usano esclusivamente classi runner approvate, oppure esiste una deroga esplicita conforme alla sezione 8? |  |  |
-| Le verifiche producono evidenze osservabili? |  |  |
-| Controlli, test, strumenti e workflow adottano la soluzione minima nell'ordine previsto e ogni custom supera il relativo burden of proof? |  |  |
-| Ogni controllo temporaneo ha owner, reversibilità e condizione di rimozione verificabili? |  |  |
+| Il risultato richiesto è stato ottenuto con evidenze sufficienti? | | |
+| Requisiti, soluzione e processo sono i minimi necessari? | | |
+| Scope, autorizzazioni e vincoli sono rispettati? | | |
+| Le decisioni si basano su fatti e deduzioni verificabili? | | |
+| Controlli e test sono necessari, sufficienti e proporzionati? | | |
+| Le fonti autorevoli rappresentano lo stato finale e le regole modificate sono coerenti, non duplicate né contraddittorie? | | |
+| Lavoro residuo, rischi e artefatti temporanei sono gestiti correttamente? | | |
